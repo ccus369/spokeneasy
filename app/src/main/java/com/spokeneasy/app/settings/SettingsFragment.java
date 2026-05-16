@@ -11,6 +11,9 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.google.android.material.textfield.TextInputEditText;
+import com.spokeneasy.app.core.net.ApiConfig;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
@@ -19,6 +22,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.spokeneasy.app.R;
 import com.spokeneasy.app.core.audio.TTSEngine;
 import com.spokeneasy.app.core.audio.TtsHelper;
@@ -52,6 +56,10 @@ public class SettingsFragment extends Fragment {
 
     private TTSEngine ttsEngine;
 
+    // MiMo API section
+    private TextInputEditText mimoKeyInput;
+    private MaterialButton btnMimoSave;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -82,6 +90,9 @@ public class SettingsFragment extends Fragment {
         btnTtsInstall = view.findViewById(R.id.btn_tts_install);
         ttsActionLayout = view.findViewById(R.id.tts_action_layout);
 
+        mimoKeyInput = view.findViewById(R.id.mimo_key_input);
+        btnMimoSave = view.findViewById(R.id.btn_mimo_save);
+
         viewModel = new ViewModelProvider(this).get(UserProgressViewModel.class);
 
         viewModel.getStats().observe(getViewLifecycleOwner(), stats -> {
@@ -96,6 +107,7 @@ public class SettingsFragment extends Fragment {
                 "设备 ID: %s", viewModel.getUserUuid()));
 
         setupTtsSection();
+        loadMimoApiKey();
         setupListeners();
     }
 
@@ -146,7 +158,26 @@ public class SettingsFragment extends Fragment {
         progressBar.setProgress(pct);
     }
 
+    private void loadMimoApiKey() {
+        com.spokeneasy.app.core.net.ApiConfig config =
+                new com.spokeneasy.app.core.net.ApiConfig(requireContext());
+        String key = config.getMiMoApiKey();
+        if (!key.isEmpty()) {
+            mimoKeyInput.setText(key);
+        }
+    }
+
     private void setupListeners() {
+        btnMimoSave.setOnClickListener(v -> {
+            String key = mimoKeyInput.getText() != null
+                    ? mimoKeyInput.getText().toString().trim() : "";
+            com.spokeneasy.app.core.net.ApiConfig config =
+                    new com.spokeneasy.app.core.net.ApiConfig(requireContext());
+            config.setMiMoApiKey(key);
+            int msgRes = key.isEmpty() ? R.string.mimo_api_key_cleared : R.string.mimo_api_key_saved;
+            Snackbar.make(requireView(), msgRes, Snackbar.LENGTH_SHORT).show();
+        });
+
         btnRecordHistory.setOnClickListener(v ->
                 Navigation.findNavController(v).navigate(
                         R.id.action_settings_to_recordHistory));

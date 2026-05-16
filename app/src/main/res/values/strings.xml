@@ -6,6 +6,7 @@
     <string name="menu_word">单词学习</string>
     <string name="menu_linking">连读练习</string>
     <string name="menu_listening">听力练习</string>
+    <string name="menu_chat">AI 对话</string>
     <string name="menu_settings">设置</string>
 
     <!-- Placeholder screen titles -->
@@ -66,4 +67,12 @@
     <string name="tts_install_data">下载英语语音数据</string>
     <string name="tts_install_google">安装 Google 文字转语音</string>
     <string name="tts_test_phrase">Hello, welcome to SpokenEasy.</string>
+
+    <!-- MiMo AI Chat -->
+    <string name="mimo_section_title">MiMo AI 配置</string>
+    <string name="mimo_api_key_label">API Key</string>
+    <string name="mimo_api_key_hint">输入你的 MiMo API Key</string>
+    <string name="mimo_api_key_save">保存</string>
+    <string name="mimo_api_key_saved">API Key 已保存</string>
+    <string name="mimo_api_key_cleared">API Key 已清除</string>
 </resources>

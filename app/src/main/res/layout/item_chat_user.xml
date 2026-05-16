@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="8dp"
+    android:paddingVertical="4dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:maxWidth="300dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="1dp"
+        app:contentPaddingStart="14dp"
+        app:contentPaddingEnd="14dp"
+        app:contentPaddingTop="10dp"
+        app:contentPaddingBottom="10dp"
+        app:cardBackgroundColor="?attr/colorPrimary">
+
+        <TextView
+            android:id="@+id/chat_user_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textColor="?attr/colorOnPrimary"
+            android:lineSpacingExtra="3dp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>

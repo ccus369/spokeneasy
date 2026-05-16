@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="8dp"
+    android:paddingVertical="4dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:maxWidth="300dp"
+        android:orientation="vertical">
+
+        <!-- AI reply card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="1dp"
+            app:contentPaddingStart="14dp"
+            app:contentPaddingEnd="14dp"
+            app:contentPaddingTop="10dp"
+            app:contentPaddingBottom="10dp"
+            app:cardBackgroundColor="?attr/colorSurfaceVariant">
+
+            <TextView
+                android:id="@+id/chat_ai_reply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textColor="?attr/colorOnSurface"
+                android:lineSpacingExtra="3dp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Corrections card (initially hidden) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/chat_correction_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:visibility="gone"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="1dp"
+            app:contentPadding="10dp"
+            app:cardBackgroundColor="#1AFFF176">
+
+            <TextView
+                android:id="@+id/chat_correction_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceBodySmall"
+                android:textColor="?attr/colorOnSurface"
+                android:lineSpacingExtra="2dp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- TTS play button -->
+        <ImageButton
+            android:id="@+id/btn_chat_play_tts"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="2dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="朗读"
+            android:src="@android:drawable/ic_media_play"
+            android:visibility="gone"
+            app:tint="?attr/colorPrimary" />
+
+    </LinearLayout>
+
+</FrameLayout>
