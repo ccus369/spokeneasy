@@ -17,6 +17,7 @@ Android 英语口语练习 App "SpokenEasy"，Java + XML Layouts + Navigation Co
 2. **每次只改一个模块**：不跨模块修改
 3. **编译通过是硬门槛**：任何修改后必须能编译
 4. **按功能分包**：word/linking/listening/settings/progress 各自独立
+5. **同步更新状态文档**：每完成一个阶段/模块，同步更新本方文件 (§Phase 进度) 和 `SPOKENEASY_STATUS.md`
 
 ### 代码规范
 - Java 17
