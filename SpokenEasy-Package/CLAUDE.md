@@ -38,4 +38,5 @@ Android 英语口语练习 App "SpokenEasy"，Java + XML Layouts + Navigation Co
 
 ### Phase 进度
 - Phase 1 已完成（项目骨架：Gradle 配置 + 导航框架 + 3 个占位页 + Material3 主题）
-- 代码使用 Java + XML Layouts，Navigation Component 进行导航
+- Phase 2 已完成（基础设施：5 Entity + 4 DAO + AppDatabase + 预置 DB + TTS/Audio/Scorer 工具类）
+- 代码使用 Java + XML Layouts，Navigation Component 进行导航，Room 数据库

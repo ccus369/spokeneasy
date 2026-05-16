@@ -57,15 +57,15 @@
 - AndroidManifest
 - **验证标准：App 能跑起来，导航能切换**
 
-### Phase 2：基础设施
+### Phase 2：基础设施 ✅
 - 所有 Entity + DAO（word/linking/listening/progress）
 - AppDatabase（Room + createFromAsset）
-- assets/database/spokeneasy.db（预置数据库文件）
-- core/model/Common.java（公共数据类）
-- TTSEngine + AudioRecorder
-- Scorer 接口 + MockScorer
-- UuidManager
-- **验证标准：数据库能初始化，工具类可调用**
+- assets/database/spokeneasy.db（预置数据库文件，含5张表空库）
+- core/model/Common.java（UiResult + ScoreResult 公共数据类）
+- TTSEngine（TextToSpeech 封装）+ AudioRecorder（录音+播放）
+- Scorer 接口 + MockScorer（随机评分 40-100）
+- UuidManager（设备 UUID 持久化）
+- **验证标准：BUILD SUCCESSFUL，数据库初始化就绪**
 
 ### Phase 3：单词板块
 ### Phase 4：连读板块
