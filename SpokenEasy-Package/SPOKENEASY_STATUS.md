@@ -1,7 +1,7 @@
 # SpokenEasy — 项目状态与开发计划
 
 ## 当前状态 (2026-05-16)
-已完成从 Kotlin + Jetpack Compose 到 Java + XML Layouts 的技术栈转换。
+全部 6 个阶段 + Phase 5.5 UI 改造已完成，BUILD SUCCESSFUL 验证通过。
 
 ### 已完成的转换
 - Gradle 配置：移除 Compose/Kotlin 插件，添加 Navigation Fragment/UI、Material Components、AppCompat
@@ -97,12 +97,12 @@
 - 导航：listeningListFragment → listeningDetailFragment(audioId:long)
 - **验证标准：BUILD SUCCESSFUL，听力列表可筛选，答题可批改得分**
 
-### Phase 6：设置 + 统计（部分完成）
-- SettingsFragment（占位页面，fragment_settings.xml 布局）
-- UserProgressEntity（联合唯一索引 (user_uuid, module_type, item_id)）
-- UserProgressDao（含统计查询：getCompletedCount / getAttemptedCount）
-- **待完成**：UserProgressRepository / ViewModel、设置页显示学习统计、用户数据导出/重置
-- **验证标准：编译通过，进度记录可写入和查询**
+### Phase 6：设置 + 统计 ✅
+- UserProgressRepository（标准 CRUD + 统计查询）
+- UserProgressViewModel（AndroidViewModel，加载各模块统计数据）
+- SettingsFragment 完全重写：统计卡片（单词/连读/听力完成数 + ProgressBar）、数据导出（Intent.ACTION_SEND 分享）、数据重置（AlertDialog 确认后清空）
+- fragment_settings.xml 完全重写：Material3 卡片布局，设备 UUID 显示
+- **验证标准：BUILD SUCCESSFUL，设置页显示各模块统计数据，导出/重置功能正常**
 
 ---
 

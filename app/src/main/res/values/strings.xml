@@ -39,4 +39,16 @@
     <string name="show_dialog_text">显示原文</string>
     <string name="hide_dialog_text">隐藏原文</string>
     <string name="listening_progress">第 %d/3 题</string>
+
+    <!-- Settings / Statistics -->
+    <string name="settings_statistics">学习统计</string>
+    <string name="settings_data_management">数据管理</string>
+    <string name="settings_export_data">导出学习数据</string>
+    <string name="settings_reset_data">重置所有数据</string>
+    <string name="settings_reset_confirm_title">确认重置</string>
+    <string name="settings_reset_confirm_message">确定要清除所有学习进度数据吗？此操作不可撤销。</string>
+    <string name="settings_cancel">取消</string>
+    <string name="settings_confirm">确定</string>
+    <string name="settings_export_subject">SpokenEasy 学习数据</string>
+    <string name="settings_export_body" formatted="false">我的 SpokenEasy 学习进度：\n\n单词：已完成 %d/%d\n连读：已完成 %d/%d\n听力：已完成 %d/%d</string>
 </resources>

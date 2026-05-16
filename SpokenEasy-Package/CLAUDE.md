@@ -43,4 +43,5 @@ Android 英语口语练习 App "SpokenEasy"，Java + XML Layouts + Navigation Co
 - Phase 3 ✅ 单词板块（WordRepository/ViewModel/ListAdapter/ListFragment/DetailFragment，完整 TTS→录音→评分闭环）
 - Phase 4 ✅ 连读板块（LinkingEntity/DAO/Repository/ViewModel/ListAdapter/ListFragment/DetailFragment，规则+例句+跟读练习）
 - Phase 5 ✅ 听力板块（AudioEntity+QuestionEntity 双表设计 + ChipGroup 难度筛选 + RadioGroup 3 题自动批改）
-- Phase 6 ⏳ 部分完成（SettingsFragment 占位 + UserProgressEntity/DAO 基础，缺少进度展示 UI 和 Repository/ViewModel）
+- Phase 6 ✅ 设置 + 统计模块（UserProgressRepository/ViewModel，设置页学习统计卡片、ProgressBar、数据导出/重置、设备UUID显示）
+- Phase 5.5 ✅ UI 全面改造 + 听力模块重构（TTS 播放对话、隐藏原文、微动画系统、3 模块列表/详情 UI 升级）
