@@ -9,13 +9,41 @@
         android:id="@+id/wordListFragment"
         android:name="com.spokeneasy.app.word.WordListFragment"
         android:label="@string/menu_word"
-        tools:layout="@layout/fragment_word_list" />
+        tools:layout="@layout/fragment_word_list">
+        <action
+            android:id="@+id/action_wordList_to_wordDetail"
+            app:destination="@id/wordDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/wordDetailFragment"
+        android:name="com.spokeneasy.app.word.WordDetailFragment"
+        android:label="单词详情"
+        tools:layout="@layout/fragment_word_detail">
+        <argument
+            android:name="wordId"
+            app:argType="long" />
+    </fragment>
 
     <fragment
         android:id="@+id/linkingListFragment"
         android:name="com.spokeneasy.app.linking.LinkingListFragment"
         android:label="@string/menu_linking"
-        tools:layout="@layout/fragment_linking_list" />
+        tools:layout="@layout/fragment_linking_list">
+        <action
+            android:id="@+id/action_linkingList_to_linkingDetail"
+            app:destination="@id/linkingDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/linkingDetailFragment"
+        android:name="com.spokeneasy.app.linking.LinkingDetailFragment"
+        android:label="@string/linking_detail_title"
+        tools:layout="@layout/fragment_linking_detail">
+        <argument
+            android:name="linkingId"
+            app:argType="long" />
+    </fragment>
 
     <fragment
         android:id="@+id/settingsFragment"

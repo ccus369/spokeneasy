@@ -67,7 +67,16 @@
 - UuidManager（设备 UUID 持久化）
 - **验证标准：BUILD SUCCESSFUL，数据库初始化就绪**
 
-### Phase 3：单词板块
+### Phase 3：单词板块 ✅
+- WordRepository（获取/搜索单词，异步插入/更新）
+- WordViewModel（AndroidViewModel + LiveData 管理列表状态）
+- WordListFragment 重构：搜索框 + RecyclerView 单词列表
+- WordListAdapter（DiffUtil 分页适配器，显示单词+音标）
+- WordDetailFragment（单词详情：3 句例句 + TTS 播放 + 中英文切换 + 跟读录音 + MockScore 评分）
+- item_word.xml 列表项布局 + fragment_word_detail.xml 详情布局
+- 导航：添加 wordDetailFragment destination，wordId 参数传递
+- **验证标准：BUILD SUCCESSFUL，单词列表可加载，点击进入详情**
+
 ### Phase 4：连读板块
 ### Phase 5：听力板块
 ### Phase 6：设置 + 统计

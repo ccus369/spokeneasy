@@ -12,6 +12,24 @@
     <string name="linking_list_title">口语连读练习</string>
     <string name="settings_title">设置</string>
 
+    <!-- Word detail -->
+    <string name="word_detail_title">单词详情</string>
+    <string name="search_hint">搜索单词</string>
+    <string name="show_translation">显示中文翻译</string>
+    <string name="hide_translation">隐藏中文翻译</string>
+    <string name="practice_title">跟读练习</string>
+    <string name="start_record">开始录音</string>
+    <string name="stop_record">停止录音</string>
+    <string name="play_record">播放录音</string>
+    <string name="score_format">%d 分</string>
+
     <!-- Content descriptions -->
     <string name="cd_open_drawer">打开菜单</string>
+    <string name="cd_play_word">播放发音</string>
+    <string name="cd_play_sentence">播放句子</string>
+    <string name="cd_play_linking">播放连读</string>
+
+    <!-- Linking -->
+    <string name="linking_detail_title">连读详情</string>
+    <string name="example_title">例句</string>
 </resources>
