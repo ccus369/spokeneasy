@@ -51,6 +51,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime)
     implementation(libs.androidx.lifecycle.viewmodel)
     implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.activity)
     annotationProcessor(libs.androidx.room.compiler)
 
     testImplementation(libs.junit)
