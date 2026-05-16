@@ -201,6 +201,7 @@ public class WordDetailFragment extends Fragment {
                                 filePath);
                         scoreText.setVisibility(View.VISIBLE);
                         scoreText.setText(String.format(Locale.getDefault(), "%d 分", score));
+                        com.spokeneasy.app.core.AnimationUtils.animateScorePulse(scoreText);
                     }
 
                     @Override

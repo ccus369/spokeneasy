@@ -5,6 +5,7 @@
     <!-- Bottom navigation & drawer menu labels -->
     <string name="menu_word">单词学习</string>
     <string name="menu_linking">连读练习</string>
+    <string name="menu_listening">听力练习</string>
     <string name="menu_settings">设置</string>
 
     <!-- Placeholder screen titles -->
@@ -32,4 +33,10 @@
     <!-- Linking -->
     <string name="linking_detail_title">连读详情</string>
     <string name="example_title">例句</string>
+
+    <!-- Listening -->
+    <string name="play_dialog">播放对话</string>
+    <string name="show_dialog_text">显示原文</string>
+    <string name="hide_dialog_text">隐藏原文</string>
+    <string name="listening_progress">第 %d/3 题</string>
 </resources>

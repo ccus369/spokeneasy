@@ -122,6 +122,21 @@ public class LinkingDetailFragment extends Fragment {
         detailExampleEn.setText(item.getExampleEn());
         detailExampleCn.setText(item.getExampleCn());
         updateChineseVisibility();
+        animateArrow();
+    }
+
+    private void animateArrow() {
+        View arrow = getView().findViewById(R.id.detail_arrow);
+        if (arrow != null) {
+            arrow.setTranslationX(-20f);
+            arrow.setAlpha(0f);
+            arrow.animate()
+                    .translationX(0f)
+                    .alpha(1f)
+                    .setDuration(400)
+                    .setInterpolator(new android.view.animation.OvershootInterpolator())
+                    .start();
+        }
     }
 
     private void updateChineseVisibility() {
@@ -180,6 +195,7 @@ public class LinkingDetailFragment extends Fragment {
                                 filePath);
                         scoreText.setVisibility(View.VISIBLE);
                         scoreText.setText(String.format(Locale.getDefault(), "%d 分", score));
+                        com.spokeneasy.app.core.AnimationUtils.animateScorePulse(scoreText);
                     }
 
                     @Override

@@ -1,5 +1,7 @@
 package com.spokeneasy.app.linking;
 
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,6 +53,22 @@ public class LinkingListAdapter extends ListAdapter<LinkingEntity, LinkingListAd
         LinkingEntity item = getItem(position);
         holder.ruleText.setText(item.getRuleName());
         holder.categoryText.setText(item.getCategory());
+
+        String category = item.getCategory();
+        int bgColor;
+        if (category != null) {
+            bgColor = getCategoryColor(category);
+            // Show abbreviated tag
+            String tag = category.length() <= 4 ? category : category.substring(0, 2);
+            holder.categoryTag.setText(tag);
+            holder.categoryTag.setVisibility(View.VISIBLE);
+            GradientDrawable drawable = (GradientDrawable) holder.categoryTag.getBackground();
+            drawable.setColor(bgColor);
+            holder.categoryTag.setTextColor(Color.WHITE);
+        } else {
+            holder.categoryTag.setVisibility(View.GONE);
+        }
+
         holder.itemView.setOnClickListener(v -> {
             if (onItemClickListener != null) {
                 onItemClickListener.onItemClick(item);
@@ -58,14 +76,33 @@ public class LinkingListAdapter extends ListAdapter<LinkingEntity, LinkingListAd
         });
     }
 
+    private int getCategoryColor(String category) {
+        switch (category) {
+            case "缩约":
+            case "缩写":
+                return Color.parseColor("#1976D2");
+            case "同化":
+                return Color.parseColor("#7B1FA2");
+            case "省略":
+                return Color.parseColor("#F57C00");
+            case "连读":
+            case "连接":
+                return Color.parseColor("#388E3C");
+            default:
+                return Color.parseColor("#757575");
+        }
+    }
+
     static class ViewHolder extends RecyclerView.ViewHolder {
         final TextView ruleText;
         final TextView categoryText;
+        final TextView categoryTag;
 
         ViewHolder(View itemView) {
             super(itemView);
             ruleText = itemView.findViewById(R.id.linking_rule_text);
             categoryText = itemView.findViewById(R.id.linking_category_text);
+            categoryTag = itemView.findViewById(R.id.category_tag);
         }
     }
 }

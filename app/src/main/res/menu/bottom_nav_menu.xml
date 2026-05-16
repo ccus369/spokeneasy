@@ -9,6 +9,10 @@
         android:icon="@drawable/ic_record_voice_over"
         android:title="@string/menu_linking" />
     <item
+        android:id="@+id/listeningListFragment"
+        android:icon="@drawable/ic_headset"
+        android:title="@string/menu_listening" />
+    <item
         android:id="@+id/settingsFragment"
         android:icon="@drawable/ic_settings"
         android:title="@string/menu_settings" />

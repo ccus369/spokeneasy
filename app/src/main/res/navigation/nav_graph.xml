@@ -12,7 +12,11 @@
         tools:layout="@layout/fragment_word_list">
         <action
             android:id="@+id/action_wordList_to_wordDetail"
-            app:destination="@id/wordDetailFragment" />
+            app:destination="@id/wordDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
@@ -32,7 +36,11 @@
         tools:layout="@layout/fragment_linking_list">
         <action
             android:id="@+id/action_linkingList_to_linkingDetail"
-            app:destination="@id/linkingDetailFragment" />
+            app:destination="@id/linkingDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
@@ -42,6 +50,30 @@
         tools:layout="@layout/fragment_linking_detail">
         <argument
             android:name="linkingId"
+            app:argType="long" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/listeningListFragment"
+        android:name="com.spokeneasy.app.listening.ListeningListFragment"
+        android:label="@string/menu_listening"
+        tools:layout="@layout/fragment_listening_list">
+        <action
+            android:id="@+id/action_listeningList_to_listeningDetail"
+            app:destination="@id/listeningDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/listeningDetailFragment"
+        android:name="com.spokeneasy.app.listening.ListeningDetailFragment"
+        android:label="听力练习"
+        tools:layout="@layout/fragment_listening_detail">
+        <argument
+            android:name="audioId"
             app:argType="long" />
     </fragment>
 

@@ -1,5 +1,6 @@
 package com.spokeneasy.app.word;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.spokeneasy.app.R;
 
-import java.util.List;
 import java.util.Locale;
 
 public class WordListAdapter extends ListAdapter<WordEntity, WordListAdapter.ViewHolder> {
@@ -59,6 +59,25 @@ public class WordListAdapter extends ListAdapter<WordEntity, WordListAdapter.Vie
         } else {
             holder.phoneticText.setVisibility(View.GONE);
         }
+
+        // Meaning preview: use first Chinese sentence translation if available
+        if (word.getSentence1Cn() != null && !word.getSentence1Cn().isEmpty()) {
+            holder.meaningPreview.setText(word.getSentence1Cn());
+            holder.meaningPreview.setVisibility(View.VISIBLE);
+        } else {
+            holder.meaningPreview.setVisibility(View.GONE);
+        }
+
+        // Category accent bar coloring
+        String category = word.getCategory();
+        if (category != null && !category.isEmpty()) {
+            int color = getCategoryColor(category);
+            holder.categoryBar.setBackgroundColor(color);
+            holder.categoryBar.setVisibility(View.VISIBLE);
+        } else {
+            holder.categoryBar.setVisibility(View.GONE);
+        }
+
         holder.itemView.setOnClickListener(v -> {
             if (onItemClickListener != null) {
                 onItemClickListener.onItemClick(word);
@@ -66,14 +85,28 @@ public class WordListAdapter extends ListAdapter<WordEntity, WordListAdapter.Vie
         });
     }
 
+    private int getCategoryColor(String category) {
+        switch (category) {
+            case "生活": return Color.parseColor("#1976D2");
+            case "工作": return Color.parseColor("#7B1FA2");
+            case "学习": return Color.parseColor("#F57C00");
+            case "旅行": return Color.parseColor("#388E3C");
+            default: return Color.parseColor("#757575");
+        }
+    }
+
     static class ViewHolder extends RecyclerView.ViewHolder {
         final TextView wordText;
         final TextView phoneticText;
+        final TextView meaningPreview;
+        final View categoryBar;
 
         ViewHolder(View itemView) {
             super(itemView);
             wordText = itemView.findViewById(R.id.word_text);
             phoneticText = itemView.findViewById(R.id.phonetic_text);
+            meaningPreview = itemView.findViewById(R.id.meaning_preview);
+            categoryBar = itemView.findViewById(R.id.category_bar);
         }
     }
 }
