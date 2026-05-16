@@ -37,6 +37,9 @@ Android 英语口语练习 App "SpokenEasy"，Java + XML Layouts + Navigation Co
 - 用户：设备UUID标识，仅游客模式
 
 ### Phase 进度
-- Phase 1 已完成（项目骨架：Gradle 配置 + 导航框架 + 3 个占位页 + Material3 主题）
-- Phase 2 已完成（基础设施：5 Entity + 4 DAO + AppDatabase + 预置 DB + TTS/Audio/Scorer 工具类）
-- 代码使用 Java + XML Layouts，Navigation Component 进行导航，Room 数据库
+- Phase 1 ✅ 项目骨架搭建（Gradle 配置 + 导航框架 DrawerLayout/BottomNavigation/NavHost + 占位页 + Material3 主题）
+- Phase 2 ✅ 基础设施（5 Entity + 4 DAO + AppDatabase + assets/database/spokeneasy.db + TTS/AudioRecorder/Scorer/UuidManager 工具类）
+- Phase 3 ✅ 单词板块（WordRepository/ViewModel/ListAdapter/ListFragment/DetailFragment，完整 TTS→录音→评分闭环）
+- Phase 4 ✅ 连读板块（LinkingEntity/DAO/Repository/ViewModel/ListAdapter/ListFragment/DetailFragment，规则+例句+跟读练习）
+- Phase 5 ✅ 听力板块（AudioEntity+QuestionEntity 双表设计 + ChipGroup 难度筛选 + RadioGroup 3 题自动批改）
+- Phase 6 ⏳ 部分完成（SettingsFragment 占位 + UserProgressEntity/DAO 基础，缺少进度展示 UI 和 Repository/ViewModel）

@@ -77,9 +77,32 @@
 - 导航：添加 wordDetailFragment destination，wordId 参数传递
 - **验证标准：BUILD SUCCESSFUL，单词列表可加载，点击进入详情**
 
-### Phase 4：连读板块
-### Phase 5：听力板块
-### Phase 6：设置 + 统计
+### Phase 4：连读板块 ✅
+- LinkingEntity + LinkingDao（标准 CRUD）
+- LinkingRepository（获取/搜索连读规则，异步操作）
+- LinkingViewModel（AndroidViewModel + LiveData）
+- LinkingListFragment + LinkingListAdapter（DiffUtil 列表）
+- LinkingDetailFragment（规则说明 + 例句 + TTS 播放 + 跟读录音 + MockScore 评分）
+- fragment_linking_list.xml + fragment_linking_detail.xml 布局
+- 导航：linkingListFragment → linkingDetailFragment(linkingId:long)
+- **验证标准：BUILD SUCCESSFUL，连读列表可加载，详情可录音评分**
+
+### Phase 5：听力板块 ✅
+- ListeningAudioEntity + ListeningQuestionEntity（双表外键关联，CASCADE 删除）
+- ListeningAudioDao（含关联查询：getQuestionsByAudioId）
+- ListeningRepository + ListeningViewModel（AndroidViewModel + LiveData）
+- ListeningListFragment + ListeningListAdapter（ChipGroup 三级难度筛选）
+- ListeningDetailFragment（对话显示 → 3 道 RadioGroup 选择题 → 提交自动批改 → 对错颜色反馈）
+- fragment_listening_list.xml + fragment_listening_detail.xml 布局
+- 导航：listeningListFragment → listeningDetailFragment(audioId:long)
+- **验证标准：BUILD SUCCESSFUL，听力列表可筛选，答题可批改得分**
+
+### Phase 6：设置 + 统计（部分完成）
+- SettingsFragment（占位页面，fragment_settings.xml 布局）
+- UserProgressEntity（联合唯一索引 (user_uuid, module_type, item_id)）
+- UserProgressDao（含统计查询：getCompletedCount / getAttemptedCount）
+- **待完成**：UserProgressRepository / ViewModel、设置页显示学习统计、用户数据导出/重置
+- **验证标准：编译通过，进度记录可写入和查询**
 
 ---
 
