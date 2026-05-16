@@ -1,7 +1,7 @@
 # SpokenEasy - CLAUDE 工作指引
 
 ## 项目概述
-Android 英语口语练习 App "SpokenEasy"，Kotlin + Jetpack Compose + Room。
+Android 英语口语练习 App "SpokenEasy"，Java + XML Layouts + Navigation Component + Room。
 
 ## 项目文档路径
 - [需求文档](docs/01-requirements.md)
@@ -19,19 +19,23 @@ Android 英语口语练习 App "SpokenEasy"，Kotlin + Jetpack Compose + Room。
 4. **按功能分包**：word/linking/listening/settings/progress 各自独立
 
 ### 代码规范
-- Kotlin + Compose
-- MVVM 模式：Screen → ViewModel → Repository → DAO
-- 状态向下，事件向上
-- Compose 文件后缀 `*Screen.kt`
-- ViewModel 文件后缀 `*ViewModel.kt`
+- Java 17
+- MVVM 模式：Fragment → ViewModel → Repository → DAO
+- Fragment 文件后缀 `*Fragment.java`
+- ViewModel 文件后缀 `*ViewModel.java`
+- 布局文件 `fragment_*.xml` / `activity_*.xml`
+- 菜单文件 `menu/*.xml`
+- 导航文件 `navigation/nav_graph.xml`
 
 ### 关键架构决策
 - 预置 .db 文件：`assets/database/spokeneasy.db`（SQLite 可视化工具创建）
-- 导航：DrawerLayout + BottomNavigationBar
+- 导航：DrawerLayout + BottomNavigationView + NavHostFragment
+- Navigation Component 导航图 + NavigationUI 自动同步
 - 评分：Scorer 接口 → MockScorer(模拟) / XunfeiScorer(讯飞)
 - 音频：TTSEngine + AudioRecorder 独立封装
-- 主题：浅色+深色模式，蓝色主色调
+- 主题：浅色+深色模式，Material3 XML 主题，蓝色主色调
 - 用户：设备UUID标识，仅游客模式
 
-### Phase 进度（新项目重写）
-- 从 Phase 1 开始重新构建
+### Phase 进度
+- Phase 1 已完成（项目骨架：Gradle 配置 + 导航框架 + 3 个占位页 + Material3 主题）
+- 代码使用 Java + XML Layouts，Navigation Component 进行导航

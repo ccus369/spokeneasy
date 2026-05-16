@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/wordListFragment">
+
+    <fragment
+        android:id="@+id/wordListFragment"
+        android:name="com.spokeneasy.app.word.WordListFragment"
+        android:label="@string/menu_word"
+        tools:layout="@layout/fragment_word_list" />
+
+    <fragment
+        android:id="@+id/linkingListFragment"
+        android:name="com.spokeneasy.app.linking.LinkingListFragment"
+        android:label="@string/menu_linking"
+        tools:layout="@layout/fragment_linking_list" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.spokeneasy.app.settings.SettingsFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_settings" />
+
+</navigation>

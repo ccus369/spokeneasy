@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">SpokenEasy</string>
+    <string name="app_subtitle">英语口语练习</string>
+
+    <!-- Bottom navigation & drawer menu labels -->
+    <string name="menu_word">单词学习</string>
+    <string name="menu_linking">连读练习</string>
+    <string name="menu_settings">设置</string>
+
+    <!-- Placeholder screen titles -->
+    <string name="word_list_title">单词联想句子</string>
+    <string name="linking_list_title">口语连读练习</string>
+    <string name="settings_title">设置</string>
+
+    <!-- Content descriptions -->
+    <string name="cd_open_drawer">打开菜单</string>
 </resources>

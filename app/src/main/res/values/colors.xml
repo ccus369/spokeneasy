@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Primary Blue palette -->
+    <color name="blue_100">#FFBBDEFB</color>
+    <color name="blue_200">#FF90CAF9</color>
+    <color name="blue_600">#FF1976D2</color>
+    <color name="blue_700">#FF1565C0</color>
+    <color name="blue_800">#FF0D47A1</color>
+    <color name="blue_900">#FF003C8F</color>
+
+    <!-- Secondary Blue Grey palette -->
+    <color name="blue_grey_200">#FFCFD8DC</color>
+    <color name="blue_grey_300">#FF90A4AE</color>
+    <color name="blue_grey_600">#FF546E7A</color>
+    <color name="blue_grey_700">#FF37474F</color>
+    <color name="blue_grey_900">#FF263238</color>
+
+    <!-- Tertiary Purple palette -->
+    <color name="purple_200">#FFCE93D8</color>
+    <color name="purple_800">#FF6A1B9A</color>
+    <color name="purple_900">#FF3E1A59</color>
+
+    <!-- Neutral palette -->
+    <color name="grey_50">#FFF5F5F5</color>
+    <color name="grey_900">#FF1E1E1E</color>
+    <color name="grey_950">#FF121212</color>
+
+    <!-- Error palette -->
+    <color name="red_300">#FFEF5350</color>
+    <color name="red_700">#FFD32F2F</color>
+    <color name="red_900">#FF601410</color>
+
+    <!-- Basic -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>
