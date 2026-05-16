@@ -356,7 +356,7 @@ public class LinkingDetailFragment extends Fragment {
 
     private void startRecording() {
         File cacheDir = requireContext().getCacheDir();
-        File audioFile = new File(cacheDir, "recording_" + System.currentTimeMillis() + ".m4a");
+        File audioFile = new File(cacheDir, "recording_" + System.currentTimeMillis() + ".wav");
         currentAudioPath = audioFile.getAbsolutePath();
 
         boolean started = audioRecorder.startRecording(currentAudioPath);

@@ -24,18 +24,22 @@ Android 英语口语练习 App "SpokenEasy"，Java + XML Layouts + Navigation Co
 - MVVM 模式：Fragment → ViewModel → Repository → DAO
 - Fragment 文件后缀 `*Fragment.java`
 - ViewModel 文件后缀 `*ViewModel.java`
-- 布局文件 `fragment_*.xml` / `activity_*.xml`
+- 布局文件 `fragment_*.xml` / `activity_*.xml` / `item_*.xml`
 - 菜单文件 `menu/*.xml`
 - 导航文件 `navigation/nav_graph.xml`
+- 网络服务 `core/net/*Service.java`（如 MiMoApiService）
+- 网络配置 `core/net/*Config.java`（如 ApiConfig）
 
 ### 关键架构决策
 - 预置 .db 文件：`assets/database/spokeneasy.db`（SQLite 可视化工具创建）
 - 导航：DrawerLayout + BottomNavigationView + NavHostFragment
 - Navigation Component 导航图 + NavigationUI 自动同步
-- 评分：Scorer 接口 → MockScorer(模拟) / XunfeiScorer(讯飞)
+- 评分：Scorer 接口 → MockScorer(模拟) / XunfeiScorer(讯飞 ISE SDK)
 - 音频：TTSEngine + AudioRecorder 独立封装
 - 主题：浅色+深色模式，Material3 XML 主题，蓝色主色调
 - 用户：设备UUID标识，仅游客模式
+- AI 聊天：MiMo API（`api.xiaomimimo.com/v1/chat/completions`，OpenAI 兼容），OkHttp 4.12.0
+- 练习记录：PracticeRecordEntity Room 表（user_uuid + created_at 索引），DB migration v1→2
 
 ### Phase 进度
 - Phase 1 ✅ 项目骨架搭建（Gradle 配置 + 导航框架 DrawerLayout/BottomNavigation/NavHost + 占位页 + Material3 主题）
@@ -45,3 +49,5 @@ Android 英语口语练习 App "SpokenEasy"，Java + XML Layouts + Navigation Co
 - Phase 5 ✅ 听力板块（AudioEntity+QuestionEntity 双表设计 + ChipGroup 难度筛选 + RadioGroup 3 题自动批改）
 - Phase 6 ✅ 设置 + 统计模块（UserProgressRepository/ViewModel，设置页学习统计卡片、ProgressBar、数据导出/重置、设备UUID显示）
 - Phase 5.5 ✅ UI 全面改造 + 听力模块重构（TTS 播放对话、隐藏原文、微动画系统、3 模块列表/详情 UI 升级）
+- Phase 7 ✅ 讯飞 ISE 语音评测 SDK（XunfeiScorer 真实评分替换 MockScorer + AudioWaveformView 波形可视化 + TTS 引擎缓存/队列/语言检测）
+- Phase 8 ✅ 练习记录 + 系统设置 + AI 聊天（PracticeRecord 历史回放 + TTS 四态检测面板 + MiMo API AI 英语语伴）

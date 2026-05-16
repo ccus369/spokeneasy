@@ -1,7 +1,14 @@
 # SpokenEasy — 项目状态与开发计划
 
-## 当前状态 (2026-05-16)
-全部 6 个阶段 + Phase 5.5 UI 改造已完成，BUILD SUCCESSFUL 验证通过。
+## 当前状态 (2026-05-17)
+全部 8 个阶段完成，BUILD SUCCESSFUL 验证通过。
+
+| 阶段 | 状态 | 说明 |
+|------|------|------|
+| Phase 1-6 | ✅ | 基础功能全部就绪 |
+| Phase 5.5 | ✅ | UI 改造 + 听力 TTS 重构 |
+| Phase 7 | ✅ | 讯飞 ISE 真实语音评测取代 MockScorer |
+| Phase 8 | ✅ | 练习记录 + TTS 设置 + AI 英语语伴聊天 |
 
 ### 已完成的转换
 - Gradle 配置：移除 Compose/Kotlin 插件，添加 Navigation Fragment/UI、Material Components、AppCompat
@@ -103,6 +110,46 @@
 - SettingsFragment 完全重写：统计卡片（单词/连读/听力完成数 + ProgressBar）、数据导出（Intent.ACTION_SEND 分享）、数据重置（AlertDialog 确认后清空）
 - fragment_settings.xml 完全重写：Material3 卡片布局，设备 UUID 显示
 - **验证标准：BUILD SUCCESSFUL，设置页显示各模块统计数据，导出/重置功能正常**
+
+### Phase 7：讯飞 ISE 语音评测 SDK 集成 ✅
+- XunfeiScorer 实现 Scorer 接口，对接讯飞 ISE SDK（`com.iflytek.ise`）
+- `parseAndCallback()` 解析 ISE 结果：总评分 + 逐词评分（✓/⚠） + 音素级发音建议（13 个音素映射）
+- `formatWordScores()`：遍历 Sentence → Syll → Word，根据 `rec_node_type == "noise"` 过滤噪音，得分 ≥60 显示 ✓、<60 显示 ⚠
+- `formatPhonemeTips()`：遍历 Word → Phone，当 `dp_message` 包含 `"Miss"`/`"Add"`/`"Sub"`/`"Mis"` 时输出错误描述，得分 <60 时输出参考级建议
+- `getPhonemeTip()`：13 个音素代码 → 中文发音建议（th→/θ/ 咬舌、dh→/ð/ 咬舌振动、r→/r/ 卷舌、v→/v/ 上牙碰下唇等）
+- AudioWaveformView：Canvas 自定义 View，实时绘制录音波形（FFT 风格竖条）
+- TTSEngine 增强：缓存（`HashMap<String, String>`）、语言自动检测（isChinese）、发音队列（speakQueue + isSpeaking flag）、seekBar 进度同步
+- **验证标准：BUILD SUCCESSFUL，跟读/连读评分显示真实 ISE 评分（非模拟），波形可视化**
+
+### Phase 8：练习记录 + 系统设置 + AI 聊天 ✅
+
+**练习记录与历史回放（Phase 8a）：**
+- PracticeRecordEntity（Room @Entity，字段：id/userUuid/moduleType/itemId/referenceText/score/detail/audioFilePath/createdAt）
+- PracticeRecordDao（getAll DESC、getRecent DESC+LIMIT、getByModule DESC、insert REPLACE）
+- PracticeRecordRepository + RecordHistoryViewModel（AndroidViewModel）
+- RecordHistoryFragment：RecyclerView + HistoryAdapter，moduleBadge 彩色方块（word=蓝/#1976D2、linking=绿/#43A047、listening=橙/#E65100），score 颜色分级（≥80 绿/#43A047、≥60 橙/#F57C00、<60 红/#E53935），参考文本截断 50 字，MediaPlayer 音频回放
+- DB Migration MIGRATION_1_2：CREATE TABLE practice_records + 2 索引（user_uuid、created_at），替换 fallbackToDestructiveMigration()
+- 在 WordDetailFragment 和 LinkingDetailFragment 的 ISE 评分回调中调用 savePracticeRecord()
+
+**TTS 设置面板与状态检测（Phase 8b）：**
+- TtsHelper：一次性的 TextToSpeech 引擎状态检测，TtsCheckCallback 返回 4 种状态（AVAILABLE/MISSING_DATA/NOT_SUPPORTED/NO_ENGINE）
+- SettingsFragment TTS 面板：状态显示 + Test（TTSEngine 播放测试）、Settings（`com.android.settings.TTS_SETTINGS`）、Install（`ACTION_INSTALL_TTS_DATA` 或 Play Store `com.google.android.tts`）
+- feedback_bg shape drawable（8dp 圆角矩形）+ dark theme colors.xml（feedback_bg_color=#0FFFFFFF）
+- 评分显示格式优化：移除"总分:"前缀，直接显示"85 分"
+- 讯飞 ISE 评分反馈增强：逐词 ✓/⚠ + 音素级发音建议
+
+**AI 英语对话聊天模块（Phase 8c）：**
+- MiMoApiService（OkHttp 4.12.0）：调用 `api.xiaomimimo.com/v1/chat/completions`（OpenAI 兼容），模型 `mimo-v2-flash`，30s 超时，Bearer token 认证
+- ApiConfig：SharedPreferences 封装，存取 MiMo API Key
+- 6 条 System Prompt 规则：英语语伴，2-4 句回复，纠错格式 `\n---\n📝 Correction` + `💡 More natural`，中文翻译，自适应难度
+- ChatMessage：Role 枚举（USER/ASSISTANT/SYSTEM），`parseCorrections()` 按 `\n---` 分隔为 replyText + correctionContent
+- ChatViewModel（AndroidViewModel）：`sendText()` 在 `databaseWriteExecutor` 后台线程调用 API，LiveData 驱动 UI，历史窗口 20 条
+- ChatAdapter：2 ViewType（TYPE_USER 蓝色右对齐气泡 / TYPE_AI 灰色左对齐气泡 + 纠错卡片 + TTS 播放按钮）
+- ChatFragment（ConstraintLayout）：toolbar（返回/清空/设置）→ ProgressBar → RecyclerView → API Key 缺失横幅 → 输入栏（MaterialCardView EditText + 发送按钮），Enter 发送/Shift+Enter 换行
+- SettingsFragment 集成：MiMo API Key TextInputLayout（密码模式） + Save 按钮 + Snackbar
+- 导航集成：nav_graph.xml chatFragment destination + drawer_menu.xml chat 菜单项
+- 依赖：libs.versions.toml okhttp=4.12.0 + app/build.gradle.kts implementation(libs.okhttp)
+- **验证标准：BUILD SUCCESSFUL，AI 对话可发送/接收，纠错卡片可展开，TTS 可朗读，API Key 可在设置页配置**
 
 ---
 
