@@ -33,4 +33,7 @@
     <!-- Basic -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Feedback background (light theme) -->
+    <color name="feedback_bg_color">#0F000000</color>
 </resources>

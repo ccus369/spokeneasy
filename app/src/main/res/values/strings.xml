@@ -51,4 +51,19 @@
     <string name="settings_confirm">确定</string>
     <string name="settings_export_subject">SpokenEasy 学习数据</string>
     <string name="settings_export_body" formatted="false">我的 SpokenEasy 学习进度：\n\n单词：已完成 %d/%d\n连读：已完成 %d/%d\n听力：已完成 %d/%d</string>
+    <string name="settings_record_history">练习记录</string>
+
+    <!-- TTS Engine -->
+    <string name="tts_section_title">语音引擎</string>
+    <string name="tts_status_label">状态:</string>
+    <string name="tts_status_available">英语语音就绪</string>
+    <string name="tts_status_missing_data">需要下载英语语音数据</string>
+    <string name="tts_status_not_supported">设备不支持英语语音</string>
+    <string name="tts_status_no_engine">未检测到语音引擎</string>
+    <string name="tts_status_checking">检测中…</string>
+    <string name="tts_test">测试语音</string>
+    <string name="tts_settings">TTS 设置</string>
+    <string name="tts_install_data">下载英语语音数据</string>
+    <string name="tts_install_google">安装 Google 文字转语音</string>
+    <string name="tts_test_phrase">Hello, welcome to SpokenEasy.</string>
 </resources>

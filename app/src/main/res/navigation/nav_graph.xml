@@ -81,6 +81,16 @@
         android:id="@+id/settingsFragment"
         android:name="com.spokeneasy.app.settings.SettingsFragment"
         android:label="@string/menu_settings"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settings_to_recordHistory"
+            app:destination="@id/recordHistoryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/recordHistoryFragment"
+        android:name="com.spokeneasy.app.progress.RecordHistoryFragment"
+        android:label="练习记录"
+        tools:layout="@layout/fragment_record_history" />
 
 </navigation>

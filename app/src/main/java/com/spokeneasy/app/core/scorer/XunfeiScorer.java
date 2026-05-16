@@ -15,6 +15,13 @@ import com.iflytek.ise.result.xml.XmlResultParser;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+
+import com.iflytek.ise.result.entity.Phone;
+import com.iflytek.ise.result.entity.Sentence;
+import com.iflytek.ise.result.entity.Syll;
+import com.iflytek.ise.result.entity.Word;
+import com.iflytek.ise.result.util.ResultTranslateUtil;
 
 public class XunfeiScorer implements Scorer {
 
@@ -150,9 +157,13 @@ public class XunfeiScorer implements Scorer {
                 if (result.is_rejected) {
                     detail.append("检测到乱读，请认真朗读");
                 } else {
-                    detail.append("总分: ").append(score).append(" 分");
+                    detail.append(score).append(" 分");
                     if (result.sentences != null && !result.sentences.isEmpty()) {
-                        detail.append("\n").append(result.toString());
+                        detail.append("\n\n").append(formatWordScores(result.sentences));
+                        String tips = formatPhonemeTips(result.sentences);
+                        if (tips != null) {
+                            detail.append("\n\n").append(tips);
+                        }
                     }
                 }
 
@@ -163,6 +174,106 @@ public class XunfeiScorer implements Scorer {
             }
         } catch (Exception e) {
             callback.onError("解析结果异常: " + e.getMessage());
+        }
+    }
+
+    /** per-word scores with icons, e.g. "hello 90 ✓  world 60 ⚠ 注意 /w/ 发音" */
+    private String formatWordScores(ArrayList<Sentence> sentences) {
+        StringBuilder sb = new StringBuilder("单词评分:\n");
+        for (Sentence sentence : sentences) {
+            if ("噪音".equals(ResultTranslateUtil.getContent(sentence.content))
+                    || "静音".equals(ResultTranslateUtil.getContent(sentence.content))) {
+                continue;
+            }
+            if (sentence.words == null) continue;
+
+            for (Word word : sentence.words) {
+                if ("噪音".equals(ResultTranslateUtil.getContent(word.content))
+                        || "静音".equals(ResultTranslateUtil.getContent(word.content))) {
+                    continue;
+                }
+                int wordScore = Math.round(word.total_score);
+                boolean hasError = word.dp_message != 0 || wordScore < 60;
+
+                sb.append("  ").append(word.content).append(" · ").append(wordScore);
+                if (hasError) {
+                    sb.append(" ⚠");
+                } else {
+                    sb.append(" ✓");
+                }
+
+                // Show what kind of error
+                if (word.dp_message != 0) {
+                    String errMsg = ResultTranslateUtil.getDpMessageInfo(word.dp_message);
+                    if (errMsg != null && !"正常".equals(errMsg)) {
+                        sb.append(" [").append(errMsg).append("]");
+                    }
+                }
+                sb.append("\n");
+            }
+        }
+        return sb.toString();
+    }
+
+    /** Generate pronunciation improvement tips based on phoneme-level errors */
+    private String formatPhonemeTips(ArrayList<Sentence> sentences) {
+        StringBuilder sb = new StringBuilder("发音建议:");
+        boolean hasTips = false;
+
+        for (Sentence sentence : sentences) {
+            if (sentence.words == null) continue;
+            for (Word word : sentence.words) {
+                if (word.sylls == null) continue;
+                for (Syll syll : word.sylls) {
+                    if (syll.phones == null) continue;
+                    for (Phone phone : syll.phones) {
+                        if (phone.dp_message != 0) {
+                            String stdSymbol = phone.getStdSymbol();
+                            String tip = getPhonemeTip(phone.content, stdSymbol);
+                            if (tip != null) {
+                                sb.append("\n  · ").append(stdSymbol != null ? stdSymbol : phone.content)
+                                        .append(" — ").append(tip);
+                                hasTips = true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        if (!hasTips) {
+            for (Sentence sentence : sentences) {
+                if (sentence.words == null) continue;
+                for (Word word : sentence.words) {
+                    if (Math.round(word.total_score) < 60) {
+                        sb.append("\n  · ").append(word.content).append(" — 放慢语速，清晰朗读");
+                        hasTips = true;
+                    }
+                }
+            }
+        }
+
+        return hasTips ? sb.toString() : null;
+    }
+
+    /** Map xunfei phoneme codes to Chinese pronunciation tips */
+    private String getPhonemeTip(String xunfeiCode, String stdSymbol) {
+        switch (xunfeiCode) {
+            case "th": return "舌尖轻触上齿缝，送气 (/θ/)";
+            case "dh": return "舌尖轻触上齿缝，声带振动 (/ð/)";
+            case "r":  return "舌尖卷起，不碰上颚 (/r/)";
+            case "v":  return "上齿轻触下唇，声带振动 (/v/)";
+            case "w":  return "双唇收圆向前突出 (/w/)";
+            case "l":  return "舌尖抵上齿龈 (/l/)";
+            case "ng": return "舌根抬起贴软腭，气流从鼻腔出 (/ŋ/)";
+            case "zh": return "舌尖靠近上齿龈后部，声带振动 (/ʒ/)";
+            case "sh": return "舌尖靠近上齿龈后部 (/ʃ/)";
+            case "ae": case "ah":
+            case "aa": return "口型张大，舌位放低";
+            case "iy": return "嘴角向两边拉开，像微笑 (/i:/)";
+            case "uw": return "双唇收圆前突 (/u:/)";
+            default:
+                return null; // no specific tip for this phoneme
         }
     }
 

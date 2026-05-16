@@ -155,6 +155,10 @@ public class ListeningDetailFragment extends Fragment {
             public void onError(String message) {
                 ttsReady = false;
             }
+
+            @Override
+            public void onLanguageWarning(String message) {
+            }
         });
     }
 

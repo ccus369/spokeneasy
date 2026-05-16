@@ -23,7 +23,10 @@ import com.spokeneasy.app.R;
 import com.spokeneasy.app.core.audio.AudioRecorder;
 import com.spokeneasy.app.core.audio.AudioWaveformView;
 import com.spokeneasy.app.core.audio.TTSEngine;
+import com.spokeneasy.app.core.database.AppDatabase;
+import com.spokeneasy.app.core.util.UuidManager;
 import com.spokeneasy.app.core.scorer.XunfeiScorer;
+import com.spokeneasy.app.progress.PracticeRecordEntity;
 
 import java.io.File;
 import java.util.Locale;
@@ -283,6 +286,12 @@ public class WordDetailFragment extends Fragment {
                                     detailFeedback.setVisibility(View.VISIBLE);
                                     detailFeedback.setText(detail);
                                 }
+
+                                // Save practice record
+                                savePracticeRecord("word",
+                                        currentWord != null ? currentWord.getId() : 0,
+                                        referenceText, score, detail, filePath);
+
                                 btnPlayback.setEnabled(true);
                             }
 
@@ -371,6 +380,18 @@ public class WordDetailFragment extends Fragment {
         btnPlayback.setEnabled(true);
         waveformView.removeCallbacks(waveformRunnable);
         waveformView.setState(0);
+    }
+
+    private void savePracticeRecord(String moduleType, long itemId,
+                                     String referenceText, int score,
+                                     String detail, String audioFilePath) {
+        String uuid = UuidManager.getDeviceUuid(requireContext());
+        PracticeRecordEntity record = new PracticeRecordEntity(
+                uuid, moduleType, itemId, referenceText, score, detail,
+                audioFilePath, System.currentTimeMillis());
+        AppDatabase.databaseWriteExecutor.execute(() ->
+                AppDatabase.getInstance(requireContext())
+                        .practiceRecordDao().insert(record));
     }
 
     @Override
