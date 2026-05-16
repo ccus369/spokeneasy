@@ -151,10 +151,16 @@
                     android:textAppearance="?attr/textAppearanceTitleMedium"
                     android:textColor="?attr/colorOnBackground" />
 
+                <com.spokeneasy.app.core.audio.AudioWaveformView
+                    android:id="@+id/waveform_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="8dp"
                     android:orientation="horizontal"
                     android:gravity="center">
 
@@ -179,6 +185,15 @@
 
                 </LinearLayout>
 
+                <SeekBar
+                    android:id="@+id/playback_seekbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:max="1000"
+                    android:progress="0"
+                    android:visibility="gone" />
+
                 <TextView
                     android:id="@+id/score_text"
                     android:layout_width="wrap_content"
@@ -188,6 +203,16 @@
                     android:textAppearance="?attr/textAppearanceHeadlineMedium"
                     android:textColor="?attr/colorPrimary"
                     android:visibility="gone" />
+
+                <!-- Detailed feedback -->
+                <TextView
+                    android:id="@+id/detail_feedback"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone"
+                    android:textAppearance="?attr/textAppearanceBodySmall"
+                    android:textColor="?attr/colorOnSurfaceVariant" />
 
             </LinearLayout>
 

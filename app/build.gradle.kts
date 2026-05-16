@@ -42,6 +42,7 @@ android {
 }
 
 dependencies {
+    implementation(files("libs/Msc.jar"))
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.constraintlayout)

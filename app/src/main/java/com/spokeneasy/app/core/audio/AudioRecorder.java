@@ -98,6 +98,49 @@ public class AudioRecorder {
         return mediaRecorder != null;
     }
 
+    public int getMaxAmplitude() {
+        if (mediaRecorder != null) {
+            try {
+                return mediaRecorder.getMaxAmplitude();
+            } catch (IllegalStateException e) {
+                return 0;
+            }
+        }
+        return 0;
+    }
+
+    public int getPlaybackPosition() {
+        if (mediaPlayer != null) {
+            try {
+                return mediaPlayer.getCurrentPosition();
+            } catch (IllegalStateException e) {
+                return 0;
+            }
+        }
+        return 0;
+    }
+
+    public int getPlaybackDuration() {
+        if (mediaPlayer != null) {
+            try {
+                return mediaPlayer.getDuration();
+            } catch (IllegalStateException e) {
+                return 0;
+            }
+        }
+        return 0;
+    }
+
+    public void seekTo(int position) {
+        if (mediaPlayer != null) {
+            try {
+                mediaPlayer.seekTo(position);
+            } catch (IllegalStateException e) {
+                // ignore
+            }
+        }
+    }
+
     public void release() {
         stopRecording();
         stopPlayback();

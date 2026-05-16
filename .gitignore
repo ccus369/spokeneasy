@@ -13,3 +13,5 @@
 .externalNativeBuild
 .cxx
 local.properties
+*.zip
+/temp_ise_sdk/
