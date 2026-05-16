@@ -1,6 +1,7 @@
 package com.spokeneasy.app.word;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -155,6 +156,23 @@ public class WordDetailFragment extends Fragment {
 
             @Override
             public void onError(String message) {}
+
+            @Override
+            public void onLanguageWarning(String message) {
+                if (ttsEngine.isMissingLanguageData()) {
+                    Snackbar.make(view, "需要下载英语语音数据", Snackbar.LENGTH_LONG)
+                            .setAction("去下载", v -> {
+                                Intent intent = new Intent(
+                                        android.speech.tts.TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
+                                startActivity(intent);
+                            })
+                            .show();
+                } else {
+                    Snackbar.make(view, "设备不支持英语语音播放，请安装 Google 文字转语音", Snackbar.LENGTH_LONG)
+                            .setAction("知道了", null)
+                            .show();
+                }
+            }
         });
 
         xunfeiScorer.init(requireContext());
