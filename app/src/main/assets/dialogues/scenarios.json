@@ -1,0 +1,142 @@
+[
+  {
+    "id": "greetings",
+    "title": "见面问候",
+    "title_en": "Greetings",
+    "description": "学习如何用英语打招呼、介绍自己和问候他人",
+    "system_prompt": "You are an English conversation partner for Chinese learners. Scene: You are meeting a new acquaintance for the first time at a social event. Rules: 1) Greet the user naturally in English 2) Ask simple questions about name, where they are from, and their interests 3) Keep responses to 1-2 short sentences 4) Use beginner-friendly English (CEFR A2 level) 5) After every 2 exchanges, offer a gentle correction if the user made any errors 6) Stay in character as a friendly new acquaintance. 7) If the user writes in Chinese, help them translate it into English first.",
+    "warmup_words": [
+      { "word": "hello", "phonetic": "/həˈloʊ/", "meaning_cn": "你好" },
+      { "word": "introduce", "phonetic": "/ˌɪntrəˈduːs/", "meaning_cn": "介绍" },
+      { "word": "meet", "phonetic": "/miːt/", "meaning_cn": "见面；认识" },
+      { "word": "colleague", "phonetic": "/ˈkɑːliːɡ/", "meaning_cn": "同事" },
+      { "word": "pleasure", "phonetic": "/ˈpleʒər/", "meaning_cn": "愉快；荣幸" }
+    ],
+    "dialogue_lines": [
+      { "speaker": "A", "text": "Hello! Nice to meet you.", "translation": "你好！很高兴认识你。" },
+      { "speaker": "B", "text": "Nice to meet you too! My name is Li Wei.", "translation": "我也很高兴认识你！我叫李伟。" },
+      { "speaker": "A", "text": "I'm Sarah. Are you new here?", "translation": "我是 Sarah。你是新来的吗？" },
+      { "speaker": "B", "text": "Yes, I just started working here this week.", "translation": "是的，我这周刚开始在这里工作。" },
+      { "speaker": "A", "text": "Welcome! Let me know if you need any help.", "translation": "欢迎！如果需要帮助请告诉我。" },
+      { "speaker": "B", "text": "Thank you! That's very kind of you.", "translation": "谢谢！你真是太好了。" }
+    ],
+    "pattern_sentences": [
+      "Nice to meet you.",
+      "My name is ...",
+      "Are you new here?",
+      "Let me know if you need any help."
+    ]
+  },
+  {
+    "id": "restaurant",
+    "title": "餐厅点餐",
+    "title_en": "At the Restaurant",
+    "description": "学习在餐厅点餐、询问菜品和结账的实用表达",
+    "system_prompt": "You are a friendly waiter/waitress at an American restaurant. Rules: 1) Greet the customer and ask for their order in English 2) Describe menu items simply when asked 3) Keep responses to 1-2 short sentences 4) Use beginner-friendly English (CEFR A2 level) 5) After every 2 exchanges, offer a gentle correction if needed 6) Stay in character throughout the conversation. 7) If the user writes in Chinese, help them translate it into English first.",
+    "warmup_words": [
+      { "word": "menu", "phonetic": "/ˈmenjuː/", "meaning_cn": "菜单" },
+      { "word": "order", "phonetic": "/ˈɔːrdər/", "meaning_cn": "点餐；订单" },
+      { "word": "recommend", "phonetic": "/ˌrekəˈmend/", "meaning_cn": "推荐" },
+      { "word": "bill", "phonetic": "/bɪl/", "meaning_cn": "账单" },
+      { "word": "delicious", "phonetic": "/dɪˈlɪʃəs/", "meaning_cn": "美味的" }
+    ],
+    "dialogue_lines": [
+      { "speaker": "A", "text": "Welcome! How many people?", "translation": "欢迎！几位用餐？" },
+      { "speaker": "B", "text": "Just one, please.", "translation": "就一位。" },
+      { "speaker": "A", "text": "Here's the menu. Can I get you something to drink?", "translation": "这是菜单。想喝点什么吗？" },
+      { "speaker": "B", "text": "I'd like a glass of water, please.", "translation": "请给我一杯水。" },
+      { "speaker": "A", "text": "Sure. Are you ready to order?", "translation": "好的。准备好点餐了吗？" },
+      { "speaker": "B", "text": "Yes. I'll have the chicken salad, please.", "translation": "是的。我要鸡肉沙拉。" }
+    ],
+    "pattern_sentences": [
+      "I'd like ...",
+      "Can I get ...?",
+      "Are you ready to order?",
+      "I'll have ..., please."
+    ]
+  },
+  {
+    "id": "directions",
+    "title": "问路",
+    "title_en": "Asking for Directions",
+    "description": "学习如何问路、指路和描述位置的日常用语",
+    "system_prompt": "You are a friendly local resident in a city. Rules: 1) The user will ask you for directions in English 2) Give clear, simple directions using landmarks 3) Keep responses to 1-2 short sentences 4) Use beginner-friendly English (CEFR A2 level) 5) After every 2 exchanges, offer a gentle correction if needed 6) Stay in character as a helpful local. 7) If the user writes in Chinese, help them translate it into English first.",
+    "warmup_words": [
+      { "word": "straight", "phonetic": "/streɪt/", "meaning_cn": "直的；径直" },
+      { "word": "corner", "phonetic": "/ˈkɔːrnər/", "meaning_cn": "拐角" },
+      { "word": "block", "phonetic": "/blɑːk/", "meaning_cn": "街区" },
+      { "word": "traffic light", "phonetic": "/ˈtræfɪk laɪt/", "meaning_cn": "红绿灯" },
+      { "word": "cross", "phonetic": "/krɔːs/", "meaning_cn": "穿过；十字路口" }
+    ],
+    "dialogue_lines": [
+      { "speaker": "A", "text": "Excuse me, where is the nearest subway station?", "translation": "打扰一下，最近的地铁站在哪里？" },
+      { "speaker": "B", "text": "Go straight for two blocks. It's on your left.", "translation": "直走两个街区。在你的左手边。" },
+      { "speaker": "A", "text": "Is it far from here?", "translation": "离这里远吗？" },
+      { "speaker": "B", "text": "No, it's about a five-minute walk.", "translation": "不远，走路大约五分钟。" },
+      { "speaker": "A", "text": "Should I turn at the traffic light?", "translation": "我应该在红绿灯那里转弯吗？" },
+      { "speaker": "B", "text": "Yes, turn right at the traffic light. You'll see the station.", "translation": "是的，在红绿灯右转。你就会看到地铁站。" }
+    ],
+    "pattern_sentences": [
+      "Excuse me, where is ...?",
+      "Go straight for ...",
+      "Is it far from here?",
+      "Turn left / right at ..."
+    ]
+  },
+  {
+    "id": "shopping",
+    "title": "购物",
+    "title_en": "Shopping",
+    "description": "学习在商店购物时询问价格、尺寸和颜色的表达",
+    "system_prompt": "You are a friendly shop assistant in a clothing store. Rules: 1) Greet the customer and offer help in English 2) Answer questions about size, color, and price 3) Keep responses to 1-2 short sentences 4) Use beginner-friendly English (CEFR A2 level) 5) After every 2 exchanges, offer a gentle correction if needed 6) Stay in character throughout. 7) If the user writes in Chinese, help them translate it into English first.",
+    "warmup_words": [
+      { "word": "size", "phonetic": "/saɪz/", "meaning_cn": "尺寸；尺码" },
+      { "word": "fit", "phonetic": "/fɪt/", "meaning_cn": "合适" },
+      { "word": "price", "phonetic": "/praɪs/", "meaning_cn": "价格" },
+      { "word": "discount", "phonetic": "/ˈdɪskaʊnt/", "meaning_cn": "折扣" },
+      { "word": "receipt", "phonetic": "/rɪˈsiːt/", "meaning_cn": "收据" }
+    ],
+    "dialogue_lines": [
+      { "speaker": "A", "text": "Hello! Can I help you find something?", "translation": "你好！需要帮忙找什么吗？" },
+      { "speaker": "B", "text": "Yes, I'm looking for a jacket.", "translation": "是的，我在找一件夹克。" },
+      { "speaker": "A", "text": "What size do you need?", "translation": "你需要什么尺寸？" },
+      { "speaker": "B", "text": "I think I need a medium. How much is this one?", "translation": "我想我需要 M 号。这件多少钱？" },
+      { "speaker": "A", "text": "It's $49.99. Would you like to try it on?", "translation": "49.99 美元。想试穿一下吗？" },
+      { "speaker": "B", "text": "Yes, please. Where is the fitting room?", "translation": "好的。试衣间在哪里？" }
+    ],
+    "pattern_sentences": [
+      "Can I help you find something?",
+      "I'm looking for ...",
+      "How much is this?",
+      "Would you like to try it on?"
+    ]
+  },
+  {
+    "id": "phone_call",
+    "title": "打电话预约",
+    "title_en": "Making a Phone Call",
+    "description": "学习用英语打电话预约、转接和留言的表达",
+    "system_prompt": "You are a receptionist at a doctor's office. Rules: 1) Answer the phone professionally in English 2) Help the user schedule an appointment 3) Keep responses to 1-2 short sentences 4) Use beginner-friendly English (CEFR A2 level) 5) After every 2 exchanges, offer a gentle correction if needed 6) Stay in character as a polite receptionist. 7) If the user writes in Chinese, help them translate it into English first.",
+    "warmup_words": [
+      { "word": "appointment", "phonetic": "/əˈpɔɪntmənt/", "meaning_cn": "预约" },
+      { "word": "available", "phonetic": "/əˈveɪləbl/", "meaning_cn": "可用的；有空的" },
+      { "word": "reserve", "phonetic": "/rɪˈzɜːrv/", "meaning_cn": "预订；预约" },
+      { "word": "message", "phonetic": "/ˈmesɪdʒ/", "meaning_cn": "留言；信息" },
+      { "word": "confirm", "phonetic": "/kənˈfɜːrm/", "meaning_cn": "确认" }
+    ],
+    "dialogue_lines": [
+      { "speaker": "A", "text": "Good morning! Dr. Smith's office. How can I help you?", "translation": "早上好！史密斯医生诊所。有什么可以帮您？" },
+      { "speaker": "B", "text": "Hello, I'd like to make an appointment.", "translation": "你好，我想预约。" },
+      { "speaker": "A", "text": "Sure. Are you available this Thursday at 3 PM?", "translation": "好的。这周四下午三点您有空吗？" },
+      { "speaker": "B", "text": "Yes, that works for me. Can I have your full name?", "translation": "好的，这个时间可以。请问您全名是？" },
+      { "speaker": "A", "text": "My name is Li Wei. Thank you!", "translation": "我叫李伟。谢谢！" },
+      { "speaker": "B", "text": "You're confirmed for Thursday at 3 PM. See you then!", "translation": "您已确认周四下午三点。到时候见！" }
+    ],
+    "pattern_sentences": [
+      "I'd like to make an appointment.",
+      "How can I help you?",
+      "Are you available ...?",
+      "That works for me."
+    ]
+  }
+]

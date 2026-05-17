@@ -1,0 +1,63 @@
+{
+    "grammar_point": "情态动词 can/must",
+    "grammar_point_en": "Modal Verbs - Can / Must",
+    "sets": [
+        {
+            "id": "modal_sub",
+            "grammar_point": "情态动词 can/must",
+            "grammar_point_en": "Modal Verbs - Can / Must",
+            "drill_type": "substitution",
+            "difficulty": 1,
+            "instructions_cn": "替换句中情态动词，注意语法不变",
+            "progress_label": "替换练习",
+            "steps": [
+                {
+                    "id": "modal_01",
+                    "base": "You [can] speak English well.",
+                    "cue": "替换为 must（必须）",
+                    "expected": "You must speak English well.",
+                    "hint_cn": "情态动词后接动词原形"
+                },
+                {
+                    "id": "modal_02",
+                    "base": "He [must] finish his homework.",
+                    "cue": "替换为 can（可以）",
+                    "expected": "He can finish his homework.",
+                    "hint_cn": "can 和 must 后都接动词原形"
+                },
+                {
+                    "id": "modal_03",
+                    "base": "They [can] swim in the pool.",
+                    "cue": "替换为 must not (mustn't)",
+                    "expected": "They must not swim in the pool.",
+                    "hint_cn": "must not 表示禁止"
+                }
+            ]
+        },
+        {
+            "id": "modal_response",
+            "grammar_point": "情态动词 can/must",
+            "grammar_point_en": "Modal Verbs - Can / Must",
+            "drill_type": "response",
+            "difficulty": 2,
+            "instructions_cn": "完整回答下列问题",
+            "progress_label": "问答练习",
+            "steps": [
+                {
+                    "id": "modal_04",
+                    "base": "Can you play the guitar?",
+                    "cue": "肯定回答",
+                    "expected": "Yes, I can play the guitar.",
+                    "hint_cn": "肯定回答: Yes, 主语 + can"
+                },
+                {
+                    "id": "modal_05",
+                    "base": "Must I wear a uniform at school?",
+                    "cue": "肯定回答",
+                    "expected": "Yes, you must wear a uniform at school.",
+                    "hint_cn": "肯定回答: Yes, you must..."
+                }
+            ]
+        }
+    ]
+}

@@ -3,7 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/wordListFragment">
+    app:startDestination="@id/learnFragment">
+
+    <fragment
+        android:id="@+id/learnFragment"
+        android:name="com.spokeneasy.app.home.LearnFragment"
+        android:label="@string/menu_learn" />
+
+    <fragment
+        android:id="@+id/practiceRootFragment"
+        android:name="com.spokeneasy.app.home.PracticeRootFragment"
+        android:label="@string/menu_practice" />
 
     <fragment
         android:id="@+id/wordListFragment"

@@ -3,6 +3,8 @@
     <string name="app_subtitle">英语口语练习</string>
 
     <!-- Bottom navigation & drawer menu labels -->
+    <string name="menu_learn">学习</string>
+    <string name="menu_practice">练习</string>
     <string name="menu_word">单词学习</string>
     <string name="menu_linking">连读练习</string>
     <string name="menu_listening">听力练习</string>

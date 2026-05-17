@@ -1,7 +1,7 @@
 # SpokenEasy — 项目状态与开发计划
 
 ## 当前状态 (2026-05-17)
-全部 8 个阶段完成，BUILD SUCCESSFUL 验证通过。
+全部 8 个阶段 + Phase 9 新功能完成，BUILD SUCCESSFUL 验证通过。
 
 | 阶段 | 状态 | 说明 |
 |------|------|------|
@@ -9,6 +9,10 @@
 | Phase 5.5 | ✅ | UI 改造 + 听力 TTS 重构 |
 | Phase 7 | ✅ | 讯飞 ISE 真实语音评测取代 MockScorer |
 | Phase 8 | ✅ | 练习记录 + TTS 设置 + AI 英语语伴聊天 |
+| Phase 9a | ✅ | 学习首页重构 (TabLayout: 单词/连读) + 练习首页 (TabLayout: 发音/句型/对话) |
+| Phase 9b | ✅ | 发音实验室 (最小对立体 minimal pairs 对比发音 + ISE 评分) |
+| Phase 9c | ✅ | 句型操练 (4 种题型: 替换/转换/扩展/问答, 多 JSON 题库, 3 阶段: 选择→操练→总结) |
+| Phase 9d | ✅ | 情景对话 (场景选择→预热词汇→对话跟读→AI 角色扮演→总结报告) |
 
 ### 已完成的转换
 - Gradle 配置：移除 Compose/Kotlin 插件，添加 Navigation Fragment/UI、Material Components、AppCompat
@@ -154,6 +158,37 @@
 - 导航集成：nav_graph.xml chatFragment destination + drawer_menu.xml chat 菜单项
 - 依赖：libs.versions.toml okhttp=4.12.0 + app/build.gradle.kts implementation(libs.okhttp)
 - **验证标准：BUILD SUCCESSFUL，AI 对话可发送/接收，纠错卡片可展开，TTS 可朗读，API Key 可在设置页配置**
+
+---
+
+## Phase 9：学习首页 + 练习模块 (Phase 9a-9d) ✅
+
+### Phase 9a：首页重构（学习 + 练习）
+- **LearnFragment**：TabLayout 双标签容器，Tab 0 → WordListFragment（单词学习），Tab 1 → LinkingListFragment（连读练习）
+- **PracticeRootFragment**：TabLayout 三标签容器，Tab 0 → PronunciationLabFragment（发音实验室），Tab 1 → PatternDrillFragment（句型操练），Tab 2 → DialogueFragment（情景对话）
+- **导航重构**：底部导航改为"学习"和"练习"两项，去掉独立的"听力练习"菜单项（听力移至后续扩展）
+- **DrawerLayout** 同步更新：菜单项与底部导航保持一致
+
+### Phase 9b：发音实验室 (Pronunciation Lab)
+- **最小对立体 (Minimal Pairs)**：从 `assets/pronunciation/minimal_pairs.json` 加载音素对比数据
+- **音素分类筛选**：ChipGroup 按音素类别筛选（如 /iː/ vs /ɪ/、/θ/ vs /ð/）
+- **对比发音**：每个 pair 显示 wordA/wordB + 音标 + 例句，TTS 播放参考发音
+- **跟读录音 + ISE 评分**：录音后自动调用 XunfeiScorer 评分，结果保存到 PracticeRecord
+- **发音技巧提示**：tipCn 字段显示中文发音要点（如"上齿咬下唇"）
+
+### Phase 9c：句型操练 (Pattern Drill)
+- **4 种题型**：替换练习 (SUBSTITUTION)、转换练习 (TRANSFORMATION)、扩展练习 (EXPANSION)、问答练习 (RESPONSE)
+- **多重题库**：从 `assets/drills/*.json` 加载 6 个语法点（一般现在时、现在进行时、一般过去时、be 动词、there be 句型、情态动词），每个语法点包含多种题型
+- **3 阶段流程**：SELECTING（选择语法点）→ DRILLING（逐题操练 + TTS 播放 + 录音 + ISE 评分）→ SUMMARY（成绩汇总 + 答题详情）
+- **高亮标记**：base 句中使用 `[括号]` 标记替换部分，显示为琥珀色高亮
+- **提示系统**：cue 显示替换提示，hintCn 提供中文辅助提示
+
+### Phase 9d：情景对话 (Scenario Dialogue)
+- **场景加载**：从 `assets/dialogues/scenarios.json` 加载多场景对话数据
+- **5 阶段流程**：SCENE_SELECT（选择场景）→ WARMUP（预热词汇 + TTS 播放）→ DIALOGUE（逐句跟读 + 录音 + ISE 评分 + 导航）→ ROLEPLAY（AI 角色扮演，MiMo API 驱动）→ SUMMARY（成绩汇总 + 重点句型）
+- **对话跟读**：Speaker A/B 角色标识，逐句录音评分，支持前后句导航
+- **AI 角色扮演**：集成 MiMo API（`mimo-v2-flash`），场景 system prompt 驱动自由对话，纠错反馈
+- **评分与总结**：每句独立 ISE 评分，总结页显示平均分 + 各句成绩 + 场景重点句型
 
 ---
 

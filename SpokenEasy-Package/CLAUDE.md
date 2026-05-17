@@ -41,6 +41,10 @@ Android 英语口语练习 App "SpokenEasy"，Java + XML Layouts + Navigation Co
 - AI 聊天：MiMo API（`api.xiaomimimo.com/v1/chat/completions`，OpenAI 兼容），OkHttp 4.12.0
 - 练习记录：PracticeRecordEntity Room 表（user_uuid + created_at 索引），DB migration v1→2
 - TTS 引擎回退链（国产 ROM 兼容）：默认引擎 → `getEngines()` → `Settings.Secure.tts_default_synth` → 已知 OEM 引擎（OPPO/Xiaomi/Huawei/Vivo）。`boolean[] listenerFired + int[] initStatus` 数组模式处理同步回调竞争
+- 首页容器：LearnFragment + PracticeRootFragment 使用 TabLayout + ChildFragmentManager 实现标签切换，避免 Navigation Component 嵌套
+- 发音实验室：Json 驱动的极小对立体（minimal pairs）数据模型，按音素分类筛选，ISE 评分对比练习
+- 句型操练：四类题型共用 DrillStep 数据模型，base/cue/expected 三段式驱动；`DrillCollection → DrillSet → DrillStep` 三层嵌套 JSON 结构
+- 情景对话：五阶段状态机（SCENE_SELECT→WARMUP→DIALOGUE→ROLEPLAY→SUMMARY），角色扮演复用 MiMoApiService 进行 AI 对话
 
 ### Phase 进度
 - Phase 1 ✅ 项目骨架搭建（Gradle 配置 + 导航框架 DrawerLayout/BottomNavigation/NavHost + 占位页 + Material3 主题）
@@ -52,3 +56,7 @@ Android 英语口语练习 App "SpokenEasy"，Java + XML Layouts + Navigation Co
 - Phase 5.5 ✅ UI 全面改造 + 听力模块重构（TTS 播放对话、隐藏原文、微动画系统、3 模块列表/详情 UI 升级）
 - Phase 7 ✅ 讯飞 ISE 语音评测 SDK（XunfeiScorer 真实评分替换 MockScorer + AudioWaveformView 波形可视化 + TTS 引擎缓存/队列/语言检测）
 - Phase 8 ✅ 练习记录 + 系统设置 + AI 聊天（PracticeRecord 历史回放 + TTS 四态检测面板 + 多引擎回退链/OEM 兼容 + MiMo API AI 英语语伴）
+- Phase 9a ✅ 首页重构（LearnFragment TabLayout 单词/连读 + PracticeRootFragment TabLayout 发音/句型/对话）
+- Phase 9b ✅ 发音实验室（最小对立体 minimal_pairs.json + 音素分类 ChipGroup + 对比发音 + ISE 评分）
+- Phase 9c ✅ 句型操练（4 种题型 substitution/transformation/expansion/response + 6 语法点 JSON 题库 + 3 阶段: 选择→操练→总结）
+- Phase 9d ✅ 情景对话（5 阶段: 场景选择→预热词汇→对话跟读→AI 角色扮演→总结报告 + MiMo API 驱动角色扮演）

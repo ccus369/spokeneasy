@@ -1,0 +1,63 @@
+{
+    "grammar_point": "一般过去时",
+    "grammar_point_en": "Simple Past",
+    "sets": [
+        {
+            "id": "simple_past_sub",
+            "grammar_point": "一般过去时",
+            "grammar_point_en": "Simple Past",
+            "drill_type": "substitution",
+            "difficulty": 1,
+            "instructions_cn": "将句中动词改为过去式",
+            "progress_label": "替换练习",
+            "steps": [
+                {
+                    "id": "past_01",
+                    "base": "I [walk] to work every day.",
+                    "cue": "改为昨天发生 (yesterday)",
+                    "expected": "I walked to work yesterday.",
+                    "hint_cn": "规则动词加 -ed → walked"
+                },
+                {
+                    "id": "past_02",
+                    "base": "She [go] to the store.",
+                    "cue": "改为昨天去",
+                    "expected": "She went to the store yesterday.",
+                    "hint_cn": "go 的过去式是 went（不规则）"
+                },
+                {
+                    "id": "past_03",
+                    "base": "We [have] a good time.",
+                    "cue": "改为上周末 (last weekend)",
+                    "expected": "We had a good time last weekend.",
+                    "hint_cn": "have 的过去式是 had（不规则）"
+                }
+            ]
+        },
+        {
+            "id": "simple_past_trans",
+            "grammar_point": "一般过去时",
+            "grammar_point_en": "Simple Past",
+            "drill_type": "transformation",
+            "difficulty": 2,
+            "instructions_cn": "将下列句子改为否定句或疑问句",
+            "progress_label": "转换练习",
+            "steps": [
+                {
+                    "id": "past_04",
+                    "base": "He ate breakfast this morning.",
+                    "cue": "改为否定句",
+                    "expected": "He didn't eat breakfast this morning.",
+                    "hint_cn": "用 didn't + 动词原形"
+                },
+                {
+                    "id": "past_05",
+                    "base": "They visited the museum yesterday.",
+                    "cue": "改为一般疑问句",
+                    "expected": "Did they visit the museum yesterday?",
+                    "hint_cn": "用 Did 开头，动词恢复原形 visited → visit"
+                }
+            ]
+        }
+    ]
+}

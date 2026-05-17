@@ -52,7 +52,7 @@ public class WordListFragment extends Fragment {
             NavController navController = Navigation.findNavController(view);
             Bundle args = new Bundle();
             args.putLong("wordId", word.getId());
-            navController.navigate(R.id.action_wordList_to_wordDetail, args);
+            navController.navigate(R.id.wordDetailFragment, args);
         });
         recyclerView.setAdapter(adapter);
 

@@ -1,0 +1,63 @@
+{
+    "grammar_point": "There is/are 句型",
+    "grammar_point_en": "There is / There are",
+    "sets": [
+        {
+            "id": "there_sub",
+            "grammar_point": "There is/are 句型",
+            "grammar_point_en": "There is / There are",
+            "drill_type": "substitution",
+            "difficulty": 1,
+            "instructions_cn": "根据名词单复数选择 is 或 are",
+            "progress_label": "替换练习",
+            "steps": [
+                {
+                    "id": "there_01",
+                    "base": "There [is] a book on the table.",
+                    "cue": "替换为 three books（三本书）",
+                    "expected": "There are three books on the table.",
+                    "hint_cn": "复数名词用 There are"
+                },
+                {
+                    "id": "there_02",
+                    "base": "There [are] many students in the room.",
+                    "cue": "替换为 a student（一个学生）",
+                    "expected": "There is a student in the room.",
+                    "hint_cn": "单数名词用 There is"
+                },
+                {
+                    "id": "there_03",
+                    "base": "There [is] a cat under the chair.",
+                    "cue": "替换为 two cats（两只猫）",
+                    "expected": "There are two cats under the chair.",
+                    "hint_cn": "复数名词用 There are"
+                }
+            ]
+        },
+        {
+            "id": "there_exp",
+            "grammar_point": "There is/are 句型",
+            "grammar_point_en": "There is / There are",
+            "drill_type": "expansion",
+            "difficulty": 2,
+            "instructions_cn": "逐步扩展句子，每次增加修饰成分",
+            "progress_label": "扩展练习",
+            "steps": [
+                {
+                    "id": "there_04",
+                    "base": "a book",
+                    "cue": "加位置 (on the table)",
+                    "expected": "There is a book on the table.",
+                    "hint_cn": "用 There is 开头"
+                },
+                {
+                    "id": "there_05",
+                    "base": "There is a book on the table.",
+                    "cue": "加颜色 (red)",
+                    "expected": "There is a red book on the table.",
+                    "hint_cn": "形容词放在名词前"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,63 @@
+{
+    "grammar_point": "现在进行时",
+    "grammar_point_en": "Present Continuous",
+    "sets": [
+        {
+            "id": "present_continuous_sub",
+            "grammar_point": "现在进行时",
+            "grammar_point_en": "Present Continuous",
+            "drill_type": "substitution",
+            "difficulty": 1,
+            "instructions_cn": "将句中动词替换为括号中的动词，注意进行时形式",
+            "progress_label": "替换练习",
+            "steps": [
+                {
+                    "id": "pc_01",
+                    "base": "She [read] a book right now.",
+                    "cue": "write（写）",
+                    "expected": "She is writing a book right now.",
+                    "hint_cn": "write 要去 e 加 -ing → writing"
+                },
+                {
+                    "id": "pc_02",
+                    "base": "They [play] soccer in the park.",
+                    "cue": "run（跑步）",
+                    "expected": "They are running in the park.",
+                    "hint_cn": "run 要双写 n 加 -ing → running"
+                },
+                {
+                    "id": "pc_03",
+                    "base": "He [eat] lunch at the moment.",
+                    "cue": "have（吃）",
+                    "expected": "He is having lunch at the moment.",
+                    "hint_cn": "have 要去 e 加 -ing → having"
+                }
+            ]
+        },
+        {
+            "id": "present_continuous_trans",
+            "grammar_point": "现在进行时",
+            "grammar_point_en": "Present Continuous",
+            "drill_type": "transformation",
+            "difficulty": 2,
+            "instructions_cn": "将下列句子改为否定句或疑问句",
+            "progress_label": "转换练习",
+            "steps": [
+                {
+                    "id": "pc_04",
+                    "base": "He is watching TV.",
+                    "cue": "改为否定句",
+                    "expected": "He is not watching TV.",
+                    "hint_cn": "在 is/are 后面加 not"
+                },
+                {
+                    "id": "pc_05",
+                    "base": "They are studying in the library.",
+                    "cue": "改为一般疑问句",
+                    "expected": "Are they studying in the library?",
+                    "hint_cn": "将 are 提到句首"
+                }
+            ]
+        }
+    ]
+}

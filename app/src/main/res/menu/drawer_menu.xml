@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/wordListFragment"
+        android:id="@+id/learnFragment"
         android:icon="@drawable/ic_menu_book"
-        android:title="@string/menu_word" />
+        android:title="@string/menu_learn" />
     <item
-        android:id="@+id/linkingListFragment"
+        android:id="@+id/practiceRootFragment"
         android:icon="@drawable/ic_record_voice_over"
-        android:title="@string/menu_linking" />
-    <item
-        android:id="@+id/listeningListFragment"
-        android:icon="@drawable/ic_headset"
-        android:title="@string/menu_listening" />
+        android:title="@string/menu_practice" />
     <item
         android:id="@+id/chatFragment"
         android:icon="@android:drawable/ic_menu_edit"

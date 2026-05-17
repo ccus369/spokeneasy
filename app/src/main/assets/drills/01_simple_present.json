@@ -1,0 +1,63 @@
+{
+    "grammar_point": "一般现在时第三人称单数",
+    "grammar_point_en": "Simple Present - Third Person Singular",
+    "sets": [
+        {
+            "id": "simple_present_sub",
+            "grammar_point": "一般现在时第三人称单数",
+            "grammar_point_en": "Simple Present - Third Person Singular",
+            "drill_type": "substitution",
+            "difficulty": 1,
+            "instructions_cn": "将句中的动词原形替换为第三人称单数形式",
+            "progress_label": "替换练习",
+            "steps": [
+                {
+                    "id": "sp_01",
+                    "base": "I [drink] coffee every morning.",
+                    "cue": "主语换成 He",
+                    "expected": "He drinks coffee every morning.",
+                    "hint_cn": "he/she/it 作主语时，动词加 -s"
+                },
+                {
+                    "id": "sp_02",
+                    "base": "They [go] to school by bus.",
+                    "cue": "主语换成 She",
+                    "expected": "She goes to school by bus.",
+                    "hint_cn": "go 变为 goes，加 -es"
+                },
+                {
+                    "id": "sp_03",
+                    "base": "We [study] English every day.",
+                    "cue": "主语换成 Tom",
+                    "expected": "Tom studies English every day.",
+                    "hint_cn": "辅音+y 结尾，改 y 为 i 加 -es → studies"
+                }
+            ]
+        },
+        {
+            "id": "simple_present_trans",
+            "grammar_point": "一般现在时第三人称单数",
+            "grammar_point_en": "Simple Present - Third Person Singular",
+            "drill_type": "transformation",
+            "difficulty": 2,
+            "instructions_cn": "将下列句子改为否定句或疑问句",
+            "progress_label": "转换练习",
+            "steps": [
+                {
+                    "id": "sp_04",
+                    "base": "She likes apples.",
+                    "cue": "改为否定句",
+                    "expected": "She doesn't like apples.",
+                    "hint_cn": "第三人称单数用 doesn't + 动词原形"
+                },
+                {
+                    "id": "sp_05",
+                    "base": "He plays the piano.",
+                    "cue": "改为一般疑问句",
+                    "expected": "Does he play the piano?",
+                    "hint_cn": "用 Does 开头，动词恢复原形"
+                }
+            ]
+        }
+    ]
+}

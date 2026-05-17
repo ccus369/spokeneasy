@@ -1,0 +1,63 @@
+{
+    "grammar_point": "be 动词 (am/is/are)",
+    "grammar_point_en": "Be Verbs",
+    "sets": [
+        {
+            "id": "be_sub",
+            "grammar_point": "be 动词 (am/is/are)",
+            "grammar_point_en": "Be Verbs",
+            "drill_type": "substitution",
+            "difficulty": 1,
+            "instructions_cn": "根据主语替换正确的 be 动词形式",
+            "progress_label": "替换练习",
+            "steps": [
+                {
+                    "id": "be_01",
+                    "base": "I [am] a student.",
+                    "cue": "主语换成 She",
+                    "expected": "She is a student.",
+                    "hint_cn": "第三人称单数用 is"
+                },
+                {
+                    "id": "be_02",
+                    "base": "He [is] from China.",
+                    "cue": "主语换成 They",
+                    "expected": "They are from China.",
+                    "hint_cn": "复数主语用 are"
+                },
+                {
+                    "id": "be_03",
+                    "base": "We [are] happy.",
+                    "cue": "主语换成 She",
+                    "expected": "She is happy.",
+                    "hint_cn": "第三人称单数用 is"
+                }
+            ]
+        },
+        {
+            "id": "be_response",
+            "grammar_point": "be 动词 (am/is/are)",
+            "grammar_point_en": "Be Verbs",
+            "drill_type": "response",
+            "difficulty": 2,
+            "instructions_cn": "完整回答问题",
+            "progress_label": "问答练习",
+            "steps": [
+                {
+                    "id": "be_04",
+                    "base": "Are you a teacher?",
+                    "cue": "肯定回答（假设你是学生）",
+                    "expected": "No, I am not a teacher. I am a student.",
+                    "hint_cn": "否定回答用 No, I am not..."
+                },
+                {
+                    "id": "be_05",
+                    "base": "Is she from Japan?",
+                    "cue": "肯定回答（假设她是）",
+                    "expected": "Yes, she is from Japan.",
+                    "hint_cn": "肯定回答用 Yes, 主语 + is"
+                }
+            ]
+        }
+    ]
+}

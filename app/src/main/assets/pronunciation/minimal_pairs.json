@@ -1,0 +1,78 @@
+{
+  "categories": [
+    {
+      "key": "th",
+      "name_cn": "咬舌音 /θ/ /ð/",
+      "name_en": "TH Sounds",
+      "description": "汉语中没有咬舌音，需将舌尖放在上下齿之间发音",
+      "order": 1
+    },
+    {
+      "key": "lr",
+      "name_cn": "l/r 对立",
+      "name_en": "L vs R",
+      "description": "汉语中 l/r 不分，注意舌尖位置差异",
+      "order": 2
+    },
+    {
+      "key": "vowels",
+      "name_cn": "长短元音",
+      "name_en": "Long vs Short Vowels",
+      "description": "汉语没有长短元音对立，注意发音时长和口型",
+      "order": 3
+    },
+    {
+      "key": "ng",
+      "name_cn": "前后鼻音",
+      "name_en": "N vs NG",
+      "description": "注意舌尖位置：/n/ 抵上齿龈，/ŋ/ 舌根抬起",
+      "order": 4
+    },
+    {
+      "key": "vw",
+      "name_cn": "v/w 对立",
+      "name_en": "V vs W",
+      "description": "汉语没有 /v/ 音，上齿需接触下唇",
+      "order": 5
+    },
+    {
+      "key": "ae",
+      "name_cn": "/æ/ vs /e/",
+      "name_en": "AE vs EH",
+      "description": "/æ/ 需要张大嘴，下巴下沉",
+      "order": 6
+    }
+  ],
+  "pairs": [
+    { "id": "th_001", "category": "th", "word_a": "think", "word_b": "sink", "phoneme_a": "/θɪŋk/", "phoneme_b": "/sɪŋk/", "sentence_a": "I think it's a good idea.", "sentence_b": "The boat began to sink.", "tip_cn": "发 /θ/ 时舌尖在上齿下沿送出气流，/s/ 时舌尖抵上颚" },
+    { "id": "th_002", "category": "th", "word_a": "thin", "word_b": "sin", "phoneme_a": "/θɪn/", "phoneme_b": "/sɪn/", "sentence_a": "She is very thin.", "sentence_b": "It is a sin to lie.", "tip_cn": "thin 的 /θ/ 要咬舌，sin 的 /s/ 不咬舌" },
+    { "id": "th_003", "category": "th", "word_a": "bat", "word_b": "bath", "phoneme_a": "/bæt/", "phoneme_b": "/bɑːθ/", "sentence_a": "He hit the ball with a bat.", "sentence_b": "I take a bath every morning.", "tip_cn": "bath 结尾的 /θ/ 要咬舌，bat 的 /t/ 不咬舌" },
+    { "id": "th_004", "category": "th", "word_a": "these", "word_b": "zeal", "phoneme_a": "/ðiːz/", "phoneme_b": "/ziːl/", "sentence_a": "These books are mine.", "sentence_b": "She works with great zeal.", "tip_cn": "/ð/ 是咬舌的浊音，/z/ 不咬舌" },
+    { "id": "th_005", "category": "th", "word_a": "they", "word_b": "day", "phoneme_a": "/ðeɪ/", "phoneme_b": "/deɪ/", "sentence_a": "They are my friends.", "sentence_b": "It is a sunny day.", "tip_cn": "/ð/ 咬舌，/d/ 用舌尖抵上齿龈" },
+    { "id": "th_006", "category": "th", "word_a": "breath", "word_b": "breathe", "phoneme_a": "/breθ/", "phoneme_b": "/briːð/", "sentence_a": "Take a deep breath.", "sentence_b": "Breathe deeply and relax.", "tip_cn": "breath 结尾 /θ/ 清音，breathe 结尾 /ð/ 浊音，声带震动" },
+    { "id": "lr_001", "category": "lr", "word_a": "light", "word_b": "right", "phoneme_a": "/laɪt/", "phoneme_b": "/raɪt/", "sentence_a": "Turn on the light.", "sentence_b": "You are right.", "tip_cn": "l 舌尖抵上齿龈，r 舌尖卷起不碰任何地方" },
+    { "id": "lr_002", "category": "lr", "word_a": "collect", "word_b": "correct", "phoneme_a": "/kəˈlekt/", "phoneme_b": "/kəˈrekt/", "sentence_a": "I collect stamps.", "sentence_b": "Your answer is correct.", "tip_cn": "collect 的 l 舌尖向上，correct 的 r 舌尖卷后" },
+    { "id": "lr_003", "category": "lr", "word_a": "long", "word_b": "wrong", "phoneme_a": "/lɒŋ/", "phoneme_b": "/rɒŋ/", "sentence_a": "It is a long road.", "sentence_b": "Something is wrong.", "tip_cn": "long 开头的 l 舌尖抵上齿龈，wrong 的 r 嘴唇微收" },
+    { "id": "lr_004", "category": "lr", "word_a": "fly", "word_b": "fry", "phoneme_a": "/flaɪ/", "phoneme_b": "/fraɪ/", "sentence_a": "Birds can fly.", "sentence_b": "I want to fry an egg.", "tip_cn": "fly 有 l 音，fry 有 r 音，注意舌尖位置变化" },
+    { "id": "lr_005", "category": "lr", "word_a": "belly", "word_b": "berry", "phoneme_a": "/ˈbeli/", "phoneme_b": "/ˈberi/", "sentence_a": "My belly is full.", "sentence_b": "This berry is sweet.", "tip_cn": "belly 的 ll 舌尖向上，berry 的 rr 舌尖卷起" },
+    { "id": "lr_006", "category": "lr", "word_a": "glass", "word_b": "grass", "phoneme_a": "/ɡlɑːs/", "phoneme_b": "/ɡrɑːs/", "sentence_a": "This glass is broken.", "sentence_b": "The grass is green.", "tip_cn": "glass 有 l，grass 有 r — 这是最经典的区分练习" },
+    { "id": "vv_001", "category": "vowels", "word_a": "ship", "word_b": "sheep", "phoneme_a": "/ʃɪp/", "phoneme_b": "/ʃiːp/", "sentence_a": "The ship is sailing.", "sentence_b": "The sheep is eating grass.", "tip_cn": "/ɪ/ 短促，/iː/ 长音且嘴角向两边拉开" },
+    { "id": "vv_002", "category": "vowels", "word_a": "full", "word_b": "fool", "phoneme_a": "/fʊl/", "phoneme_b": "/fuːl/", "sentence_a": "The glass is full.", "sentence_b": "Don't be a fool.", "tip_cn": "/ʊ/ 短促嘴唇收圆，/uː/ 长音嘴唇更收圆" },
+    { "id": "vv_003", "category": "vowels", "word_a": "had", "word_b": "hard", "phoneme_a": "/hæd/", "phoneme_b": "/hɑːd/", "sentence_a": "I had a dream.", "sentence_b": "This is hard to do.", "tip_cn": "/æ/ 张口大，/ɑː/ 口型更圆更后" },
+    { "id": "vv_004", "category": "vowels", "word_a": "bed", "word_b": "bad", "phoneme_a": "/bed/", "phoneme_b": "/bæd/", "sentence_a": "Time for bed.", "sentence_b": "It is very bad.", "tip_cn": "/e/ 嘴半开，/æ/ 嘴大张（下巴下沉）" },
+    { "id": "vv_005", "category": "vowels", "word_a": "cot", "word_b": "caught", "phoneme_a": "/kɒt/", "phoneme_b": "/kɔːt/", "sentence_a": "The baby is in the cot.", "sentence_b": "I caught a fish.", "tip_cn": "/ɒ/ 短促嘴圆，/ɔː/ 长音嘴更圆" },
+    { "id": "vv_006", "category": "vowels", "word_a": "pull", "word_b": "pool", "phoneme_a": "/pʊl/", "phoneme_b": "/puːl/", "sentence_a": "Pull the door open.", "sentence_b": "Let's swim in the pool.", "tip_cn": "pull 的 /ʊ/ 短而快，pool 的 /uː/ 拖长" },
+    { "id": "ng_001", "category": "ng", "word_a": "thin", "word_b": "thing", "phoneme_a": "/θɪn/", "phoneme_b": "/θɪŋ/", "sentence_a": "The stick is thin.", "sentence_b": "What is that thing?", "tip_cn": "/n/ 舌尖抵上齿龈，/ŋ/ 舌根抬起软腭下垂" },
+    { "id": "ng_002", "category": "ng", "word_a": "win", "word_b": "wing", "phoneme_a": "/wɪn/", "phoneme_b": "/wɪŋ/", "sentence_a": "We will win the game.", "sentence_b": "The bird has a broken wing.", "tip_cn": "win 结尾舌尖向上，wing 结尾舌根抬起" },
+    { "id": "ng_003", "category": "ng", "word_a": "sin", "word_b": "sing", "phoneme_a": "/sɪn/", "phoneme_b": "/sɪŋ/", "sentence_a": "Tell me your sins.", "sentence_b": "I like to sing.", "tip_cn": "sin 的 /n/ 舌尖抵上齿龈，sing 的 /ŋ/ 舌根抵软腭" },
+    { "id": "ng_004", "category": "ng", "word_a": "ran", "word_b": "rang", "phoneme_a": "/ræn/", "phoneme_b": "/ræŋ/", "sentence_a": "I ran very fast.", "sentence_b": "The bell rang.", "tip_cn": "ran 结尾舌尖抵上齿龈，rang 结尾舌根抬起" },
+    { "id": "vw_001", "category": "vw", "word_a": "vest", "word_b": "west", "phoneme_a": "/vest/", "phoneme_b": "/west/", "sentence_a": "He wears a vest.", "sentence_b": "Go to the west.", "tip_cn": "/v/ 上齿咬下唇，/w/ 嘴唇收圆不碰牙齿" },
+    { "id": "vw_002", "category": "vw", "word_a": "vine", "word_b": "wine", "phoneme_a": "/vaɪn/", "phoneme_b": "/waɪn/", "sentence_a": "The vine grows fast.", "sentence_b": "This wine is delicious.", "tip_cn": "vine 上齿碰下唇，wine 嘴唇收圆 — 手放喉部感受震动" },
+    { "id": "vw_003", "category": "vw", "word_a": "very", "word_b": "wary", "phoneme_a": "/ˈveri/", "phoneme_b": "/ˈweəri/", "sentence_a": "I am very happy.", "sentence_b": "Be wary of strangers.", "tip_cn": "very 有 /v/ 上齿咬唇，wary 的 /w/ 嘴唇收圆" },
+    { "id": "vw_004", "category": "vw", "word_a": "veal", "word_b": "wheel", "phoneme_a": "/viːl/", "phoneme_b": "/wiːl/", "sentence_a": "This veal is tender.", "sentence_b": "The wheel is spinning.", "tip_cn": "veal 上齿碰下唇，wheel 先 /w/ 再 /iː/" },
+    { "id": "ae_001", "category": "ae", "word_a": "bat", "word_b": "bet", "phoneme_a": "/bæt/", "phoneme_b": "/bet/", "sentence_a": "He swung the bat.", "sentence_b": "I bet you can do it.", "tip_cn": "/æ/ 嘴张大像苹果，/e/ 嘴半开像鸡蛋" },
+    { "id": "ae_002", "category": "ae", "word_a": "man", "word_b": "men", "phoneme_a": "/mæn/", "phoneme_b": "/men/", "sentence_a": "The man is tall.", "sentence_b": "The men are working.", "tip_cn": "man 的 /æ/ 下巴下沉，men 的 /e/ 下巴微抬" },
+    { "id": "ae_003", "category": "ae", "word_a": "pan", "word_b": "pen", "phoneme_a": "/pæn/", "phoneme_b": "/pen/", "sentence_a": "I need a frying pan.", "sentence_b": "This pen is blue.", "tip_cn": "pan 嘴大张，pen 嘴半开" },
+    { "id": "ae_004", "category": "ae", "word_a": "sat", "word_b": "set", "phoneme_a": "/sæt/", "phoneme_b": "/set/", "sentence_a": "I sat on the chair.", "sentence_b": "Set the table, please.", "tip_cn": "sat 的 /æ/ 嘴更开，set 的 /e/ 嘴更闭" }
+  ]
+}

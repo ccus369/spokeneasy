@@ -27,6 +27,7 @@ import com.spokeneasy.app.core.database.AppDatabase;
 import com.spokeneasy.app.core.util.UuidManager;
 import com.spokeneasy.app.core.scorer.XunfeiScorer;
 import com.spokeneasy.app.progress.PracticeRecordEntity;
+import com.spokeneasy.app.progress.UserProgressEntity;
 
 import java.io.File;
 import java.util.Locale;
@@ -275,46 +276,7 @@ public class WordDetailFragment extends Fragment {
                         playbackSeekBar.setVisibility(View.GONE);
                         playbackSeekBar.setProgress(0);
                         waveformView.setState(0);
-
-                        if (!xunfeiScorer.isInitialized()) {
-                            btnPlayback.setEnabled(true);
-                            return;
-                        }
-
-                        scoreText.setVisibility(View.VISIBLE);
-                        scoreText.setText("评分中...");
-
-                        final String referenceText = currentWord != null
-                                ? currentWord.getSentence1En() : "";
-                        xunfeiScorer.scoreAsync(referenceText, filePath,
-                                new XunfeiScorer.ScoreCallback() {
-                            @Override
-                            public void onResult(int score, String detail) {
-                                scoreText.setText(String.format(Locale.getDefault(),
-                                        "%d 分", score));
-                                com.spokeneasy.app.core.AnimationUtils.animateScorePulse(scoreText);
-
-                                if (detail != null && !detail.isEmpty()) {
-                                    detailFeedback.setVisibility(View.VISIBLE);
-                                    detailFeedback.setText(detail);
-                                }
-
-                                // Save practice record
-                                savePracticeRecord("word",
-                                        currentWord != null ? currentWord.getId() : 0,
-                                        referenceText, score, detail, filePath);
-
-                                btnPlayback.setEnabled(true);
-                            }
-
-                            @Override
-                            public void onError(String message) {
-                                scoreText.setText("评分失败");
-                                detailFeedback.setVisibility(View.VISIBLE);
-                                detailFeedback.setText(message);
-                                btnPlayback.setEnabled(true);
-                            }
-                        });
+                        btnPlayback.setEnabled(true);
                     }
 
                     @Override
@@ -387,11 +349,53 @@ public class WordDetailFragment extends Fragment {
     }
 
     private void stopRecording() {
-        audioRecorder.stopRecording();
+        String filePath = audioRecorder.stopRecording();
         btnRecord.setText("开始录音");
-        btnPlayback.setEnabled(true);
         waveformView.removeCallbacks(waveformRunnable);
         waveformView.setState(0);
+
+        if (filePath == null) return;
+
+        // Score immediately after recording (same as drill interface)
+        btnRecord.setEnabled(false);
+        scoreText.setVisibility(View.VISIBLE);
+        scoreText.setText("评分中…");
+        btnPlayback.setEnabled(false);
+
+        final String referenceText = currentWord != null
+                ? currentWord.getSentence1En() : "";
+        xunfeiScorer.scoreAsync(referenceText, filePath,
+                new XunfeiScorer.ScoreCallback() {
+            @Override
+            public void onResult(int score, String detail) {
+                if (!isAdded()) return;
+                requireActivity().runOnUiThread(() -> {
+                    scoreText.setText(String.format(Locale.getDefault(), "%d 分", score));
+                    com.spokeneasy.app.core.AnimationUtils.animateScorePulse(scoreText);
+                    if (detail != null && !detail.isEmpty()) {
+                        detailFeedback.setVisibility(View.VISIBLE);
+                        detailFeedback.setText(detail);
+                    }
+                    savePracticeRecord("word",
+                            currentWord != null ? currentWord.getId() : 0,
+                            referenceText, score, detail, filePath);
+                    btnRecord.setEnabled(true);
+                    btnPlayback.setEnabled(true);
+                });
+            }
+
+            @Override
+            public void onError(String message) {
+                if (!isAdded()) return;
+                requireActivity().runOnUiThread(() -> {
+                    scoreText.setText("评分失败");
+                    detailFeedback.setVisibility(View.VISIBLE);
+                    detailFeedback.setText(message);
+                    btnRecord.setEnabled(true);
+                    btnPlayback.setEnabled(true);
+                });
+            }
+        });
     }
 
     private void savePracticeRecord(String moduleType, long itemId,
@@ -401,9 +405,19 @@ public class WordDetailFragment extends Fragment {
         PracticeRecordEntity record = new PracticeRecordEntity(
                 uuid, moduleType, itemId, referenceText, score, detail,
                 audioFilePath, System.currentTimeMillis());
-        AppDatabase.databaseWriteExecutor.execute(() ->
-                AppDatabase.getInstance(requireContext())
-                        .practiceRecordDao().insert(record));
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            AppDatabase db = AppDatabase.getInstance(requireContext());
+            db.practiceRecordDao().insert(record);
+            // Also update user progress for statistics
+            UserProgressEntity progress = new UserProgressEntity();
+            progress.setUserUuid(uuid);
+            progress.setModuleType(moduleType);
+            progress.setItemId(itemId);
+            progress.setScore(score);
+            progress.setIsCompleted(score >= 60 ? 1 : 0);
+            progress.setCompletedAt(System.currentTimeMillis());
+            db.userProgressDao().insert(progress);
+        });
     }
 
     @Override
