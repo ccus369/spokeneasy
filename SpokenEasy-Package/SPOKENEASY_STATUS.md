@@ -133,6 +133,10 @@
 
 **TTS 设置面板与状态检测（Phase 8b）：**
 - TtsHelper：一次性的 TextToSpeech 引擎状态检测，TtsCheckCallback 返回 4 种状态（AVAILABLE/MISSING_DATA/NOT_SUPPORTED/NO_ENGINE）
+- **多引擎回退链**（国产手机兼容）：默认引擎失败 → `TextToSpeech.getEngines()` 逐一遍历 → `Settings.Secure.tts_default_synth` → 已知 OEM 引擎包名硬编码列表（OPPO `com.oplus.ttsaccessibilityengine`、Xiaomi `com.xiaomi.tts`、Huawei `com.huawei.tts`、Vivo `com.vivo.tts`）
+- **同步 OnInitListener 处理**：国产 ROM 上 listener 在构造器中同步触发，用 `boolean[] listenerFired + int[] initStatus` 数组模式确保引用安全
+- **引擎信息显示**：SettingsFragment 显示当前引擎名，NO_ENGINE 时列出所有已安装引擎 + "重试检测"按钮 + 音量检测
+- AndroidManifest 添加 `<queries>` TTS_SERVICE intent 声明（Android 11+ 包可见性）
 - SettingsFragment TTS 面板：状态显示 + Test（TTSEngine 播放测试）、Settings（`com.android.settings.TTS_SETTINGS`）、Install（`ACTION_INSTALL_TTS_DATA` 或 Play Store `com.google.android.tts`）
 - feedback_bg shape drawable（8dp 圆角矩形）+ dark theme colors.xml（feedback_bg_color=#0FFFFFFF）
 - 评分显示格式优化：移除"总分:"前缀，直接显示"85 分"

@@ -40,6 +40,7 @@ Android 英语口语练习 App "SpokenEasy"，Java + XML Layouts + Navigation Co
 - 用户：设备UUID标识，仅游客模式
 - AI 聊天：MiMo API（`api.xiaomimimo.com/v1/chat/completions`，OpenAI 兼容），OkHttp 4.12.0
 - 练习记录：PracticeRecordEntity Room 表（user_uuid + created_at 索引），DB migration v1→2
+- TTS 引擎回退链（国产 ROM 兼容）：默认引擎 → `getEngines()` → `Settings.Secure.tts_default_synth` → 已知 OEM 引擎（OPPO/Xiaomi/Huawei/Vivo）。`boolean[] listenerFired + int[] initStatus` 数组模式处理同步回调竞争
 
 ### Phase 进度
 - Phase 1 ✅ 项目骨架搭建（Gradle 配置 + 导航框架 DrawerLayout/BottomNavigation/NavHost + 占位页 + Material3 主题）
@@ -50,4 +51,4 @@ Android 英语口语练习 App "SpokenEasy"，Java + XML Layouts + Navigation Co
 - Phase 6 ✅ 设置 + 统计模块（UserProgressRepository/ViewModel，设置页学习统计卡片、ProgressBar、数据导出/重置、设备UUID显示）
 - Phase 5.5 ✅ UI 全面改造 + 听力模块重构（TTS 播放对话、隐藏原文、微动画系统、3 模块列表/详情 UI 升级）
 - Phase 7 ✅ 讯飞 ISE 语音评测 SDK（XunfeiScorer 真实评分替换 MockScorer + AudioWaveformView 波形可视化 + TTS 引擎缓存/队列/语言检测）
-- Phase 8 ✅ 练习记录 + 系统设置 + AI 聊天（PracticeRecord 历史回放 + TTS 四态检测面板 + MiMo API AI 英语语伴）
+- Phase 8 ✅ 练习记录 + 系统设置 + AI 聊天（PracticeRecord 历史回放 + TTS 四态检测面板 + 多引擎回退链/OEM 兼容 + MiMo API AI 英语语伴）
