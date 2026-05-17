@@ -65,7 +65,7 @@
     <string name="tts_test">测试语音</string>
     <string name="tts_settings">TTS 设置</string>
     <string name="tts_install_data">下载英语语音数据</string>
-    <string name="tts_install_google">安装 Google 文字转语音</string>
+    <string name="tts_configure_engine">配置系统语音引擎</string>
     <string name="tts_test_phrase">Hello, welcome to SpokenEasy.</string>
 
     <!-- MiMo AI Chat -->

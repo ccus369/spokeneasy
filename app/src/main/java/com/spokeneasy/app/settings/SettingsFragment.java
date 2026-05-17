@@ -117,7 +117,17 @@ public class SettingsFragment extends Fragment {
 
         TtsHelper.check(requireContext(), (state, engineLabel) -> {
             if (!isAdded()) return;
-            ttsEngineText.setText(engineLabel);
+
+            // Show detected engine(s) info
+            String engInfo = "";
+            if (engineLabel != null && !engineLabel.isEmpty()) {
+                if (state == TtsHelper.TtsState.NO_ENGINE && engineLabel.startsWith("已安装引擎")) {
+                    engInfo = engineLabel; // Show the list of installed engines
+                } else {
+                    engInfo = "引擎: " + engineLabel;
+                }
+            }
+            ttsEngineText.setText(engInfo);
 
             switch (state) {
                 case AVAILABLE:
@@ -134,14 +144,20 @@ public class SettingsFragment extends Fragment {
                 case NOT_SUPPORTED:
                     ttsStatusText.setText(R.string.tts_status_not_supported);
                     btnTtsInstall.setVisibility(View.VISIBLE);
-                    btnTtsInstall.setText(R.string.tts_install_google);
+                    btnTtsInstall.setText(R.string.tts_configure_engine);
                     btnTtsTest.setVisibility(View.VISIBLE);
                     break;
                 case NO_ENGINE:
                     ttsStatusText.setText(R.string.tts_status_no_engine);
                     btnTtsInstall.setVisibility(View.VISIBLE);
-                    btnTtsInstall.setText(R.string.tts_install_google);
-                    btnTtsTest.setVisibility(View.GONE);
+                    btnTtsInstall.setText(R.string.tts_configure_engine);
+                    if (engineLabel != null && engineLabel.startsWith("已安装引擎")) {
+                        // Has installed engines but none worked — show test button
+                        btnTtsTest.setVisibility(View.VISIBLE);
+                        btnTtsTest.setText("重试检测");
+                    } else {
+                        btnTtsTest.setVisibility(View.GONE);
+                    }
                     break;
             }
         });
@@ -216,42 +232,55 @@ public class SettingsFragment extends Fragment {
 
         btnTtsTest.setOnClickListener(v -> speakTestPhrase());
 
-        btnTtsSettings.setOnClickListener(v -> {
-            Intent intent = new Intent();
-            intent.setAction("com.android.settings.TTS_SETTINGS");
-            if (intent.resolveActivity(requireContext().getPackageManager()) != null) {
-                startActivity(intent);
-            } else {
-                // Fallback: open system settings
-                Intent fallback = new Intent(Settings.ACTION_SETTINGS);
-                startActivity(fallback);
-            }
-        });
+        btnTtsSettings.setOnClickListener(v -> openTtsSettings());
 
         btnTtsInstall.setOnClickListener(v -> {
             String text = btnTtsInstall.getText().toString();
             if (text.equals(getString(R.string.tts_install_data))) {
-                // Download English voice data
-                Intent intent = new Intent(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
-                startActivity(intent);
-            } else {
-                // Install Google TTS from Play Store
+                // Try to install TTS data — wrap in try-catch in case no handler exists
                 try {
-                    Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(android.net.Uri.parse(
-                            "market://details?id=com.google.android.tts"));
-                    startActivity(intent);
+                    Intent intent = new Intent(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
+                    if (intent.resolveActivity(requireContext().getPackageManager()) != null) {
+                        startActivity(intent);
+                    } else {
+                        // No TTS data installer available, open system TTS settings instead
+                        openTtsSettings();
+                    }
                 } catch (Exception e) {
-                    Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(android.net.Uri.parse(
-                            "https://play.google.com/store/apps/details?id=com.google.android.tts"));
-                    startActivity(intent);
+                    openTtsSettings();
                 }
+            } else {
+                openTtsSettings();
             }
         });
     }
 
+    private void openTtsSettings() {
+        Intent intent = new Intent();
+        intent.setAction("com.android.settings.TTS_SETTINGS");
+        if (intent.resolveActivity(requireContext().getPackageManager()) != null) {
+            startActivity(intent);
+        } else {
+            Intent fallback = new Intent(Settings.ACTION_SETTINGS);
+            startActivity(fallback);
+        }
+    }
+
     private void speakTestPhrase() {
+        // If button text is "重试检测", re-run TTS detection
+        if ("重试检测".equals(btnTtsTest.getText().toString())) {
+            setupTtsSection();
+            return;
+        }
+
+        // Check media volume first
+        android.media.AudioManager am = (android.media.AudioManager)
+                requireContext().getSystemService(android.content.Context.AUDIO_SERVICE);
+        int vol = am.getStreamVolume(android.media.AudioManager.STREAM_MUSIC);
+        if (vol == 0) {
+            Snackbar.make(requireView(), "媒体音量已静音，请调高音量", Snackbar.LENGTH_LONG).show();
+        }
+
         if (ttsEngine == null) {
             ttsEngine = new TTSEngine();
             ttsEngine.init(requireContext(), new TTSEngine.TtsCallback() {
@@ -262,17 +291,23 @@ public class SettingsFragment extends Fragment {
 
                 @Override
                 public void onError(String message) {
+                    Snackbar.make(requireView(),
+                            "TTS 初始化失败: " + message, Snackbar.LENGTH_LONG).show();
                     ttsEngine = null;
                 }
 
                 @Override
                 public void onLanguageWarning(String message) {
-                    // Still try to speak even if language data is incomplete
+                    Snackbar.make(requireView(),
+                            message, Snackbar.LENGTH_LONG).show();
                     ttsEngine.speak(getString(R.string.tts_test_phrase));
                 }
             });
-        } else {
+        } else if (ttsEngine.isInitialized()) {
             ttsEngine.speak(getString(R.string.tts_test_phrase));
+        } else {
+            Snackbar.make(requireView(), "TTS 引擎尚未就绪，请稍后重试",
+                    Snackbar.LENGTH_SHORT).show();
         }
     }
 

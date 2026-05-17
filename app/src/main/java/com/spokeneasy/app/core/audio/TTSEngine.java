@@ -6,14 +6,17 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
+import android.util.Log;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Queue;
 import java.util.UUID;
@@ -24,6 +27,7 @@ public class TTSEngine {
     private boolean isInitialized = false;
     private boolean languageAvailable = true;
     private boolean missingLanguageData = false;
+    private String engineName = "";
     private File cacheDir;
     private MediaPlayer mediaPlayer;
     private final Queue<String> pendingSpeaks = new LinkedList<>();
@@ -47,39 +51,258 @@ public class TTSEngine {
         languageAvailable = true;
         missingLanguageData = false;
 
-        tts = new TextToSpeech(context, status -> {
+        // Phase 1: try default engine
+        initEngine(context, null, callback);
+    }
+
+    /** Try initializing with a specific engine (null = default).
+     *  If it fails and there are other engines available, try them. */
+    private void initEngine(Context context, String engineName, TtsCallback callback) {
+        final TextToSpeech[] ttsRef = new TextToSpeech[1];
+        final boolean[] listenerFired = {false};
+        final int[] initStatus = {TextToSpeech.ERROR};
+
+        TextToSpeech.OnInitListener listener = status -> {
+            listenerFired[0] = true;
+            initStatus[0] = status;
+            TextToSpeech tts = ttsRef[0];
+            // On some devices (Xiaomi, Huawei) the listener fires synchronously
+            // from within the TextToSpeech constructor, before ttsRef[0] is assigned.
+            if (tts == null) return; // handled post-constructor
             if (status == TextToSpeech.SUCCESS) {
-                int result = tts.setLanguage(Locale.US);
-                if (result == TextToSpeech.LANG_MISSING_DATA) {
-                    // TTS engine exists but English voice data not downloaded
-                    missingLanguageData = true;
-                    languageAvailable = false;
-                    tts.setLanguage(Locale.getDefault()); // best-effort
-                    tts.setSpeechRate(0.9f);
-                    isInitialized = true;
-                    processPendingSpeaks();
-                    callback.onLanguageWarning("需要下载英语语音数据");
-                    callback.onDone();
-                    return;
-                } else if (result == TextToSpeech.LANG_NOT_SUPPORTED) {
-                    // TTS engine doesn't support English at all
-                    languageAvailable = false;
-                    tts.setLanguage(Locale.getDefault());
-                    tts.setSpeechRate(0.9f);
-                    isInitialized = true;
-                    processPendingSpeaks();
-                    callback.onLanguageWarning("设备不支持英语语音播放");
-                    callback.onDone();
-                    return;
-                }
-                tts.setSpeechRate(0.9f);
-                isInitialized = true;
-                processPendingSpeaks();
-                callback.onDone();
+                onTtsReady(tts, engineName, callback);
             } else {
-                callback.onError("TTS initialization failed");
+                // Default engine failed — try other installed engines
+                tts.shutdown();
+                tryFallbackEngines(context, engineName, callback);
             }
+        };
+
+        if (engineName != null) {
+            ttsRef[0] = new TextToSpeech(context, listener, engineName);
+        } else {
+            ttsRef[0] = new TextToSpeech(context, listener);
+        }
+
+        // Handle synchronous listener case
+        if (listenerFired[0] && ttsRef[0] != null) {
+            if (initStatus[0] == TextToSpeech.SUCCESS) {
+                onTtsReady(ttsRef[0], engineName, callback);
+            } else {
+                ttsRef[0].shutdown();
+                tryFallbackEngines(context, engineName, callback);
+            }
+        }
+    }
+
+    private void onTtsReady(TextToSpeech tts, String engineName, TtsCallback callback) {
+        this.tts = tts;
+        this.engineName = engineName != null ? engineName : tts.getDefaultEngine();
+        if (this.engineName == null) this.engineName = "unknown";
+
+        int result = tts.setLanguage(Locale.US);
+        if (result == TextToSpeech.LANG_MISSING_DATA) {
+            missingLanguageData = true;
+            languageAvailable = false;
+            tts.setLanguage(Locale.US);
+            tts.setSpeechRate(0.9f);
+            isInitialized = true;
+            processPendingSpeaks();
+            callback.onLanguageWarning("引擎 " + this.engineName + " 可能需要下载英语数据");
+            callback.onDone();
+        } else if (result == TextToSpeech.LANG_NOT_SUPPORTED) {
+            languageAvailable = false;
+            tts.setLanguage(Locale.US);
+            tts.setSpeechRate(0.9f);
+            isInitialized = true;
+            processPendingSpeaks();
+            callback.onLanguageWarning("引擎 " + this.engineName + " 可能不支持英语，尝试中");
+            callback.onDone();
+        } else {
+            tts.setSpeechRate(0.9f);
+            isInitialized = true;
+            processPendingSpeaks();
+            callback.onDone();
+        }
+    }
+
+    private void tryFallbackEngines(Context context, String failedEngine, TtsCallback callback) {
+        TextToSpeech[] enumTtsRef = new TextToSpeech[1];
+        final boolean[] listenerFired = {false};
+
+        enumTtsRef[0] = new TextToSpeech(context, status -> {
+            listenerFired[0] = true;
+            TextToSpeech enumTts = enumTtsRef[0];
+            // Guard against synchronous listener firing before assignment
+            if (enumTts == null) return;
+            processEngineListAndTryFallback(enumTts, context, failedEngine, callback);
         });
+
+        if (listenerFired[0] && enumTtsRef[0] != null) {
+            processEngineListAndTryFallback(enumTtsRef[0], context, failedEngine, callback);
+        }
+    }
+
+    private void processEngineListAndTryFallback(TextToSpeech enumTts, Context context,
+                                                  String failedEngine, TtsCallback callback) {
+        List<TextToSpeech.EngineInfo> engines = enumTts.getEngines();
+        enumTts.shutdown();
+
+        if (engines == null || engines.isEmpty()) {
+            // No engines enumerated — try system default engine from Settings
+            trySystemDefaultEngine(context, callback);
+            return;
+        }
+
+        // Store the label list for error messages
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < engines.size(); i++) {
+            if (i > 0) sb.append(", ");
+            sb.append(engines.get(i).label);
+        }
+        final String engineList = sb.toString();
+
+        // Try each engine, skip the one that already failed
+        tryEngineFromList(context, engines, 0, failedEngine, callback, engineList);
+    }
+
+    /** Known Chinese OEM TTS engine packages used as fallback */
+    private static final String[] KNOWN_OEM_ENGINES = {
+        "com.oplus.ttsaccessibilityengine",  // OPPO / OnePlus
+        "com.oppo.tts",                      // OPPO (older)
+        "com.xiaomi.tts",                    // Xiaomi
+        "com.huawei.tts",                    // Huawei
+        "com.vivo.tts",                      // Vivo
+    };
+
+    /**
+     * Try to read the system default TTS engine from Settings.Secure
+     * and initialize with it. Fallback for Chinese OEM ROMs where
+     * getEngines() returns empty.
+     */
+    private void trySystemDefaultEngine(Context context, TtsCallback callback) {
+        String defaultEngine = null;
+        try {
+            defaultEngine = Settings.Secure.getString(
+                    context.getContentResolver(), "tts_default_synth");
+            Log.d("TTSEngine", "trySystemDefaultEngine: tts_default_synth=" + defaultEngine);
+        } catch (Exception e) {
+            Log.d("TTSEngine", "trySystemDefaultEngine: error reading settings", e);
+        }
+
+        if (defaultEngine != null && !defaultEngine.isEmpty()) {
+            tryEngineDirect(context, defaultEngine, callback, true);
+        } else {
+            tryKnownOemEngines(context, 0, callback);
+        }
+    }
+
+    private void tryKnownOemEngines(Context context, int index, TtsCallback callback) {
+        if (index >= KNOWN_OEM_ENGINES.length) {
+            callback.onError("All TTS engines failed");
+            return;
+        }
+
+        final String engineName = KNOWN_OEM_ENGINES[index];
+        Log.d("TTSEngine", "tryKnownOemEngines[" + index + "]: " + engineName);
+
+        tryEngineDirect(context, engineName, new TtsCallback() {
+            @Override public void onDone() { callback.onDone(); }
+            @Override public void onError(String msg) {
+                Log.d("TTSEngine", "tryKnownOemEngines[" + engineName + "] failed: " + msg);
+                tryKnownOemEngines(context, index + 1, callback);
+            }
+            @Override public void onLanguageWarning(String msg) { callback.onLanguageWarning(msg); }
+        }, false);
+    }
+
+    /**
+     * Try a specific engine by name without triggering fallback enumeration.
+     * Used by trySystemDefaultEngine and tryKnownOemEngines to avoid recursion.
+     */
+    private void tryEngineDirect(Context context, String engineName,
+                                  TtsCallback callback, boolean tryOemFallback) {
+        final TextToSpeech[] ttsRef = new TextToSpeech[1];
+        final boolean[] listenerFired = {false};
+        final int[] initStatus = {TextToSpeech.ERROR};
+
+        TextToSpeech.OnInitListener listener = status -> {
+            listenerFired[0] = true;
+            initStatus[0] = status;
+            TextToSpeech tts = ttsRef[0];
+            if (tts == null) return;
+            if (status == TextToSpeech.SUCCESS) {
+                onTtsReady(tts, engineName, callback);
+            } else {
+                tts.shutdown();
+                if (tryOemFallback) {
+                    tryKnownOemEngines(context, 0, callback);
+                } else {
+                    callback.onError("Engine " + engineName + " failed");
+                }
+            }
+        };
+
+        ttsRef[0] = new TextToSpeech(context, listener, engineName);
+
+        if (listenerFired[0] && ttsRef[0] != null) {
+            if (initStatus[0] == TextToSpeech.SUCCESS) {
+                onTtsReady(ttsRef[0], engineName, callback);
+            } else {
+                ttsRef[0].shutdown();
+                if (tryOemFallback) {
+                    tryKnownOemEngines(context, 0, callback);
+                } else {
+                    callback.onError("Engine " + engineName + " failed");
+                }
+            }
+        }
+    }
+
+    private void tryEngineFromList(Context context,
+                                    List<TextToSpeech.EngineInfo> engines,
+                                    int index,
+                                    String failedEngine,
+                                    TtsCallback callback,
+                                    String engineList) {
+        if (index >= engines.size()) {
+            callback.onError("All TTS engines failed: " + engineList);
+            return;
+        }
+
+        TextToSpeech.EngineInfo ei = engines.get(index);
+        if (ei.name.equals(failedEngine)) {
+            tryEngineFromList(context, engines, index + 1, failedEngine, callback, engineList);
+            return;
+        }
+
+        final TextToSpeech[] ttsRef = new TextToSpeech[1];
+        final boolean[] listenerFired = {false};
+        final int[] initStatus = {TextToSpeech.ERROR};
+
+        ttsRef[0] = new TextToSpeech(context, status -> {
+            listenerFired[0] = true;
+            initStatus[0] = status;
+            TextToSpeech tts = ttsRef[0];
+            // Guard against synchronous listener firing before assignment
+            if (tts == null) return; // handled post-constructor
+            if (status == TextToSpeech.SUCCESS) {
+                onTtsReady(tts, ei.name, callback);
+            } else {
+                tts.shutdown();
+                tryEngineFromList(context, engines, index + 1, failedEngine, callback, engineList);
+            }
+        }, ei.name);
+
+        // Handle synchronous listener case
+        if (listenerFired[0] && ttsRef[0] != null) {
+            if (initStatus[0] == TextToSpeech.SUCCESS) {
+                onTtsReady(ttsRef[0], ei.name, callback);
+            } else {
+                ttsRef[0].shutdown();
+                tryEngineFromList(context, engines, index + 1, failedEngine, callback, engineList);
+            }
+        }
     }
 
     /** Whether English TTS data is available on this device */
@@ -90,6 +313,15 @@ public class TTSEngine {
     /** Whether English data exists but needs download (LANG_MISSING_DATA) */
     public boolean isMissingLanguageData() {
         return missingLanguageData;
+    }
+
+    /** Returns the detected TTS engine name, e.g. \"com.iflytek.tts\" */
+    public String getEngineName() {
+        return engineName;
+    }
+
+    public boolean isInitialized() {
+        return isInitialized;
     }
 
     public void speak(String text) {

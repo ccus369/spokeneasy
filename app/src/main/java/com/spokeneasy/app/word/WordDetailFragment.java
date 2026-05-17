@@ -158,7 +158,19 @@ public class WordDetailFragment extends Fragment {
             public void onDone() {}
 
             @Override
-            public void onError(String message) {}
+            public void onError(String message) {
+                Snackbar.make(view, "语音引擎不可用: " + message, Snackbar.LENGTH_LONG)
+                        .setAction("设置", v -> {
+                            Intent intent = new Intent();
+                            intent.setAction("com.android.settings.TTS_SETTINGS");
+                            if (intent.resolveActivity(requireContext().getPackageManager()) != null) {
+                                startActivity(intent);
+                            } else {
+                                startActivity(new Intent(android.provider.Settings.ACTION_SETTINGS));
+                            }
+                        })
+                        .show();
+            }
 
             @Override
             public void onLanguageWarning(String message) {
