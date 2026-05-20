@@ -1,5 +1,7 @@
 package com.spokeneasy.app.pronunciation;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +9,8 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
+import com.google.android.material.snackbar.Snackbar;
 import com.spokeneasy.app.R;
 import com.spokeneasy.app.core.audio.AudioRecorder;
 import com.spokeneasy.app.core.audio.TTSEngine;
@@ -23,6 +28,7 @@ import com.spokeneasy.app.core.util.UuidManager;
 import com.spokeneasy.app.progress.PracticeRecordEntity;
 import com.spokeneasy.app.progress.UserProgressEntity;
 
+import java.io.File;
 import java.util.List;
 
 public class PronunciationLabFragment extends Fragment {
@@ -32,11 +38,14 @@ public class PronunciationLabFragment extends Fragment {
     private ChipGroup categoryChipGroup;
     private RecyclerView pairList;
 
+    private static final int REQUEST_RECORD_AUDIO = 100;
+
     private TTSEngine ttsEngine;
     private AudioRecorder audioRecorder;
     private XunfeiScorer xunfeiScorer;
 
     private String currentRecordingPairId;
+    private String pendingPermissionPairId;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -71,12 +80,16 @@ public class PronunciationLabFragment extends Fragment {
 
             @Override
             public void onRecord(String pairId) {
+                if (ContextCompat.checkSelfPermission(requireContext(),
+                        Manifest.permission.RECORD_AUDIO)
+                        != PackageManager.PERMISSION_GRANTED) {
+                    pendingPermissionPairId = pairId;
+                    ActivityCompat.requestPermissions(requireActivity(),
+                            new String[]{Manifest.permission.RECORD_AUDIO},
+                            REQUEST_RECORD_AUDIO);
+                    return;
+                }
                 toggleRecording(pairId);
-            }
-
-            @Override
-            public boolean isRecording() {
-                return audioRecorder != null && audioRecorder.isRecording();
             }
         });
         pairList.setAdapter(adapter);
@@ -101,6 +114,22 @@ public class PronunciationLabFragment extends Fragment {
             PronunciationContent.MinimalPairsData data = viewModel.getData().getValue();
             if (data != null) updatePairList(data);
         });
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == REQUEST_RECORD_AUDIO) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                String pairId = pendingPermissionPairId;
+                pendingPermissionPairId = null;
+                if (pairId != null) toggleRecording(pairId);
+            } else {
+                Snackbar.make(requireView(), "需要录音权限才能使用跟读功能",
+                        Snackbar.LENGTH_LONG).show();
+            }
+        }
     }
 
     private void setupCategoryChips(List<PronunciationContent.PhonemeCategory> categories) {
@@ -155,15 +184,23 @@ public class PronunciationLabFragment extends Fragment {
 
     private void startRecording(String pairId) {
         currentRecordingPairId = pairId;
-        java.io.File cacheDir = requireContext().getCacheDir();
-        java.io.File audioFile = new java.io.File(cacheDir,
+        File cacheDir = requireContext().getCacheDir();
+        File audioFile = new File(cacheDir,
                 "pron_" + System.currentTimeMillis() + ".wav");
-        audioRecorder.startRecording(audioFile.getAbsolutePath());
+        boolean started = audioRecorder.startRecording(audioFile.getAbsolutePath());
+        if (started) {
+            adapter.setRecordingPairId(pairId);
+        }
     }
 
     private void stopRecording(String pairId) {
         String filePath = audioRecorder.stopRecording();
-        if (filePath == null) return;
+        if (filePath == null) {
+            adapter.clearRecording();
+            return;
+        }
+
+        adapter.clearRecording();
 
         // Find the pair to get reference text
         PronunciationContent.MinimalPairsData data = viewModel.getData().getValue();
@@ -183,20 +220,42 @@ public class PronunciationLabFragment extends Fragment {
                 filePath, new XunfeiScorer.ScoreCallback() {
             @Override
             public void onResult(int score, String detail) {
-                savePracticeRecord(pairId, score, detail, filePath);
+                if (!isAdded()) return;
+                requireActivity().runOnUiThread(() -> {
+                    adapter.setScore(pairId, score, detail);
+                    savePracticeRecord(pairId, score, detail, filePath);
+                });
             }
 
             @Override
             public void onError(String message) {
-                // Scoring failed silently
+                if (!isAdded()) return;
+                requireActivity().runOnUiThread(() -> {
+                    Snackbar.make(requireView(), "评分失败: " + message,
+                            Snackbar.LENGTH_SHORT).show();
+                });
             }
         });
     }
 
+    private int findItemId(PronunciationContent.MinimalPairsData data, String pairId) {
+        if (data == null) return 0;
+        for (int i = 0; i < data.pairs.size(); i++) {
+            if (data.pairs.get(i).id.equals(pairId)) {
+                return i + 1;
+            }
+        }
+        return 0;
+    }
+
     private void savePracticeRecord(String pairId, int score, String detail, String audioPath) {
         String uuid = UuidManager.getDeviceUuid(requireContext());
+
+        PronunciationContent.MinimalPairsData data = viewModel.getData().getValue();
+        final int numericItemId = findItemId(data, pairId);
+
         PracticeRecordEntity record = new PracticeRecordEntity(
-                uuid, "pronunciation", 0, pairId, score,
+                uuid, "pronunciation", numericItemId, pairId, score,
                 detail, audioPath, System.currentTimeMillis());
         AppDatabase.databaseWriteExecutor.execute(() -> {
             AppDatabase db = AppDatabase.getInstance(requireContext());
@@ -205,7 +264,7 @@ public class PronunciationLabFragment extends Fragment {
             UserProgressEntity progress = new UserProgressEntity();
             progress.setUserUuid(uuid);
             progress.setModuleType("pronunciation");
-            progress.setItemId(0);
+            progress.setItemId(numericItemId);
             progress.setScore(score);
             progress.setIsCompleted(score >= 60 ? 1 : 0);
             progress.setCompletedAt(System.currentTimeMillis());

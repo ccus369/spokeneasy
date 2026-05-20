@@ -14,16 +14,29 @@ import com.google.android.material.button.MaterialButton;
 import com.spokeneasy.app.R;
 import com.spokeneasy.app.core.audio.AudioWaveformView;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class PronunciationAdapter extends
         ListAdapter<PronunciationContent.MinimalPair, PronunciationAdapter.ViewHolder> {
 
     public interface Callback {
         void onPlayWord(String word, String sentence);
         void onRecord(String pairId);
-        boolean isRecording();
+    }
+
+    public static class ScoreResult {
+        public final int score;
+        public final String detail;
+        public ScoreResult(int score, String detail) {
+            this.score = score;
+            this.detail = detail;
+        }
     }
 
     private Callback callback;
+    private String recordingPairId;
+    private final Map<String, ScoreResult> scoreMap = new HashMap<>();
 
     public PronunciationAdapter() {
         super(new DiffUtil.ItemCallback<PronunciationContent.MinimalPair>() {
@@ -38,13 +51,30 @@ public class PronunciationAdapter extends
             public boolean areContentsTheSame(
                     @NonNull PronunciationContent.MinimalPair oldItem,
                     @NonNull PronunciationContent.MinimalPair newItem) {
-                return oldItem.id.equals(newItem.id);
+                return oldItem.id.equals(newItem.id) &&
+                        oldItem.category.equals(newItem.category);
             }
         });
     }
 
     public void setCallback(Callback callback) {
         this.callback = callback;
+    }
+
+    public void setRecordingPairId(String pairId) {
+        this.recordingPairId = pairId;
+        notifyDataSetChanged();
+    }
+
+    public void setScore(String pairId, int score, String detail) {
+        scoreMap.put(pairId, new ScoreResult(score, detail));
+        this.recordingPairId = null;
+        notifyDataSetChanged();
+    }
+
+    public void clearRecording() {
+        this.recordingPairId = null;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -93,9 +123,28 @@ public class PronunciationAdapter extends
             btnPlayB.setOnClickListener(v -> {
                 if (callback != null) callback.onPlayWord(pair.wordB, pair.sentenceB);
             });
+
+            boolean isCurrentlyRecording = pair.id.equals(recordingPairId);
             btnRecord.setOnClickListener(v -> {
                 if (callback != null) callback.onRecord(pair.id);
             });
+
+            // Waveform shown during recording
+            if (isCurrentlyRecording) {
+                waveformView.setVisibility(View.VISIBLE);
+                waveformView.setState(1);
+            } else {
+                waveformView.setVisibility(View.GONE);
+            }
+
+            // Score display
+            ScoreResult result = scoreMap.get(pair.id);
+            if (result != null) {
+                scoreText.setVisibility(View.VISIBLE);
+                scoreText.setText(result.score + " 分");
+            } else {
+                scoreText.setVisibility(View.GONE);
+            }
 
             if (tipText != null && pair.tipCn != null && !pair.tipCn.isEmpty()) {
                 tipText.setText(pair.tipCn);

@@ -53,7 +53,7 @@
     <string name="settings_cancel">取消</string>
     <string name="settings_confirm">确定</string>
     <string name="settings_export_subject">SpokenEasy 学习数据</string>
-    <string name="settings_export_body" formatted="false">我的 SpokenEasy 学习进度：\n\n单词：已完成 %d/%d\n连读：已完成 %d/%d\n听力：已完成 %d/%d</string>
+    <string name="settings_export_body" formatted="false">我的 SpokenEasy 学习进度：\n\n单词：已完成 %d/%d\n连读：已完成 %d/%d\n发音：已完成 %d/%d</string>
     <string name="settings_record_history">练习记录</string>
 
     <!-- TTS Engine -->

@@ -37,10 +37,10 @@ public class SettingsFragment extends Fragment {
 
     private TextView statsWordLabel;
     private TextView statsLinkingLabel;
-    private TextView statsListeningLabel;
+    private TextView statsPronunciationLabel;
     private ProgressBar statsWordProgress;
     private ProgressBar statsLinkingProgress;
-    private ProgressBar statsListeningProgress;
+    private ProgressBar statsPronunciationProgress;
     private MaterialButton btnExport;
     private MaterialButton btnReset;
     private MaterialButton btnRecordHistory;
@@ -69,15 +69,23 @@ public class SettingsFragment extends Fragment {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        if (viewModel != null) {
+            viewModel.loadStats();
+        }
+    }
+
+    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         statsWordLabel = view.findViewById(R.id.stats_word_label);
         statsLinkingLabel = view.findViewById(R.id.stats_linking_label);
-        statsListeningLabel = view.findViewById(R.id.stats_listening_label);
+        statsPronunciationLabel = view.findViewById(R.id.stats_pronunciation_label);
         statsWordProgress = view.findViewById(R.id.stats_word_progress);
         statsLinkingProgress = view.findViewById(R.id.stats_linking_progress);
-        statsListeningProgress = view.findViewById(R.id.stats_listening_progress);
+        statsPronunciationProgress = view.findViewById(R.id.stats_pronunciation_progress);
         btnExport = view.findViewById(R.id.btn_export_data);
         btnReset = view.findViewById(R.id.btn_reset_data);
         btnRecordHistory = view.findViewById(R.id.btn_record_history);
@@ -99,7 +107,7 @@ public class SettingsFragment extends Fragment {
             if (stats != null && stats.size() >= 3) {
                 updateStat(stats.get(0), statsWordLabel, statsWordProgress);
                 updateStat(stats.get(1), statsLinkingLabel, statsLinkingProgress);
-                updateStat(stats.get(2), statsListeningLabel, statsListeningProgress);
+                updateStat(stats.get(2), statsPronunciationLabel, statsPronunciationProgress);
             }
         });
 

@@ -40,6 +40,14 @@ public class UserProgressRepository {
         return dao.getAttemptedCount(userUuid, moduleType);
     }
 
+    public int getWordCompletedCount(String uuid) {
+        return dao.getWordCompletedCount(uuid);
+    }
+
+    public int getWordAttemptedCount(String uuid) {
+        return dao.getWordAttemptedCount(uuid);
+    }
+
     public long insert(UserProgressEntity entity) {
         return dao.insert(entity);
     }

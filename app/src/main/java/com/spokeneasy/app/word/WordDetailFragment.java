@@ -46,10 +46,15 @@ public class WordDetailFragment extends Fragment {
     private TextView sentence1Cn, sentence2Cn, sentence3Cn;
     private MaterialButton btnPlayWord, btnPlay1, btnPlay2, btnPlay3;
     private MaterialButton btnToggleCn;
-    private MaterialButton btnRecord, btnPlayback;
-    private TextView scoreText;
-    private TextView detailFeedback;
 
+    // Per-sentence recording UI
+    private TextView[] sentenceScoreTexts;
+    private MaterialButton[] btnPlaybackSentence;
+    private String[] sentenceAudioPaths;
+    private int recordingSentenceIndex = -1;
+
+    // Bottom recording section
+    private MaterialButton btnRecord, btnPlayback;
     private AudioWaveformView waveformView;
     private SeekBar playbackSeekBar;
     private boolean isSeeking = false;
@@ -58,6 +63,8 @@ public class WordDetailFragment extends Fragment {
     private AudioRecorder audioRecorder;
     private XunfeiScorer xunfeiScorer;
     private boolean showChinese = false;
+    private String currentAudioPath;
+
     private final Runnable waveformRunnable = new Runnable() {
         @Override
         public void run() {
@@ -82,7 +89,6 @@ public class WordDetailFragment extends Fragment {
             }
         }
     };
-    private String currentAudioPath;
 
     public static WordDetailFragment newInstance(long wordId) {
         WordDetailFragment fragment = new WordDetailFragment();
@@ -98,6 +104,7 @@ public class WordDetailFragment extends Fragment {
         ttsEngine = new TTSEngine();
         audioRecorder = new AudioRecorder();
         xunfeiScorer = new XunfeiScorer();
+        sentenceAudioPaths = new String[3];
     }
 
     @Nullable
@@ -125,10 +132,21 @@ public class WordDetailFragment extends Fragment {
         btnPlay2 = view.findViewById(R.id.btn_play_2);
         btnPlay3 = view.findViewById(R.id.btn_play_3);
         btnToggleCn = view.findViewById(R.id.btn_toggle_cn);
+
+        // Per-sentence recording views
+        sentenceScoreTexts = new TextView[]{
+                view.findViewById(R.id.score_text_1),
+                view.findViewById(R.id.score_text_2),
+                view.findViewById(R.id.score_text_3)
+        };
+        btnPlaybackSentence = new MaterialButton[]{
+                view.findViewById(R.id.btn_pb_1),
+                view.findViewById(R.id.btn_pb_2),
+                view.findViewById(R.id.btn_pb_3)
+        };
+
         btnRecord = view.findViewById(R.id.btn_record);
         btnPlayback = view.findViewById(R.id.btn_playback);
-        scoreText = view.findViewById(R.id.score_text);
-        detailFeedback = view.findViewById(R.id.detail_feedback);
         waveformView = view.findViewById(R.id.waveform_view);
         playbackSeekBar = view.findViewById(R.id.playback_seekbar);
 
@@ -146,6 +164,7 @@ public class WordDetailFragment extends Fragment {
                     if (w.getId() == wordId) {
                         currentWord = w;
                         bindWord(w);
+                        loadExistingProgress(wordId);
                         break;
                     }
                 }
@@ -242,6 +261,17 @@ public class WordDetailFragment extends Fragment {
             updateChineseVisibility();
         });
 
+        // Per-sentence playback buttons
+        for (int i = 0; i < 3; i++) {
+            final int sentenceIdx = i;
+            btnPlaybackSentence[i].setOnClickListener(v -> {
+                if (sentenceAudioPaths[sentenceIdx] != null) {
+                    playbackRecording(sentenceAudioPaths[sentenceIdx]);
+                }
+            });
+        }
+
+        // Bottom recording button (records the next unscored sentence)
         btnRecord.setOnClickListener(v -> {
             if (!audioRecorder.isRecording()) {
                 if (ContextCompat.checkSelfPermission(requireContext(),
@@ -252,7 +282,8 @@ public class WordDetailFragment extends Fragment {
                             REQUEST_RECORD_AUDIO);
                     return;
                 }
-                startRecording();
+                int targetIdx = findNextUnscoredSentence();
+                startRecording(targetIdx);
             } else {
                 stopRecording();
             }
@@ -260,33 +291,7 @@ public class WordDetailFragment extends Fragment {
 
         btnPlayback.setOnClickListener(v -> {
             if (currentAudioPath != null) {
-                audioRecorder.playBack(currentAudioPath, new AudioRecorder.AudioCallback() {
-                    @Override
-                    public void onStart() {
-                        btnPlayback.setEnabled(false);
-                        waveformView.setState(2);
-                        playbackSeekBar.setVisibility(View.VISIBLE);
-                        playbackSeekBar.setProgress(0);
-                        playbackSeekBar.post(playbackRunnable);
-                    }
-
-                    @Override
-                    public void onStop(String filePath) {
-                        playbackSeekBar.removeCallbacks(playbackRunnable);
-                        playbackSeekBar.setVisibility(View.GONE);
-                        playbackSeekBar.setProgress(0);
-                        waveformView.setState(0);
-                        btnPlayback.setEnabled(true);
-                    }
-
-                    @Override
-                    public void onError(String message) {
-                        playbackSeekBar.removeCallbacks(playbackRunnable);
-                        playbackSeekBar.setVisibility(View.GONE);
-                        waveformView.setState(0);
-                        btnPlayback.setEnabled(true);
-                    }
-                });
+                playbackRecording(currentAudioPath);
             }
         });
 
@@ -313,13 +318,21 @@ public class WordDetailFragment extends Fragment {
         });
     }
 
+    private int findNextUnscoredSentence() {
+        for (int i = 0; i < 3; i++) {
+            if (sentenceAudioPaths[i] == null) return i;
+        }
+        return 0; // All scored, re-record the first
+    }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == REQUEST_RECORD_AUDIO) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                startRecording();
+                int targetIdx = findNextUnscoredSentence();
+                startRecording(targetIdx);
             } else {
                 Snackbar.make(requireView(), "需要录音权限才能使用跟读功能",
                         Snackbar.LENGTH_LONG)
@@ -334,7 +347,33 @@ public class WordDetailFragment extends Fragment {
         }
     }
 
-    private void startRecording() {
+    private void loadExistingProgress(long wordId) {
+        String uuid = UuidManager.getDeviceUuid(requireContext());
+        AppDatabase.databaseWriteExecutor.execute(() -> {
+            AppDatabase db = AppDatabase.getInstance(requireContext());
+            for (int i = 0; i < 3; i++) {
+                long itemId = wordId * 10 + i + 1;
+                UserProgressEntity progress = db.userProgressDao().getByItem(uuid, "word", itemId);
+                final int index = i;
+                if (progress != null && progress.getScore() > 0) {
+                    PracticeRecordEntity record = db.practiceRecordDao().getLatestByItem(uuid, "word", itemId);
+                    final String audioPath = record != null ? record.getAudioFilePath() : null;
+                    final int score = progress.getScore();
+                    requireActivity().runOnUiThread(() -> {
+                        sentenceScoreTexts[index].setVisibility(View.VISIBLE);
+                        sentenceScoreTexts[index].setText(score + "分");
+                        if (audioPath != null && new java.io.File(audioPath).exists()) {
+                            sentenceAudioPaths[index] = audioPath;
+                            btnPlaybackSentence[index].setVisibility(View.VISIBLE);
+                        }
+                    });
+                }
+            }
+        });
+    }
+
+    private void startRecording(int sentenceIndex) {
+        recordingSentenceIndex = sentenceIndex;
         File cacheDir = requireContext().getCacheDir();
         File audioFile = new File(cacheDir, "recording_" + System.currentTimeMillis() + ".wav");
         currentAudioPath = audioFile.getAbsolutePath();
@@ -356,31 +395,36 @@ public class WordDetailFragment extends Fragment {
 
         if (filePath == null) return;
 
-        // Score immediately after recording (same as drill interface)
+        int sentenceIdx = recordingSentenceIndex;
+        if (sentenceIdx < 0) return;
+
+        final String referenceText = getSentenceText(sentenceIdx);
+        if (referenceText == null || referenceText.isEmpty()) return;
+
         btnRecord.setEnabled(false);
-        scoreText.setVisibility(View.VISIBLE);
-        scoreText.setText("评分中…");
         btnPlayback.setEnabled(false);
 
-        final String referenceText = currentWord != null
-                ? currentWord.getSentence1En() : "";
         xunfeiScorer.scoreAsync(referenceText, filePath,
                 new XunfeiScorer.ScoreCallback() {
             @Override
             public void onResult(int score, String detail) {
                 if (!isAdded()) return;
                 requireActivity().runOnUiThread(() -> {
-                    scoreText.setText(String.format(Locale.getDefault(), "%d 分", score));
-                    com.spokeneasy.app.core.AnimationUtils.animateScorePulse(scoreText);
-                    if (detail != null && !detail.isEmpty()) {
-                        detailFeedback.setVisibility(View.VISIBLE);
-                        detailFeedback.setText(detail);
-                    }
-                    savePracticeRecord("word",
-                            currentWord != null ? currentWord.getId() : 0,
-                            referenceText, score, detail, filePath);
+                    sentenceAudioPaths[sentenceIdx] = filePath;
+                    currentAudioPath = filePath;
+
+                    // Show score and playback button next to this sentence
+                    sentenceScoreTexts[sentenceIdx].setVisibility(View.VISIBLE);
+                    sentenceScoreTexts[sentenceIdx].setText(score + "分");
+                    btnPlaybackSentence[sentenceIdx].setVisibility(View.VISIBLE);
+
+                    com.spokeneasy.app.core.AnimationUtils.animateScorePulse(
+                            sentenceScoreTexts[sentenceIdx]);
+
+                    savePracticeRecord(sentenceIdx, referenceText, score, detail, filePath);
                     btnRecord.setEnabled(true);
                     btnPlayback.setEnabled(true);
+                    recordingSentenceIndex = -1;
                 });
             }
 
@@ -388,9 +432,7 @@ public class WordDetailFragment extends Fragment {
             public void onError(String message) {
                 if (!isAdded()) return;
                 requireActivity().runOnUiThread(() -> {
-                    scoreText.setText("评分失败");
-                    detailFeedback.setVisibility(View.VISIBLE);
-                    detailFeedback.setText(message);
+                    recordingSentenceIndex = -1;
                     btnRecord.setEnabled(true);
                     btnPlayback.setEnabled(true);
                 });
@@ -398,20 +440,72 @@ public class WordDetailFragment extends Fragment {
         });
     }
 
-    private void savePracticeRecord(String moduleType, long itemId,
-                                     String referenceText, int score,
-                                     String detail, String audioFilePath) {
+    private String getSentenceText(int sentenceIndex) {
+        if (currentWord == null) return "";
+        switch (sentenceIndex) {
+            case 0: return currentWord.getSentence1En();
+            case 1: return currentWord.getSentence2En();
+            case 2: return currentWord.getSentence3En();
+            default: return "";
+        }
+    }
+
+    private void playbackRecording(String audioPath) {
+        audioRecorder.playBack(audioPath, new AudioRecorder.AudioCallback() {
+            @Override
+            public void onStart() {
+                btnPlayback.setEnabled(false);
+                for (int i = 0; i < 3; i++) {
+                    btnPlaybackSentence[i].setEnabled(false);
+                }
+                waveformView.setState(2);
+                playbackSeekBar.setVisibility(View.VISIBLE);
+                playbackSeekBar.setProgress(0);
+                playbackSeekBar.post(playbackRunnable);
+            }
+
+            @Override
+            public void onStop(String filePath) {
+                playbackSeekBar.removeCallbacks(playbackRunnable);
+                playbackSeekBar.setVisibility(View.GONE);
+                playbackSeekBar.setProgress(0);
+                waveformView.setState(0);
+                btnPlayback.setEnabled(true);
+                for (int i = 0; i < 3; i++) {
+                    btnPlaybackSentence[i].setEnabled(true);
+                }
+            }
+
+            @Override
+            public void onError(String message) {
+                playbackSeekBar.removeCallbacks(playbackRunnable);
+                playbackSeekBar.setVisibility(View.GONE);
+                waveformView.setState(0);
+                btnPlayback.setEnabled(true);
+                for (int i = 0; i < 3; i++) {
+                    btnPlaybackSentence[i].setEnabled(true);
+                }
+            }
+        });
+    }
+
+    private void savePracticeRecord(int sentenceIndex, String referenceText,
+                                     int score, String detail, String audioFilePath) {
         String uuid = UuidManager.getDeviceUuid(requireContext());
+        long wordId = currentWord != null ? currentWord.getId() : 0;
+        // Encode sentence index into itemId: wordId * 10 + sentenceIndex + 1
+        long itemId = wordId * 10 + sentenceIndex + 1;
+
         PracticeRecordEntity record = new PracticeRecordEntity(
-                uuid, moduleType, itemId, referenceText, score, detail,
+                uuid, "word", itemId, referenceText, score, detail,
                 audioFilePath, System.currentTimeMillis());
         AppDatabase.databaseWriteExecutor.execute(() -> {
             AppDatabase db = AppDatabase.getInstance(requireContext());
             db.practiceRecordDao().insert(record);
-            // Also update user progress for statistics
+            // Update user progress per sentence
             UserProgressEntity progress = new UserProgressEntity();
             progress.setUserUuid(uuid);
-            progress.setModuleType(moduleType);
+            progress.setModuleType("word");
             progress.setItemId(itemId);
             progress.setScore(score);
             progress.setIsCompleted(score >= 60 ? 1 : 0);

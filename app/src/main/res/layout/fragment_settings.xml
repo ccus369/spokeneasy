@@ -166,7 +166,7 @@
                     android:layout_marginVertical="12dp"
                     android:background="?attr/colorOutlineVariant" />
 
-                <!-- Listening Stats -->
+                <!-- Pronunciation Stats -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -182,12 +182,12 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="@string/menu_listening"
+                            android:text="发音实验室"
                             android:textAppearance="?attr/textAppearanceTitleSmall"
                             android:textColor="?attr/colorOnBackground" />
 
                         <TextView
-                            android:id="@+id/stats_listening_label"
+                            android:id="@+id/stats_pronunciation_label"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textAppearance="?attr/textAppearanceBodySmall"
@@ -196,7 +196,7 @@
                     </LinearLayout>
 
                     <ProgressBar
-                        android:id="@+id/stats_listening_progress"
+                        android:id="@+id/stats_pronunciation_progress"
                         style="?android:attr/progressBarStyleHorizontal"
                         android:layout_width="match_parent"
                         android:layout_height="6dp"

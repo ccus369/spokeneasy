@@ -20,6 +20,9 @@ public interface PracticeRecordDao {
     @Query("SELECT * FROM practice_records WHERE user_uuid = :userUuid AND module_type = :moduleType ORDER BY created_at DESC")
     List<PracticeRecordEntity> getByModule(@NonNull String userUuid, @NonNull String moduleType);
 
+    @Query("SELECT * FROM practice_records WHERE user_uuid = :userUuid AND module_type = :moduleType AND item_id = :itemId ORDER BY created_at DESC LIMIT 1")
+    PracticeRecordEntity getLatestByItem(@NonNull String userUuid, @NonNull String moduleType, long itemId);
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     long insert(PracticeRecordEntity record);
 }

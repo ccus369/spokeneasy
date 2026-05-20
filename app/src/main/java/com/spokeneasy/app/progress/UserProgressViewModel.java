@@ -10,9 +10,10 @@ import androidx.lifecycle.MutableLiveData;
 import com.spokeneasy.app.core.database.AppDatabase;
 import com.spokeneasy.app.core.util.UuidManager;
 import com.spokeneasy.app.linking.LinkingRepository;
-import com.spokeneasy.app.listening.ListeningRepository;
+import com.spokeneasy.app.pronunciation.PronunciationContent;
 import com.spokeneasy.app.word.WordRepository;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +22,6 @@ public class UserProgressViewModel extends AndroidViewModel {
     private final UserProgressRepository progressRepo;
     private final WordRepository wordRepo;
     private final LinkingRepository linkingRepo;
-    private final ListeningRepository listeningRepo;
     private final String userUuid;
 
     private final MutableLiveData<List<ModuleStats>> stats = new MutableLiveData<>();
@@ -33,7 +33,6 @@ public class UserProgressViewModel extends AndroidViewModel {
         this.progressRepo = UserProgressRepository.create(db);
         this.wordRepo = WordRepository.create(db);
         this.linkingRepo = LinkingRepository.create(db);
-        this.listeningRepo = ListeningRepository.create(db);
         this.userUuid = UuidManager.getDeviceUuid(application);
         loadStats();
     }
@@ -44,8 +43,8 @@ public class UserProgressViewModel extends AndroidViewModel {
             List<ModuleStats> list = new ArrayList<>(3);
 
             int wordTotal = wordRepo.getCount();
-            int wordCompleted = progressRepo.getCompletedCount(userUuid, "word");
-            int wordAttempted = progressRepo.getAttemptedCount(userUuid, "word");
+            int wordCompleted = progressRepo.getWordCompletedCount(userUuid);
+            int wordAttempted = progressRepo.getWordAttemptedCount(userUuid);
             list.add(new ModuleStats("word", wordTotal, wordCompleted, wordAttempted));
 
             int linkingTotal = linkingRepo.getCount();
@@ -53,10 +52,25 @@ public class UserProgressViewModel extends AndroidViewModel {
             int linkingAttempted = progressRepo.getAttemptedCount(userUuid, "linking");
             list.add(new ModuleStats("linking", linkingTotal, linkingCompleted, linkingAttempted));
 
-            int listeningTotal = listeningRepo.getCount();
-            int listeningCompleted = progressRepo.getCompletedCount(userUuid, "listening");
-            int listeningAttempted = progressRepo.getAttemptedCount(userUuid, "listening");
-            list.add(new ModuleStats("listening", listeningTotal, listeningCompleted, listeningAttempted));
+            // Pronunciation: count from JSON assets
+            int pronunciationTotal = 0;
+            try {
+                InputStream is = getApplication().getAssets()
+                        .open("pronunciation/minimal_pairs.json");
+                java.util.Scanner scanner = new java.util.Scanner(is, "UTF-8").useDelimiter("\\A");
+                String json = scanner.hasNext() ? scanner.next() : "";
+                scanner.close();
+                is.close();
+                PronunciationContent.MinimalPairsData parsed =
+                        PronunciationContent.parse(json);
+                pronunciationTotal = parsed.pairs.size();
+            } catch (Exception e) {
+                pronunciationTotal = 0;
+            }
+            int pronunciationCompleted = progressRepo.getCompletedCount(userUuid, "pronunciation");
+            int pronunciationAttempted = progressRepo.getAttemptedCount(userUuid, "pronunciation");
+            list.add(new ModuleStats("pronunciation", pronunciationTotal,
+                    pronunciationCompleted, pronunciationAttempted));
 
             stats.postValue(list);
             isLoading.postValue(false);
