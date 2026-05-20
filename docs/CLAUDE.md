@@ -4,20 +4,28 @@
 Android 英语口语练习 App "SpokenEasy"，Java + XML Layouts + Navigation Component + Room。
 
 ## 项目文档路径
-- [需求文档](docs/01-requirements.md)
-- [技术规范](docs/02-technical-spec.md)
-- [架构设计](docs/03-architecture.md)
-- [数据库设计](docs/04-data-schema.md)
-- [项目状态与计划](SPOKENEASY_STATUS.md)
+- [需求文档](01-requirements.md)
+- [技术规范](02-technical-spec.md)
+- [架构设计](03-architecture.md)
+- [数据库设计](04-data-schema.md)
 
 ## 工作说明
 
 ### 开发原则
-1. **逐阶段推进**：完成→编译验证→进入下一阶段，不跳步
-2. **每次只改一个模块**：不跨模块修改
-3. **编译通过是硬门槛**：任何修改后必须能编译
-4. **按功能分包**：word/linking/listening/settings/progress 各自独立
-5. **同步更新状态文档**：每完成一个阶段/模块，同步更新本方文件 (§Phase 进度) 和 `SPOKENEASY_STATUS.md`
+1. **动手前先想**：不确定就问，不假装懂了瞎干
+2. **简洁优先**：50行能解决别写200行，不引入不必要的抽象
+3. **精准修改**：只动必要的代码，不顺手改格式/清旧代码
+4. **完工必验证**：改完必须自测，编译+功能双确认
+5. **增量验证**：改一点→编译确认→再继续，避免累积问题
+6. **先读再写**：改不熟悉的模块前先读通现有逻辑，不盲改
+7. **明确假设**：依赖外部条件时写清楚假设
+8. **暴露冲突**：逻辑矛盾时主动暴露讨论，不悄悄选方案
+9. **拒绝复杂**：遇到嵌套深/耦合重的设计，先重构再继续
+10. **不做预期功能**：现在不需要就不写
+11. **不藏错误**：出错就报，不吞异常静默失败
+12. **明确失败**：失败信息要具体，不让调用方猜
+13. **按功能分包**：word/linking/listening/...各自独立
+14. **同步更新本文档**：新增功能或改架构时更新
 
 ### 代码规范
 - Java 17
@@ -60,3 +68,30 @@ Android 英语口语练习 App "SpokenEasy"，Java + XML Layouts + Navigation Co
 - Phase 9b ✅ 发音实验室（最小对立体 minimal_pairs.json + 音素分类 ChipGroup + 对比发音 + ISE 评分）
 - Phase 9c ✅ 句型操练（4 种题型 substitution/transformation/expansion/response + 6 语法点 JSON 题库 + 3 阶段: 选择→操练→总结）
 - Phase 9d ✅ 情景对话（5 阶段: 场景选择→预热词汇→对话跟读→AI 角色扮演→总结报告 + MiMo API 驱动角色扮演）
+
+---
+
+## 版本勘误（重要）
+
+`02-technical-spec.md` 中的版本号是**初始计划**，实际已验证可用的版本为：
+
+| 配置项 | 文档写的（别用） | 已验证可用的 |
+|--------|----------------|------------|
+| Gradle | 9.4.1 | 8.14.5 |
+| AGP | 9.2.1 | 8.2.2 |
+| Kotlin | 2.0.x | 1.9.22（已移除，转 Java 17） |
+| Compose BOM | 2024.x | 2024.02.00（已移除，转 XML） |
+
+**不要用 Gradle 9.x / AGP 9.x**，Gradle 9 移除了部分 API，会导致编译错误。
+
+---
+
+## Build 踩坑记录
+
+| 问题 | 原因 | 正确做法 |
+|------|------|---------|
+| `NoSuchMethodError: module(Object)` | Gradle 9.x 移除了 API | 用 Gradle 8.14.5 + AGP 8.2.2 |
+| 插件找不到 `com.android.application` | settings.gradle.kts 的 google() 加了 content 过滤 | 去掉 content 过滤 |
+| Gradle 下载超时 | 国内网络问题 | 用腾讯云镜像下载，手动放入缓存 |
+| SHA256 校验失败 | 用了错误版本的 checksum | 版本确定后从 Gradle 官网获取正确 checksum |
+| Theme.Material3.DayNight.NoActionBar 找不到 | 缺少 `com.google.android.material:material` 依赖 | 添加 Material Components 依赖 |
