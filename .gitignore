@@ -11,3 +11,7 @@
 local.properties
 *.zip
 /temp_ise_sdk/
+
+# Binary files — download from GitHub Releases
+/app/libs/Msc.jar
+**/spokeneasy.db
