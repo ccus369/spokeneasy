@@ -70,6 +70,11 @@
     <string name="tts_configure_engine">配置系统语音引擎</string>
     <string name="tts_test_phrase">Hello, welcome to SpokenEasy.</string>
 
+    <!-- Guide -->
+    <string name="guide_description">跟读单词、练习连读、纠正发音、AI 对话\n—— 全方位提升你的英语口语</string>
+    <string name="guide_permission_hint">首次使用需要授予录音权限以进行发音评测</string>
+    <string name="guide_btn_start">开始练习</string>
+
     <!-- MiMo AI Chat -->
     <string name="mimo_section_title">MiMo AI 配置</string>
     <string name="mimo_api_key_label">API Key</string>

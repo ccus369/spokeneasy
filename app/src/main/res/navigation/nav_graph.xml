@@ -3,7 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/learnFragment">
+    app:startDestination="@id/guideFragment">
+
+    <fragment
+        android:id="@+id/guideFragment"
+        android:name="com.spokeneasy.app.home.GuideFragment"
+        android:label="引导页" />
 
     <fragment
         android:id="@+id/learnFragment"

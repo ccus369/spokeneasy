@@ -23,7 +23,7 @@ import com.iflytek.ise.result.entity.Syll;
 import com.iflytek.ise.result.entity.Word;
 import com.iflytek.ise.result.util.ResultTranslateUtil;
 
-public class XunfeiScorer implements Scorer {
+public class XunfeiScorer {
 
     private SpeechEvaluator evaluator;
     private boolean isInitialized = false;
@@ -131,7 +131,7 @@ public class XunfeiScorer implements Scorer {
             return;
         }
 
-        new Thread(() -> {
+        com.spokeneasy.app.core.database.AppDatabase.scoringExecutor.execute(() -> {
             try {
                 Thread.sleep(200); // Wait for evaluator to be ready
                 byte[] audioData = readFileBytes(audioFile);
@@ -142,7 +142,7 @@ public class XunfeiScorer implements Scorer {
             } catch (Exception e) {
                 callback.onError("写入音频失败: " + e.getMessage());
             }
-        }).start();
+        });
     }
 
     void parseAndCallback(String xmlResult, ScoreCallback callback, String expectedText) {
@@ -302,18 +302,5 @@ public class XunfeiScorer implements Scorer {
             evaluator = null;
         }
         isInitialized = false;
-    }
-
-    // Legacy synchronous methods (not used by XunfeiScorer, kept for interface compatibility)
-
-    @Override
-    @Deprecated
-    public int score(String expectedText, String audioFilePath) {
-        return 0;
-    }
-
-    @Override
-    public String getDetail() {
-        return lastDetail != null ? lastDetail : "暂无评测结果";
     }
 }

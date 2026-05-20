@@ -72,7 +72,7 @@ public class ChatViewModel extends AndroidViewModel {
         error.setValue(null);
 
         // Call API on background thread
-        AppDatabase.databaseWriteExecutor.execute(() -> {
+        AppDatabase.networkExecutor.execute(() -> {
             try {
                 String response = apiService.sendMessage(current);
 

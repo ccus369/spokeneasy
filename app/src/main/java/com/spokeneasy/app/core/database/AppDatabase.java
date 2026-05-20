@@ -48,6 +48,10 @@ public abstract class AppDatabase extends RoomDatabase {
     private static final String DB_NAME = "spokeneasy.db";
     public static final ExecutorService databaseWriteExecutor =
             Executors.newFixedThreadPool(4);
+    public static final ExecutorService networkExecutor =
+            Executors.newCachedThreadPool();
+    public static final ExecutorService scoringExecutor =
+            Executors.newSingleThreadExecutor();
 
     static final Migration MIGRATION_1_2 = new Migration(1, 2) {
         @Override
