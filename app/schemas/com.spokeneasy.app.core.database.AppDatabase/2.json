@@ -1,0 +1,421 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "0a9124a151d4e02a31bc1a22ac2c38cb",
+    "entities": [
+      {
+        "tableName": "words",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `word` TEXT, `phonetic` TEXT, `sentence1_en` TEXT, `sentence1_cn` TEXT, `sentence2_en` TEXT, `sentence2_cn` TEXT, `sentence3_en` TEXT, `sentence3_cn` TEXT, `category` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "word",
+            "columnName": "word",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "phonetic",
+            "columnName": "phonetic",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sentence1En",
+            "columnName": "sentence1_en",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sentence1Cn",
+            "columnName": "sentence1_cn",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sentence2En",
+            "columnName": "sentence2_en",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sentence2Cn",
+            "columnName": "sentence2_cn",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sentence3En",
+            "columnName": "sentence3_en",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sentence3Cn",
+            "columnName": "sentence3_cn",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "category",
+            "columnName": "category",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "linking",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `rule_name` TEXT, `original` TEXT, `linking_text` TEXT, `example_en` TEXT, `example_cn` TEXT, `category` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ruleName",
+            "columnName": "rule_name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "original",
+            "columnName": "original",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "linkingText",
+            "columnName": "linking_text",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "exampleEn",
+            "columnName": "example_en",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "exampleCn",
+            "columnName": "example_cn",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "category",
+            "columnName": "category",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "listening_audios",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `title` TEXT, `level` INTEGER NOT NULL, `dialog_text` TEXT, `audio_file_name` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "level",
+            "columnName": "level",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dialogText",
+            "columnName": "dialog_text",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "audioFileName",
+            "columnName": "audio_file_name",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "listening_questions",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `audio_id` INTEGER NOT NULL, `question` TEXT, `option_a` TEXT, `option_b` TEXT, `option_c` TEXT, `correct_answer` TEXT, FOREIGN KEY(`audio_id`) REFERENCES `listening_audios`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "audioId",
+            "columnName": "audio_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "question",
+            "columnName": "question",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "optionA",
+            "columnName": "option_a",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "optionB",
+            "columnName": "option_b",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "optionC",
+            "columnName": "option_c",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "correctAnswer",
+            "columnName": "correct_answer",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_listening_questions_audio_id",
+            "unique": false,
+            "columnNames": [
+              "audio_id"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_listening_questions_audio_id` ON `${TABLE_NAME}` (`audio_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "listening_audios",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "audio_id"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "user_progress",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `user_uuid` TEXT, `module_type` TEXT, `item_id` INTEGER NOT NULL, `score` INTEGER, `is_completed` INTEGER NOT NULL, `completed_at` INTEGER)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userUuid",
+            "columnName": "user_uuid",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "moduleType",
+            "columnName": "module_type",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "itemId",
+            "columnName": "item_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "score",
+            "columnName": "score",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isCompleted",
+            "columnName": "is_completed",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "completedAt",
+            "columnName": "completed_at",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_user_progress_user_uuid_module_type_item_id",
+            "unique": true,
+            "columnNames": [
+              "user_uuid",
+              "module_type",
+              "item_id"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_user_progress_user_uuid_module_type_item_id` ON `${TABLE_NAME}` (`user_uuid`, `module_type`, `item_id`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "practice_records",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `user_uuid` TEXT NOT NULL, `module_type` TEXT NOT NULL, `item_id` INTEGER NOT NULL, `reference_text` TEXT, `score` INTEGER NOT NULL, `detail` TEXT, `audio_file_path` TEXT, `created_at` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userUuid",
+            "columnName": "user_uuid",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "moduleType",
+            "columnName": "module_type",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "itemId",
+            "columnName": "item_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "referenceText",
+            "columnName": "reference_text",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "score",
+            "columnName": "score",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "detail",
+            "columnName": "detail",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "audioFilePath",
+            "columnName": "audio_file_path",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "created_at",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_practice_records_user_uuid",
+            "unique": false,
+            "columnNames": [
+              "user_uuid"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_practice_records_user_uuid` ON `${TABLE_NAME}` (`user_uuid`)"
+          },
+          {
+            "name": "index_practice_records_created_at",
+            "unique": false,
+            "columnNames": [
+              "created_at"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_practice_records_created_at` ON `${TABLE_NAME}` (`created_at`)"
+          }
+        ],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '0a9124a151d4e02a31bc1a22ac2c38cb')"
+    ]
+  }
+}

@@ -11,6 +11,6 @@ public class SpokenEasyApp extends Application {
         super.onCreate();
 
         SpeechUtility.createUtility(this,
-                SpeechConstant.APPID + "=b01c2cf5");
+                SpeechConstant.APPID + "=" + BuildConfig.XUNFEI_APPID);
     }
 }

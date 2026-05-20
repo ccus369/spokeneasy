@@ -34,7 +34,7 @@ import java.util.concurrent.Executors;
         PracticeRecordEntity.class
     },
     version = 2,
-    exportSchema = false
+    exportSchema = true
 )
 public abstract class AppDatabase extends RoomDatabase {
 

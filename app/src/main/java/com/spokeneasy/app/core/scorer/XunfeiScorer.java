@@ -145,7 +145,7 @@ public class XunfeiScorer implements Scorer {
         }).start();
     }
 
-    private void parseAndCallback(String xmlResult, ScoreCallback callback, String expectedText) {
+    void parseAndCallback(String xmlResult, ScoreCallback callback, String expectedText) {
         try {
             XmlResultParser parser = new XmlResultParser();
             Result result = parser.parse(xmlResult);
@@ -178,7 +178,7 @@ public class XunfeiScorer implements Scorer {
     }
 
     /** per-word scores with icons, e.g. "hello 90 ✓  world 60 ⚠ 注意 /w/ 发音" */
-    private String formatWordScores(ArrayList<Sentence> sentences) {
+    String formatWordScores(ArrayList<Sentence> sentences) {
         StringBuilder sb = new StringBuilder("单词评分:\n");
         for (Sentence sentence : sentences) {
             if ("噪音".equals(ResultTranslateUtil.getContent(sentence.content))
@@ -216,7 +216,7 @@ public class XunfeiScorer implements Scorer {
     }
 
     /** Generate pronunciation improvement tips based on phoneme-level errors */
-    private String formatPhonemeTips(ArrayList<Sentence> sentences) {
+    String formatPhonemeTips(ArrayList<Sentence> sentences) {
         StringBuilder sb = new StringBuilder("发音建议:");
         boolean hasTips = false;
 
@@ -257,7 +257,7 @@ public class XunfeiScorer implements Scorer {
     }
 
     /** Map xunfei phoneme codes to Chinese pronunciation tips */
-    private String getPhonemeTip(String xunfeiCode, String stdSymbol) {
+    String getPhonemeTip(String xunfeiCode, String stdSymbol) {
         switch (xunfeiCode) {
             case "th": return "舌尖轻触上齿缝，送气 (/θ/)";
             case "dh": return "舌尖轻触上齿缝，声带振动 (/ð/)";

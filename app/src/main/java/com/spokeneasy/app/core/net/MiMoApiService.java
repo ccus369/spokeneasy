@@ -81,7 +81,7 @@ public class MiMoApiService {
         }
     }
 
-    private JSONObject buildRequestBody(List<ChatMessage> history) throws MiMoException {
+    JSONObject buildRequestBody(List<ChatMessage> history) throws MiMoException {
         try {
             JSONObject root = new JSONObject();
             root.put("model", MODEL);
@@ -110,7 +110,7 @@ public class MiMoApiService {
         }
     }
 
-    private String parseResponse(String json) throws MiMoException {
+    String parseResponse(String json) throws MiMoException {
         try {
             JSONObject root = new JSONObject(json);
             JSONArray choices = root.getJSONArray("choices");
@@ -125,7 +125,7 @@ public class MiMoApiService {
         }
     }
 
-    private String parseErrorMessage(int code, String body) {
+    String parseErrorMessage(int code, String body) {
         // Try to extract error from MiMo API response
         try {
             if (body != null && !body.isEmpty()) {
