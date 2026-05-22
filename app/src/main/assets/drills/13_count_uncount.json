@@ -1,0 +1,144 @@
+{
+    "grammar_point": "可数和不可数名词",
+    "grammar_point_en": "Countable and Uncountable Nouns",
+    "sets": [
+        {
+            "id": "cnt_sub",
+            "grammar_point": "可数和不可数名词",
+            "grammar_point_en": "Countable and Uncountable Nouns",
+            "drill_type": "substitution",
+            "difficulty": 1,
+            "instructions_cn": "用 a / an / some / any 填空",
+            "progress_label": "替换练习",
+            "steps": [
+                {
+                    "id": "cnt_01",
+                    "base": "I have [a] apple.",
+                    "cue": "用正确冠词",
+                    "expected": "I have an apple.",
+                    "hint_cn": "apple 以元音音素开头，用 an"
+                },
+                {
+                    "id": "cnt_02",
+                    "base": "There is [some] milk in the fridge.",
+                    "cue": "改为否定句，用 any",
+                    "expected": "There isn't any milk in the fridge.",
+                    "hint_cn": "不可数名词在否定句中用 any"
+                },
+                {
+                    "id": "cnt_03",
+                    "base": "She wants [some] water.",
+                    "cue": "改为一般疑问句，用 any",
+                    "expected": "Does she want any water?",
+                    "hint_cn": "疑问句中不可数名词用 any"
+                },
+                {
+                    "id": "cnt_04",
+                    "base": "I need [a] egg for the cake.",
+                    "cue": "用正确冠词",
+                    "expected": "I need an egg for the cake.",
+                    "hint_cn": "egg 以元音音素开头，用 an"
+                },
+                {
+                    "id": "cnt_05",
+                    "base": "There are [some] books on the shelf.",
+                    "cue": "改为否定句，用 any",
+                    "expected": "There aren't any books on the shelf.",
+                    "hint_cn": "可数名词复数在否定句中用 any"
+                }
+            ]
+        },
+        {
+            "id": "cnt_trans",
+            "grammar_point": "可数和不可数名词",
+            "grammar_point_en": "Countable and Uncountable Nouns",
+            "drill_type": "transformation",
+            "difficulty": 2,
+            "instructions_cn": "将句子在单数和复数之间转换",
+            "progress_label": "转换练习",
+            "steps": [
+                {
+                    "id": "cnt_06",
+                    "base": "There is a cat in the garden.",
+                    "cue": "改为复数句（多只猫）",
+                    "expected": "There are cats in the garden.",
+                    "hint_cn": "复数用 There are，名词加 -s，去掉 a"
+                },
+                {
+                    "id": "cnt_07",
+                    "base": "I have a book.",
+                    "cue": "改为复数句（多本书）",
+                    "expected": "I have books.",
+                    "hint_cn": "可数名词复数加 -s，去掉 a"
+                },
+                {
+                    "id": "cnt_08",
+                    "base": "She is eating an orange.",
+                    "cue": "改为复数句",
+                    "expected": "They are eating oranges.",
+                    "hint_cn": "主语、动词和名词都要改为复数"
+                },
+                {
+                    "id": "cnt_09",
+                    "base": "The children are playing in the park.",
+                    "cue": "改为单数句",
+                    "expected": "The child is playing in the park.",
+                    "hint_cn": "children 的单数是 child，are 改为 is"
+                },
+                {
+                    "id": "cnt_10",
+                    "base": "There are many people at the station.",
+                    "cue": "改为单数句",
+                    "expected": "There is a person at the station.",
+                    "hint_cn": "people 的单数是 person"
+                }
+            ]
+        },
+        {
+            "id": "cnt_response",
+            "grammar_point": "可数和不可数名词",
+            "grammar_point_en": "Countable and Uncountable Nouns",
+            "drill_type": "response",
+            "difficulty": 2,
+            "instructions_cn": "用量词表达，如 a piece of, a cup of, a bottle of 等",
+            "progress_label": "量词练习",
+            "steps": [
+                {
+                    "id": "cnt_11",
+                    "base": "你想说要一张纸。",
+                    "cue": "用量词表达 paper（不可数）",
+                    "expected": "I want a piece of paper.",
+                    "hint_cn": "paper 是不可数名词，用 a piece of"
+                },
+                {
+                    "id": "cnt_12",
+                    "base": "你想喝一杯咖啡。",
+                    "cue": "用量词表达 coffee（不可数）",
+                    "expected": "I would like a cup of coffee.",
+                    "hint_cn": "coffee 是不可数名词，用 a cup of"
+                },
+                {
+                    "id": "cnt_13",
+                    "base": "冰箱里有两瓶水。",
+                    "cue": "用量词表达 water（不可数）",
+                    "expected": "There are two bottles of water in the fridge.",
+                    "hint_cn": "water 不可数，用 two bottles of 表示数量"
+                },
+                {
+                    "id": "cnt_14",
+                    "base": "请给我三片面包。",
+                    "cue": "用量词表达 bread（不可数）",
+                    "expected": "Please give me three slices of bread.",
+                    "hint_cn": "bread 是不可数名词，用 slices of"
+                },
+                {
+                    "id": "cnt_15",
+                    "base": "我从商店买了一公斤大米。",
+                    "cue": "用量词表达 rice（不可数）",
+                    "expected": "I bought a kilo of rice from the store.",
+                    "hint_cn": "rice 是不可数名词，用 a kilo of"
+                }
+            ]
+        }
+    ]
+}

@@ -1,6 +1,6 @@
 {
-    "grammar_point": "情态动词 can/must",
-    "grammar_point_en": "Modal Verbs - Can / Must",
+    "grammar_point": "情态动词 (can/must/should)",
+    "grammar_point_en": "Modal Verbs (Can/Must/Should)",
     "sets": [
         {
             "id": "modal_sub",
@@ -39,7 +39,7 @@
             "grammar_point": "情态动词 can/must",
             "grammar_point_en": "Modal Verbs - Can / Must",
             "drill_type": "response",
-            "difficulty": 2,
+            "difficulty": 1,
             "instructions_cn": "完整回答下列问题",
             "progress_label": "问答练习",
             "steps": [
@@ -56,6 +56,98 @@
                     "cue": "肯定回答",
                     "expected": "Yes, you must wear a uniform at school.",
                     "hint_cn": "肯定回答: Yes, you must..."
+                }
+            ]
+        },
+        {
+            "id": "modal_trans",
+            "grammar_point": "情态动词 (can/must/should)",
+            "grammar_point_en": "Modal Verbs (Can/Must/Should)",
+            "drill_type": "transformation",
+            "difficulty": 2,
+            "instructions_cn": "将下列句子改为否定句或一般疑问句",
+            "progress_label": "转换练习",
+            "steps": [
+                {
+                    "id": "modal_06",
+                    "base": "I can go to the party.",
+                    "cue": "改为否定句",
+                    "expected": "I cannot go to the party.",
+                    "hint_cn": "can 的否定式是 cannot / can't"
+                },
+                {
+                    "id": "modal_07",
+                    "base": "He must finish the report today.",
+                    "cue": "改为否定句",
+                    "expected": "He must not finish the report today.",
+                    "hint_cn": "must 的否定式是 must not / mustn't"
+                },
+                {
+                    "id": "modal_08",
+                    "base": "You should see a doctor.",
+                    "cue": "改为否定句",
+                    "expected": "You should not see a doctor.",
+                    "hint_cn": "should 的否定式是 should not / shouldn't"
+                },
+                {
+                    "id": "modal_09",
+                    "base": "She can swim across the river.",
+                    "cue": "改为一般疑问句",
+                    "expected": "Can she swim across the river?",
+                    "hint_cn": "将 can 提到主语前"
+                },
+                {
+                    "id": "modal_10",
+                    "base": "We must leave before 6 o'clock.",
+                    "cue": "改为一般疑问句",
+                    "expected": "Must we leave before 6 o'clock?",
+                    "hint_cn": "将 must 提到主语前"
+                }
+            ]
+        },
+        {
+            "id": "modal_exp",
+            "grammar_point": "情态动词 (can/must/should)",
+            "grammar_point_en": "Modal Verbs (Can/Must/Should)",
+            "drill_type": "expansion",
+            "difficulty": 3,
+            "instructions_cn": "给句子添加成分以扩展内容",
+            "progress_label": "扩展练习",
+            "steps": [
+                {
+                    "id": "modal_11",
+                    "base": "You should study.",
+                    "cue": "加目的 (for the exam)",
+                    "expected": "You should study for the exam.",
+                    "hint_cn": "介词短语放在句末"
+                },
+                {
+                    "id": "modal_12",
+                    "base": "He can speak.",
+                    "cue": "加语言 (Chinese and English)",
+                    "expected": "He can speak Chinese and English.",
+                    "hint_cn": "宾语放在动词后"
+                },
+                {
+                    "id": "modal_13",
+                    "base": "I must go.",
+                    "cue": "加时间 (now)",
+                    "expected": "I must go now.",
+                    "hint_cn": "时间副词放在句末"
+                },
+                {
+                    "id": "modal_14",
+                    "base": "She should eat.",
+                    "cue": "加内容 (more vegetables)",
+                    "expected": "She should eat more vegetables.",
+                    "hint_cn": "宾语放在动词后"
+                },
+                {
+                    "id": "modal_15",
+                    "base": "They can stay.",
+                    "cue": "加地点 (at home today)",
+                    "expected": "They can stay at home today.",
+                    "hint_cn": "地点和时间放在句末"
                 }
             ]
         }

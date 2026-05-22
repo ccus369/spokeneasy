@@ -39,7 +39,7 @@
             "grammar_point": "现在进行时",
             "grammar_point_en": "Present Continuous",
             "drill_type": "transformation",
-            "difficulty": 2,
+            "difficulty": 1,
             "instructions_cn": "将下列句子改为否定句或疑问句",
             "progress_label": "转换练习",
             "steps": [
@@ -56,6 +56,98 @@
                     "cue": "改为一般疑问句",
                     "expected": "Are they studying in the library?",
                     "hint_cn": "将 are 提到句首"
+                }
+            ]
+        },
+        {
+            "id": "present_continuous_trans2",
+            "grammar_point": "现在进行时",
+            "grammar_point_en": "Present Continuous",
+            "drill_type": "transformation",
+            "difficulty": 2,
+            "instructions_cn": "将下列句子改为否定句或疑问句",
+            "progress_label": "转换练习",
+            "steps": [
+                {
+                    "id": "pc_06",
+                    "base": "She is singing a song.",
+                    "cue": "改为否定句",
+                    "expected": "She is not singing a song.",
+                    "hint_cn": "在 is 后面加 not"
+                },
+                {
+                    "id": "pc_07",
+                    "base": "The kids are playing outside.",
+                    "cue": "改为一般疑问句",
+                    "expected": "Are the kids playing outside?",
+                    "hint_cn": "将 are 提到句首"
+                },
+                {
+                    "id": "pc_08",
+                    "base": "I am reading a newspaper.",
+                    "cue": "改为否定句",
+                    "expected": "I am not reading a newspaper.",
+                    "hint_cn": "在 am 后面加 not"
+                },
+                {
+                    "id": "pc_09",
+                    "base": "He is cooking dinner.",
+                    "cue": "改为一般疑问句",
+                    "expected": "Is he cooking dinner?",
+                    "hint_cn": "将 is 提到句首"
+                },
+                {
+                    "id": "pc_10",
+                    "base": "They are building a house.",
+                    "cue": "改为否定句",
+                    "expected": "They are not building a house.",
+                    "hint_cn": "在 are 后面加 not"
+                }
+            ]
+        },
+        {
+            "id": "present_continuous_resp",
+            "grammar_point": "现在进行时",
+            "grammar_point_en": "Present Continuous",
+            "drill_type": "response",
+            "difficulty": 3,
+            "instructions_cn": "根据提示完整回答下列问题",
+            "progress_label": "问答练习",
+            "steps": [
+                {
+                    "id": "pc_11",
+                    "base": "Is she watching TV?",
+                    "cue": "肯定回答",
+                    "expected": "Yes, she is watching TV.",
+                    "hint_cn": "肯定回答用 Yes, 主语 + is"
+                },
+                {
+                    "id": "pc_12",
+                    "base": "Are they coming to the party?",
+                    "cue": "否定回答",
+                    "expected": "No, they are not coming to the party.",
+                    "hint_cn": "否定回答用 No, 主语 + are not"
+                },
+                {
+                    "id": "pc_13",
+                    "base": "What are you doing?",
+                    "cue": "我正在写一封信",
+                    "expected": "I am writing a letter.",
+                    "hint_cn": "write → writing，去 e 加 -ing"
+                },
+                {
+                    "id": "pc_14",
+                    "base": "Is it raining outside?",
+                    "cue": "肯定回答",
+                    "expected": "Yes, it is raining outside.",
+                    "hint_cn": "肯定回答用 Yes, it is"
+                },
+                {
+                    "id": "pc_15",
+                    "base": "Are the children sleeping?",
+                    "cue": "否定回答（他们在玩）",
+                    "expected": "No, they are not sleeping. They are playing.",
+                    "hint_cn": "否定回答后补充说明正在做的事"
                 }
             ]
         }

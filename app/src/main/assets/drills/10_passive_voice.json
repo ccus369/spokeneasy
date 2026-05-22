@@ -1,0 +1,144 @@
+{
+    "grammar_point": "被动语态",
+    "grammar_point_en": "Passive Voice",
+    "sets": [
+        {
+            "id": "passive_sub",
+            "grammar_point": "被动语态",
+            "grammar_point_en": "Passive Voice",
+            "drill_type": "substitution",
+            "difficulty": 1,
+            "instructions_cn": "将主动句改为被动语态",
+            "progress_label": "替换练习",
+            "steps": [
+                {
+                    "id": "pass_01",
+                    "base": "The cat [chase] the mouse.",
+                    "cue": "改为被动语态（The mouse...）",
+                    "expected": "The mouse is chased by the cat.",
+                    "hint_cn": "be + 过去分词，by + 动作执行者"
+                },
+                {
+                    "id": "pass_02",
+                    "base": "The chef [cook] the meal.",
+                    "cue": "改为被动语态（The meal...）",
+                    "expected": "The meal is cooked by the chef.",
+                    "hint_cn": "被动结构: be + 过去分词 cooked"
+                },
+                {
+                    "id": "pass_03",
+                    "base": "The students [clean] the classroom every day.",
+                    "cue": "改为被动语态（The classroom...）",
+                    "expected": "The classroom is cleaned by the students every day.",
+                    "hint_cn": "一般现在时被动: am/is/are + 过去分词"
+                },
+                {
+                    "id": "pass_04",
+                    "base": "The company [build] a new school.",
+                    "cue": "改为被动语态（A new school...）",
+                    "expected": "A new school is built by the company.",
+                    "hint_cn": "is + 过去分词 built，build 是不规则动词"
+                },
+                {
+                    "id": "pass_05",
+                    "base": "The mother [feed] the baby.",
+                    "cue": "改为被动语态（The baby...）",
+                    "expected": "The baby is fed by the mother.",
+                    "hint_cn": "feed 的过去分词是 fed（不规则）"
+                }
+            ]
+        },
+        {
+            "id": "passive_trans",
+            "grammar_point": "被动语态",
+            "grammar_point_en": "Passive Voice",
+            "drill_type": "transformation",
+            "difficulty": 2,
+            "instructions_cn": "变换被动语态的时态",
+            "progress_label": "时态转换",
+            "steps": [
+                {
+                    "id": "pass_06",
+                    "base": "The letter was written by Tom.",
+                    "cue": "改为一般现在时被动",
+                    "expected": "The letter is written by Tom.",
+                    "hint_cn": "was → is，改为一般现在时"
+                },
+                {
+                    "id": "pass_07",
+                    "base": "The window is broken by the boy.",
+                    "cue": "改为一般过去时被动",
+                    "expected": "The window was broken by the boy.",
+                    "hint_cn": "is → was，改为一般过去时"
+                },
+                {
+                    "id": "pass_08",
+                    "base": "The cake is made by my mother.",
+                    "cue": "改为一般将来时被动（will be）",
+                    "expected": "The cake will be made by my mother.",
+                    "hint_cn": "will be + 过去分词 made"
+                },
+                {
+                    "id": "pass_09",
+                    "base": "The homework was finished by the students.",
+                    "cue": "改为一般将来时被动",
+                    "expected": "The homework will be finished by the students.",
+                    "hint_cn": "will be + 过去分词 finished"
+                },
+                {
+                    "id": "pass_10",
+                    "base": "The room is cleaned every day.",
+                    "cue": "改为情态动词被动（must be）",
+                    "expected": "The room must be cleaned every day.",
+                    "hint_cn": "情态动词 + be + 过去分词 cleaned"
+                }
+            ]
+        },
+        {
+            "id": "passive_response",
+            "grammar_point": "被动语态",
+            "grammar_point_en": "Passive Voice",
+            "drill_type": "response",
+            "difficulty": 2,
+            "instructions_cn": "用被动语态完整回答问题",
+            "progress_label": "问答练习",
+            "steps": [
+                {
+                    "id": "pass_11",
+                    "base": "Who wrote this book?",
+                    "cue": "用被动语态回答（J.K. Rowling）",
+                    "expected": "This book was written by J.K. Rowling.",
+                    "hint_cn": "was/were + 过去分词 + by..."
+                },
+                {
+                    "id": "pass_12",
+                    "base": "Do they speak English in Australia?",
+                    "cue": "用被动语态肯定回答",
+                    "expected": "Yes, English is spoken in Australia.",
+                    "hint_cn": "is + 过去分词 spoken"
+                },
+                {
+                    "id": "pass_13",
+                    "base": "Where is rice grown?",
+                    "cue": "用被动语态回答（在中国等许多国家）",
+                    "expected": "Rice is grown in China and many other countries.",
+                    "hint_cn": "is + 过去分词 grown"
+                },
+                {
+                    "id": "pass_14",
+                    "base": "Who will teach the class?",
+                    "cue": "用被动语态回答（Mr. Smith）",
+                    "expected": "The class will be taught by Mr. Smith.",
+                    "hint_cn": "will be + 过去分词 taught（teach 的不规则过去分词）"
+                },
+                {
+                    "id": "pass_15",
+                    "base": "Why was the meeting canceled?",
+                    "cue": "用被动语态回答（因为下雨）",
+                    "expected": "The meeting was canceled because of the rain.",
+                    "hint_cn": "was + 过去分词 canceled"
+                }
+            ]
+        }
+    ]
+}

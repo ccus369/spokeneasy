@@ -39,7 +39,7 @@
             "grammar_point": "There is/are 句型",
             "grammar_point_en": "There is / There are",
             "drill_type": "expansion",
-            "difficulty": 2,
+            "difficulty": 1,
             "instructions_cn": "逐步扩展句子，每次增加修饰成分",
             "progress_label": "扩展练习",
             "steps": [
@@ -56,6 +56,98 @@
                     "cue": "加颜色 (red)",
                     "expected": "There is a red book on the table.",
                     "hint_cn": "形容词放在名词前"
+                }
+            ]
+        },
+        {
+            "id": "there_trans",
+            "grammar_point": "There is/are 句型",
+            "grammar_point_en": "There is / There are",
+            "drill_type": "transformation",
+            "difficulty": 2,
+            "instructions_cn": "在单复数之间转换或改为否定句",
+            "progress_label": "转换练习",
+            "steps": [
+                {
+                    "id": "there_06",
+                    "base": "There is a pencil on the desk.",
+                    "cue": "改为复数形式",
+                    "expected": "There are pencils on the desk.",
+                    "hint_cn": "复数名词用 There are，去掉 a(n)"
+                },
+                {
+                    "id": "there_07",
+                    "base": "There are some apples in the basket.",
+                    "cue": "改为单数形式",
+                    "expected": "There is an apple in the basket.",
+                    "hint_cn": "单数名词用 There is/an"
+                },
+                {
+                    "id": "there_08",
+                    "base": "There is a dog in the yard.",
+                    "cue": "改为否定句",
+                    "expected": "There is not a dog in the yard.",
+                    "hint_cn": "在 is 后面加 not"
+                },
+                {
+                    "id": "there_09",
+                    "base": "There are two windows in the room.",
+                    "cue": "改为否定句",
+                    "expected": "There are not two windows in the room.",
+                    "hint_cn": "在 are 后面加 not"
+                },
+                {
+                    "id": "there_10",
+                    "base": "There is a map on the wall.",
+                    "cue": "改为复数形式",
+                    "expected": "There are maps on the wall.",
+                    "hint_cn": "复数名词用 There are"
+                }
+            ]
+        },
+        {
+            "id": "there_resp",
+            "grammar_point": "There is/are 句型",
+            "grammar_point_en": "There is / There are",
+            "drill_type": "response",
+            "difficulty": 3,
+            "instructions_cn": "根据提示完整回答问题",
+            "progress_label": "问答练习",
+            "steps": [
+                {
+                    "id": "there_11",
+                    "base": "Is there a bank near here?",
+                    "cue": "肯定回答",
+                    "expected": "Yes, there is a bank near here.",
+                    "hint_cn": "肯定回答用 Yes, there is"
+                },
+                {
+                    "id": "there_12",
+                    "base": "Are there any restaurants nearby?",
+                    "cue": "否定回答",
+                    "expected": "No, there are not any restaurants nearby.",
+                    "hint_cn": "否定回答用 No, there are not"
+                },
+                {
+                    "id": "there_13",
+                    "base": "How many chairs are there in the room?",
+                    "cue": "有四把椅子",
+                    "expected": "There are four chairs in the room.",
+                    "hint_cn": "回答用 There are + 数量 + 名词"
+                },
+                {
+                    "id": "there_14",
+                    "base": "Is there a supermarket on this street?",
+                    "cue": "否定回答",
+                    "expected": "No, there is not a supermarket on this street.",
+                    "hint_cn": "否定回答用 No, there is not"
+                },
+                {
+                    "id": "there_15",
+                    "base": "Are there any students in the classroom?",
+                    "cue": "肯定回答",
+                    "expected": "Yes, there are some students in the classroom.",
+                    "hint_cn": "肯定回答用 Yes, there are"
                 }
             ]
         }

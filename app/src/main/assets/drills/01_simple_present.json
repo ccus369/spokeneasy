@@ -39,7 +39,7 @@
             "grammar_point": "一般现在时第三人称单数",
             "grammar_point_en": "Simple Present - Third Person Singular",
             "drill_type": "transformation",
-            "difficulty": 2,
+            "difficulty": 1,
             "instructions_cn": "将下列句子改为否定句或疑问句",
             "progress_label": "转换练习",
             "steps": [
@@ -56,6 +56,98 @@
                     "cue": "改为一般疑问句",
                     "expected": "Does he play the piano?",
                     "hint_cn": "用 Does 开头，动词恢复原形"
+                }
+            ]
+        },
+        {
+            "id": "simple_present_sub2",
+            "grammar_point": "一般现在时第三人称单数",
+            "grammar_point_en": "Simple Present - Third Person Singular",
+            "drill_type": "substitution",
+            "difficulty": 2,
+            "instructions_cn": "将句中的动词原形替换为第三人称单数形式",
+            "progress_label": "替换练习",
+            "steps": [
+                {
+                    "id": "sp_06",
+                    "base": "I [watch] TV after dinner.",
+                    "cue": "主语换成 My father",
+                    "expected": "My father watches TV after dinner.",
+                    "hint_cn": "watch → watches，以 ch 结尾加 -es"
+                },
+                {
+                    "id": "sp_07",
+                    "base": "I [do] the dishes every day.",
+                    "cue": "主语换成 My mother",
+                    "expected": "My mother does the dishes every day.",
+                    "hint_cn": "do → does，特殊变化"
+                },
+                {
+                    "id": "sp_08",
+                    "base": "They [fix] cars for a living.",
+                    "cue": "主语换成 Tom",
+                    "expected": "Tom fixes cars for a living.",
+                    "hint_cn": "fix → fixes，以 x 结尾加 -es"
+                },
+                {
+                    "id": "sp_09",
+                    "base": "We [carry] the boxes to the truck.",
+                    "cue": "主语换成 He",
+                    "expected": "He carries the boxes to the truck.",
+                    "hint_cn": "carry → carries，辅音+y 变 i 加 -es"
+                },
+                {
+                    "id": "sp_10",
+                    "base": "I [teach] math at a high school.",
+                    "cue": "主语换成 Miss Li",
+                    "expected": "Miss Li teaches math at a high school.",
+                    "hint_cn": "teach → teaches，以 ch 结尾加 -es"
+                }
+            ]
+        },
+        {
+            "id": "simple_present_resp",
+            "grammar_point": "一般现在时第三人称单数",
+            "grammar_point_en": "Simple Present - Third Person Singular",
+            "drill_type": "response",
+            "difficulty": 3,
+            "instructions_cn": "根据提示完整回答问题",
+            "progress_label": "问答练习",
+            "steps": [
+                {
+                    "id": "sp_11",
+                    "base": "Does she speak French?",
+                    "cue": "肯定回答",
+                    "expected": "Yes, she speaks French.",
+                    "hint_cn": "肯定回答用 Yes, 主语 + 动词三单"
+                },
+                {
+                    "id": "sp_12",
+                    "base": "Does he like coffee?",
+                    "cue": "否定回答",
+                    "expected": "No, he doesn't like coffee.",
+                    "hint_cn": "否定回答用 No, 主语 + doesn't + 动词原形"
+                },
+                {
+                    "id": "sp_13",
+                    "base": "Where does your mother work?",
+                    "cue": "她在医院工作",
+                    "expected": "She works in a hospital.",
+                    "hint_cn": "回答时动词用第三人称单数形式"
+                },
+                {
+                    "id": "sp_14",
+                    "base": "What does he do every morning?",
+                    "cue": "他每天早上跑步",
+                    "expected": "He runs every morning.",
+                    "hint_cn": "run → runs，第三人称单数加 -s"
+                },
+                {
+                    "id": "sp_15",
+                    "base": "Does your father cook dinner?",
+                    "cue": "肯定回答",
+                    "expected": "Yes, my father cooks dinner.",
+                    "hint_cn": "my father 是第三人称单数，动词加 -s"
                 }
             ]
         }

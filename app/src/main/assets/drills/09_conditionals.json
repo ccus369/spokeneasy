@@ -1,0 +1,144 @@
+{
+    "grammar_point": "条件句",
+    "grammar_point_en": "Conditional Sentences",
+    "sets": [
+        {
+            "id": "conditional_sub",
+            "grammar_point": "条件句",
+            "grammar_point_en": "Conditional Sentences",
+            "drill_type": "substitution",
+            "difficulty": 1,
+            "instructions_cn": "根据提示用正确的条件句形式填空",
+            "progress_label": "替换练习",
+            "steps": [
+                {
+                    "id": "cond_01",
+                    "base": "If it [rain], I [stay] home.",
+                    "cue": "用零条件句（一般规律）",
+                    "expected": "If it rains, I stay home.",
+                    "hint_cn": "零条件句: if + 一般现在时，主句一般现在时"
+                },
+                {
+                    "id": "cond_02",
+                    "base": "If she [study] hard, she [pass] the exam.",
+                    "cue": "用第一条件句（将来可能发生）",
+                    "expected": "If she studies hard, she will pass the exam.",
+                    "hint_cn": "第一条件句: if + 一般现在时，主句 will + 动词原形"
+                },
+                {
+                    "id": "cond_03",
+                    "base": "If you [heat] ice, it [melt].",
+                    "cue": "用零条件句（客观事实）",
+                    "expected": "If you heat ice, it melts.",
+                    "hint_cn": "客观真理用零条件句"
+                },
+                {
+                    "id": "cond_04",
+                    "base": "If we [hurry], we [catch] the bus.",
+                    "cue": "用第一条件句（将来的可能情况）",
+                    "expected": "If we hurry, we will catch the bus.",
+                    "hint_cn": "if + 一般现在时，主句 will + 动词原形"
+                },
+                {
+                    "id": "cond_05",
+                    "base": "If he [not come], I [be] sad.",
+                    "cue": "用第一条件句",
+                    "expected": "If he does not come, I will be sad.",
+                    "hint_cn": "if 从句用一般现在时（否定用 doesn't），主句 will + be"
+                }
+            ]
+        },
+        {
+            "id": "conditional_trans",
+            "grammar_point": "条件句",
+            "grammar_point_en": "Conditional Sentences",
+            "drill_type": "transformation",
+            "difficulty": 2,
+            "instructions_cn": "将零条件句与第一条件句互相转换",
+            "progress_label": "转换练习",
+            "steps": [
+                {
+                    "id": "cond_06",
+                    "base": "If you heat water to 100°C, it boils.",
+                    "cue": "改为第一条件句（谈论具体某次）",
+                    "expected": "If you heat water to 100°C, it will boil.",
+                    "hint_cn": "具体某次情况主句用 will + 动词原形"
+                },
+                {
+                    "id": "cond_07",
+                    "base": "If she gets up early, she will catch the train.",
+                    "cue": "改为零条件句（表示一般规律）",
+                    "expected": "If she gets up early, she catches the train.",
+                    "hint_cn": "一般规律主句用一般现在时"
+                },
+                {
+                    "id": "cond_08",
+                    "base": "If I drink coffee at night, I can't sleep.",
+                    "cue": "改为第一条件句（谈论今晚）",
+                    "expected": "If I drink coffee tonight, I won't sleep.",
+                    "hint_cn": "具体某个晚上用第一条件句"
+                },
+                {
+                    "id": "cond_09",
+                    "base": "If it snows tomorrow, the school will close.",
+                    "cue": "改为零条件句（一般情况）",
+                    "expected": "If it snows, the school closes.",
+                    "hint_cn": "一般情况用零条件句，去掉将来时间状语"
+                },
+                {
+                    "id": "cond_10",
+                    "base": "If you don't water plants, they die.",
+                    "cue": "改为第一条件句（关于这些植物）",
+                    "expected": "If you don't water the plants, they will die.",
+                    "hint_cn": "具体这些植物用第一条件句，主句加 will"
+                }
+            ]
+        },
+        {
+            "id": "conditional_response",
+            "grammar_point": "条件句",
+            "grammar_point_en": "Conditional Sentences",
+            "drill_type": "response",
+            "difficulty": 2,
+            "instructions_cn": "用条件句完整回答问题",
+            "progress_label": "问答练习",
+            "steps": [
+                {
+                    "id": "cond_11",
+                    "base": "What do you do if you are tired?",
+                    "cue": "用零条件句回答（一般习惯）",
+                    "expected": "If I am tired, I take a rest.",
+                    "hint_cn": "零条件句: if + 一般现在时，主句一般现在时"
+                },
+                {
+                    "id": "cond_12",
+                    "base": "What will you do if it rains tomorrow?",
+                    "cue": "用第一条件句回答",
+                    "expected": "If it rains tomorrow, I will stay at home.",
+                    "hint_cn": "第一条件句: if + 一般现在时，主句 will + 动词原形"
+                },
+                {
+                    "id": "cond_13",
+                    "base": "What happens if you mix red and blue?",
+                    "cue": "用零条件句回答（客观事实）",
+                    "expected": "If you mix red and blue, you get purple.",
+                    "hint_cn": "客观事实用零条件句"
+                },
+                {
+                    "id": "cond_14",
+                    "base": "What will she do if she misses the bus?",
+                    "cue": "用第一条件句回答",
+                    "expected": "If she misses the bus, she will take a taxi.",
+                    "hint_cn": "if + 一般现在时，主句 will + 动词原形"
+                },
+                {
+                    "id": "cond_15",
+                    "base": "Where do you go if you feel sick?",
+                    "cue": "用零条件句回答（一般习惯）",
+                    "expected": "If I feel sick, I go to the doctor.",
+                    "hint_cn": "零条件句表示习惯性动作"
+                }
+            ]
+        }
+    ]
+}

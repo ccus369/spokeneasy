@@ -39,7 +39,7 @@
             "grammar_point": "be 动词 (am/is/are)",
             "grammar_point_en": "Be Verbs",
             "drill_type": "response",
-            "difficulty": 2,
+            "difficulty": 1,
             "instructions_cn": "完整回答问题",
             "progress_label": "问答练习",
             "steps": [
@@ -56,6 +56,98 @@
                     "cue": "肯定回答（假设她是）",
                     "expected": "Yes, she is from Japan.",
                     "hint_cn": "肯定回答用 Yes, 主语 + is"
+                }
+            ]
+        },
+        {
+            "id": "be_trans",
+            "grammar_point": "be 动词 (am/is/are)",
+            "grammar_point_en": "Be Verbs",
+            "drill_type": "transformation",
+            "difficulty": 2,
+            "instructions_cn": "将下列句子改为否定句或一般疑问句",
+            "progress_label": "转换练习",
+            "steps": [
+                {
+                    "id": "be_06",
+                    "base": "She is a doctor.",
+                    "cue": "改为否定句",
+                    "expected": "She is not a doctor.",
+                    "hint_cn": "is 后面加 not"
+                },
+                {
+                    "id": "be_07",
+                    "base": "They are students.",
+                    "cue": "改为一般疑问句",
+                    "expected": "Are they students?",
+                    "hint_cn": "将 are 提到句首"
+                },
+                {
+                    "id": "be_08",
+                    "base": "I am tired.",
+                    "cue": "改为否定句",
+                    "expected": "I am not tired.",
+                    "hint_cn": "am 后面加 not"
+                },
+                {
+                    "id": "be_09",
+                    "base": "He is at home.",
+                    "cue": "改为一般疑问句",
+                    "expected": "Is he at home?",
+                    "hint_cn": "将 is 提到句首"
+                },
+                {
+                    "id": "be_10",
+                    "base": "We are ready.",
+                    "cue": "改为否定句",
+                    "expected": "We are not ready.",
+                    "hint_cn": "are 后面加 not"
+                }
+            ]
+        },
+        {
+            "id": "be_exp",
+            "grammar_point": "be 动词 (am/is/are)",
+            "grammar_point_en": "Be Verbs",
+            "drill_type": "expansion",
+            "difficulty": 3,
+            "instructions_cn": "在句中添加修饰成分以扩展句子",
+            "progress_label": "扩展练习",
+            "steps": [
+                {
+                    "id": "be_11",
+                    "base": "She is a nurse.",
+                    "cue": "加形容词 (kind)",
+                    "expected": "She is a kind nurse.",
+                    "hint_cn": "形容词放在名词前"
+                },
+                {
+                    "id": "be_12",
+                    "base": "The soup is hot.",
+                    "cue": "加程度副词 (very)",
+                    "expected": "The soup is very hot.",
+                    "hint_cn": "程度副词放在形容词前"
+                },
+                {
+                    "id": "be_13",
+                    "base": "He is a worker.",
+                    "cue": "加地点 (in a factory)",
+                    "expected": "He is a worker in a factory.",
+                    "hint_cn": "介词短语放在名词后"
+                },
+                {
+                    "id": "be_14",
+                    "base": "They are students.",
+                    "cue": "加形容词 (hardworking)",
+                    "expected": "They are hardworking students.",
+                    "hint_cn": "形容词放在名词前"
+                },
+                {
+                    "id": "be_15",
+                    "base": "The movie is interesting.",
+                    "cue": "加程度副词 (very)",
+                    "expected": "The movie is very interesting.",
+                    "hint_cn": "very 放在形容词 interesting 前"
                 }
             ]
         }

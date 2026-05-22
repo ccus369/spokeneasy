@@ -1,0 +1,144 @@
+{
+    "grammar_point": "将来时",
+    "grammar_point_en": "Future Tense",
+    "sets": [
+        {
+            "id": "future_sub",
+            "grammar_point": "将来时",
+            "grammar_point_en": "Future Tense",
+            "drill_type": "substitution",
+            "difficulty": 1,
+            "instructions_cn": "将句中动词改为一般将来时（用 will）",
+            "progress_label": "替换练习",
+            "steps": [
+                {
+                    "id": "ft_01",
+                    "base": "I [go] to the park tomorrow.",
+                    "cue": "改为一般将来时，用 will",
+                    "expected": "I will go to the park tomorrow.",
+                    "hint_cn": "will + 动词原形构成一般将来时"
+                },
+                {
+                    "id": "ft_02",
+                    "base": "She [call] you later.",
+                    "cue": "改为一般将来时，用 will",
+                    "expected": "She will call you later.",
+                    "hint_cn": "will 不受主语影响，后接动词原形"
+                },
+                {
+                    "id": "ft_03",
+                    "base": "We [have] a meeting next week.",
+                    "cue": "改为一般将来时，用 will",
+                    "expected": "We will have a meeting next week.",
+                    "hint_cn": "will + 动词原形 have"
+                },
+                {
+                    "id": "ft_04",
+                    "base": "It [rain] tomorrow.",
+                    "cue": "改为一般将来时，用 will",
+                    "expected": "It will rain tomorrow.",
+                    "hint_cn": "will 用于天气预报等"
+                },
+                {
+                    "id": "ft_05",
+                    "base": "They [arrive] at 8 PM.",
+                    "cue": "改为一般将来时，用 will",
+                    "expected": "They will arrive at 8 PM.",
+                    "hint_cn": "will 后动词用原形 arrive"
+                }
+            ]
+        },
+        {
+            "id": "future_trans",
+            "grammar_point": "将来时",
+            "grammar_point_en": "Future Tense",
+            "drill_type": "transformation",
+            "difficulty": 2,
+            "instructions_cn": "在 will 和 be going to 之间互换表达",
+            "progress_label": "转换练习",
+            "steps": [
+                {
+                    "id": "ft_06",
+                    "base": "She is going to buy a new phone.",
+                    "cue": "改为 will 表达",
+                    "expected": "She will buy a new phone.",
+                    "hint_cn": "be going to 可换成 will，后接动词原形"
+                },
+                {
+                    "id": "ft_07",
+                    "base": "They will visit the museum.",
+                    "cue": "改为 be going to 表达",
+                    "expected": "They are going to visit the museum.",
+                    "hint_cn": "will 换成 be going to，be 动词根据主语变化"
+                },
+                {
+                    "id": "ft_08",
+                    "base": "He is going to start a business.",
+                    "cue": "改为 will 表达",
+                    "expected": "He will start a business.",
+                    "hint_cn": "is going to → will，后接动词原形"
+                },
+                {
+                    "id": "ft_09",
+                    "base": "I will help you with the project.",
+                    "cue": "改为 be going to 表达",
+                    "expected": "I am going to help you with the project.",
+                    "hint_cn": "will → am going to，主语 I 用 am"
+                },
+                {
+                    "id": "ft_10",
+                    "base": "We are going to travel to Japan.",
+                    "cue": "改为 will 表达",
+                    "expected": "We will travel to Japan.",
+                    "hint_cn": "are going to → will"
+                }
+            ]
+        },
+        {
+            "id": "future_response",
+            "grammar_point": "将来时",
+            "grammar_point_en": "Future Tense",
+            "drill_type": "response",
+            "difficulty": 2,
+            "instructions_cn": "根据情景用 will 或 be going to 造句",
+            "progress_label": "情景回答",
+            "steps": [
+                {
+                    "id": "ft_11",
+                    "base": "It's very cold outside.",
+                    "cue": "你要去拿外套（临时决定）",
+                    "expected": "I will get my coat.",
+                    "hint_cn": "临时决定做某事用 will"
+                },
+                {
+                    "id": "ft_12",
+                    "base": "She looks very tired.",
+                    "cue": "推测她会休息一下（已有迹象）",
+                    "expected": "She is going to take a rest.",
+                    "hint_cn": "根据已有迹象推测用 be going to"
+                },
+                {
+                    "id": "ft_13",
+                    "base": "The sky is very dark.",
+                    "cue": "推测快要下雨了",
+                    "expected": "It is going to rain.",
+                    "hint_cn": "已有迹象表明即将发生用 be going to"
+                },
+                {
+                    "id": "ft_14",
+                    "base": "I forgot to buy milk.",
+                    "cue": "你现在就去买（临时决定）",
+                    "expected": "I will buy some milk now.",
+                    "hint_cn": "临时决定做某事用 will"
+                },
+                {
+                    "id": "ft_15",
+                    "base": "We have no food for dinner.",
+                    "cue": "你们打算叫外卖（已有计划）",
+                    "expected": "We are going to order food.",
+                    "hint_cn": "已有计划打算用 be going to"
+                }
+            ]
+        }
+    ]
+}

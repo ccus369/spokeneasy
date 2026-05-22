@@ -1,0 +1,144 @@
+{
+    "grammar_point": "比较级和最高级",
+    "grammar_point_en": "Comparatives and Superlatives",
+    "sets": [
+        {
+            "id": "comp_sub",
+            "grammar_point": "比较级和最高级",
+            "grammar_point_en": "Comparatives and Superlatives",
+            "drill_type": "substitution",
+            "difficulty": 1,
+            "instructions_cn": "用所给形容词的正确形式（比较级或最高级）填空",
+            "progress_label": "替换练习",
+            "steps": [
+                {
+                    "id": "comp_01",
+                    "base": "Tom is [tall] than Jerry.",
+                    "cue": "用比较级",
+                    "expected": "Tom is taller than Jerry.",
+                    "hint_cn": "单音节形容词加 -er 构成比较级"
+                },
+                {
+                    "id": "comp_02",
+                    "base": "Mount Everest is the [high] mountain in the world.",
+                    "cue": "用最高级",
+                    "expected": "Mount Everest is the highest mountain in the world.",
+                    "hint_cn": "单音节形容词加 -est 构成最高级，前面加 the"
+                },
+                {
+                    "id": "comp_03",
+                    "base": "This book is [interesting] than that one.",
+                    "cue": "用比较级",
+                    "expected": "This book is more interesting than that one.",
+                    "hint_cn": "多音节形容词用 more + 原级构成比较级"
+                },
+                {
+                    "id": "comp_04",
+                    "base": "She is the [smart] student in our class.",
+                    "cue": "用最高级",
+                    "expected": "She is the smartest student in our class.",
+                    "hint_cn": "smart 加 -est，结尾加 the"
+                },
+                {
+                    "id": "comp_05",
+                    "base": "My father is [busy] than my mother.",
+                    "cue": "用比较级",
+                    "expected": "My father is busier than my mother.",
+                    "hint_cn": "辅音+y 结尾，变 y 为 i 加 -er → busier"
+                }
+            ]
+        },
+        {
+            "id": "comp_trans",
+            "grammar_point": "比较级和最高级",
+            "grammar_point_en": "Comparatives and Superlatives",
+            "drill_type": "transformation",
+            "difficulty": 2,
+            "instructions_cn": "将 as...as 同级比较句改为比较级句",
+            "progress_label": "转换练习",
+            "steps": [
+                {
+                    "id": "comp_06",
+                    "base": "Tom is as tall as Jerry.",
+                    "cue": "改为：Tom 比 Jerry 高",
+                    "expected": "Tom is taller than Jerry.",
+                    "hint_cn": "as...as 同级比较改为比较级 + than"
+                },
+                {
+                    "id": "comp_07",
+                    "base": "Math is as easy as English.",
+                    "cue": "改为：数学比英语简单",
+                    "expected": "Math is easier than English.",
+                    "hint_cn": "easy 变 y 为 i 加 -er → easier"
+                },
+                {
+                    "id": "comp_08",
+                    "base": "This movie is as interesting as that one.",
+                    "cue": "改为：这部电影比那部有趣",
+                    "expected": "This movie is more interesting than that one.",
+                    "hint_cn": "多音节词用 more + 原级"
+                },
+                {
+                    "id": "comp_09",
+                    "base": "The red dress is as expensive as the blue one.",
+                    "cue": "改为：红裙子比蓝裙子贵",
+                    "expected": "The red dress is more expensive than the blue one.",
+                    "hint_cn": "expensive 是多音节词，用 more expensive"
+                },
+                {
+                    "id": "comp_10",
+                    "base": "Running is as good as swimming for health.",
+                    "cue": "改为：跑步比游泳对健康更好",
+                    "expected": "Running is better than swimming for health.",
+                    "hint_cn": "good 的比较级是 better（不规则变化）"
+                }
+            ]
+        },
+        {
+            "id": "comp_response",
+            "grammar_point": "比较级和最高级",
+            "grammar_point_en": "Comparatives and Superlatives",
+            "drill_type": "response",
+            "difficulty": 2,
+            "instructions_cn": "根据提示用比较级或最高级完整回答",
+            "progress_label": "问答练习",
+            "steps": [
+                {
+                    "id": "comp_11",
+                    "base": "A lion runs 80 km/h. A horse runs 70 km/h.",
+                    "cue": "比较狮子和马谁更快",
+                    "expected": "A lion is faster than a horse.",
+                    "hint_cn": "fast 加 -er，用 than 连接"
+                },
+                {
+                    "id": "comp_12",
+                    "base": "Tom is 10 years old. Tim is 12 years old. Tony is 8 years old.",
+                    "cue": "Tim 是谁？",
+                    "expected": "Tim is the oldest (among the three).",
+                    "hint_cn": "三人或以上用最高级，old 加 -est"
+                },
+                {
+                    "id": "comp_13",
+                    "base": "The blue car costs $20,000. The red car costs $25,000.",
+                    "cue": "比较两辆车的价格",
+                    "expected": "The red car is more expensive than the blue car.",
+                    "hint_cn": "expensive 用 more 构成比较级"
+                },
+                {
+                    "id": "comp_14",
+                    "base": "Beijing has 22 million people. Shanghai has 25 million. Tianjin has 14 million.",
+                    "cue": "上海在中国城市中人口如何？",
+                    "expected": "Shanghai is the biggest city (among the three).",
+                    "hint_cn": "big 双写 g 加 -gest → biggest"
+                },
+                {
+                    "id": "comp_15",
+                    "base": "I think history is very interesting. I think science is interesting too.",
+                    "cue": "比较你对历史和科学的看法",
+                    "expected": "I think history is more interesting than science.",
+                    "hint_cn": "interesting 是多音节词，用 more"
+                }
+            ]
+        }
+    ]
+}

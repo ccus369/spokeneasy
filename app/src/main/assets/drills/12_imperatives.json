@@ -1,0 +1,144 @@
+{
+    "grammar_point": "祈使句",
+    "grammar_point_en": "Imperatives",
+    "sets": [
+        {
+            "id": "imp_sub",
+            "grammar_point": "祈使句",
+            "grammar_point_en": "Imperatives",
+            "drill_type": "substitution",
+            "difficulty": 1,
+            "instructions_cn": "将括号中的动词变成祈使句形式",
+            "progress_label": "替换练习",
+            "steps": [
+                {
+                    "id": "imp_01",
+                    "base": "[open] the door, please.",
+                    "cue": "用 open 的祈使形式",
+                    "expected": "Open the door, please.",
+                    "hint_cn": "肯定祈使句用动词原形开头"
+                },
+                {
+                    "id": "imp_02",
+                    "base": "[sit] down and listen carefully.",
+                    "cue": "用 sit 的祈使形式",
+                    "expected": "Sit down and listen carefully.",
+                    "hint_cn": "祈使句用动词原形，可连接多个动作"
+                },
+                {
+                    "id": "imp_03",
+                    "base": "[be] quiet, please.",
+                    "cue": "用 be 的祈使形式",
+                    "expected": "Be quiet, please.",
+                    "hint_cn": "be 动词在祈使句中用原形 be"
+                },
+                {
+                    "id": "imp_04",
+                    "base": "[turn] left at the traffic lights.",
+                    "cue": "用 turn 的祈使形式",
+                    "expected": "Turn left at the traffic lights.",
+                    "hint_cn": "祈使句以动词原形开头，表示指令"
+                },
+                {
+                    "id": "imp_05",
+                    "base": "[wash] your hands before dinner.",
+                    "cue": "用 wash 的祈使形式",
+                    "expected": "Wash your hands before dinner.",
+                    "hint_cn": "祈使句用于发出命令或建议"
+                }
+            ]
+        },
+        {
+            "id": "imp_trans",
+            "grammar_point": "祈使句",
+            "grammar_point_en": "Imperatives",
+            "drill_type": "transformation",
+            "difficulty": 2,
+            "instructions_cn": "将肯定祈使句改为否定祈使句",
+            "progress_label": "转换练习",
+            "steps": [
+                {
+                    "id": "imp_06",
+                    "base": "Open the window.",
+                    "cue": "改为否定祈使句（别开窗）",
+                    "expected": "Don't open the window.",
+                    "hint_cn": "否定祈使句用 Don't + 动词原形"
+                },
+                {
+                    "id": "imp_07",
+                    "base": "Touch the painting.",
+                    "cue": "改为否定祈使句（禁止触摸）",
+                    "expected": "Don't touch the painting.",
+                    "hint_cn": "Don't 放在动词前表示禁止"
+                },
+                {
+                    "id": "imp_08",
+                    "base": "Be late for class.",
+                    "cue": "改为否定祈使句",
+                    "expected": "Don't be late for class.",
+                    "hint_cn": "Don't be + 形容词表示「不要做某事」"
+                },
+                {
+                    "id": "imp_09",
+                    "base": "Run in the hallway.",
+                    "cue": "改为否定祈使句",
+                    "expected": "Don't run in the hallway.",
+                    "hint_cn": "否定祈使句在句首加 Don't"
+                },
+                {
+                    "id": "imp_10",
+                    "base": "Forget to bring your umbrella.",
+                    "cue": "改为否定祈使句",
+                    "expected": "Don't forget to bring your umbrella.",
+                    "hint_cn": "Don't forget to do sth. 是常见搭配"
+                }
+            ]
+        },
+        {
+            "id": "imp_response",
+            "grammar_point": "祈使句",
+            "grammar_point_en": "Imperatives",
+            "drill_type": "response",
+            "difficulty": 2,
+            "instructions_cn": "根据情景写出恰当的指令（祈使句）",
+            "progress_label": "情景练习",
+            "steps": [
+                {
+                    "id": "imp_11",
+                    "base": "你的朋友正在开车，速度太快了。",
+                    "cue": "劝他开慢点",
+                    "expected": "Drive slowly, please.",
+                    "hint_cn": "祈使句用动词原形 + 副词"
+                },
+                {
+                    "id": "imp_12",
+                    "base": "天气很冷，你的弟弟只穿了一件薄外套。",
+                    "cue": "建议他穿上外套",
+                    "expected": "Put on your coat.",
+                    "hint_cn": "put on 是动词短语，用原形"
+                },
+                {
+                    "id": "imp_13",
+                    "base": "教室里的灯还亮着，但已经没人了。",
+                    "cue": "让人关灯",
+                    "expected": "Turn off the lights, please.",
+                    "hint_cn": "turn off 表示关闭"
+                },
+                {
+                    "id": "imp_14",
+                    "base": "你的朋友感冒了，在不停咳嗽。",
+                    "cue": "建议他去看医生",
+                    "expected": "Go to see a doctor.",
+                    "hint_cn": "用 go 开头表示建议"
+                },
+                {
+                    "id": "imp_15",
+                    "base": "你的妹妹在考试前很紧张。",
+                    "cue": "安慰她，告诉她要放松",
+                    "expected": "Don't worry. Relax.",
+                    "hint_cn": "Don't worry 是常见的安慰表达"
+                }
+            ]
+        }
+    ]
+}

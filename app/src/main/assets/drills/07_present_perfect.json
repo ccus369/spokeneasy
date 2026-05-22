@@ -1,0 +1,144 @@
+{
+    "grammar_point": "现在完成时",
+    "grammar_point_en": "Present Perfect Tense",
+    "sets": [
+        {
+            "id": "present_perfect_sub",
+            "grammar_point": "现在完成时",
+            "grammar_point_en": "Present Perfect Tense",
+            "drill_type": "substitution",
+            "difficulty": 1,
+            "instructions_cn": "将括号内的动词改为现在完成时",
+            "progress_label": "替换练习",
+            "steps": [
+                {
+                    "id": "pp_01",
+                    "base": "I [finish] my homework.",
+                    "cue": "改为现在完成时",
+                    "expected": "I have finished my homework.",
+                    "hint_cn": "have + 过去分词，规则动词加 -ed"
+                },
+                {
+                    "id": "pp_02",
+                    "base": "She [go] to London.",
+                    "cue": "改为现在完成时",
+                    "expected": "She has gone to London.",
+                    "hint_cn": "has + 过去分词，go 的过去分词是 gone（不规则）"
+                },
+                {
+                    "id": "pp_03",
+                    "base": "They [eat] dinner already.",
+                    "cue": "改为现在完成时",
+                    "expected": "They have eaten dinner already.",
+                    "hint_cn": "have + 过去分词，eat 的过去分词是 eaten（不规则）"
+                },
+                {
+                    "id": "pp_04",
+                    "base": "He [write] three emails.",
+                    "cue": "改为现在完成时",
+                    "expected": "He has written three emails.",
+                    "hint_cn": "has + 过去分词，write 的过去分词是 written（不规则）"
+                },
+                {
+                    "id": "pp_05",
+                    "base": "We [see] that movie before.",
+                    "cue": "改为现在完成时",
+                    "expected": "We have seen that movie before.",
+                    "hint_cn": "have + 过去分词，see 的过去分词是 seen（不规则）"
+                }
+            ]
+        },
+        {
+            "id": "present_perfect_trans",
+            "grammar_point": "现在完成时",
+            "grammar_point_en": "Present Perfect Tense",
+            "drill_type": "transformation",
+            "difficulty": 2,
+            "instructions_cn": "将下列现在完成时句子改为否定句或疑问句",
+            "progress_label": "转换练习",
+            "steps": [
+                {
+                    "id": "pp_06",
+                    "base": "She has visited Paris.",
+                    "cue": "改为否定句",
+                    "expected": "She has not visited Paris.",
+                    "hint_cn": "在 has/have 后加 not 构成否定"
+                },
+                {
+                    "id": "pp_07",
+                    "base": "They have finished the work.",
+                    "cue": "改为一般疑问句",
+                    "expected": "Have they finished the work?",
+                    "hint_cn": "将 have/has 提到句首构成疑问"
+                },
+                {
+                    "id": "pp_08",
+                    "base": "He has bought a new car.",
+                    "cue": "改为否定句",
+                    "expected": "He has not bought a new car.",
+                    "hint_cn": "has + not + 过去分词"
+                },
+                {
+                    "id": "pp_09",
+                    "base": "You have seen this film before.",
+                    "cue": "改为一般疑问句",
+                    "expected": "Have you seen this film before?",
+                    "hint_cn": "将 have 提到句首"
+                },
+                {
+                    "id": "pp_10",
+                    "base": "I have lost my keys.",
+                    "cue": "改为否定句",
+                    "expected": "I have not lost my keys.",
+                    "hint_cn": "have + not + 过去分词"
+                }
+            ]
+        },
+        {
+            "id": "present_perfect_response",
+            "grammar_point": "现在完成时",
+            "grammar_point_en": "Present Perfect Tense",
+            "drill_type": "response",
+            "difficulty": 2,
+            "instructions_cn": "用括号中的提示词完整回答问题",
+            "progress_label": "问答练习",
+            "steps": [
+                {
+                    "id": "pp_11",
+                    "base": "Have you ever been to Japan?",
+                    "cue": "否定回答，用 never",
+                    "expected": "No, I have never been to Japan.",
+                    "hint_cn": "never 表示'从未'，放在 have/has 之后"
+                },
+                {
+                    "id": "pp_12",
+                    "base": "Has she finished her homework?",
+                    "cue": "肯定回答，用 already",
+                    "expected": "Yes, she has already finished her homework.",
+                    "hint_cn": "already 表示'已经'，放在 have/has 之后"
+                },
+                {
+                    "id": "pp_13",
+                    "base": "Have they eaten lunch?",
+                    "cue": "否定回答，用 yet",
+                    "expected": "No, they have not eaten lunch yet.",
+                    "hint_cn": "yet 表示'还（未）'，放在句末"
+                },
+                {
+                    "id": "pp_14",
+                    "base": "Have you read this book?",
+                    "cue": "肯定回答，用 already",
+                    "expected": "Yes, I have already read this book.",
+                    "hint_cn": "already 表示'已经'，常用于肯定句"
+                },
+                {
+                    "id": "pp_15",
+                    "base": "Has he ever tried sushi?",
+                    "cue": "肯定回答，去掉 ever",
+                    "expected": "Yes, he has tried sushi.",
+                    "hint_cn": "ever 用于疑问句，肯定回答中省略"
+                }
+            ]
+        }
+    ]
+}

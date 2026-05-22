@@ -39,7 +39,7 @@
             "grammar_point": "一般过去时",
             "grammar_point_en": "Simple Past",
             "drill_type": "transformation",
-            "difficulty": 2,
+            "difficulty": 1,
             "instructions_cn": "将下列句子改为否定句或疑问句",
             "progress_label": "转换练习",
             "steps": [
@@ -56,6 +56,98 @@
                     "cue": "改为一般疑问句",
                     "expected": "Did they visit the museum yesterday?",
                     "hint_cn": "用 Did 开头，动词恢复原形 visited → visit"
+                }
+            ]
+        },
+        {
+            "id": "simple_past_trans2",
+            "grammar_point": "一般过去时",
+            "grammar_point_en": "Simple Past",
+            "drill_type": "transformation",
+            "difficulty": 2,
+            "instructions_cn": "将下列句子改为否定句或疑问句（注意不规则动词）",
+            "progress_label": "转换练习",
+            "steps": [
+                {
+                    "id": "past_06",
+                    "base": "She bought a new dress.",
+                    "cue": "改为否定句",
+                    "expected": "She didn't buy a new dress.",
+                    "hint_cn": "didn't + 动词原形，bought → buy"
+                },
+                {
+                    "id": "past_07",
+                    "base": "He wrote a letter to his friend.",
+                    "cue": "改为一般疑问句",
+                    "expected": "Did he write a letter to his friend?",
+                    "hint_cn": "Did + 主语 + 动词原形，wrote → write"
+                },
+                {
+                    "id": "past_08",
+                    "base": "They drank coffee after dinner.",
+                    "cue": "改为否定句",
+                    "expected": "They didn't drink coffee after dinner.",
+                    "hint_cn": "didn't + 动词原形，drank → drink"
+                },
+                {
+                    "id": "past_09",
+                    "base": "She made a cake for the party.",
+                    "cue": "改为一般疑问句",
+                    "expected": "Did she make a cake for the party?",
+                    "hint_cn": "made → make，用 Did 开头"
+                },
+                {
+                    "id": "past_10",
+                    "base": "We went to the museum last week.",
+                    "cue": "改为否定句",
+                    "expected": "We didn't go to the museum last week.",
+                    "hint_cn": "went → go，用 didn't"
+                }
+            ]
+        },
+        {
+            "id": "simple_past_resp",
+            "grammar_point": "一般过去时",
+            "grammar_point_en": "Simple Past",
+            "drill_type": "response",
+            "difficulty": 3,
+            "instructions_cn": "根据提示完整回答下列问题",
+            "progress_label": "问答练习",
+            "steps": [
+                {
+                    "id": "past_11",
+                    "base": "Did you see the movie last night?",
+                    "cue": "肯定回答",
+                    "expected": "Yes, I saw the movie last night.",
+                    "hint_cn": "肯定回答中用 saw（see 的过去式）"
+                },
+                {
+                    "id": "past_12",
+                    "base": "Did she take the bus to school?",
+                    "cue": "否定回答",
+                    "expected": "No, she didn't take the bus to school.",
+                    "hint_cn": "否定回答用 didn't + 动词原形"
+                },
+                {
+                    "id": "past_13",
+                    "base": "Where did they go on vacation?",
+                    "cue": "他们去了海边",
+                    "expected": "They went to the beach.",
+                    "hint_cn": "go → went，回答用过去式"
+                },
+                {
+                    "id": "past_14",
+                    "base": "What did he eat for lunch?",
+                    "cue": "他吃了一个三明治",
+                    "expected": "He ate a sandwich for lunch.",
+                    "hint_cn": "eat → ate（不规则变化）"
+                },
+                {
+                    "id": "past_15",
+                    "base": "Did you do your homework?",
+                    "cue": "肯定回答",
+                    "expected": "Yes, I did my homework.",
+                    "hint_cn": "do → did，肯定回答用 did"
                 }
             ]
         }

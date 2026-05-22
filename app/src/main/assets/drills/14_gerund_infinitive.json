@@ -1,0 +1,144 @@
+{
+    "grammar_point": "动名词和不定式",
+    "grammar_point_en": "Gerunds and Infinitives",
+    "sets": [
+        {
+            "id": "ger_sub",
+            "grammar_point": "动名词和不定式",
+            "grammar_point_en": "Gerunds and Infinitives",
+            "drill_type": "substitution",
+            "difficulty": 1,
+            "instructions_cn": "用括号中动词的正确形式（动名词或不定式）填空",
+            "progress_label": "替换练习",
+            "steps": [
+                {
+                    "id": "ger_01",
+                    "base": "I enjoy [swim] in the pool.",
+                    "cue": "用动名词形式",
+                    "expected": "I enjoy swimming in the pool.",
+                    "hint_cn": "enjoy 后接动名词 (doing)"
+                },
+                {
+                    "id": "ger_02",
+                    "base": "She wants [learn] Japanese.",
+                    "cue": "用不定式形式",
+                    "expected": "She wants to learn Japanese.",
+                    "hint_cn": "want 后接不定式 (to do)"
+                },
+                {
+                    "id": "ger_03",
+                    "base": "He likes [read] books before bed.",
+                    "cue": "可用动名词或不定式",
+                    "expected": "He likes reading books before bed.",
+                    "hint_cn": "like 后可接 doing 或 to do，意思相近"
+                },
+                {
+                    "id": "ger_04",
+                    "base": "They finished [build] the house last month.",
+                    "cue": "用动名词形式",
+                    "expected": "They finished building the house last month.",
+                    "hint_cn": "finish 后接动名词 (doing)"
+                },
+                {
+                    "id": "ger_05",
+                    "base": "I decided [take] a break.",
+                    "cue": "用不定式形式",
+                    "expected": "I decided to take a break.",
+                    "hint_cn": "decide 后接不定式 (to do)"
+                }
+            ]
+        },
+        {
+            "id": "ger_trans",
+            "grammar_point": "动名词和不定式",
+            "grammar_point_en": "Gerunds and Infinitives",
+            "drill_type": "transformation",
+            "difficulty": 2,
+            "instructions_cn": "将两句话合并为一句，用动名词或不定式",
+            "progress_label": "转换练习",
+            "steps": [
+                {
+                    "id": "ger_06",
+                    "base": "I like music. I listen to music every day.",
+                    "cue": "合并为一句，用 like + doing",
+                    "expected": "I like listening to music every day.",
+                    "hint_cn": "like doing 表示喜欢做某事"
+                },
+                {
+                    "id": "ger_07",
+                    "base": "She wants a new phone. She will save money.",
+                    "cue": "合并为一句，用 want + to do",
+                    "expected": "She wants to save money for a new phone.",
+                    "hint_cn": "want to do 表示想要做某事"
+                },
+                {
+                    "id": "ger_08",
+                    "base": "He is good at drawing. He draws every weekend.",
+                    "cue": "合并为一句，用 be good at + doing",
+                    "expected": "He is good at drawing every weekend.",
+                    "hint_cn": "be good at 后接动名词"
+                },
+                {
+                    "id": "ger_09",
+                    "base": "My brother plays games. He enjoys it.",
+                    "cue": "合并为一句，用 enjoy + doing",
+                    "expected": "My brother enjoys playing games.",
+                    "hint_cn": "enjoy 后接动名词"
+                },
+                {
+                    "id": "ger_10",
+                    "base": "I need to rest. I feel tired.",
+                    "cue": "合并为一句，用 need + to do",
+                    "expected": "I need to rest because I feel tired.",
+                    "hint_cn": "need to do 表示需要做某事"
+                }
+            ]
+        },
+        {
+            "id": "ger_response",
+            "grammar_point": "动名词和不定式",
+            "grammar_point_en": "Gerunds and Infinitives",
+            "drill_type": "response",
+            "difficulty": 2,
+            "instructions_cn": "根据问题用动名词或不定式完整回答",
+            "progress_label": "问答练习",
+            "steps": [
+                {
+                    "id": "ger_11",
+                    "base": "What do you enjoy doing in your free time?",
+                    "cue": "回答：读书",
+                    "expected": "I enjoy reading books in my free time.",
+                    "hint_cn": "enjoy 后接动名词"
+                },
+                {
+                    "id": "ger_12",
+                    "base": "What do you want to be when you grow up?",
+                    "cue": "回答：当医生",
+                    "expected": "I want to be a doctor when I grow up.",
+                    "hint_cn": "want to do 表示未来目标"
+                },
+                {
+                    "id": "ger_13",
+                    "base": "What did you finish doing yesterday?",
+                    "cue": "回答：做作业",
+                    "expected": "I finished doing my homework yesterday.",
+                    "hint_cn": "finish 后接动名词"
+                },
+                {
+                    "id": "ger_14",
+                    "base": "What do you suggest doing this weekend?",
+                    "cue": "回答：去看电影",
+                    "expected": "I suggest going to see a movie this weekend.",
+                    "hint_cn": "suggest 后接动名词"
+                },
+                {
+                    "id": "ger_15",
+                    "base": "What do you need to do before the exam?",
+                    "cue": "回答：复习笔记",
+                    "expected": "I need to review my notes before the exam.",
+                    "hint_cn": "need to do 表示需要做的事"
+                }
+            ]
+        }
+    ]
+}
