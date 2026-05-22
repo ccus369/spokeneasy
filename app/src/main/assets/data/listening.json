@@ -1,1512 +1,496 @@
 {
   "audios": [
     {
-      "title": "Greetings",
+      "title": "Coffee Order",
       "level": 1,
-      "dialog_text": "A: Hello! How are you?\nB: I'm fine, thank you. And you?\nA: I'm good, thanks!\nB: That's great to hear.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "How is person B?",
-          "option_a": "Sad",
-          "option_b": "Tired",
-          "option_c": "Fine",
-          "correct_answer": "C"
-        },
-        {
-          "question": "What does person A say at the end?",
-          "option_a": "I'm good, thanks",
-          "option_b": "I'm tired",
-          "option_c": "I'm sad",
-          "correct_answer": "A"
-        },
-        {
-          "question": "How does person B feel about person A's response?",
-          "option_a": "Surprised",
-          "option_b": "Happy",
-          "option_c": "Sad",
-          "correct_answer": "B"
-        }
-      ]
+      "dialog_text": "A: Hey, welcome to Starbucks! What can I get started for ya?\nB: Uh, yeah, can I get a latte please?\nA: Sure, what size? We got tall, grande, and venti.\nB: Oh, um, grande sounds good.\nA: Any flavor? Vanilla, caramel…?\nB: Vanilla, please.\nA: Alright, that'll be six fifty. Name?\nB: Emma.\nA: Thanks Emma! We'll call ya when it's ready.",
+      "type": "dialogue"
     },
     {
-      "title": "Introductions",
+      "title": "New Neighbor",
       "level": 1,
-      "dialog_text": "A: Hi, I'm Tom. What's your name?\nB: I'm Sarah. Nice to meet you.\nA: Nice to meet you too. Where are you from?\nB: I'm from New York. How about you?\nA: I'm from London.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What is the man's name?",
-          "option_a": "Tom",
-          "option_b": "Sarah",
-          "option_c": "John",
-          "correct_answer": "A"
-        },
-        {
-          "question": "Where is Sarah from?",
-          "option_a": "London",
-          "option_b": "New York",
-          "option_c": "Paris",
-          "correct_answer": "B"
-        },
-        {
-          "question": "Where is Tom from?",
-          "option_a": "New York",
-          "option_b": "London",
-          "option_c": "Tokyo",
-          "correct_answer": "B"
-        }
-      ]
+      "dialog_text": "A: Oh, hi! You just moved in next door, right?\nB: Yeah! I'm Kevin. Nice to meet ya.\nA: I'm Lisa. Welcome to the building! Need any help?\nB: Aw thanks, I think I'm good. Just gotta unpack some boxes.\nA: Well if you need anything, I'm right next door.\nB: Actually, do you know where I can find a grocery store around here?\nA: Yeah there's one just two blocks down. Can't miss it.\nB: Awesome, thanks!",
+      "type": "dialogue"
     },
     {
-      "title": "Ordering Food",
+      "title": "Bus Stop",
       "level": 1,
-      "dialog_text": "A: Welcome to our restaurant. What would you like to order?\nB: I'd like a hamburger, please.\nA: Would you like fries with that?\nB: Yes, please.\nA: Anything to drink?\nB: A cola, please.\nA: Coming right up.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What does the customer order first?",
-          "option_a": "Fries",
-          "option_b": "Hamburger",
-          "option_c": "Cola",
-          "correct_answer": "B"
-        },
-        {
-          "question": "Does the customer want fries?",
-          "option_a": "Yes",
-          "option_b": "No",
-          "option_c": "Not mentioned",
-          "correct_answer": "A"
-        },
-        {
-          "question": "What drink does the customer order?",
-          "option_a": "Water",
-          "option_b": "Cola",
-          "option_c": "Juice",
-          "correct_answer": "B"
-        }
-      ]
+      "dialog_text": "A: Excuse me, does the number 7 bus stop here?\nB: Yeah, it does. But you just missed one like five minutes ago.\nA: Oh man. How often do they come?\nB: Every fifteen minutes or so. Next one should be here around 10:15.\nA: Okay, that's not too bad. Thanks.\nB: Where ya headed?\nA: Downtown, near the library.\nB: Oh yeah, the 7 will take ya right there. Just four stops.",
+      "type": "dialogue"
     },
     {
-      "title": "Shopping for Clothes",
+      "title": "Ordering Pizza",
       "level": 1,
-      "dialog_text": "A: Can I help you?\nB: Yes, I'm looking for a shirt.\nA: What size do you need?\nB: Medium, please.\nA: What color would you like?\nB: Blue, if you have it.\nA: Here you go. The fitting room is over there.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What is the customer looking for?",
-          "option_a": "Pants",
-          "option_b": "Shirt",
-          "option_c": "Shoes",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What size does the customer need?",
-          "option_a": "Small",
-          "option_b": "Medium",
-          "option_c": "Large",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What color does the customer want?",
-          "option_a": "Red",
-          "option_b": "Blue",
-          "option_c": "Black",
-          "correct_answer": "B"
-        }
-      ]
+      "dialog_text": "A: Hello, Tony's Pizza. How can I help you?\nB: Hi, I'd like to order a large pepperoni pizza please.\nA: Large pepperoni, got it. Anything else?\nB: Yeah, can I get an order of garlic bread too?\nA: Sure. That's eighteen ninety five. Dine in or pickup?\nB: Pickup, please.\nA: Alright, it'll be ready in about twenty minutes. Name?\nB: Sarah.\nA: Thanks Sarah! See ya soon.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Lost Keys",
+      "level": 1,
+      "dialog_text": "A: Oh no, I can't find my keys anywhere!\nB: Did you check your jacket pocket?\nA: Yeah, empty. I already checked my bag too.\nB: When was the last time you remember having them?\nA: When I came home last night, I think.\nB: Maybe they're in the door. You know, sometimes you leave 'em in the lock.\nA: Let me check… Oh my god, they ARE! Thank you!\nB: Haha, happens to everyone.",
+      "type": "dialogue"
+    },
+    {
+      "title": "At the Pharmacy",
+      "level": 1,
+      "dialog_text": "A: Hi, I need to pick up a prescription. Name's David Chen.\nB: Let me look it up. Hmm, I don't see anything under Chen.\nA: Oh, maybe it's under my wife's name. Try Lisa Chen.\nB: Ah, there it is! One moment please.\nA: How much do I owe?\nB: Let's see… your insurance covers most of it. That'll be twelve dollars.\nA: Great, here ya go.\nB: Here's your medicine. Take one pill twice a day with food.",
+      "type": "dialogue"
     },
     {
       "title": "Asking for Directions",
       "level": 1,
-      "dialog_text": "A: Excuse me. Is there a bank near here?\nB: Yes, go straight for two blocks.\nA: Then what?\nB: Turn left at the traffic light.\nA: How far is it?\nB: About a five-minute walk.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What is the person looking for?",
-          "option_a": "A bank",
-          "option_b": "A hospital",
-          "option_c": "A school",
-          "correct_answer": "A"
-        },
-        {
-          "question": "How many blocks should they go straight?",
-          "option_a": "One",
-          "option_b": "Two",
-          "option_c": "Three",
-          "correct_answer": "B"
-        },
-        {
-          "question": "How long is the walk?",
-          "option_a": "5 minutes",
-          "option_b": "10 minutes",
-          "option_c": "15 minutes",
-          "correct_answer": "A"
-        }
-      ]
+      "dialog_text": "A: Excuse me, I'm looking for the city library. Is it around here?\nB: Yeah, it's not far. You see that big building with the clock tower?\nA: The brown one?\nB: Yeah, that's the one. Walk straight towards it, it's right behind it.\nA: So past the clock tower building?\nB: Exactly. About a five-minute walk.\nA: Thanks so much!\nB: No problem, enjoy your day!",
+      "type": "dialogue"
     },
     {
-      "title": "Weather Conversation",
+      "title": "Weather Talk",
       "level": 1,
-      "dialog_text": "A: Beautiful day, isn't it?\nB: Yes, the sun is finally out.\nA: What's the forecast for tomorrow?\nB: They say it might rain in the afternoon.\nA: I hope not. I have plans outside.\nB: You should bring an umbrella just in case.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What is the weather like today?",
-          "option_a": "Rainy",
-          "option_b": "Sunny",
-          "option_c": "Snowy",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What might happen tomorrow?",
-          "option_a": "Snow",
-          "option_b": "Rain",
-          "option_c": "Thunderstorm",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What does the woman suggest bringing?",
-          "option_a": "A coat",
-          "option_b": "An umbrella",
-          "option_c": "A hat",
-          "correct_answer": "B"
-        }
-      ]
+      "dialog_text": "A: Whew, it's hot out there today!\nB: Tell me about it. I'm melting.\nA: Is it always like this in July?\nB: Honestly, this is actually hotter than usual.\nA: Yeah? Forecast says it might rain tonight though.\nB: Really? That'd be nice. We could use it.\nA: For sure. My garden is dying.\nB: I bet. Well, fingers crossed!",
+      "type": "dialogue"
     },
     {
-      "title": "At the Supermarket",
+      "title": "Buying a Ticket",
       "level": 1,
-      "dialog_text": "A: Excuse me, where can I find milk?\nB: It's in aisle 5, on the left.\nA: Thank you. And eggs?\nB: Those are in the dairy section, same aisle.\nA: Do you have organic milk?\nB: Yes, it's on the top shelf.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What is the customer looking for first?",
-          "option_a": "Eggs",
-          "option_b": "Milk",
-          "option_c": "Bread",
-          "correct_answer": "B"
-        },
-        {
-          "question": "Which aisle has milk and eggs?",
-          "option_a": "Aisle 3",
-          "option_b": "Aisle 4",
-          "option_c": "Aisle 5",
-          "correct_answer": "C"
-        },
-        {
-          "question": "Where is the organic milk?",
-          "option_a": "Bottom shelf",
-          "option_b": "Middle shelf",
-          "option_c": "Top shelf",
-          "correct_answer": "C"
-        }
-      ]
+      "dialog_text": "A: Hi, two tickets for the 7 o'clock show, please.\nB: Sure. That's $24 total.\nA: Here you go. Oh, what row are we?\nB: Row H, seats 12 and 13. Pretty center.\nA: Nice! Is there a student discount by the way?\nB: Actually yeah, if you show your student ID, it's $10 each instead of $12.\nA: Oh great, I have mine right here.\nB: Perfect, that brings it down to $20. Here's your change.",
+      "type": "dialogue"
     },
     {
-      "title": "Making a Phone Call",
+      "title": "At the Cafe",
       "level": 1,
-      "dialog_text": "A: Hello, may I speak to John?\nB: This is John speaking.\nA: Hi John, this is Mike from work.\nB: Oh hi Mike. What's up?\nA: Can we meet tomorrow to discuss the project?\nB: Sure, what time works for you?\nA: How about 2 PM?\nB: Perfect. See you then.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "Who is calling?",
-          "option_a": "John",
-          "option_b": "Mike",
-          "option_c": "The boss",
-          "correct_answer": "B"
-        },
-        {
-          "question": "Why is Mike calling?",
-          "option_a": "To say hello",
-          "option_b": "To discuss a project",
-          "option_c": "To invite John to lunch",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What time will they meet?",
-          "option_a": "1 PM",
-          "option_b": "2 PM",
-          "option_c": "3 PM",
-          "correct_answer": "B"
-        }
-      ]
+      "dialog_text": "A: What are you gonna get?\nB: Hmm, I'm thinking about the blueberry muffin and a chai latte.\nA: Oh, their muffins are so good. I had one yesterday.\nB: Yeah? What are you having?\nA: I think I'll just get a black coffee today. Trying to cut back on sugar.\nB: Good for you. But you gotta live a little too, ya know?\nA: Haha, you sound like my mom.\nB: Well, someone's gotta say it!",
+      "type": "dialogue"
     },
     {
-      "title": "At the Doctor's Office",
-      "level": 2,
-      "dialog_text": "A: What seems to be the problem?\nB: I've had a headache for three days.\nA: Any other symptoms?\nB: I feel tired all the time and my throat hurts.\nA: Let me take your temperature. You have a slight fever.\nB: Do I need medicine?\nA: I'll prescribe something for the pain. Get plenty of rest and drink lots of water.\nB: Thank you, doctor.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "How long has the patient had a headache?",
-          "option_a": "One day",
-          "option_b": "Two days",
-          "option_c": "Three days",
-          "correct_answer": "C"
-        },
-        {
-          "question": "What symptoms does the patient have?",
-          "option_a": "Headache and fever",
-          "option_b": "Stomach pain",
-          "option_c": "Broken arm",
-          "correct_answer": "A"
-        },
-        {
-          "question": "What does the doctor prescribe?",
-          "option_a": "Antibiotics",
-          "option_b": "Pain medicine",
-          "option_c": "Vitamins",
-          "correct_answer": "B"
-        }
-      ]
+      "title": "Taking a Taxi",
+      "level": 1,
+      "dialog_text": "A: Hey, can you take me to 42nd Street and Broadway please?\nB: Sure, hop in. Buckle up.\nA: Thanks. About how long will it take?\nB: With this traffic… maybe twenty minutes? Could be thirty.\nA: That's fine. I'm not in a huge rush.\nB: First time in the city?\nA: Yeah, actually. Just visiting for a few days.\nB: Nice! Well, I'll take ya the scenic route if you want. Won't cost more.\nA: Sure, why not!",
+      "type": "dialogue"
     },
     {
-      "title": "Booking a Hotel Room",
-      "level": 2,
-      "dialog_text": "A: I'd like to book a room for this weekend.\nB: Do you have a reservation?\nA: No, this is a new booking.\nB: What kind of room do you need?\nA: A double room for two nights.\nB: Let me check availability. Yes, we have rooms available.\nA: How much is it per night?\nB: $120 per night, including breakfast.\nA: That sounds reasonable. I'll take it.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "How many nights will the guest stay?",
-          "option_a": "One",
-          "option_b": "Two",
-          "option_c": "Three",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What type of room does the guest want?",
-          "option_a": "Single",
-          "option_b": "Double",
-          "option_c": "Suite",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What is included in the price?",
-          "option_a": "Dinner",
-          "option_b": "Breakfast",
-          "option_c": "Parking",
-          "correct_answer": "B"
-        }
-      ]
+      "title": "Library Visit",
+      "level": 1,
+      "dialog_text": "A: Excuse me, how do I get a library card?\nB: Sure, just fill out this form. Need to see an ID too.\nA: Okay, I have my driver's license.\nB: Perfect. Fill this out and I'll get you set up in a minute.\nA: And how many books can I check out at a time?\nB: Up to fifteen. And they're due back in three weeks.\nA: That's plenty. Thanks!\nB: No problem. Welcome to the library!",
+      "type": "dialogue"
     },
     {
-      "title": "Job Interview",
-      "level": 2,
-      "dialog_text": "A: Tell me about your previous experience.\nB: I worked as a sales assistant for two years.\nA: Why did you leave that job?\nB: I wanted more responsibility and growth opportunities.\nA: What are your strengths?\nB: I'm organized, hard-working, and good with people.\nA: What's your biggest weakness?\nB: I sometimes pay too much attention to details.\nA: When can you start?\nB: I can start next Monday.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What was the candidate's previous job?",
-          "option_a": "Sales assistant",
-          "option_b": "Manager",
-          "option_c": "Teacher",
-          "correct_answer": "A"
-        },
-        {
-          "question": "Why did the candidate leave their last job?",
-          "option_a": "Low pay",
-          "option_b": "Wanted more responsibility",
-          "option_c": "Got fired",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What is the candidate's weakness?",
-          "option_a": "Being late",
-          "option_b": "Too much attention to details",
-          "option_c": "Poor communication",
-          "correct_answer": "B"
-        }
-      ]
+      "title": "Talking About Pets",
+      "level": 1,
+      "dialog_text": "A: Is that a new dog? I haven't seen her before.\nB: Yeah! This is Luna. We adopted her last month.\nA: Aw, she's adorable! What breed is she?\nB: Shes a golden retriever mix. Best decision we ever made.\nA: How old is she?\nB: About one and a half. Still has lots of puppy energy!\nA: I can tell! Look at that tail go.\nB: Haha yeah, she's happy all the time. It's impossible to be sad around her.",
+      "type": "dialogue"
     },
     {
-      "title": "Renting an Apartment",
-      "level": 2,
-      "dialog_text": "A: I'm calling about the apartment you have for rent.\nB: Yes, it's a one-bedroom on Main Street.\nA: How much is the rent?\nB: $900 per month, utilities not included.\nA: Is it furnished?\nB: No, it's unfurnished, but the kitchen has appliances.\nA: Is there parking available?\nB: Yes, there's one parking spot included.\nA: When can I see it?\nB: How about tomorrow at 3 PM?\nA: That works for me. See you then.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What type of apartment is for rent?",
-          "option_a": "Studio",
-          "option_b": "One-bedroom",
-          "option_c": "Two-bedroom",
-          "correct_answer": "B"
-        },
-        {
-          "question": "How much is the monthly rent?",
-          "option_a": "$800",
-          "option_b": "$900",
-          "option_c": "$1000",
-          "correct_answer": "B"
-        },
-        {
-          "question": "Is parking included?",
-          "option_a": "Yes",
-          "option_b": "No",
-          "option_c": "Extra fee",
-          "correct_answer": "A"
-        }
-      ]
+      "title": "Compliment",
+      "level": 1,
+      "dialog_text": "A: Hey, I really like your jacket! Is it new?\nB: Thanks! Yeah, I got it last weekend on sale.\nA: It looks really good on you. Where'd you get it?\nB: At the mall, that store next to the food court.\nA: Oh, I know the one. Was it expensive?\nB: Not really. It was like forty percent off.\nA: No way! I gotta go check it out.\nB: You should. They have a bunch of colors.",
+      "type": "dialogue"
     },
     {
-      "title": "Travel Plans",
-      "level": 2,
-      "dialog_text": "A: Where are you going on your vacation?\nB: I'm planning to visit Japan for two weeks.\nA: That sounds amazing! When are you leaving?\nB: Next month, on the 15th.\nA: Have you booked your flight yet?\nB: Yes, I booked it last week. It was pretty expensive.\nA: Where are you staying?\nB: I found a nice hotel in Tokyo.\nA: Well, have a great trip!",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "Where is the person going on vacation?",
-          "option_a": "China",
-          "option_b": "Japan",
-          "option_c": "Korea",
-          "correct_answer": "B"
-        },
-        {
-          "question": "How long will the trip be?",
-          "option_a": "One week",
-          "option_b": "Two weeks",
-          "option_c": "Three weeks",
-          "correct_answer": "B"
-        },
-        {
-          "question": "When did the person book the flight?",
-          "option_a": "Yesterday",
-          "option_b": "Last week",
-          "option_c": "Last month",
-          "correct_answer": "B"
-        }
-      ]
+      "title": "Lunch Break",
+      "level": 1,
+      "dialog_text": "A: You wanna grab lunch? I'm starving.\nB: Sure, what're you in the mood for?\nA: I dunno, maybe something light. A salad or a sandwich.\nB: There's that new place around the corner. I heard their sandwiches are good.\nA: Oh yeah? Let's check it out.\nB: Cool. I just gotta finish this email real quick.\nA: No rush. Take your time.\nB: Alright, done. Let's go!",
+      "type": "dialogue"
     },
     {
-      "title": "At the Airport",
-      "level": 2,
-      "dialog_text": "A: May I see your passport and ticket, please?\nB: Here you are.\nA: Do you have any luggage to check?\nB: Yes, I have one suitcase.\nA: Please put it on the scale.\nB: Is it overweight?\nA: No, it's fine. Here's your boarding pass. Your gate is B12.\nB: What time does boarding start?\nA: Boarding starts at 10:30 AM.\nB: Thank you very much.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What does the agent ask to see first?",
-          "option_a": "Ticket only",
-          "option_b": "Passport and ticket",
-          "option_c": "ID card",
-          "correct_answer": "B"
-        },
-        {
-          "question": "How many suitcases is the passenger checking?",
-          "option_a": "One",
-          "option_b": "Two",
-          "option_c": "Three",
-          "correct_answer": "A"
-        },
-        {
-          "question": "What time does boarding start?",
-          "option_a": "10:00 AM",
-          "option_b": "10:30 AM",
-          "option_c": "11:00 AM",
-          "correct_answer": "B"
-        }
-      ]
+      "title": "Taking a Photo",
+      "level": 1,
+      "dialog_text": "A: Excuse me, would you mind taking a picture of us?\nB: Sure, not at all! Just press this button?\nA: Yeah, just tap the screen there.\nB: Okay. Say cheese! Wow, that's a good one.\nA: Let me see… Oh, that's perfect! Thank you so much.\nB: No problem! The lighting here is really nice.\nA: It really is. Thanks again!\nB: You guys have a great day!",
+      "type": "dialogue"
     },
     {
-      "title": "Movie Discussion",
+      "title": "Grocery Shopping",
+      "level": 1,
+      "dialog_text": "A: Okay, what do we need from the store?\nB: Let me think… we're out of milk and eggs for sure.\nA: Got it. Anything else?\nB: Oh, and we need bread too. For sandwiches this week.\nA: Alright. Milk, eggs, bread. I'll be back in twenty.\nB: Wait, can you also grab some apples? The ones we have are bad.\nA: Sure, any particular kind?\nB: Just get whatever looks fresh. Thanks!",
+      "type": "dialogue"
+    },
+    {
+      "title": "Weekend Plans",
       "level": 2,
-      "dialog_text": "A: Did you see the new action movie last night?\nB: Not yet. Is it good?\nA: It was amazing! The special effects were incredible.\nB: Who's in it?\nA: The lead actor is Tom Cruise.\nB: Oh, I like him. Is the story interesting?\nA: Yes, it keeps you on the edge of your seat.\nB: I'll definitely watch it this weekend.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What kind of movie is it?",
-          "option_a": "Comedy",
-          "option_b": "Action",
-          "option_c": "Romance",
-          "correct_answer": "B"
-        },
-        {
-          "question": "Who is the lead actor?",
-          "option_a": "Tom Hanks",
-          "option_b": "Tom Cruise",
-          "option_c": "Brad Pitt",
-          "correct_answer": "B"
-        },
-        {
-          "question": "When will the person watch the movie?",
-          "option_a": "Tonight",
-          "option_b": "This weekend",
-          "option_c": "Next week",
-          "correct_answer": "B"
-        }
-      ]
+      "dialog_text": "A: So, any plans for the weekend?\nB: Yeah actually, I'm thinking about going to the beach on Saturday.\nA: Oh nice! Which beach?\nB: Probably Santa Monica. Wanna come?\nA: I'd love to, but I've got stuff to do around the house.\nB: Ah come on, it's gonna be gorgeous this weekend. Like 80 degrees.\nA: Don't tempt me… Ugh, fine. You convinced me.\nB: That's the spirit! I'll pick you up at nine.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Movie Debate",
+      "level": 2,
+      "dialog_text": "A: Did you watch the new Marvel movie yet?\nB: Yeah, I saw it opening night actually.\nA: What did you think? No spoilers though!\nB: Honestly? I was a little disappointed. The ending felt rushed.\nA: Really? I thought it was great! The visuals were incredible.\nB: Oh the visuals were amazing, no doubt. But the story, you know, it just didn't hit the same.\nA: I guess I see what you mean. But still, I had a good time.\nB: Yeah, I mean it wasn't bad. Just had higher expectations I guess.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Gym Talk",
+      "level": 2,
+      "dialog_text": "A: Hey, long time no see at the gym! Where've you been?\nB: I know, I know. I kinda fell off for a couple months.\nA: Life gets busy, I get it. Good to see you back though.\nB: Thanks. Gotta get back in shape before summer, ya know?\nA: Haha, same here. You want a spot?\nB: Actually yeah, that'd be great. I'm trying to push a little heavier today.\nA: Nice, how much you benching?\nB: Aiming for 185. Haven't hit that in a while.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Cooking Attempt",
+      "level": 2,
+      "dialog_text": "A: I tried making pasta from scratch last night.\nB: Oh cool, how'd it turn out?\nA: Honestly? Total disaster. The dough was way too sticky.\nB: Been there. Did you follow a recipe?\nA: Yeah, but I think I added too much water.\nB: Pasta dough is tricky. You kinda gotta feel it, ya know?\nA: Clearly I don't have that feel yet.\nB: Haha, keep practicing. Maybe start with store-bought next time.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Concert Plans",
+      "level": 2,
+      "dialog_text": "A: Did you get tickets for the concert?\nB: Yeah! I was able to snag two before they sold out.\nA: No way! I thought they were already sold out.\nB: I got lucky. Someone released theirs like five minutes after they sold out.\nA: That's crazy luck. How much did they cost?\nB: $120 each. Kinda pricy but it's gonna be worth it.\nA: Definitely. I heard their live performances are amazing.\nB: I've been waiting for this tour for like three years.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Book Club",
+      "level": 2,
+      "dialog_text": "A: Did you finish the book for this month's club?\nB: Almost! I have like fifty pages left.\nA: What do you think so far?\nB: Honestly, it started slow but now I can't put it down.\nA: Right? The plot twist in chapter twelve got me.\nB: I haven't gotten there yet! Don't spoil it!\nA: Sorry, sorry! I won't say a word.\nB: I gotta finish it tonight before the meeting tomorrow.\nA: You can do it. It's worth the push.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Car Shopping",
+      "level": 2,
+      "dialog_text": "A: I'm thinking about getting a new car. My old one's on its last legs.\nB: What are you looking at?\nA: I'm torn between a hybrid and a full electric.\nB: If you can charge at home, electric is the way to go. Save on gas.\nA: That's true. But what about long trips?\nB: The range on new ones is like 300 miles. That's plenty for most people.\nA: Good point. I should probably test drive a few.\nB: Definitely. Don't buy anything without driving it first.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Doctor Visit",
+      "level": 2,
+      "dialog_text": "A: So doctor, what's the verdict?\nB: Well, it's a mild sinus infection. Nothing too serious.\nA: That's a relief. I was worried it was something worse.\nB: I'm gonna prescribe you some antibiotics. Take 'em for ten days.\nA: Will these make me feel better right away?\nB: You should start feeling better in a couple of days, but finish the whole course.\nA: Got it. Anything else I should do?\nB: Drink lots of water and get plenty of rest.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Job Hunt",
+      "level": 2,
+      "dialog_text": "A: How's the job search going?\nB: Ugh, don't even ask. It's rough out there.\nA: Yeah, I've heard. How many places have you applied to?\nB: Like twenty? I've had two interviews so far.\nA: That's not bad! Any callbacks?\nB: One place said they'd let me know by the end of the week.\nA: That's promising! What company?\nB: A tech startup downtown. The culture seems really cool.\nA: Fingers crossed for ya!",
+      "type": "dialogue"
+    },
+    {
+      "title": "Birthday Gift",
+      "level": 2,
+      "dialog_text": "A: I have no idea what to get my mom for her birthday.\nB: What does she like?\nA: She likes cooking and gardening. But she already has everything.\nB: What about a cooking class experience? Like a pasta-making workshop?\nA: Oh, that's actually a really good idea! She'd love that.\nB: Or you could get her a really nice plant for the garden.\nA: The cooking class is better. She loves trying new recipes.\nB: Perfect. Problem solved!",
+      "type": "dialogue"
+    },
+    {
+      "title": "Traffic Jam",
+      "level": 2,
+      "dialog_text": "A: Ugh, I'm stuck in traffic again. This is the third day this week.\nB: Where are you right now?\nA: On the 405, barely moving. Gonna be late for work again.\nB: That highway is always a nightmare during rush hour.\nA: I know. I gotta find a different route.\nB: Have you tried taking the side streets? It takes longer but at least you're moving.\nA: Yeah, maybe I should. Anything's better than sitting here.\nB: Or you could ask your boss about working from home a couple days.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Dental Appointment",
+      "level": 2,
+      "dialog_text": "A: I have a dentist appointment tomorrow and I'm dreading it.\nB: Oh I hate the dentist too. What for? Just a cleaning?\nA: No, I think I have a cavity. Been feeling sensitive to cold stuff.\nB: Ugh, those are the worst. But better to get it checked early.\nA: Yeah, I know. I've been putting it off for like two months.\nB: The longer you wait, the worse it gets. Trust me.\nA: You're right. I'll just go and get it over with.\nB: That's the attitude. You'll be glad you did.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Hiking Plans",
+      "level": 2,
+      "dialog_text": "A: Wanna go hiking this Saturday? The weather's supposed to be perfect.\nB: I'd love to, but my knee's been acting up lately.\nA: Oh no, what happened?\nB: I think I overdid it at the gym last week. Stupidly added too much weight.\nA: That sucks. Maybe try a light trail instead? Something flat?\nB: I could do a flat trail. Know any good ones?\nA: Yeah, there's a nice one by the river. Super easy, like two miles.\nB: That sounds doable. Let's do it.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Home Renovation",
+      "level": 2,
+      "dialog_text": "A: So we finally decided to renovate the bathroom.\nB: It's about time! You've been talking about that forever.\nA: I know, I know. We got three quotes and picked one.\nB: How much did they quote you?\nA: The one we went with was twelve thousand. Mid-range.\nB: That's not bad for a full bathroom redo. How long will it take?\nA: About three weeks they said. We'll survive.\nB: At least you have a second bathroom, right?\nA: Yeah, thank goodness. Otherwise I'd be staying at a hotel.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Flight Delay",
+      "level": 2,
+      "dialog_text": "A: Did you hear? Our flight's been delayed.\nB: What? By how long?\nA: They said at least two hours. Something about weather.\nB: Oh great. And I was already dreading this layover.\nA: At least we're not stuck at the gate. We can grab some food.\nB: True. I saw a decent-looking restaurant past security.\nA: Let's go. My treat.\nB: Really? Well, that makes the delay a little better.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Phone Upgrade",
+      "level": 2,
+      "dialog_text": "A: I think it's time for a new phone. This one's so slow.\nB: Which one are you thinking of getting?\nA: The new iPhone, I guess. But it's so expensive.\nB: Yeah, they're getting ridiculous. Have you looked at Android options?\nA: I've thought about switching, but I'm so used to iOS.\nB: The transition's not that bad honestly. Everything syncs now anyway.\nA: That's what everyone says. Maybe I'll check out the Pixel.\nB: My friend has one and loves it. Way better battery life.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Apartment Search",
+      "level": 2,
+      "dialog_text": "A: I've been looking for apartments all week and it's exhausting.\nB: The market's crazy right now. What's your budget?\nA: Trying to stay under fifteen hundred for a one-bedroom.\nB: That's doable but you'll have to move fast. Good ones go within a day.\nA: Yeah, I learned that the hard way. Missed out on two already.\nB: Did you check out that building on Main Street?\nA: Yeah, saw it yesterday. The unit was nice but no laundry in the building.\nB: Oh that's a dealbreaker for sure.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Learning to Drive",
+      "level": 2,
+      "dialog_text": "A: I finally signed up for driving lessons!\nB: Good for you! It's about time.\nA: I know, I know. I should've done this years ago.\nB: Don't worry, once you get the hang of it, it's easy.\nA: I hope so. I'm nervous about parallel parking.\nB: Everyone is at first. Just practice and you'll get it.\nA: How long did it take you to get comfortable?\nB: Maybe a month of driving regularly. Then it felt natural.\nA: A month? Okay, I can do that.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Salary Negotiation",
+      "level": 3,
+      "dialog_text": "A: So I got the job offer, but I feel like the salary's a bit low.\nB: How much did they offer?\nA: Eighty-five thousand. I was hoping for at least ninety-five.\nB: Did you try negotiating yet?\nA: Not yet. I'm kinda nervous about it. What if they take back the offer?\nB: They won't. That's a myth. Most companies expect you to negotiate.\nA: Really? I always thought it might offend them.\nB: Not if you do it politely. Just say you're excited but based on your experience, you were hoping for something closer to market rate.\nA: Okay, I'll give it a shot. Worst they can say is no.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Relationship Conflict",
+      "level": 3,
+      "dialog_text": "A: Me and my girlfriend had a huge fight last night.\nB: Oh no, what happened?\nA: It's stupid really. She got upset because I forgot our anniversary.\nB: Oof. Yeah, that's not great. But I'm guessing there's more to it?\nA: I mean, she said it's not just about the date. It's that I've been distant lately.\nB: Has she got a point?\nA: …Yeah, honestly, I have been distracted with work.\nB: Then the anniversary thing was just the last straw, ya know?\nA: You're right. I need to do better. I'll talk to her tonight.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Startup Pitch",
+      "level": 3,
+      "dialog_text": "A: I'm pitching to investors next week. I'm freaking out.\nB: You've been preparing for this for months. You got this.\nA: I know the product inside out, but the financial projections are what scare me.\nB: Investors know early-stage numbers are mostly guesses. They care more about the team and the market.\nA: That's reassuring. But what if they ask something I don't know?\nB: Just say \"That's a great question, I'll look into that\" — don't make up numbers.\nA: Good advice. I just wanna come across as credible.\nB: You will. Just be honest and passionate. That's what sells.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Relocation Decision",
+      "level": 3,
+      "dialog_text": "A: I got offered a transfer to the London office. Six months.\nB: Wow, that's huge! Are you gonna take it?\nA: I don't know. It'd be great for my career, but I'd miss everyone.\nB: Six months goes by fast. And I can come visit!\nA: You'd really do that?\nB: Of course! I've always wanted to go to London.\nA: That means a lot. I guess my biggest worry is being lonely.\nB: You'll make friends. You're good with people. And we can video call.\nA: Yeah… Okay. I think I'm gonna do it.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Family Drama",
+      "level": 3,
+      "dialog_text": "A: My brother and I haven't spoken in two months. It's killing me.\nB: What happened?\nA: He got upset about something I said at Thanksgiving. Honestly, I don't even remember what it was.\nB: So nobody's reaching out?\nA: I think we're both too stubborn. Waiting for the other to apologize first.\nB: Sometimes you just gotta be the bigger person.\nA: I know. But what if he rejects my apology?\nB: At least you tried. Regret of not trying is worse.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Health Scare",
+      "level": 3,
+      "dialog_text": "A: I had a panic attack last week. Thought I was having a heart attack.\nB: Oh my god, that sounds terrifying. Are you okay?\nA: I'm fine now. Went to the ER and everything. They said it was just anxiety.\nB: Just anxiety? That's not \"just\" anything. That's serious.\nA: Yeah, I guess I've been ignoring the signs. Not sleeping well, always stressed.\nB: You gotta take care of yourself, man. Work can wait.\nA: I'm starting therapy next week.\nB: Good. I'm proud of you for making that call.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Social Media Debate",
+      "level": 3,
+      "dialog_text": "A: I'm thinking about deleting my social media. All of it.\nB: Really? Even Instagram?\nA: Especially Instagram. I catch myself comparing my life to everyone else's.\nB: I feel that. But isn't it also how you stay in touch with people?\nA: Honestly, the people who matter, I talk to directly anyway.\nB: That's fair. I tried a social media detox once and it was really freeing.\nA: Right? I just need the courage to actually do it.\nB: Start with a week. See how you feel. You can always come back.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Career Change",
+      "level": 3,
+      "dialog_text": "A: I'm seriously considering quitting my job to become a graphic designer.\nB: That's a big leap. Do you have a portfolio ready?\nA: I've been working on one for the past six months. Taking online courses too.\nB: That's smart. Have you saved enough to cover a few months without income?\nA: I've got about six months of savings. I figured that's enough runway.\nB: Sounds like you've thought this through pretty well.\nA: I've been thinking about it for like two years. Finally feel ready.\nB: Then go for it. Life's too short to wonder \"what if.\"",
+      "type": "dialogue"
+    },
+    {
+      "title": "Apology",
+      "level": 3,
+      "dialog_text": "A: I need to apologize to you. I've been a bad friend lately.\nB: What do you mean?\nA: When you were going through that breakup, I wasn't really there for you. I was so caught up in my own stuff.\nB: Honestly, I did notice you were distant.\nA: I'm really sorry. You deserved better. I should have been there.\nB: I appreciate you saying that. It means a lot.\nA: I want to do better. Can we grab coffee this week? My treat.\nB: Yeah, I'd like that.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Financial Crisis",
+      "level": 3,
+      "dialog_text": "A: I need to be honest with you. I'm in a bit of a financial hole.\nB: What happened?\nA: I lost some money investing in crypto. More than I'm comfortable admitting.\nB: How bad are we talking?\nA: About fifteen thousand. It was money I shouldn't have risked.\nB: Okay. First, don't panic. We can figure this out.\nA: I feel so stupid. Everyone said it was risky.\nB: Look, what's done is done. Let's make a plan to recover.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Moving Abroad",
+      "level": 3,
+      "dialog_text": "A: I got accepted into the master's program in Barcelona!\nB: No way! Congratulations! That's amazing!\nA: Thanks! I still can't believe it. I applied on a whim.\nB: So you're actually moving to Spain?\nA: Looks like it! The program starts in September.\nB: That's like three months away. You gotta start packing.\nA: I know! I have so much to figure out. Visa, housing, all that.\nB: You'll figure it out. And I'm so jealous. Barcelona is incredible.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Parenting Struggle",
+      "level": 3,
+      "dialog_text": "A: My teenager wants a phone and I don't know what to do.\nB: How old is she?\nA: Twelve. All her friends have one, but I worry about screen time.\nB: That's tough. You don't wanna be the only parent saying no.\nA: Exactly! I don't wanna isolate her socially.\nB: Maybe get her a basic phone with limited features first?\nA: That's a good middle ground. Like a starter phone.\nB: Yeah, and set clear rules about when it can be used. Dinner time, homework time, no phones.\nA: I'll talk to her about it tonight. Set some ground rules.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Trust Issues",
+      "level": 3,
+      "dialog_text": "A: I found out my partner's been hiding their credit card debt from me.\nB: Oh man. How much are we talking?\nA: Almost twenty grand. And we're supposed to buy a house next year.\nB: That's a serious betrayal of trust. How do you feel?\nA: I feel… lied to. Like how can I trust them now?\nB: Have you talked to them about it?\nA: Briefly. They said they were embarrassed and didn't know how to tell me.\nB: I get being embarrassed, but that's not something you hide from your partner.\nA: Exactly. I don't know how we move forward from this.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Life Regrets",
+      "level": 3,
+      "dialog_text": "A: Do you ever feel like you're running out of time to do the things you wanna do?\nB: All the time. Especially as I get older.\nA: I turned 35 last week and it hit me hard. I haven't traveled, haven't written that book…\nB: Thirty-five is still young. You've got plenty of time.\nA: But the longer I wait, the harder it gets. Responsibilities pile up.\nB: Then stop waiting. Take that trip. Start that book.\nA: Easier said than done, you know?\nB: I know. But the regret of not trying is heavier than the effort of trying.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Office Politics",
+      "level": 3,
+      "dialog_text": "A: My coworker took credit for my work in the meeting today. I'm furious.\nB: What?! That's insane. What did you do?\nA: Nothing. I was too shocked to say anything.\nB: You gotta speak up next time. Otherwise they'll keep doing it.\nA: I know, I know. I just hate confrontation.\nB: It's not confrontation, it's standing up for yourself. Big difference.\nA: What would you say?\nB: Just say \"Actually, that was my idea\" or \"I've been working on that for weeks.\" Calm and firm.\nA: I'll try that next time. Hopefully there won't be a next time.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Environmental Guilt",
+      "level": 3,
+      "dialog_text": "A: I've been feeling guilty about how much plastic I use.\nB: It's hard to avoid though. Everything comes in plastic.\nA: I know, but I feel like I should be doing more. Like bring my own bags, buy in bulk…\nB: Those are good starts. Every little bit helps.\nA: But is it enough? Sometimes I feel like individual actions don't matter.\nB: Look, systemic change is what we really need. But individual habits shift culture.\nA: That's a good way to put it.\nB: Plus, if everyone thought \"my actions don't matter,\" nothing would change.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Grief",
+      "level": 3,
+      "dialog_text": "A: It's been a year since my dad passed and I still don't know how to deal with it.\nB: Grief doesn't have a timeline. There's no right way to feel.\nA: I know. But everyone around me seems to think I should be over it by now.\nB: They don't understand unless they've been through it.\nA: How did you cope when you lost your mom?\nB: I talked to a therapist. It helped more than I expected.\nA: Maybe I should try that.\nB: It helps to have someone who just listens without judging.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Entrepreneur Doubts",
+      "level": 3,
+      "dialog_text": "A: It's been six months since I started my business and I'm barely breaking even.\nB: Six months is nothing. Most successful businesses take years to be profitable.\nA: I know, but I'm running out of savings. What if I fail?\nB: Failure is part of the process. Doesn't mean you're a failure.\nA: Logically I know that. But emotionally it's hard.\nB: Have you thought about getting a part-time job to extend your runway?\nA: I have. I just hate the idea of splitting my focus.\nB: Think of it as temporary. Just to take the pressure off.\nA: Yeah… you're probably right.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Wedding Stress",
+      "level": 3,
+      "dialog_text": "A: Wedding planning is making me insane. I almost snapped at my mom today.\nB: Oh no. What did she do?\nA: She keeps adding people to the guest list. We agreed on 120, and now she wants 150.\nB: Classic mom move. Is she paying for part of it?\nA: Yeah, she's contributing. That's why I feel like I can't say no.\nB: You can say no. It's your wedding. Boundaries are important.\nA: I know, but I don't wanna hurt her feelings.\nB: It's your day at the end of it. She'll get over it.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Imposter Syndrome",
+      "level": 3,
+      "dialog_text": "A: I got promoted to team lead and I feel like a total fraud.\nB: That's classic imposter syndrome. You earned that promotion.\nA: But there are people on my team who know way more than me.\nB: You weren't promoted to know everything. You were promoted to lead.\nA: I guess. It's just hard to shake the feeling.\nB: Fake it till you make it. Everyone does it.\nA: Even you?\nB: Especially me. Every time I've leveled up in my career, I felt like I didn't belong. Eventually the feeling goes away.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Creative Block",
+      "level": 3,
+      "dialog_text": "A: I haven't been able to write anything good in weeks. It's so frustrating.\nB: Writer's block is real. Have you tried just writing badly on purpose?\nA: What do you mean?\nB: Like, give yourself permission to write something terrible. Takes the pressure off.\nA: Huh. That's actually not a bad idea.\nB: The point is to get something on the page. You can always edit crap.\nA: True. I've been waiting for \"inspiration\" but it's not coming.\nB: Inspiration shows up when you're working, not when you're waiting.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Online Dating",
+      "level": 3,
+      "dialog_text": "A: I'm so done with dating apps. It's a complete circus.\nB: Tell me about it. What happened this time?\nA: Matched with someone, great conversation for a week, then they just disappeared.\nB: Ghosting. Classic. People treat dating apps like a game.\nA: It's exhausting. I feel like I'm wasting my time.\nB: Maybe try meeting people in real life? Like through hobbies or classes.\nA: Easier said than done. I work from home most days.\nB: Sign up for something you enjoy. Cooking class, hiking group. Way more natural.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Work-Life Balance",
+      "level": 3,
+      "dialog_text": "A: My boss emailed me at 10 PM last night expecting a response.\nB: That's ridiculous. Did you reply?\nA: I did. And then I couldn't fall asleep because I was thinking about work.\nB: You gotta set boundaries. Just because they email late doesn't mean you have to respond.\nA: I know, but I feel guilty if I don't.\nB: That guilt is conditioned. Companies want you to feel that way.\nA: How do you handle it?\nB: I turn off notifications after 7 PM. If it's urgent, they'll call.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Cultural Differences",
+      "level": 3,
+      "dialog_text": "A: I had the weirdest cultural misunderstanding with my colleague today.\nB: Oh? What happened?\nA: I invited him for coffee and he kept insisting on paying. I didn't know if I should let him.\nB: Haha, it depends on the culture. In some places, whoever invites pays.\nA: I should've known that. He's from Japan. I felt so awkward.\nB: Don't worry, I'm sure he understood you didn't mean anything by it.\nA: Next time I'll just let him pay and say thanks.\nB: Or you can treat him next time. That's how relationships build.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Burnout",
+      "level": 3,
+      "dialog_text": "A: I think I'm burned out. I have zero motivation for anything.\nB: That's your body telling you to slow down.\nA: But I have so much to do. Deadlines, meetings, life stuff.\nB: If you crash completely, you won't be able to do any of it.\nA: I know you're right. But I don't know how to stop.\nB: Start small. Take one day this weekend with no work. No emails.\nA: One whole day? That sounds… kind of scary actually.\nB: That's exactly why you need it.",
+      "type": "dialogue"
+    },
+    {
+      "title": "Finding Purpose",
+      "level": 3,
+      "dialog_text": "A: Lately I've been wondering what the point of all this is. Work, routine, repeat.\nB: Sounds like an existential crisis. Pretty normal in your thirties.\nA: Is it? I thought something was wrong with me.\nB: No, it's healthy to question things. Means you're growing.\nA: So what do I do about it?\nB: Figure out what actually matters to you. Not what society says should matter.\nA: That's a big question. I don't know the answer.\nB: That's okay. The questioning itself is valuable.",
+      "type": "dialogue"
+    },
+    {
+      "title": "My Morning Routine",
+      "level": 1,
+      "type": "monologue",
+      "dialog_text": "Every morning I wake up at seven. The first thing I do is drink a glass of water. Then I brush my teeth and wash my face. After that, I make coffee and eat breakfast. I usually have eggs and toast. While I eat, I check my phone for messages. Then I get dressed and leave for work. It takes me about thirty minutes to get ready."
+    },
+    {
+      "title": "My Favorite Food",
+      "level": 1,
+      "type": "monologue",
+      "dialog_text": "My favorite food is pizza. I love how the cheese melts on top. I like pepperoni and mushrooms on my pizza. There's a pizza shop near my house. The owner knows me because I go there so much. I eat pizza maybe once a week. It's not the healthiest food, but it makes me happy. My friends and I often share a large pizza on weekends."
+    },
+    {
+      "title": "A Day at the Park",
+      "level": 1,
+      "type": "monologue",
+      "dialog_text": "Last Saturday I went to the park. The weather was warm and sunny. I saw many people there. Some were running, some were walking their dogs. Kids were playing on the swings. I sat on a bench and read my book for an hour. Then I bought ice cream from a small truck. It was a very relaxing day. I stayed until the sun started to go down."
+    },
+    {
+      "title": "My Pet Cat",
+      "level": 1,
+      "type": "monologue",
+      "dialog_text": "I have a cat named Mimi. She is three years old and has white fur. She likes to sleep on my bed during the day. When I come home, she runs to the door to meet me. She makes a soft sound and rubs against my legs. I feed her twice a day, morning and evening. At night, she sits on my lap while I watch TV. Having a cat is very nice."
+    },
+    {
+      "title": "Learning to Ride a Bike",
+      "level": 1,
+      "type": "monologue",
+      "dialog_text": "I learned to ride a bike when I was seven. My dad taught me in the park near our house. At first I was scared of falling. He held the back of my bike while I pedaled. After about an hour, I could ride by myself. I felt so happy and proud. Now I ride my bike everywhere. It's great exercise and it's good for the environment too."
+    },
+    {
+      "title": "My Best Friend",
+      "level": 1,
+      "type": "monologue",
+      "dialog_text": "My best friend is named Sarah. We met in middle school. We sat next to each other in class. Soon we started eating lunch together every day. Sarah is very funny and kind. She always listens when I have a problem. We like to watch movies and go shopping on weekends. We've been friends for over ten years now. She's like a sister to me."
+    },
+    {
+      "title": "The Seasons Here",
+      "level": 1,
+      "type": "monologue",
+      "dialog_text": "I live in a place with four seasons. Spring is warm and flowers start to bloom. Summer is hot, so I go swimming a lot. The fall is my favorite because the leaves change color. Everything looks orange and red. Winter is cold and sometimes it snows. I stay inside and drink hot chocolate. Each season has something special. I couldn't pick just one favorite."
+    },
+    {
+      "title": "Learning to Drive",
+      "level": 2,
+      "type": "monologue",
+      "dialog_text": "Learning to drive was harder than I expected. I mean, I thought it'd be just steering and pedals, but there's so much to pay attention to. My dad took me to an empty parking lot the first time. I was all over the place, honestly. Couldn't even stay in the lines. After a few weeks of practice, I started getting the hang of it. Parallel parking was the worst — I still avoid it if I can. But you know, once you pass the test, it all clicks. Now driving is second nature."
+    },
+    {
+      "title": "My First Job",
+      "level": 2,
+      "type": "monologue",
+      "dialog_text": "My first job was at a coffee shop when I was sixteen. I thought it'd be fun — free coffee, chatting with customers, you know. Turns out it's a lot of work. I had to wake up at five in the morning. My feet hurt after standing for hours. And some customers can be really rude. But I learned a lot. I learned how to handle pressure and how to talk to people. The best part was the tips and the friends I made there. I stayed for about a year and a half."
+    },
+    {
+      "title": "Moving to a New City",
+      "level": 2,
+      "type": "monologue",
+      "dialog_text": "I moved to a new city about two years ago for work. Honestly, the first few months were really tough. I didn't know anyone, and I kept getting lost. Everything felt unfamiliar and I missed my old friends a lot. But I told myself to give it time. I started going to local events and joined a gym. Slowly, I began to meet people. Now I actually love this city. There's always something to do, and I've built a good group of friends here. Moving was scary, but it was worth it."
+    },
+    {
+      "title": "Why I Started Running",
+      "level": 2,
+      "type": "monologue",
+      "dialog_text": "I started running about six months ago. Honestly, I hated it at first. The first week I could barely run for five minutes without feeling like I was gonna pass out. But I kept at it because I really wanted to get in shape. I started following a beginner program, running three times a week. Little by little, it got easier. One day I ran for twenty minutes without stopping and I couldn't believe it. Now I actually look forward to my runs. It clears my head and makes me feel good."
+    },
+    {
+      "title": "A Trip to the Beach",
+      "level": 2,
+      "type": "monologue",
+      "dialog_text": "Last summer my friends and I took a trip to the beach. We drove about four hours to get there. The traffic was terrible, honestly. But once we arrived and saw the ocean, it was totally worth it. We spent the whole day swimming and playing volleyball. The water was really warm. In the evening, we had a barbecue on the sand and watched the sunset. Someone brought a guitar and we sang songs. It was one of those perfect days you don't forget. We're planning to do it again this year."
     },
     {
       "title": "Learning English",
       "level": 2,
-      "dialog_text": "A: How long have you been learning English?\nB: I've been learning for about three years now.\nA: You speak very well!\nB: Thank you. I practice every day.\nA: What's the hardest part for you?\nB: Pronunciation is the most difficult. Some sounds don't exist in my language.\nA: I understand. What's your best advice for learning?\nB: Watch movies and listen to music in English. It really helps.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "How long has the person been learning English?",
-          "option_a": "One year",
-          "option_b": "Two years",
-          "option_c": "Three years",
-          "correct_answer": "C"
-        },
-        {
-          "question": "What is the hardest part for the person?",
-          "option_a": "Grammar",
-          "option_b": "Pronunciation",
-          "option_c": "Vocabulary",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What advice does the person give?",
-          "option_a": "Read books",
-          "option_b": "Take classes",
-          "option_c": "Watch movies and listen to music",
-          "correct_answer": "C"
-        }
-      ]
+      "type": "monologue",
+      "dialog_text": "I've been learning English for about three years now. The beginning was pretty rough, I'm not gonna lie. Grammar rules were confusing and my pronunciation was terrible. I remember being too shy to speak because I was afraid of making mistakes. But I kept watching movies and listening to podcasts every day. I also found a language partner online. We talk once a week for an hour. My English has improved a lot, but there's still so much to learn. The key is just to keep practicing every day."
     },
     {
-      "title": "Family Gathering",
+      "title": "My Morning Routine Change",
       "level": 2,
-      "dialog_text": "A: Are you going to your family gathering this weekend?\nB: Yes, I am. It's my mom's birthday.\nA: How many people will be there?\nB: Around twenty. My whole family is coming.\nA: That sounds nice. What are you bringing?\nB: I'm making a chocolate cake. It's her favorite.\nA: What time does it start?\nB: Around 2 PM. We'll have lunch together.\nA: Well, give her my best wishes.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "Why is the family gathering happening?",
-          "option_a": "Holiday",
-          "option_b": "Mom's birthday",
-          "option_c": "Wedding",
-          "correct_answer": "B"
-        },
-        {
-          "question": "How many people will attend?",
-          "option_a": "Ten",
-          "option_b": "Fifteen",
-          "option_c": "Twenty",
-          "correct_answer": "C"
-        },
-        {
-          "question": "What is the person bringing?",
-          "option_a": "Salad",
-          "option_b": "Chocolate cake",
-          "option_c": "Drinks",
-          "correct_answer": "B"
-        }
-      ]
+      "type": "monologue",
+      "dialog_text": "I used to hit snooze like three times every morning. I'd wake up feeling rushed and stressed. So about a month ago, I decided to change my morning routine. Now I wake up at six, fifteen minutes earlier than before. I do a quick stretch, drink some water, and read for twenty minutes. No phone in bed anymore — that was a hard habit to break. Honestly, it made a huge difference. I feel calmer and more prepared for the day. It's amazing what a small change can do."
     },
     {
-      "title": "Technology Problems",
+      "title": "Why I Changed Careers",
       "level": 3,
-      "dialog_text": "A: I can't get my computer to turn on. What should I do?\nB: Did you check if it's plugged in?\nA: Yeah, I already did that. It's definitely plugged in.\nB: Try holding down the power button for ten seconds.\nA: Let me try... No, still nothing.\nB: Hmm, it might be the battery. Can you remove it?\nA: It's not removable on this model.\nB: You might need to take it to a repair shop.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What is the problem?",
-          "option_a": "Computer is slow",
-          "option_b": "Computer won't turn on",
-          "option_c": "Internet is down",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What did the person already check?",
-          "option_a": "The battery",
-          "option_b": "If it's plugged in",
-          "option_c": "The screen",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What is the final suggestion?",
-          "option_a": "Buy a new computer",
-          "option_b": "Take it to a repair shop",
-          "option_c": "Call customer service",
-          "correct_answer": "B"
-        }
-      ]
+      "type": "monologue",
+      "dialog_text": "So, I spent almost seven years in accounting. Good money, stable job, all that. But man, I was miserable. Like, every Sunday I'd get this sinking feeling thinking about Monday morning. I kept telling myself, you know, it's fine, this is just what adult life is. But eventually I couldn't ignore it anymore. So I quit. Everyone thought I was crazy. I went back to school for graphic design, which was terrifying at thirty. But honestly? Best decision I ever made. I actually enjoy my work now. Sometimes you gotta take a risk to find what really fits you."
     },
     {
-      "title": "Restaurant Complaint",
+      "title": "Traveling Alone for the First Time",
       "level": 3,
-      "dialog_text": "A: Excuse me, there seems to be a problem with my order.\nB: I'm sorry to hear that. What's wrong?\nA: I ordered my steak medium, but it's well done.\nB: Oh, I apologize for that mistake.\nA: Also, my friend's salad has dressing when she asked for no dressing.\nB: I'm very sorry. Let me take both dishes back.\nA: Could we also get some more water, please?\nB: Of course. I'll bring everything right away.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "How did the customer order their steak?",
-          "option_a": "Rare",
-          "option_b": "Medium",
-          "option_c": "Well done",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What's wrong with the salad?",
-          "option_a": "It's cold",
-          "option_b": "Has dressing",
-          "option_c": "Missing ingredients",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What else does the customer request?",
-          "option_a": "More napkins",
-          "option_b": "More water",
-          "option_c": "The check",
-          "correct_answer": "B"
-        }
-      ]
+      "type": "monologue",
+      "dialog_text": "I took my first solo trip when I was twenty-three. Went to Japan for three weeks. My family thought I'd lost my mind — like, you're going alone? To a country where you don't speak the language? Honestly, I was scared too. The first couple days were overwhelming. I'd get lost, order the wrong food, you know, typical stuff. But around day four, something clicked. I realized being alone meant I could do whatever I wanted. I stayed in temples, ate at random little restaurants, made friends with locals. It completely changed how I see the world. Now I try to take a solo trip every year."
     },
     {
-      "title": "Business Meeting",
+      "title": "Imposter Syndrome",
       "level": 3,
-      "dialog_text": "A: Thanks for coming in today, everyone.\nB: I'd like to start with the sales report.\nA: Go ahead, Mark.\nB: Sales are up 15% from last quarter.\nC: That's great news! What's driving the increase?\nB: Our new marketing campaign has been very effective.\nA: And what about next quarter's projections?\nB: We expect another 10% growth if the trend continues.\nC: I'm impressed. Good work, team.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "How much have sales increased?",
-          "option_a": "10%",
-          "option_b": "15%",
-          "option_c": "20%",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What is driving the sales increase?",
-          "option_a": "Lower prices",
-          "option_b": "New marketing campaign",
-          "option_c": "New product",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What is the projection for next quarter?",
-          "option_a": "10% growth",
-          "option_b": "15% growth",
-          "option_c": "20% growth",
-          "correct_answer": "A"
-        }
-      ]
+      "type": "monologue",
+      "dialog_text": "You ever feel like you're gonna get found out any minute? Like someone's gonna tap you on the shoulder and say, hey, you don't actually belong here? That's imposter syndrome, and I've dealt with it my whole career. I'd get a promotion and think, well, they made a mistake. I'd finish a project and think anyone could've done it better. It's exhausting. What helped me was talking to other people about it. Turns out, like, almost everyone feels this way. Even the people who seem super confident. I'm still working on it, but now when that voice shows up, I can at least tell it to shut up."
     },
     {
-      "title": "Car Trouble",
+      "title": "Dealing with Burnout",
       "level": 3,
-      "dialog_text": "A: I think my car is overheating. Can you take a look?\nB: Let me see. How long have you been driving?\nA: About thirty minutes. The temperature light came on.\nB: Have you checked the coolant level?\nA: I'm not sure how to do that.\nB: I'll show you. It's this tank here. It's almost empty.\nA: Do I need to add more?\nB: Yes, but wait for the engine to cool down first. That's very important.\nA: Okay, how long should I wait?\nB: At least an hour, to be safe.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What is the problem with the car?",
-          "option_a": "It won't start",
-          "option_b": "Overheating",
-          "option_c": "Flat tire",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What is almost empty?",
-          "option_a": "Gas tank",
-          "option_b": "Coolant tank",
-          "option_c": "Oil tank",
-          "correct_answer": "B"
-        },
-        {
-          "question": "How long should the person wait before adding coolant?",
-          "option_a": "30 minutes",
-          "option_b": "1 hour",
-          "option_c": "2 hours",
-          "correct_answer": "B"
-        }
-      ]
+      "type": "monologue",
+      "dialog_text": "Last year I hit a wall. Hard. I was working twelve-hour days, skipping meals, answering emails at midnight. I thought I was being productive — turns out I was just running on empty. One morning I woke up and literally couldn't get out of bed. Like, my body just gave up. That was my wake-up call. I took a month off work, which felt impossible at first. Started seeing a therapist. Learned to actually rest, not just scroll my phone. I set boundaries now — no work after seven, no email on weekends. I wish I'd done it sooner. Burnout isn't a badge of honor, it's a warning sign."
     },
     {
-      "title": "Gym Membership",
+      "title": "The Gig Economy Life",
       "level": 3,
-      "dialog_text": "A: I'm interested in joining your gym. What are the rates?\nB: We have a monthly plan for $50 or an annual plan for $500.\nA: What's included in the membership?\nB: You get access to all equipment, group classes, and the pool.\nA: Are there any extra fees?\nB: There's a one-time registration fee of $25.\nA: Do you offer personal training?\nB: Yes, but that's an additional cost. It's $40 per session.\nA: Okay, I'll think about it. Can I try a free class first?\nB: Absolutely. We offer a free trial for first-time visitors.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "How much is the monthly plan?",
-          "option_a": "$40",
-          "option_b": "$50",
-          "option_c": "$60",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What is the registration fee?",
-          "option_a": "$15",
-          "option_b": "$20",
-          "option_c": "$25",
-          "correct_answer": "C"
-        },
-        {
-          "question": "Is there a free trial available?",
-          "option_a": "Yes",
-          "option_b": "No",
-          "option_c": "Only on weekends",
-          "correct_answer": "A"
-        }
-      ]
+      "type": "monologue",
+      "dialog_text": "I've been freelancing for about four years now. People think it's all freedom and flexibility, and yeah, there are perks. I work from home, set my own hours, all that. But nobody talks about the downsides. The income is unpredictable — some months are great, others you're barely scraping by. No paid time off, no health insurance, no 401k. You're constantly hunting for the next project. It's like you're always on. But honestly? I can't imagine going back to a nine-to-five. Being my own boss, choosing the work I do — that's worth the uncertainty. It's a trade-off, you know?"
     },
     {
-      "title": "Lost Item",
+      "title": "What Failure Taught Me",
       "level": 3,
-      "dialog_text": "A: Excuse me, I think I lost my wallet somewhere in the store.\nB: Oh no, I'm sorry to hear that. Can you describe it?\nA: It's black leather, and it has my ID and credit cards inside.\nB: When did you last see it?\nA: About twenty minutes ago, when I was in the electronics section.\nB: Let me check with customer service. What's your name?\nA: David Miller.\nB: Please wait here. I'll be right back.\nA: Thank you. I really hope someone found it.\nB: Good news! Someone turned it in at the front desk.\nA: Oh, thank goodness! I was so worried.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What did the person lose?",
-          "option_a": "Phone",
-          "option_b": "Wallet",
-          "option_c": "Keys",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What color is the wallet?",
-          "option_a": "Brown",
-          "option_b": "Black",
-          "option_c": "Blue",
-          "correct_answer": "B"
-        },
-        {
-          "question": "Where was the wallet found?",
-          "option_a": "Electronics section",
-          "option_b": "Front desk",
-          "option_c": "Parking lot",
-          "correct_answer": "B"
-        }
-      ]
+      "type": "monologue",
+      "dialog_text": "I started a business a few years ago with a friend. We put everything into it — savings, time, late nights, the whole deal. And it failed. Like, completely failed. We ran out of money in about a year. I felt like such a loser. I avoided my friends because I didn't want to answer the 'how's the business going' question. It took me a while to see it differently. But looking back, I learned more from that failure than from any success I've had. I learned how to handle money, how to work with people, how to bounce back. Failure's not the end — it's just really expensive tuition."
     },
     {
-      "title": "Weekend Plans",
+      "title": "Why I Quit Social Media",
       "level": 3,
-      "dialog_text": "A: Any plans for the weekend?\nB: I'm going hiking with a couple of friends.\nA: That sounds fun. Where are you going?\nB: We're heading to the national park about an hour from here.\nA: How long will you be out there?\nB: Just for the day. We'll leave early in the morning.\nA: Have you been there before?\nB: Once, a few years ago. It's beautiful this time of year.\nA: I hope you have good weather.\nB: Thanks! The forecast says it'll be sunny.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What is the person doing on the weekend?",
-          "option_a": "Camping",
-          "option_b": "Hiking",
-          "option_c": "Swimming",
-          "correct_answer": "B"
-        },
-        {
-          "question": "How far is the national park?",
-          "option_a": "30 minutes",
-          "option_b": "1 hour",
-          "option_c": "2 hours",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What will the weather be like?",
-          "option_a": "Rainy",
-          "option_b": "Cloudy",
-          "option_c": "Sunny",
-          "correct_answer": "C"
-        }
-      ]
-    },
-    {
-      "title": "Online Shopping",
-      "level": 3,
-      "dialog_text": "A: I bought this shirt online, but it doesn't fit.\nB: What's the problem with it?\nA: It's too small. I ordered a large, but this feels like a medium.\nB: Did you check the size chart before ordering?\nA: I thought I did, but maybe I made a mistake.\nB: What's the return policy?\nA: They offer free returns within thirty days.\nB: That's good. Are you going to exchange it for a larger size?\nA: I think so. I really like the style.\nB: Make sure to measure yourself first this time.\nA: You're right. I don't want to make the same mistake again.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What size did the person order?",
-          "option_a": "Small",
-          "option_b": "Medium",
-          "option_c": "Large",
-          "correct_answer": "C"
-        },
-        {
-          "question": "What is the return policy?",
-          "option_a": "No returns",
-          "option_b": "Free returns within 30 days",
-          "option_c": "Store credit only",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What will the person do?",
-          "option_a": "Keep the shirt",
-          "option_b": "Return for refund",
-          "option_c": "Exchange for larger size",
-          "correct_answer": "C"
-        }
-      ]
-    },
-    {
-      "title": "Advice from a Friend",
-      "level": 3,
-      "dialog_text": "A: I don't know what to do about my job. I'm really unhappy there.\nB: Have you thought about looking for something else?\nA: I have, but I'm scared to make a change.\nB: What's the worst that could happen?\nA: I might end up in a worse situation.\nB: Or you could end up much happier. You'll never know unless you try.\nA: That's true. I've been there for five years with no promotion.\nB: It sounds like you've already made up your mind.\nA: I guess I have. I'm going to update my resume tonight.\nB: Good for you! I'm proud of you for taking action.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "Why is the person unhappy?",
-          "option_a": "Low pay",
-          "option_b": "No promotion in 5 years",
-          "option_c": "Bad boss",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What is the person scared of?",
-          "option_a": "Losing money",
-          "option_b": "Making a change",
-          "option_c": "Telling the boss",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What will the person do tonight?",
-          "option_a": "Talk to the boss",
-          "option_b": "Update their resume",
-          "option_c": "Apply for jobs",
-          "correct_answer": "B"
-        }
-      ]
-    },
-    {
-      "title": "Medical Appointment",
-      "level": 3,
-      "dialog_text": "A: Hello, I'd like to schedule an appointment with Dr. Smith.\nB: What seems to be the problem?\nA: I've been having really bad headaches for the past week.\nB: Is there anything that makes them better or worse?\nA: They seem worse when I look at screens for too long.\nB: When would you like to come in?\nA: As soon as possible, please.\nB: Dr. Smith has an opening tomorrow at 10 AM. Does that work for you?\nA: Yes, that's perfect.\nB: Great. Please bring your insurance card and arrive 15 minutes early.\nA: I will. Thank you very much.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What is the patient's symptom?",
-          "option_a": "Stomach pain",
-          "option_b": "Headaches",
-          "option_c": "Sore throat",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What makes the symptom worse?",
-          "option_a": "Looking at screens",
-          "option_b": "Eating certain foods",
-          "option_c": "Lack of sleep",
-          "correct_answer": "A"
-        },
-        {
-          "question": "What time is the appointment?",
-          "option_a": "9 AM",
-          "option_b": "10 AM",
-          "option_c": "11 AM",
-          "correct_answer": "B"
-        }
-      ]
-    },
-    {
-      "title": "Financial Planning",
-      "level": 3,
-      "dialog_text": "A: I want to start saving money, but I don't know where to begin.\nB: The first step is to track your spending for a month.\nA: That sounds like a lot of work.\nB: It's actually not that hard. There are apps that do it for you.\nA: Okay, I can try that. Then what?\nB: Once you know where your money is going, you can create a budget.\nA: How much should I try to save each month?\nB: A good rule of thumb is to save 20% of your income.\nA: That seems like a lot. I don't know if I can do that.\nB: Start with 10% and work your way up. Every little bit helps.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What is the first step in saving money?",
-          "option_a": "Create a budget",
-          "option_b": "Track spending",
-          "option_c": "Open a savings account",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What is the recommended savings percentage?",
-          "option_a": "10%",
-          "option_b": "15%",
-          "option_c": "20%",
-          "correct_answer": "C"
-        },
-        {
-          "question": "What does the advisor suggest starting with?",
-          "option_a": "5%",
-          "option_b": "10%",
-          "option_c": "15%",
-          "correct_answer": "B"
-        }
-      ]
-    },
-    {
-      "title": "Dating Advice",
-      "level": 3,
-      "dialog_text": "A: I have a date on Friday, and I'm really nervous.\nB: That's exciting! Where are you going?\nA: We're going to that new Italian restaurant downtown.\nB: That's a nice place. What are you going to wear?\nA: I have no idea. I was hoping you could help me.\nB: Definitely don't wear anything too formal. It's casual there.\nA: Okay, so jeans and a nice shirt?\nB: Perfect. Just be yourself and try to relax.\nA: What if there's an awkward silence?\nB: It's normal. Just ask questions about them. People love talking about themselves.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "Where is the date?",
-          "option_a": "A movie theater",
-          "option_b": "An Italian restaurant",
-          "option_c": "A coffee shop",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What clothing does the friend suggest?",
-          "option_a": "Formal wear",
-          "option_b": "Jeans and a nice shirt",
-          "option_c": "Casual shorts",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What advice is given for awkward silences?",
-          "option_a": "Leave early",
-          "option_b": "Ask questions",
-          "option_c": "Talk about yourself",
-          "correct_answer": "B"
-        }
-      ]
-    },
-    {
-      "title": "Moving to a New City",
-      "level": 3,
-      "dialog_text": "A: I'm thinking about moving to Chicago for a new job.\nB: That's a big decision. Have you visited there before?\nA: Once, for a weekend. I really liked the energy of the city.\nB: Do you know anyone there?\nA: Not really. That's what makes me nervous.\nB: It can be hard starting over without a support system.\nA: I know, but the job opportunity is too good to pass up.\nB: Have you looked at apartments yet?\nA: I've been browsing online, but I want to see them in person.\nB: Maybe you should visit for a week to get a feel for neighborhoods.\nA: That's a good idea. I'll take some vacation time to do that.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "Why is the person moving?",
-          "option_a": "For school",
-          "option_b": "For a new job",
-          "option_c": "To be near family",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What makes the person nervous?",
-          "option_a": "The cost of living",
-          "option_b": "Not knowing anyone",
-          "option_c": "Finding an apartment",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What does the friend suggest?",
-          "option_a": "Visit for a week",
-          "option_b": "Don't move",
-          "option_c": "Find a roommate",
-          "correct_answer": "A"
-        }
-      ]
-    },
-    {
-      "title": "Parent-Teacher Conference",
-      "level": 3,
-      "dialog_text": "A: Thank you for coming in to discuss your daughter's progress.\nB: Of course. How is she doing in your class?\nA: Academically, she's doing very well. Her grades are above average.\nB: That's good to hear. Are there any concerns?\nA: She seems distracted lately and doesn't participate as much.\nB: She's been going through some changes at home. We just moved.\nA: That can definitely affect a child's focus.\nB: What can I do to help her feel more comfortable?\nA: Encourage her to join an after-school activity to make friends.\nB: That's a great idea. I'll talk to her about it tonight.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "How are the daughter's grades?",
-          "option_a": "Below average",
-          "option_b": "Average",
-          "option_c": "Above average",
-          "correct_answer": "C"
-        },
-        {
-          "question": "What has changed at home?",
-          "option_a": "The family moved",
-          "option_b": "Parents divorced",
-          "option_c": "New baby",
-          "correct_answer": "A"
-        },
-        {
-          "question": "What does the teacher suggest?",
-          "option_a": "Tutoring",
-          "option_b": "After-school activity",
-          "option_c": "Summer school",
-          "correct_answer": "B"
-        }
-      ]
-    },
-    {
-      "title": "Fitness Goals",
-      "level": 3,
-      "dialog_text": "A: I've been trying to lose weight, but nothing seems to work.\nB: What have you been doing so far?\nA: I've been running three times a week, but I'm not seeing results.\nB: What about your diet? Exercise is only half of the equation.\nA: I eat pretty healthy, I think. Mostly salads and grilled chicken.\nB: Do you track your calories? You might be eating more than you realize.\nA: I've never tried that. It seems tedious.\nB: There are apps that make it really easy. Just scan the barcode.\nA: Okay, I'll give it a try. How many calories should I aim for?\nB: Start with 1800 per day and adjust based on your activity level.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "How often does the person run?",
-          "option_a": "Two times a week",
-          "option_b": "Three times a week",
-          "option_c": "Five times a week",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What does the friend suggest trying?",
-          "option_a": "More exercise",
-          "option_b": "Track calories",
-          "option_c": "Eat less",
-          "correct_answer": "B"
-        },
-        {
-          "question": "How many calories should the person start with?",
-          "option_a": "1500",
-          "option_b": "1800",
-          "option_c": "2000",
-          "correct_answer": "B"
-        }
-      ]
-    },
-    {
-      "title": "Buying a Car",
-      "level": 3,
-      "dialog_text": "A: I'm thinking about buying my first car. Do you have any advice?\nB: First, set a budget and stick to it. Don't let the dealer upsell you.\nA: What about buying used versus new?\nB: Used is usually better for your first car. You won't lose as much value.\nA: How do I know if I'm getting a good deal?\nB: Research online before you go. Look at similar cars in the area.\nA: Should I bring someone with me?\nB: Definitely. Bring a friend who knows about cars. Two heads are better than one.\nA: What about financing? Should I get a loan from the dealer?\nB: Compare rates from your bank first. Often they offer better terms.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What type of car does the friend recommend?",
-          "option_a": "New car",
-          "option_b": "Used car",
-          "option_c": "Leased car",
-          "correct_answer": "B"
-        },
-        {
-          "question": "Who should the person bring to the dealership?",
-          "option_a": "A parent",
-          "option_b": "A friend who knows cars",
-          "option_c": "A lawyer",
-          "correct_answer": "B"
-        },
-        {
-          "question": "Where should the person compare loan rates?",
-          "option_a": "Only at the dealer",
-          "option_b": "Online only",
-          "option_c": "From their bank first",
-          "correct_answer": "C"
-        }
-      ]
-    },
-    {
-      "title": "Party Planning",
-      "level": 3,
-      "dialog_text": "A: I'm throwing a surprise party for my husband's birthday. Need help!\nB: I'd love to help. When is it?\nA: Next Saturday, and I'm so behind on planning.\nB: First things first, what's the guest list like?\nA: About thirty people, mostly his coworkers and our friends.\nB: Are you having it at your house or somewhere else?\nA: I was thinking here, but I'm not sure we have enough space.\nB: What about renting a room at a restaurant?\nA: That's a good idea. Do you know any good places?\nB: There's that sports bar downtown. They have a private room.\nA: I'll call them tomorrow. Thanks for the suggestion!",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What kind of party is it?",
-          "option_a": "Wedding",
-          "option_b": "Surprise birthday",
-          "option_c": "Graduation",
-          "correct_answer": "B"
-        },
-        {
-          "question": "How many people are invited?",
-          "option_a": "Twenty",
-          "option_b": "Thirty",
-          "option_c": "Forty",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What location does the friend suggest?",
-          "option_a": "A restaurant",
-          "option_b": "A park",
-          "option_c": "A community center",
-          "correct_answer": "A"
-        }
-      ]
-    },
-    {
-      "title": "Pet Adoption",
-      "level": 3,
-      "dialog_text": "A: I'm thinking about adopting a dog, but I've never had one before.\nB: That's a big responsibility. Have you done any research?\nA: A little bit. I know I need to walk it every day.\nB: That's just the beginning. You also need to budget for food and vet bills.\nA: How much does that usually cost per month?\nB: About $100 for food, plus maybe $50 for other supplies.\nA: That's not too bad. What about breeds? Any recommendations?\nB: For a first-time owner, I'd suggest a medium-sized, calm breed.\nA: Like a labrador?\nB: Exactly. They're friendly and easy to train.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What is the monthly cost estimate for food?",
-          "option_a": "$50",
-          "option_b": "$100",
-          "option_c": "$150",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What breed does the friend suggest?",
-          "option_a": "Small breed",
-          "option_b": "Labrador",
-          "option_c": "Working dog",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What quality do labradors have?",
-          "option_a": "Aggressive",
-          "option_b": "Hard to train",
-          "option_c": "Friendly and easy to train",
-          "correct_answer": "C"
-        }
-      ]
-    },
-    {
-      "title": "Cooking Disaster",
-      "level": 3,
-      "dialog_text": "A: I tried to make dinner for my girlfriend, and it was a complete disaster.\nB: Oh no! What happened?\nA: I burned the chicken, and the rice was still hard in the middle.\nB: Did you follow a recipe?\nA: I tried to, but I got distracted and forgot to set a timer.\nB: We've all been there. What did you end up eating?\nA: We ordered pizza. She was nice about it, but I felt terrible.\nB: Don't be so hard on yourself. Cooking takes practice.\nA: I guess so. Do you have any easy recipes I could try?\nB: Start with something simple like pasta. It's hard to mess up.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What went wrong with the chicken?",
-          "option_a": "It was undercooked",
-          "option_b": "It was burned",
-          "option_c": "It was too salty",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What did the person forget to do?",
-          "option_a": "Buy ingredients",
-          "option_b": "Set a timer",
-          "option_c": "Turn on the oven",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What did they end up eating?",
-          "option_a": "Pasta",
-          "option_b": "Sandwiches",
-          "option_c": "Pizza",
-          "correct_answer": "C"
-        }
-      ]
-    },
-    {
-      "title": "Renovation Plans",
-      "level": 3,
-      "dialog_text": "A: We're finally going to renovate our kitchen next month.\nB: That's exciting! What are you planning to change?\nA: Everything. New cabinets, countertops, and appliances.\nB: Do you have a contractor lined up?\nA: Not yet. We're still getting quotes. The prices vary a lot.\nB: How much is the estimate so far?\nA: Anywhere from $15,000 to $25,000. It's hard to decide.\nB: Make sure to check their references before you choose.\nA: That's a good point. I'll ask for references from all of them.\nB: Also, plan for unexpected costs. There's always something.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What room is being renovated?",
-          "option_a": "Bathroom",
-          "option_b": "Kitchen",
-          "option_c": "Bedroom",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What is the estimated cost range?",
-          "option_a": "$10,000-20,000",
-          "option_b": "$15,000-25,000",
-          "option_c": "$20,000-30,000",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What does the friend suggest checking?",
-          "option_a": "Prices online",
-          "option_b": "Contractor references",
-          "option_c": "Material quality",
-          "correct_answer": "B"
-        }
-      ]
-    },
-    {
-      "title": "Teaching Kids Responsibility",
-      "level": 3,
-      "dialog_text": "A: How do you get your kids to do their chores without complaining?\nB: I started giving them an allowance. It really motivates them.\nA: How much do you give them?\nB: $5 per week for basic chores like taking out the trash and making their beds.\nA: Do they ever refuse to do them?\nB: Sometimes, but then they don't get paid. They learn quickly.\nA: What about bigger tasks like cleaning the garage?\nB: Those are extra. I pay them $10 for big jobs like that.\nA: I should try that system. My kids just ignore me when I ask.\nB: Make sure you're consistent. That's the key.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What motivates the kids to do chores?",
-          "option_a": "Praise",
-          "option_b": "Allowance",
-          "option_c": "Rewards",
-          "correct_answer": "B"
-        },
-        {
-          "question": "How much is the weekly allowance for basic chores?",
-          "option_a": "$3",
-          "option_b": "$5",
-          "option_c": "$7",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What is the key to the system?",
-          "option_a": "Being generous",
-          "option_b": "Being consistent",
-          "option_c": "Being strict",
-          "correct_answer": "B"
-        }
-      ]
-    },
-    {
-      "title": "Learning Guitar",
-      "level": 3,
-      "dialog_text": "A: I bought a guitar last month, but I'm not making much progress.\nB: Are you taking lessons or trying to learn on your own?\nA: I've been using YouTube videos, but it's not the same as a real teacher.\nB: Have you considered an app? There are some really good ones.\nA: I tried a few, but I got bored after a couple of weeks.\nB: Maybe you need to set a specific goal, like learning one song.\nA: That's a good idea. What song would you recommend for a beginner?\nB: \"Knockin' on Heaven's Door\" is pretty easy. Only three chords.\nA: Okay, I'll try that. Thanks for the advice.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "How has the person been learning guitar?",
-          "option_a": "Taking lessons",
-          "option_b": "YouTube videos",
-          "option_c": "Books",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What does the friend suggest as a goal?",
-          "option_a": "Learn one song",
-          "option_b": "Practice daily",
-          "option_c": "Buy a better guitar",
-          "correct_answer": "A"
-        },
-        {
-          "question": "What song is recommended?",
-          "option_a": "Wonderwall",
-          "option_b": "Knockin' on Heaven's Door",
-          "option_c": "Stairway to Heaven",
-          "correct_answer": "B"
-        }
-      ]
-    },
-    {
-      "title": "Neighbor Dispute",
-      "level": 3,
-      "dialog_text": "A: I have a problem with my neighbor. He plays loud music late at night.\nB: Have you tried talking to him about it?\nA: I left a note on his door, but nothing changed.\nB: Maybe you should knock and talk to him face to face.\nA: I'm not very confrontational. What if he gets angry?\nB: Just be polite and explain how it's affecting your sleep.\nA: What if that doesn't work?\nB: Then you can file a noise complaint with the building manager.\nA: I hope it doesn't come to that. I don't want bad blood.\nB: Most people are reasonable if you approach them calmly.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What is the neighbor doing?",
-          "option_a": "Playing loud music",
-          "option_b": "Having parties",
-          "option_c": "Dogs barking",
-          "correct_answer": "A"
-        },
-        {
-          "question": "What did the person try first?",
-          "option_a": "Called the police",
-          "option_b": "Left a note",
-          "option_c": "Knocked on the door",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What is the next step if talking fails?",
-          "option_a": "Call the police",
-          "option_b": "File a complaint",
-          "option_c": "Move out",
-          "correct_answer": "B"
-        }
-      ]
-    },
-    {
-      "title": "Job Promotion",
-      "level": 3,
-      "dialog_text": "A: I just got offered a promotion at work!\nB: That's amazing! Congratulations! What's the new position?\nA: I'll be the regional sales manager for the western territory.\nB: Does it come with a raise?\nA: Yes, a 15% increase, plus a company car.\nB: That sounds like a great package. Are you going to take it?\nA: I think so, but I'm nervous about the added responsibility.\nB: You've been preparing for this for years. You'll do great.\nA: I'll be managing ten people instead of just myself.\nB: Remember, good leaders trust their teams. You don't have to do everything alone.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What is the new position?",
-          "option_a": "Regional sales manager",
-          "option_b": "Team leader",
-          "option_c": "Account executive",
-          "correct_answer": "A"
-        },
-        {
-          "question": "How much is the raise?",
-          "option_a": "10%",
-          "option_b": "15%",
-          "option_c": "20%",
-          "correct_answer": "B"
-        },
-        {
-          "question": "How many people will the person manage?",
-          "option_a": "Five",
-          "option_b": "Ten",
-          "option_c": "Fifteen",
-          "correct_answer": "B"
-        }
-      ]
-    },
-    {
-      "title": "Wedding Planning",
-      "level": 3,
-      "dialog_text": "A: Planning this wedding is way more stressful than I expected.\nB: What's the biggest challenge so far?\nA: The guest list. My parents want to invite everyone they know.\nB: How many people are on the list right now?\nA: Over 200. We only wanted around 100.\nB: You need to set a firm number and stick to it.\nA: I tried, but my mom keeps adding more people.\nB: Maybe you could have a small ceremony and a larger reception later.\nA: That's not a bad idea. Then everyone feels included.\nB: Remember, this day is about you and your partner. Don't lose sight of that.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What is the biggest challenge?",
-          "option_a": "The venue",
-          "option_b": "The guest list",
-          "option_c": "The budget",
-          "correct_answer": "B"
-        },
-        {
-          "question": "How many people are on the current guest list?",
-          "option_a": "100",
-          "option_b": "150",
-          "option_c": "200",
-          "correct_answer": "C"
-        },
-        {
-          "question": "What alternative solution is suggested?",
-          "option_a": "Elope",
-          "option_b": "Small ceremony, larger reception later",
-          "option_c": "Cancel the wedding",
-          "correct_answer": "B"
-        }
-      ]
-    },
-    {
-      "title": "Technology Addiction",
-      "level": 3,
-      "dialog_text": "A: I think I spend way too much time on my phone. It's becoming a problem.\nB: How many hours a day would you say you're on it?\nA: Probably five or six hours. Maybe more on weekends.\nB: That is a lot. What are you usually doing on it?\nA: Social media mostly, scrolling through feeds mindlessly.\nB: Have you tried setting screen time limits on your phone?\nA: I have, but I always ignore them. It's too easy to override.\nB: What about leaving your phone in another room when you're home?\nA: That makes me anxious. I feel like I'm missing something.\nB: That's exactly the addiction talking. Try it for one hour and see how you feel.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "How many hours does the person spend on their phone?",
-          "option_a": "2-3 hours",
-          "option_b": "5-6 hours",
-          "option_c": "8-10 hours",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What does the person do mostly on their phone?",
-          "option_a": "Work emails",
-          "option_b": "Social media",
-          "option_c": "Games",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What makes the person anxious?",
-          "option_a": "Running out of battery",
-          "option_b": "Missing notifications",
-          "option_c": "Leaving phone in another room",
-          "correct_answer": "C"
-        }
-      ]
-    },
-    {
-      "title": "Volunteering",
-      "level": 3,
-      "dialog_text": "A: I've been thinking about volunteering on weekends. Any suggestions?\nB: What causes are you passionate about?\nA: I love animals. Maybe an animal shelter?\nB: That's a great choice. Shelters always need help with walking dogs.\nA: Do I need any special training for that?\nB: Usually just a short orientation. They'll show you how to handle the dogs.\nA: How many hours should I commit to?\nB: Most places are happy with as little as two hours per week.\nA: I can definitely do that. Do I just show up and ask?\nB: Call ahead and ask about their volunteer application process.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What cause is the person passionate about?",
-          "option_a": "Children",
-          "option_b": "Animals",
-          "option_c": "Environment",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What would the volunteer do at the shelter?",
-          "option_a": "Feed the animals",
-          "option_b": "Walk dogs",
-          "option_c": "Clean cages",
-          "correct_answer": "B"
-        },
-        {
-          "question": "How many hours per week is typical for volunteers?",
-          "option_a": "1 hour",
-          "option_b": "2 hours",
-          "option_c": "5 hours",
-          "correct_answer": "B"
-        }
-      ]
-    },
-    {
-      "title": "Starting a Business",
-      "level": 3,
-      "dialog_text": "A: I'm thinking about starting my own bakery. What do you think?\nB: You make the best cookies I've ever had. I think it's a great idea.\nA: Thanks! I'm just nervous about the financial risk.\nB: Have you written a business plan yet?\nA: Not yet. I don't even know where to start.\nB: There are templates online. You need to estimate your costs.\nA: What are the biggest expenses?\nB: Rent for the space, equipment, ingredients, and labor.\nA: I might start small, selling at farmers' markets first.\nB: That's smart. You can test the market without too much risk.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What business does the person want to start?",
-          "option_a": "Restaurant",
-          "option_b": "Bakery",
-          "option_c": "Coffee shop",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What does the friend suggest doing first?",
-          "option_a": "Find a location",
-          "option_b": "Write a business plan",
-          "option_c": "Buy equipment",
-          "correct_answer": "B"
-        },
-        {
-          "question": "Where might the person start selling first?",
-          "option_a": "Online",
-          "option_b": "Farmers' markets",
-          "option_c": "A food truck",
-          "correct_answer": "B"
-        }
-      ]
-    },
-    {
-      "title": "Bad Haircut",
-      "level": 3,
-      "dialog_text": "A: I just got a haircut, and I hate it. What should I do?\nB: Let me see... Oh, it's not that bad. Maybe a little short.\nA: A little? She cut off three inches more than I asked for!\nB: Did you tell her you didn't like it while you were there?\nA: I was too shy to say anything. I just paid and left.\nB: You should call and explain. Maybe they can fix it for free.\nA: I don't want to go back. I'm too embarrassed.\nB: Then just let it grow out. In a month, it'll look better.\nA: You're right. I'm overreacting. It's just hair. It'll grow.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "How much more was cut than requested?",
-          "option_a": "1 inch",
-          "option_b": "2 inches",
-          "option_c": "3 inches",
-          "correct_answer": "C"
-        },
-        {
-          "question": "Why didn't the person speak up at the salon?",
-          "option_a": "In a hurry",
-          "option_b": "Too shy",
-          "option_c": "Phone rang",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What does the friend suggest doing?",
-          "option_a": "Call to complain",
-          "option_b": "Go to another salon",
-          "option_c": "Let it grow out",
-          "correct_answer": "C"
-        }
-      ]
-    },
-    {
-      "title": "Public Speaking",
-      "level": 3,
-      "dialog_text": "A: I have to give a presentation at work tomorrow, and I'm terrified.\nB: Public speaking is scary, but preparation makes a huge difference.\nA: I've prepared, but I'm still so nervous.\nB: Practice in front of a mirror or record yourself.\nA: I've done that a few times, but it's not the same as real people.\nB: Practice in front of a friend or family member. Get used to eyes on you.\nA: That's a good idea. What about my voice? I sound so shaky.\nB: Take deep breaths before you start. It'll calm your nerves.\nA: What if I forget what I'm supposed to say?\nB: Keep notecards with bullet points, not full sentences.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What is the person scared of?",
-          "option_a": "Meeting the boss",
-          "option_b": "Public speaking",
-          "option_c": "Working late",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What does the friend suggest practicing?",
-          "option_a": "In front of a mirror",
-          "option_b": "In an empty room",
-          "option_c": "While driving",
-          "correct_answer": "A"
-        },
-        {
-          "question": "What should the person put on notecards?",
-          "option_a": "Full sentences",
-          "option_b": "Bullet points",
-          "option_c": "Pictures",
-          "correct_answer": "B"
-        }
-      ]
-    },
-    {
-      "title": "Apartment Noise",
-      "level": 3,
-      "dialog_text": "A: The upstairs neighbor's kids run around all day. It's driving me crazy.\nB: Have you talked to the neighbor about it?\nA: I knocked once, but no one answered.\nB: Try leaving a polite note explaining the situation.\nA: I'm worried they'll get defensive and make it worse.\nB: Most people don't realize how much noise travels through floors.\nA: That's true. They might not even know it's a problem.\nB: If that doesn't work, talk to the building manager.\nA: I hope it doesn't come to that. I'll try a note first.\nB: Be friendly and suggest they put down rugs to muffle the sound.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "What is the problem with the upstairs neighbor?",
-          "option_a": "Loud music",
-          "option_b": "Kids running",
-          "option_c": "Fighting",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What did the person try first?",
-          "option_a": "Left a note",
-          "option_b": "Knocked on the door",
-          "option_c": "Called the manager",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What does the friend suggest using to muffle sound?",
-          "option_a": "Carpet",
-          "option_b": "Rugs",
-          "option_c": "Curtains",
-          "correct_answer": "B"
-        }
-      ]
-    },
-    {
-      "title": "Late Night Work",
-      "level": 3,
-      "dialog_text": "A: I've been working until midnight every day this week. I'm exhausted.\nB: That's not sustainable. Is it always this busy?\nA: No, it's just a project deadline. It should get better next week.\nB: Make sure you're taking care of yourself. Sleep is important.\nA: I know, but I can't fall behind. There's too much at stake.\nB: Can you delegate any of your tasks to others?\nA: Everyone else is just as busy as I am.\nB: What about working from home a couple of days to save commute time?\nA: That's a good idea. I'll ask my boss about it tomorrow.\nB: And don't forget to eat properly. Junk food won't help your energy.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "Why is the person working so late?",
-          "option_a": "Project deadline",
-          "option_b": "Short-staffed",
-          "option_c": "Boss demands it",
-          "correct_answer": "A"
-        },
-        {
-          "question": "What does the friend suggest to save time?",
-          "option_a": "Work faster",
-          "option_b": "Work from home",
-          "option_c": "Skip breaks",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What does the friend say about food?",
-          "option_a": "Skip meals to save time",
-          "option_b": "Order takeout",
-          "option_c": "Eat properly, not junk food",
-          "correct_answer": "C"
-        }
-      ]
-    },
-    {
-      "title": "Friendship Problems",
-      "level": 3,
-      "dialog_text": "A: My best friend hasn't talked to me in two weeks, and I don't know why.\nB: Did you have an argument that I don't know about?\nA: No, everything seemed fine. Then suddenly she stopped responding.\nB: Have you tried reaching out again?\nA: I sent a text yesterday, but she left me on read.\nB: Maybe something is going on in her life that she hasn't shared.\nA: I didn't think about that. Maybe she's dealing with something hard.\nB: Give her space for a few more days, then try calling instead of texting.\nA: You're right. A phone call is more personal.\nB: If she still doesn't respond, then you might need to accept that the friendship is changing.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "How long has the friend not talked to the person?",
-          "option_a": "One week",
-          "option_b": "Two weeks",
-          "option_c": "Three weeks",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What did the person try yesterday?",
-          "option_a": "Called",
-          "option_b": "Sent a text",
-          "option_c": "Sent an email",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What does the friend suggest trying next?",
-          "option_a": "Send another text",
-          "option_b": "Call instead",
-          "option_c": "Visit in person",
-          "correct_answer": "B"
-        }
-      ]
-    },
-    {
-      "title": "Buying a House",
-      "level": 3,
-      "dialog_text": "A: We found a house we love, but it's at the top of our budget.\nB: How much over your ideal price is it?\nA: About $30,000 more than we wanted to spend.\nB: That's significant, but not impossible. What's included?\nA: It has a finished basement and a huge backyard.\nB: Those are features you'd pay for anyway if you bought a cheaper house.\nA: That's what we're thinking. It might be worth it in the long run.\nB: Have you factored in property taxes and maintenance costs?\nA: Yes, we calculated everything. We can afford it, but it'll be tight.\nB: Only you can decide if the stretch is worth it. Trust your gut.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "How much more is the house than the budget?",
-          "option_a": "$20,000",
-          "option_b": "$30,000",
-          "option_c": "$40,000",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What features does the house have?",
-          "option_a": "Pool and garage",
-          "option_b": "Finished basement and backyard",
-          "option_c": "New kitchen and bathroom",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What advice does the friend give?",
-          "option_a": "Don't buy it",
-          "option_b": "Negotiate the price",
-          "option_c": "Trust your gut",
-          "correct_answer": "C"
-        }
-      ]
-    },
-    {
-      "title": "Learning a Language",
-      "level": 3,
-      "dialog_text": "A: I've been studying French for six months, and I still can't hold a conversation.\nB: Language learning takes time. Are you practicing speaking every day?\nA: Not every day. I mostly use an app to learn vocabulary.\nB: Apps are good for vocabulary, but not for speaking.\nA: I'm too nervous to speak with real people.\nB: There are apps where you can practice with AI first to build confidence.\nA: That might help. Do you have any recommendations?\nB: Try HelloTalk. You can chat with native speakers learning your language.\nA: That sounds perfect. I'll download it today.",
-      "audio_file_name": "",
-      "questions": [
-        {
-          "question": "How long has the person been studying French?",
-          "option_a": "3 months",
-          "option_b": "6 months",
-          "option_c": "1 year",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What does the person mostly use to learn?",
-          "option_a": "Books",
-          "option_b": "An app",
-          "option_c": "Classes",
-          "correct_answer": "B"
-        },
-        {
-          "question": "What app does the friend recommend?",
-          "option_a": "Duolingo",
-          "option_b": "HelloTalk",
-          "option_c": "Babbel",
-          "correct_answer": "B"
-        }
-      ]
+      "type": "monologue",
+      "dialog_text": "I deleted all my social media about a year ago. Instagram, Twitter, the whole lot. People thought I was being dramatic. But honestly, it was making me miserable. I'd scroll through my feed and feel like everyone else had a perfect life while I was just, you know, existing. The comparison game is toxic. And the amount of time I wasted just mindlessly swiping — it's embarrassing to think about. After I quit, something interesting happened. I started reading more. I'd call friends instead of liking their posts. I felt less anxious. I'm not saying everyone should do it, but for me, it was one of the best decisions I ever made."
     }
   ]
 }

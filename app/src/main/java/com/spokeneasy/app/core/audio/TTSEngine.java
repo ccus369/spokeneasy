@@ -32,6 +32,7 @@ public class TTSEngine {
     private MediaPlayer mediaPlayer;
     private final Queue<String> pendingSpeaks = new LinkedList<>();
     private Handler mainHandler;
+    private TtsCallback callback;
 
     public interface TtsCallback {
         void onDone();
@@ -97,6 +98,7 @@ public class TTSEngine {
 
     private void onTtsReady(TextToSpeech tts, String engineName, TtsCallback callback) {
         this.tts = tts;
+        this.callback = callback;
         this.engineName = engineName != null ? engineName : tts.getDefaultEngine();
         if (this.engineName == null) this.engineName = "unknown";
 
@@ -373,6 +375,10 @@ public class TTSEngine {
 
             @Override
             public void onDone(String id) {
+                // Notify caller that speech is done (e.g. to play next sentence)
+                if (callback != null) {
+                    mainHandler.post(() -> callback.onDone());
+                }
                 // Streaming finished, now cache silently for future plays
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     cacheFile.getParentFile().mkdirs();
@@ -381,7 +387,11 @@ public class TTSEngine {
             }
 
             @Override
-            public void onError(String id) {}
+            public void onError(String id) {
+                if (callback != null) {
+                    mainHandler.post(() -> callback.onError("TTS utterance error"));
+                }
+            }
         });
 
         Bundle params = new Bundle();

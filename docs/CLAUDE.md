@@ -36,6 +36,14 @@ Android 英语口语练习 App "SpokenEasy"，Java + XML Layouts + Navigation Co
 17. **按功能分包**：word/linking/listening/...各自独立
 18. **同步更新本文档**：新增功能或改架构时更新
 
+### 防低级错误规则
+19. **跨组件回调链路，必须同时读取调用方和被调用方的源码再实现** — 当实现 A→B 的事件驱动流程时（回调、监听器、异步 chain），在写代码前先读出 A 和 B 的相关源码，确认回调链路完整。仅靠"我记得 B 会回调"的假设是不够的。
+20. **顺序操作场景，显式检查完成信号** — 涉及"做完 X 再做 Y"的逻辑（播放下一句、批量处理、动画链），在实现前用文字描述完整的信号传递路径，避免遗漏中间环节。同时在代码中用 TODO 标记关键信号点，逐点核验后再移除标记。
+21. **生命周期意识：任何异步回调必须考虑组件销毁场景** — Fragment/Activity 传给异步回调的 `Context`、`View`、`getView()` 返回值，在回调触发时可能已失效。回调 lambda 入口必须加 `isAdded()` / `getView() != null` 守卫；长时操作（录音、TTS、网络请求）的持有引用必须在 `onDestroyView()` / `onDestroy()` 中释放，避免内存泄漏或对已销毁组件操作。
+22. **异步回调必须确认线程归属** — 在回调中操作 UI 或 Fragment 之前，先确认回调在哪个线程执行。非 UI 线程的回调必须通过 `runOnUiThread()` / `Handler.post()` 切换到主线程。对不确定的，调用前翻被调用方源码确认线程归属，不要假设。
+23. **写完 happy path 后，逐个检查资源/状态/回调的边界失效场景** — 对每个外部依赖（TTS、录音、网络请求、文件 IO），列出至少一种"它不按预期工作时会发生什么"：初始化失败、正在执行时被中断、多次快速点击触发重叠操作、文件写入权限不足。对每个失效场景确认有 guard 或 fallback，不可静默崩溃。
+24. **Material / Android 命名空间混淆时，先查官方或同类布局对照** — XML 中 Material 组件的属性（chipMinHeight、chipCornerRadius 等）使用 `app:` 而非 `android:` 前缀；不确定时先在项目内搜索同类组件的已有使用方式，不凭空写。
+
 ### 代码规范
 - Java 17
 - MVVM 模式：Fragment → ViewModel → Repository → DAO

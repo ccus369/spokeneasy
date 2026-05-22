@@ -93,6 +93,16 @@
     </fragment>
 
     <fragment
+        android:id="@+id/shadowingDetailFragment"
+        android:name="com.spokeneasy.app.shadowing.ShadowingDetailFragment"
+        android:label="听力跟读"
+        tools:layout="@layout/fragment_shadowing_detail">
+        <argument
+            android:name="audioId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
         android:id="@+id/settingsFragment"
         android:name="com.spokeneasy.app.settings.SettingsFragment"
         android:label="@string/menu_settings"
