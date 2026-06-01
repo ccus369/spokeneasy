@@ -1,6 +1,5 @@
 package com.spokeneasy.app.shadowing;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.button.MaterialButton;
@@ -164,14 +164,14 @@ public class ShadowingDetailFragment extends Fragment {
         if (content.isMonologue()) {
             detailTypeChip.setText("独白");
             detailTypeChip.setChipBackgroundColor(
-                    android.content.res.ColorStateList.valueOf(Color.parseColor("#E3F2FD")));
-            detailTypeChip.setTextColor(Color.parseColor("#1565C0"));
+                    android.content.res.ColorStateList.valueOf(ContextCompat.getColor(requireContext(), R.color.chip_grammar_bg)));
+            detailTypeChip.setTextColor(ContextCompat.getColor(requireContext(), R.color.chip_grammar_text));
             speakerLabel.setVisibility(View.GONE);
         } else {
             detailTypeChip.setText("对话");
             detailTypeChip.setChipBackgroundColor(
-                    android.content.res.ColorStateList.valueOf(Color.parseColor("#FFF3E0")));
-            detailTypeChip.setTextColor(Color.parseColor("#E65100"));
+                    android.content.res.ColorStateList.valueOf(ContextCompat.getColor(requireContext(), R.color.chip_scene_bg)));
+            detailTypeChip.setTextColor(ContextCompat.getColor(requireContext(), R.color.chip_scene_text));
         }
     }
 
@@ -347,10 +347,10 @@ public class ShadowingDetailFragment extends Fragment {
         scoreSection.setVisibility(View.VISIBLE);
         int color;
         String label;
-        if (score >= 85) { color = Color.parseColor("#4CAF50"); label = "优秀"; }
-        else if (score >= 70) { color = Color.parseColor("#2196F3"); label = "良好"; }
-        else if (score >= 50) { color = Color.parseColor("#FF9800"); label = "一般"; }
-        else { color = Color.parseColor("#F44336"); label = "需努力"; }
+        if (score >= 85) { color = ContextCompat.getColor(requireContext(), R.color.score_excellent); label = "优秀"; }
+        else if (score >= 70) { color = ContextCompat.getColor(requireContext(), R.color.score_good); label = "良好"; }
+        else if (score >= 50) { color = ContextCompat.getColor(requireContext(), R.color.score_fair); label = "一般"; }
+        else { color = ContextCompat.getColor(requireContext(), R.color.score_poor); label = "需努力"; }
         scoreDisplay.setTextColor(color);
         scoreDisplay.setText(score + " 分 · " + label);
     }

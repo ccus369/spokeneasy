@@ -1,6 +1,5 @@
 package com.spokeneasy.app.listening;
 
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
@@ -61,10 +61,10 @@ public class ListeningListAdapter extends ListAdapter<ListeningAudioEntity, List
 
         int levelColor;
         switch (item.getLevel()) {
-            case 1: levelColor = Color.parseColor("#4CAF50"); break;
-            case 2: levelColor = Color.parseColor("#FF9800"); break;
-            case 3: levelColor = Color.parseColor("#F44336"); break;
-            default: levelColor = Color.parseColor("#4CAF50");
+            case 1: levelColor = ContextCompat.getColor(holder.itemView.getContext(), R.color.level_easy); break;
+            case 2: levelColor = ContextCompat.getColor(holder.itemView.getContext(), R.color.level_medium); break;
+            case 3: levelColor = ContextCompat.getColor(holder.itemView.getContext(), R.color.level_hard); break;
+            default: levelColor = ContextCompat.getColor(holder.itemView.getContext(), R.color.level_easy);
         }
         holder.difficultyBar.setBackgroundColor(levelColor);
 

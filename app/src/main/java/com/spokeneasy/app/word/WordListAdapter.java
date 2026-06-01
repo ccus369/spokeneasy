@@ -1,12 +1,13 @@
 package com.spokeneasy.app.word;
 
-import android.graphics.Color;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
@@ -72,7 +73,7 @@ public class WordListAdapter extends ListAdapter<WordEntity, WordListAdapter.Vie
         // Category accent bar coloring
         String category = word.getCategory();
         if (category != null && !category.isEmpty()) {
-            int color = getCategoryColor(category);
+            int color = getCategoryColor(category, holder.itemView.getContext());
             holder.categoryBar.setBackgroundColor(color);
             holder.categoryBar.setVisibility(View.VISIBLE);
         } else {
@@ -88,13 +89,13 @@ public class WordListAdapter extends ListAdapter<WordEntity, WordListAdapter.Vie
         AnimationUtils.animateListItem(holder.itemView, position * 50, holder.itemView.getContext());
     }
 
-    private int getCategoryColor(String category) {
+    private int getCategoryColor(String category, Context context) {
         switch (category) {
-            case "生活": return Color.parseColor("#1976D2");
-            case "工作": return Color.parseColor("#7B1FA2");
-            case "学习": return Color.parseColor("#F57C00");
-            case "旅行": return Color.parseColor("#388E3C");
-            default: return Color.parseColor("#757575");
+            case "生活": return ContextCompat.getColor(context, R.color.tag_blue);
+            case "工作": return ContextCompat.getColor(context, R.color.tag_purple);
+            case "学习": return ContextCompat.getColor(context, R.color.tag_orange);
+            case "旅行": return ContextCompat.getColor(context, R.color.tag_green);
+            default: return ContextCompat.getColor(context, R.color.tag_grey);
         }
     }
 

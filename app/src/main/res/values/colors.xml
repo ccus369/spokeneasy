@@ -36,4 +36,58 @@
 
     <!-- Feedback background (light theme) -->
     <color name="feedback_bg_color">#0F000000</color>
+
+    <!-- ===== Phase 2: Themed colors ===== -->
+
+    <!-- Score tier colors -->
+    <color name="score_excellent">#FF4CAF50</color>
+    <color name="score_good">#FF2196F3</color>
+    <color name="score_fair">#FFFF9800</color>
+    <color name="score_poor">#FFF44336</color>
+    <color name="highlight_amber">#FFFF6F00</color>
+
+    <!-- Waveform state colors -->
+    <color name="waveform_recording">#FF4CAF50</color>
+    <color name="waveform_playing">#FFFF9800</color>
+    <color name="waveform_idle">#FFE0E0E0</color>
+
+    <!-- Quiz result colors -->
+    <color name="quiz_correct">#FF4CAF50</color>
+    <color name="quiz_correct_bg">#1A4CAF50</color>
+    <color name="quiz_wrong">#FFF44336</color>
+    <color name="quiz_wrong_bg">#1AF44336</color>
+
+    <!-- Difficulty level colors -->
+    <color name="level_easy">#FF4CAF50</color>
+    <color name="level_medium">#FFFF9800</color>
+    <color name="level_hard">#FFF44336</color>
+
+    <!-- Category / tag colors -->
+    <color name="tag_blue">#FF1976D2</color>
+    <color name="tag_purple">#FF7B1FA2</color>
+    <color name="tag_orange">#FFF57C00</color>
+    <color name="tag_green">#FF388E3C</color>
+    <color name="tag_grey">#FF757575</color>
+
+    <!-- Record history module badge colors -->
+    <color name="record_badge_word">#FF1976D2</color>
+    <color name="record_badge_linking">#FF43A047</color>
+    <color name="record_badge_listening">#FFE65100</color>
+    <color name="record_badge_default">#FF546E7A</color>
+
+    <!-- Record history score colors -->
+    <color name="record_score_high">#FF43A047</color>
+    <color name="record_score_medium">#FFF57C00</color>
+    <color name="record_score_low">#FFE53935</color>
+
+    <!-- Shadowing chip type background colors (light theme) -->
+    <color name="chip_grammar_bg">#FFE3F2FD</color>
+    <color name="chip_grammar_text">#FF1565C0</color>
+    <color name="chip_scene_bg">#FFFFF3E0</color>
+    <color name="chip_scene_text">#FFE65100</color>
+
+    <!-- Bottom navigation tab colors -->
+    <color name="bottom_nav_learn_tint">#FF1976D2</color>
+    <color name="bottom_nav_practice_tint">#FFFF8F00</color>
+    <color name="bottom_nav_settings_tint">#FF78909C</color>
 </resources>

@@ -1,5 +1,6 @@
 package com.spokeneasy.app.linking;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
@@ -58,7 +60,7 @@ public class LinkingListAdapter extends ListAdapter<LinkingEntity, LinkingListAd
         String category = item.getCategory();
         int bgColor;
         if (category != null) {
-            bgColor = getCategoryColor(category);
+            bgColor = getCategoryColor(category, holder.itemView.getContext());
             // Show abbreviated tag
             String tag = category.length() <= 4 ? category : category.substring(0, 2);
             holder.categoryTag.setText(tag);
@@ -79,20 +81,20 @@ public class LinkingListAdapter extends ListAdapter<LinkingEntity, LinkingListAd
         AnimationUtils.animateListItem(holder.itemView, position * 50, holder.itemView.getContext());
     }
 
-    private int getCategoryColor(String category) {
+    private int getCategoryColor(String category, Context context) {
         switch (category) {
             case "缩约":
             case "缩写":
-                return Color.parseColor("#1976D2");
+                return ContextCompat.getColor(context, R.color.tag_blue);
             case "同化":
-                return Color.parseColor("#7B1FA2");
+                return ContextCompat.getColor(context, R.color.tag_purple);
             case "省略":
-                return Color.parseColor("#F57C00");
+                return ContextCompat.getColor(context, R.color.tag_orange);
             case "连读":
             case "连接":
-                return Color.parseColor("#388E3C");
+                return ContextCompat.getColor(context, R.color.tag_green);
             default:
-                return Color.parseColor("#757575");
+                return ContextCompat.getColor(context, R.color.tag_grey);
         }
     }
 

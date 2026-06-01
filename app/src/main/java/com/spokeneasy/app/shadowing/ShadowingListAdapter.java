@@ -1,13 +1,13 @@
 package com.spokeneasy.app.shadowing;
 
 import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
@@ -65,21 +65,21 @@ public class ShadowingListAdapter extends ListAdapter<ShadowingContent, Shadowin
 
         int levelColor;
         switch (item.getLevel()) {
-            case 1: levelColor = Color.parseColor("#4CAF50"); break;
-            case 2: levelColor = Color.parseColor("#FF9800"); break;
-            case 3: levelColor = Color.parseColor("#F44336"); break;
-            default: levelColor = Color.parseColor("#4CAF50");
+            case 1: levelColor = ContextCompat.getColor(holder.itemView.getContext(), R.color.level_easy); break;
+            case 2: levelColor = ContextCompat.getColor(holder.itemView.getContext(), R.color.level_medium); break;
+            case 3: levelColor = ContextCompat.getColor(holder.itemView.getContext(), R.color.level_hard); break;
+            default: levelColor = ContextCompat.getColor(holder.itemView.getContext(), R.color.level_easy);
         }
         holder.difficultyBar.setBackgroundColor(levelColor);
 
         if (item.isMonologue()) {
             holder.typeChip.setText("独白");
-            holder.typeChip.setChipBackgroundColor(ColorStateList.valueOf(Color.parseColor("#E3F2FD")));
-            holder.typeChip.setTextColor(Color.parseColor("#1565C0"));
+            holder.typeChip.setChipBackgroundColor(ColorStateList.valueOf(ContextCompat.getColor(holder.itemView.getContext(), R.color.chip_grammar_bg)));
+            holder.typeChip.setTextColor(ContextCompat.getColor(holder.itemView.getContext(), R.color.chip_grammar_text));
         } else {
             holder.typeChip.setText("对话");
-            holder.typeChip.setChipBackgroundColor(ColorStateList.valueOf(Color.parseColor("#FFF3E0")));
-            holder.typeChip.setTextColor(Color.parseColor("#E65100"));
+            holder.typeChip.setChipBackgroundColor(ColorStateList.valueOf(ContextCompat.getColor(holder.itemView.getContext(), R.color.chip_scene_bg)));
+            holder.typeChip.setTextColor(ContextCompat.getColor(holder.itemView.getContext(), R.color.chip_scene_text));
         }
 
         holder.itemView.setOnClickListener(v -> {

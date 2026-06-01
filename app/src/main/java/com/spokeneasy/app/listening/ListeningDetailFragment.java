@@ -1,6 +1,5 @@
 package com.spokeneasy.app.listening;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -312,17 +312,17 @@ public class ListeningDetailFragment extends Fragment {
                 resultText.setVisibility(View.VISIBLE);
                 if (correctAnswer.equals(userAnswer)) {
                     resultText.setText("✓ 正确");
-                    resultText.setTextColor(Color.parseColor("#4CAF50"));
-                    card.setCardBackgroundColor(Color.parseColor("#1A4CAF50"));
-                    card.setStrokeColor(Color.parseColor("#4CAF50"));
+                    resultText.setTextColor(ContextCompat.getColor(requireContext(), R.color.quiz_correct));
+                    card.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.quiz_correct_bg));
+                    card.setStrokeColor(ContextCompat.getColor(requireContext(), R.color.quiz_correct));
                     card.setStrokeWidth(2);
                     correctCount++;
                 } else {
                     String correctOptionText = getCorrectOptionText(i, correctAnswer);
                     resultText.setText("✗ 正确答案: " + correctOptionText);
-                    resultText.setTextColor(Color.parseColor("#F44336"));
-                    card.setCardBackgroundColor(Color.parseColor("#1AF44336"));
-                    card.setStrokeColor(Color.parseColor("#F44336"));
+                    resultText.setTextColor(ContextCompat.getColor(requireContext(), R.color.quiz_wrong));
+                    card.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.quiz_wrong_bg));
+                    card.setStrokeColor(ContextCompat.getColor(requireContext(), R.color.quiz_wrong));
                     card.setStrokeWidth(2);
                     highlightCorrectAnswer(i, correctAnswer);
                 }
@@ -362,7 +362,7 @@ public class ListeningDetailFragment extends Fragment {
             default: rbId = RADIO_IDS[questionIndex][2]; break;
         }
         RadioButton correctRb = getView().findViewById(rbId);
-        correctRb.setTextColor(Color.parseColor("#4CAF50"));
+        correctRb.setTextColor(ContextCompat.getColor(requireContext(), R.color.quiz_correct));
         correctRb.setChecked(false);
     }
 

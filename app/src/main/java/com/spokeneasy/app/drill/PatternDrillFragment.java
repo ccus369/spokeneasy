@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -207,7 +208,8 @@ public class PatternDrillFragment extends Fragment {
         drillTypeBadge.setText(viewModel.getCurrentDrillTypeLabel());
 
         // Base sentence with highlighted brackets
-        baseSentence.setText(highlightBrackets(step.base));
+        int highlightColor = ContextCompat.getColor(requireContext(), R.color.highlight_amber);
+        baseSentence.setText(highlightBrackets(step.base, highlightColor));
 
         cueLabel.setText("提示");
         cueText.setText(step.cue);
@@ -246,7 +248,7 @@ public class PatternDrillFragment extends Fragment {
     }
 
     /** Parse [highlighted] text in base sentence. */
-    private SpannableString highlightBrackets(String text) {
+    private SpannableString highlightBrackets(String text, int color) {
         SpannableString ss = new SpannableString(text);
         int start = text.indexOf('[');
         int end = text.indexOf(']');
@@ -261,7 +263,6 @@ public class PatternDrillFragment extends Fragment {
             // Highlight the previously-bracketed text
             int cleanStart = start;
             int cleanEnd = cleanStart + (end - start - 1);
-            int color = 0xFFFF6F00; // amber
             ss.setSpan(new ForegroundColorSpan(color), cleanStart, cleanEnd,
                     Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         }
@@ -373,22 +374,21 @@ public class PatternDrillFragment extends Fragment {
 
     private void showScore(int score, String expected) {
         scoreSection.setVisibility(View.VISIBLE);
-        scoreDisplay.setText(score + " 分");
 
         // Color
         int color;
         String label;
         if (score >= 85) {
-            color = 0xFF4CAF50;
+            color = ContextCompat.getColor(requireContext(), R.color.score_excellent);
             label = "优秀";
         } else if (score >= 70) {
-            color = 0xFF2196F3;
+            color = ContextCompat.getColor(requireContext(), R.color.score_good);
             label = "良好";
         } else if (score >= 50) {
-            color = 0xFFFF9800;
+            color = ContextCompat.getColor(requireContext(), R.color.score_fair);
             label = "一般";
         } else {
-            color = 0xFFF44336;
+            color = ContextCompat.getColor(requireContext(), R.color.score_poor);
             label = "需努力";
         }
         scoreDisplay.setTextColor(color);
@@ -408,10 +408,10 @@ public class PatternDrillFragment extends Fragment {
         summaryScore.setText(avg + " 分");
 
         int color;
-        if (avg >= 85) color = 0xFF4CAF50;
-        else if (avg >= 70) color = 0xFF2196F3;
-        else if (avg >= 50) color = 0xFFFF9800;
-        else color = 0xFFF44336;
+        if (avg >= 85) color = ContextCompat.getColor(requireContext(), R.color.score_excellent);
+        else if (avg >= 70) color = ContextCompat.getColor(requireContext(), R.color.score_good);
+        else if (avg >= 50) color = ContextCompat.getColor(requireContext(), R.color.score_fair);
+        else color = ContextCompat.getColor(requireContext(), R.color.score_poor);
         summaryScore.setTextColor(color);
 
         List<DrillViewModel.StepResult> results = viewModel.getStepResults();

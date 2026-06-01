@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -120,28 +121,34 @@ public class RecordHistoryFragment extends Fragment {
             switch (record.getModuleType()) {
                 case "word":
                     moduleLabel = "单词";
-                    badgeColor = 0xFF1976D2;
+                    badgeColor = ContextCompat.getColor(moduleBadge.getContext(), R.color.record_badge_word);
                     break;
                 case "linking":
                     moduleLabel = "连读";
-                    badgeColor = 0xFF43A047;
+                    badgeColor = ContextCompat.getColor(moduleBadge.getContext(), R.color.record_badge_linking);
                     break;
                 case "listening":
                     moduleLabel = "听力";
-                    badgeColor = 0xFFE65100;
+                    badgeColor = ContextCompat.getColor(moduleBadge.getContext(), R.color.record_badge_listening);
                     break;
                 default:
                     moduleLabel = record.getModuleType();
-                    badgeColor = 0xFF546E7A;
+                    badgeColor = ContextCompat.getColor(moduleBadge.getContext(), R.color.record_badge_default);
             }
             moduleBadge.setText(moduleLabel);
             moduleBadge.setBackgroundColor(badgeColor);
 
             // Score
             scoreText.setText(String.format(Locale.getDefault(), "%d", record.getScore()));
-            int scoreColor = record.getScore() >= 80 ? 0xFF43A047 :
-                             record.getScore() >= 60 ? 0xFFF57C00 : 0xFFE53935;
-            scoreText.setTextColor(scoreColor);
+            int scoreColorRes;
+            if (record.getScore() >= 80) {
+                scoreColorRes = R.color.record_score_high;
+            } else if (record.getScore() >= 60) {
+                scoreColorRes = R.color.record_score_medium;
+            } else {
+                scoreColorRes = R.color.record_score_low;
+            }
+            scoreText.setTextColor(ContextCompat.getColor(scoreText.getContext(), scoreColorRes));
 
             // Reference text (truncate to 1 line worth)
             String ref = record.getReferenceText();

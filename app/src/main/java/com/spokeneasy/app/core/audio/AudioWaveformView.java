@@ -8,6 +8,9 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
+
+import com.spokeneasy.app.R;
 
 public class AudioWaveformView extends View {
 
@@ -61,13 +64,13 @@ public class AudioWaveformView extends View {
 
         switch (state) {
             case 1:
-                paint.setColor(0xFF4CAF50);
+                paint.setColor(ContextCompat.getColor(getContext(), R.color.waveform_recording));
                 break;
             case 2:
-                paint.setColor(0xFFFF9800);
+                paint.setColor(ContextCompat.getColor(getContext(), R.color.waveform_playing));
                 break;
             default:
-                paint.setColor(0xFFE0E0E0);
+                paint.setColor(ContextCompat.getColor(getContext(), R.color.waveform_idle));
                 break;
         }
 
