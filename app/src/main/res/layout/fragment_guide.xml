@@ -1,61 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
-    android:padding="48dp"
-    android:background="?android:colorBackground"
     tools:context=".home.GuideFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="@string/app_name"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        android:textColor="?android:textColorPrimary" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/app_subtitle"
-        android:textSize="18sp"
-        android:textColor="?android:textColorSecondary" />
-
-    <TextView
+    <!-- Hero section (upper ~38%) -->
+    <LinearLayout
+        android:id="@+id/hero_panel"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="@string/guide_description"
-        android:textSize="16sp"
-        android:lineSpacingExtra="6dp"
-        android:gravity="center"
-        android:textColor="?android:textColorSecondary" />
-
-    <Space
-        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_weight="1" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/guide_permission_hint"
-        android:textSize="14sp"
-        android:textColor="?android:textColorTertiary"
-        android:layout_marginBottom="24dp" />
+        android:orientation="vertical"
+        android:background="?attr/colorPrimaryContainer"
+        android:padding="32dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.38">
 
-    <Button
-        android:id="@+id/btn_start"
+        <TextView
+            android:id="@+id/guide_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnPrimaryContainer" />
+
+        <TextView
+            android:id="@+id/guide_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/app_subtitle"
+            android:textSize="20sp"
+            android:textColor="?attr/colorOnPrimaryContainer"
+            android:alpha="0.85" />
+
+    </LinearLayout>
+
+    <!-- Content section (remaining ~62%) -->
+    <LinearLayout
+        android:id="@+id/content_panel"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:text="@string/guide_btn_start"
-        android:textSize="18sp"
-        android:layout_marginBottom="64dp" />
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:background="?android:colorBackground"
+        android:paddingHorizontal="32dp"
+        android:paddingTop="36dp"
+        android:paddingBottom="24dp"
+        app:layout_constraintTop_toBottomOf="@id/hero_panel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-</LinearLayout>
+        <!-- Feature 1 -->
+        <LinearLayout
+            android:id="@+id/guide_feature_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:padding="12dp"
+                android:background="@drawable/bg_category_tag"
+                android:backgroundTint="?attr/colorPrimaryContainer"
+                android:src="@drawable/ic_menu_book"
+                android:contentDescription=""
+                app:tint="?attr/colorPrimary" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="16dp"
+                android:text="@string/guide_feature_1"
+                android:textAppearance="?attr/textAppearanceBodyLarge"
+                android:textColor="?attr/colorOnBackground" />
+
+        </LinearLayout>
+
+        <!-- Feature 2 -->
+        <LinearLayout
+            android:id="@+id/guide_feature_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:padding="12dp"
+                android:background="@drawable/bg_category_tag"
+                android:backgroundTint="?attr/colorPrimaryContainer"
+                android:src="@drawable/ic_headset"
+                android:contentDescription=""
+                app:tint="?attr/colorPrimary" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="16dp"
+                android:text="@string/guide_feature_2"
+                android:textAppearance="?attr/textAppearanceBodyLarge"
+                android:textColor="?attr/colorOnBackground" />
+
+        </LinearLayout>
+
+        <!-- Feature 3 -->
+        <LinearLayout
+            android:id="@+id/guide_feature_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:padding="12dp"
+                android:background="@drawable/bg_category_tag"
+                android:backgroundTint="?attr/colorPrimaryContainer"
+                android:src="@drawable/ic_record_voice_over"
+                android:contentDescription=""
+                app:tint="?attr/colorPrimary" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="16dp"
+                android:text="@string/guide_feature_3"
+                android:textAppearance="?attr/textAppearanceBodyLarge"
+                android:textColor="?attr/colorOnBackground" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Permission hint -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/guide_permission_hint"
+            android:textSize="13sp"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Full-width pill button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_start"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/guide_btn_start"
+            android:textSize="18sp"
+            app:cornerRadius="@dimen/corner_pill" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

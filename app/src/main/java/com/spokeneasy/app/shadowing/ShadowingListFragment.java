@@ -27,6 +27,7 @@ public class ShadowingListFragment extends Fragment {
     private OnItemClickListener listener;
     private TextView emptyView;
     private RecyclerView recyclerView;
+    private View skeletonLayout;
 
     public interface OnItemClickListener {
         void onItemClick(ShadowingContent item);
@@ -51,6 +52,7 @@ public class ShadowingListFragment extends Fragment {
         ChipGroup chipGroup = view.findViewById(R.id.chip_group_level);
         emptyView = view.findViewById(R.id.empty_view);
         recyclerView = view.findViewById(R.id.shadowing_recycler_view);
+        skeletonLayout = view.findViewById(R.id.skeleton_layout);
 
         adapter = new ShadowingListAdapter();
         adapter.setOnItemClickListener(item -> {
@@ -60,7 +62,9 @@ public class ShadowingListFragment extends Fragment {
         });
         recyclerView.setAdapter(adapter);
 
+        skeletonLayout.setVisibility(View.VISIBLE);
         allItems = ShadowingLoader.load(requireContext());
+        skeletonLayout.setVisibility(View.GONE);
         updateEmptyState(allItems);
         adapter.submitList(allItems);
 

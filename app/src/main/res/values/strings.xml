@@ -81,6 +81,9 @@
     <string name="guide_description">跟读单词、练习连读、纠正发音、AI 对话\n—— 全方位提升你的英语口语</string>
     <string name="guide_permission_hint">首次使用需要授予录音权限以进行发音评测</string>
     <string name="guide_btn_start">开始练习</string>
+    <string name="guide_feature_1">逐句跟读，AI 实时评分纠音</string>
+    <string name="guide_feature_2">连读技巧，掌握地道英语发音</string>
+    <string name="guide_feature_3">听力对话，真实场景沉浸练习</string>
 
     <!-- MiMo AI Chat -->
     <string name="mimo_section_title">MiMo AI 配置</string>

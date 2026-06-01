@@ -8,7 +8,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:paddingHorizontal="16dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="16dp">
 
         <!-- Rule name header -->
         <LinearLayout
@@ -95,7 +97,8 @@
             android:layout_height="wrap_content"
             android:text="@string/example_title"
             android:textAppearance="?attr/textAppearanceTitleSmall"
-            android:textColor="?attr/colorOnSurfaceVariant" />
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:layout_marginBottom="8dp" />
 
         <TextView
             android:id="@+id/detail_example_en"

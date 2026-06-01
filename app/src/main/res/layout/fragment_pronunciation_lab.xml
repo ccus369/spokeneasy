@@ -35,6 +35,48 @@
         android:textColor="?attr/colorOnSurfaceVariant"
         android:visibility="gone" />
 
+    <!-- Skeleton loading placeholder -->
+    <LinearLayout
+        android:id="@+id/skeleton_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingHorizontal="12dp"
+        android:paddingTop="8dp"
+        android:visibility="visible">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/skeleton_rect" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/skeleton_rect" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/skeleton_rect" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/skeleton_rect" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:background="@drawable/skeleton_rect" />
+
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/pair_list"
         android:layout_width="match_parent"
@@ -42,6 +84,7 @@
         android:layout_weight="1"
         android:clipToPadding="false"
         android:paddingHorizontal="12dp"
-        android:paddingBottom="80dp" />
+        android:paddingBottom="80dp"
+        android:visibility="gone" />
 
 </LinearLayout>

@@ -8,7 +8,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:paddingHorizontal="16dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="16dp">
 
         <!-- Title + level + type -->
         <LinearLayout
@@ -96,7 +98,8 @@
             android:layout_height="wrap_content"
             android:text="影子跟读"
             android:textAppearance="?attr/textAppearanceTitleLarge"
-            android:textColor="?attr/colorOnBackground" />
+            android:textColor="?attr/colorOnBackground"
+            android:layout_marginBottom="8dp" />
 
         <TextView
             android:layout_width="wrap_content"

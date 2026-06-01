@@ -32,6 +32,7 @@ public class WordListFragment extends Fragment {
     private TextInputEditText searchEditText;
     private TextView emptyView;
     private RecyclerView recyclerView;
+    private View skeletonLayout;
 
     @Nullable
     @Override
@@ -48,6 +49,7 @@ public class WordListFragment extends Fragment {
         viewModel = new ViewModelProvider(this).get(WordViewModel.class);
 
         loadingIndicator = view.findViewById(R.id.loading_indicator);
+        skeletonLayout = view.findViewById(R.id.skeleton_layout);
         searchEditText = view.findViewById(R.id.search_edit_text);
         emptyView = view.findViewById(R.id.empty_view);
 
@@ -63,6 +65,7 @@ public class WordListFragment extends Fragment {
 
         viewModel.getWords().observe(getViewLifecycleOwner(), words -> {
             if (words != null) {
+                skeletonLayout.setVisibility(View.GONE);
                 adapter.submitList(words);
                 boolean empty = words.isEmpty();
                 recyclerView.setVisibility(empty ? View.GONE : View.VISIBLE);
@@ -72,6 +75,7 @@ public class WordListFragment extends Fragment {
 
         viewModel.getIsLoading().observe(getViewLifecycleOwner(), loading -> {
             loadingIndicator.setVisibility(loading ? View.VISIBLE : View.GONE);
+            skeletonLayout.setVisibility(loading ? View.VISIBLE : View.GONE);
         });
 
         searchEditText.addTextChangedListener(new TextWatcher() {

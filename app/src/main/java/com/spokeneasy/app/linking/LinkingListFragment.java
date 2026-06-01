@@ -24,6 +24,7 @@ public class LinkingListFragment extends Fragment {
     private LinkingListAdapter adapter;
     private LinearProgressIndicator loadingIndicator;
     private TextView emptyView;
+    private View skeletonLayout;
 
     @Nullable
     @Override
@@ -40,6 +41,7 @@ public class LinkingListFragment extends Fragment {
         viewModel = new ViewModelProvider(this).get(LinkingViewModel.class);
 
         loadingIndicator = view.findViewById(R.id.loading_indicator);
+        skeletonLayout = view.findViewById(R.id.skeleton_layout);
         emptyView = view.findViewById(R.id.empty_view);
 
         RecyclerView recyclerView = view.findViewById(R.id.linking_recycler_view);
@@ -54,6 +56,7 @@ public class LinkingListFragment extends Fragment {
 
         viewModel.getItems().observe(getViewLifecycleOwner(), items -> {
             if (items != null) {
+                skeletonLayout.setVisibility(View.GONE);
                 adapter.submitList(items);
                 boolean empty = items.isEmpty();
                 recyclerView.setVisibility(empty ? View.GONE : View.VISIBLE);
@@ -63,6 +66,7 @@ public class LinkingListFragment extends Fragment {
 
         viewModel.getIsLoading().observe(getViewLifecycleOwner(), loading -> {
             loadingIndicator.setVisibility(loading ? View.VISIBLE : View.GONE);
+            skeletonLayout.setVisibility(loading ? View.VISIBLE : View.GONE);
         });
     }
 }

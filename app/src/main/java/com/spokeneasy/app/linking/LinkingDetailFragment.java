@@ -389,6 +389,9 @@ public class LinkingDetailFragment extends Fragment {
                 requireActivity().runOnUiThread(() -> {
                     scoreText.setText(String.format(Locale.getDefault(), "%d 分", score));
                     com.spokeneasy.app.core.AnimationUtils.animateScorePulse(scoreText);
+                    if (waveformView != null) {
+                        waveformView.showSuccess();
+                    }
                     if (detail != null && !detail.isEmpty()) {
                         detailFeedback.setVisibility(View.VISIBLE);
                         detailFeedback.setText(detail);

@@ -28,6 +28,7 @@ public class ListeningListFragment extends Fragment {
     private ChipGroup chipGroupLevel;
     private TextView emptyView;
     private RecyclerView recyclerView;
+    private View skeletonLayout;
 
     @Nullable
     @Override
@@ -44,6 +45,7 @@ public class ListeningListFragment extends Fragment {
         viewModel = new ViewModelProvider(this).get(ListeningViewModel.class);
 
         loadingIndicator = view.findViewById(R.id.loading_indicator);
+        skeletonLayout = view.findViewById(R.id.skeleton_layout);
         chipGroupLevel = view.findViewById(R.id.chip_group_level);
         emptyView = view.findViewById(R.id.empty_view);
 
@@ -59,6 +61,7 @@ public class ListeningListFragment extends Fragment {
 
         viewModel.getItems().observe(getViewLifecycleOwner(), items -> {
             if (items != null) {
+                skeletonLayout.setVisibility(View.GONE);
                 adapter.submitList(items);
                 boolean empty = items.isEmpty();
                 recyclerView.setVisibility(empty ? View.GONE : View.VISIBLE);
@@ -68,6 +71,7 @@ public class ListeningListFragment extends Fragment {
 
         viewModel.getIsLoading().observe(getViewLifecycleOwner(), loading -> {
             loadingIndicator.setVisibility(loading ? View.VISIBLE : View.GONE);
+            skeletonLayout.setVisibility(loading ? View.VISIBLE : View.GONE);
         });
 
         chipGroupLevel.setOnCheckedStateChangeListener((group, checkedIds) -> {

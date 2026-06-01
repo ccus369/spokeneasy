@@ -61,7 +61,7 @@
                         style="@style/Widget.Material3.Chip.Assist"
                         android:textSize="11sp"
                         app:chipMinHeight="22dp"
-                        app:chipCornerRadius="8dp" />
+                        app:chipCornerRadius="@dimen/corner_small" />
 
                 </LinearLayout>
 

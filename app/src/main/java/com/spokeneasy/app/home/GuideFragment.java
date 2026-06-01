@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,7 +18,9 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavOptions;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.google.android.material.button.MaterialButton;
 import com.spokeneasy.app.R;
+import com.spokeneasy.app.core.AnimationUtils;
 
 public class GuideFragment extends Fragment {
 
@@ -43,6 +46,26 @@ public class GuideFragment extends Fragment {
             navigatingAway = true;
             view.post(this::navigateToMain);
             return;
+        }
+
+        // Staggered entry animation — title, subtitle, 3 features, button (200ms apart)
+        View title = view.findViewById(R.id.guide_title);
+        View subtitle = view.findViewById(R.id.guide_subtitle);
+        View feature1 = view.findViewById(R.id.guide_feature_1);
+        View feature2 = view.findViewById(R.id.guide_feature_2);
+        View feature3 = view.findViewById(R.id.guide_feature_3);
+        View btnStart = view.findViewById(R.id.btn_start);
+
+        View[] elements = {title, subtitle, feature1, feature2, feature3, btnStart};
+        for (View el : elements) {
+            el.setAlpha(0f);
+            el.setScaleX(0.8f);
+            el.setScaleY(0.8f);
+        }
+
+        for (int i = 0; i < elements.length; i++) {
+            final int index = i;
+            title.postDelayed(() -> AnimationUtils.animateReveal(elements[index]), index * 200L);
         }
 
         view.findViewById(R.id.btn_start).setOnClickListener(v -> requestPermission());

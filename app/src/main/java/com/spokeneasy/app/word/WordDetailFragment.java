@@ -421,6 +421,10 @@ public class WordDetailFragment extends Fragment {
                     com.spokeneasy.app.core.AnimationUtils.animateScorePulse(
                             sentenceScoreTexts[sentenceIdx]);
 
+                    if (waveformView != null) {
+                        waveformView.showSuccess();
+                    }
+
                     savePracticeRecord(sentenceIdx, referenceText, score, detail, filePath);
                     btnRecord.setEnabled(true);
                     btnPlayback.setEnabled(true);

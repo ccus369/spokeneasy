@@ -8,7 +8,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:paddingHorizontal="16dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="16dp">
 
         <!-- Word + Phonetic header (asymmetric: word left, play button top-right) -->
         <androidx.constraintlayout.widget.ConstraintLayout

@@ -41,6 +41,7 @@ public class PronunciationLabFragment extends Fragment {
     private ChipGroup categoryChipGroup;
     private RecyclerView pairList;
     private TextView emptyView;
+    private View skeletonLayout;
 
     private static final int REQUEST_RECORD_AUDIO = 100;
 
@@ -74,6 +75,7 @@ public class PronunciationLabFragment extends Fragment {
         categoryChipGroup = view.findViewById(R.id.category_chip_group);
         pairList = view.findViewById(R.id.pair_list);
         emptyView = view.findViewById(R.id.empty_view);
+        skeletonLayout = view.findViewById(R.id.skeleton_layout);
 
         pairList.setLayoutManager(new LinearLayoutManager(requireContext()));
         adapter = new PronunciationAdapter();
@@ -169,6 +171,7 @@ public class PronunciationLabFragment extends Fragment {
     }
 
     private void updatePairList(PronunciationContent.MinimalPairsData data) {
+        if (skeletonLayout != null) skeletonLayout.setVisibility(View.GONE);
         String selected = viewModel.getSelectedCategory().getValue();
         List<PronunciationContent.MinimalPair> pairs;
         if (selected == null) {
