@@ -245,12 +245,14 @@ public class LinkingDetailFragment extends Fragment {
 
     private void setupListeners() {
         btnPlayRule.setOnClickListener(v -> {
+            com.spokeneasy.app.core.AnimationUtils.animateButtonAction(v);
             if (currentItem != null) {
                 ttsEngine.speak(currentItem.getLinkingText());
             }
         });
 
         btnPlayExample.setOnClickListener(v -> {
+            com.spokeneasy.app.core.AnimationUtils.animateButtonAction(v);
             if (currentItem != null) ttsEngine.speak(currentItem.getExampleEn());
         });
 
@@ -387,8 +389,8 @@ public class LinkingDetailFragment extends Fragment {
             public void onResult(int score, String detail) {
                 if (!isAdded()) return;
                 requireActivity().runOnUiThread(() -> {
-                    scoreText.setText(String.format(Locale.getDefault(), "%d 分", score));
-                    com.spokeneasy.app.core.AnimationUtils.animateScorePulse(scoreText);
+                    com.spokeneasy.app.core.AnimationUtils.animateScoreCount(
+                            scoreText, score, "%d 分");
                     if (waveformView != null) {
                         waveformView.showSuccess();
                     }

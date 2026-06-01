@@ -189,7 +189,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_gravity="center"
                     android:text="录音中…"
-                    android:textColor="#F44336"
+                    android:textColor="?attr/colorError"
                     android:textSize="13sp"
                     android:visibility="gone" />
 
@@ -201,7 +201,7 @@
                     android:layout_marginTop="12dp"
                     android:orientation="vertical"
                     android:visibility="gone"
-                    android:background="#1A4CAF50"
+                    android:background="?attr/colorSurfaceVariant"
                     android:padding="12dp">
 
                     <TextView
@@ -210,7 +210,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="22sp"
                         android:textStyle="bold"
-                        android:textColor="#4CAF50" />
+                        android:textColor="@color/score_excellent" />
 
                 </LinearLayout>
 

@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="选择语法点"
-            android:textSize="20sp"
+            android:textSize="@dimen/text_size_heading"
             android:textStyle="bold"
             android:textColor="?attr/colorOnSurface" />
 
@@ -88,7 +88,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                app:cardCornerRadius="12dp"
+                app:cardCornerRadius="@dimen/corner_medium"
                 app:cardElevation="2dp"
                 app:strokeWidth="0dp">
 
@@ -171,7 +171,7 @@
                 android:layout_marginTop="8dp"
                 android:text="录音中…"
                 android:textSize="14sp"
-                android:textColor="@color/design_default_color_error"
+                android:textColor="?attr/colorError"
                 android:gravity="center"
                 android:visibility="gone" />
 
@@ -278,7 +278,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="练习完成！"
-            android:textSize="20sp"
+            android:textSize="@dimen/text_size_heading"
             android:textStyle="bold"
             android:textColor="?attr/colorOnSurface" />
 
@@ -287,7 +287,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:textSize="48sp"
+            android:textSize="@dimen/text_score_summary"
             android:textStyle="bold"
             android:layout_gravity="center" />
 

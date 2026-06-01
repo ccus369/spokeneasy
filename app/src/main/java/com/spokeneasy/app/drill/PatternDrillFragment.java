@@ -137,7 +137,10 @@ public class PatternDrillFragment extends Fragment {
         });
 
         // Action buttons
-        btnListen.setOnClickListener(v -> playCurrentStep());
+        btnListen.setOnClickListener(v -> {
+            com.spokeneasy.app.core.AnimationUtils.animateButtonAction(v);
+            playCurrentStep();
+        });
         btnRecord.setOnClickListener(v -> toggleRecording());
         btnPlayExpected.setOnClickListener(v -> playExpectedAnswer());
         btnPlayRecording.setOnClickListener(v -> playUserRecording());
@@ -392,7 +395,8 @@ public class PatternDrillFragment extends Fragment {
             label = "需努力";
         }
         scoreDisplay.setTextColor(color);
-        scoreDisplay.setText(score + " 分 · " + label);
+        com.spokeneasy.app.core.AnimationUtils.animateScoreCount(
+                scoreDisplay, score, "%d 分 · " + label);
 
         expectedText.setText(expected);
     }
@@ -405,7 +409,8 @@ public class PatternDrillFragment extends Fragment {
 
     private void refreshSummaryUi() {
         int avg = viewModel.getAverageScore();
-        summaryScore.setText(avg + " 分");
+        com.spokeneasy.app.core.AnimationUtils.animateScoreCount(
+                summaryScore, avg, "%d 分");
 
         int color;
         if (avg >= 85) color = ContextCompat.getColor(requireContext(), R.color.score_excellent);

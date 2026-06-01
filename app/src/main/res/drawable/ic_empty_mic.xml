@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="80dp"
+    android:height="80dp"
+    android:viewportWidth="80"
+    android:viewportHeight="80">
+    <!-- Mic body -->
+    <path
+        android:fillColor="#FFF5F5F5"
+        android:strokeColor="#FF90A4AE"
+        android:strokeWidth="2.5"
+        android:pathData="M34,14 L46,14 L46,44 C46,48 42,52 40,52 C38,52 34,48 34,44 Z" />
+    <!-- Mic grille lines -->
+    <path
+        android:strokeColor="#FFCFD8DC"
+        android:strokeWidth="1"
+        android:pathData="M37,20 L43,20 M37,24 L43,24 M37,28 L43,28 M37,32 L43,32 M37,36 L43,36" />
+    <!-- Mic stand -->
+    <path
+        android:strokeColor="#FF90A4AE"
+        android:strokeWidth="2"
+        android:pathData="M40,52 L40,60" />
+    <!-- Base -->
+    <path
+        android:strokeColor="#FF90A4AE"
+        android:strokeWidth="2"
+        android:pathData="M28,66 L52,66" />
+    <!-- Sound wave left -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFCFD8DC"
+        android:strokeWidth="1.5"
+        android:pathData="M24,30 C20,34 20,42 24,46" />
+    <!-- Sound wave right -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFCFD8DC"
+        android:strokeWidth="1.5"
+        android:pathData="M56,30 C60,34 60,42 56,46" />
+</vector>

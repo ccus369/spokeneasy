@@ -352,7 +352,10 @@ public class ShadowingDetailFragment extends Fragment {
         else if (score >= 50) { color = ContextCompat.getColor(requireContext(), R.color.score_fair); label = "一般"; }
         else { color = ContextCompat.getColor(requireContext(), R.color.score_poor); label = "需努力"; }
         scoreDisplay.setTextColor(color);
-        scoreDisplay.setText(score + " 分 · " + label);
+        final String suffix = " 分 · " + label;
+        com.spokeneasy.app.core.AnimationUtils.animateScoreCount(
+                scoreDisplay, score, "%d 分 · " + label,
+                () -> { /* counting ends with pulse already */ });
     }
 
     private void hideScore() {
@@ -366,8 +369,9 @@ public class ShadowingDetailFragment extends Fragment {
             if (s >= 0) total += s;
         }
         int avg = total / scoredCount;
-        overallScoreText.setText(avg + " 分");
         scoreCard.setVisibility(View.VISIBLE);
+        com.spokeneasy.app.core.AnimationUtils.animateScoreCount(
+                overallScoreText, avg, "%d 分");
         scoreCard.setScaleX(0.8f);
         scoreCard.setScaleY(0.8f);
         scoreCard.setAlpha(0f);
@@ -385,7 +389,10 @@ public class ShadowingDetailFragment extends Fragment {
     // region Listeners
 
     private void setupListeners() {
-        btnPlayAll.setOnClickListener(v -> togglePlayAll());
+        btnPlayAll.setOnClickListener(v -> {
+            com.spokeneasy.app.core.AnimationUtils.animateButtonAction(v);
+            togglePlayAll();
+        });
 
         btnShowText.setOnClickListener(v -> {
             boolean isVisible = dialogTextCard.getVisibility() == View.VISIBLE;
@@ -395,7 +402,10 @@ public class ShadowingDetailFragment extends Fragment {
                     : R.string.hide_dialog_text);
         });
 
-        btnPlaySentence.setOnClickListener(v -> playCurrentSentence());
+        btnPlaySentence.setOnClickListener(v -> {
+            com.spokeneasy.app.core.AnimationUtils.animateButtonAction(v);
+            playCurrentSentence();
+        });
 
         btnRecord.setOnClickListener(v -> toggleRecording());
 

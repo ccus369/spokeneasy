@@ -8,8 +8,9 @@ import android.speech.tts.TextToSpeech;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import com.google.android.material.progressindicator.LinearProgressIndicator;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.spokeneasy.app.core.net.ApiConfig;
@@ -38,9 +39,9 @@ public class SettingsFragment extends Fragment {
     private TextView statsWordLabel;
     private TextView statsLinkingLabel;
     private TextView statsPronunciationLabel;
-    private ProgressBar statsWordProgress;
-    private ProgressBar statsLinkingProgress;
-    private ProgressBar statsPronunciationProgress;
+    private LinearProgressIndicator statsWordProgress;
+    private LinearProgressIndicator statsLinkingProgress;
+    private LinearProgressIndicator statsPronunciationProgress;
     private MaterialButton btnExport;
     private MaterialButton btnReset;
     private MaterialButton btnRecordHistory;
@@ -172,7 +173,7 @@ public class SettingsFragment extends Fragment {
     }
 
     private void updateStat(UserProgressViewModel.ModuleStats stat,
-                            TextView label, ProgressBar progressBar) {
+                            TextView label, LinearProgressIndicator progressBar) {
         label.setText(String.format(Locale.getDefault(), "%d/%d 已完成",
                 stat.getCompletedCount(), stat.getTotalCount()));
 

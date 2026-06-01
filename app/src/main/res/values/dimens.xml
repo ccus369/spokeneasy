@@ -5,4 +5,9 @@
     <dimen name="corner_medium">12dp</dimen>
     <dimen name="corner_large">16dp</dimen>
     <dimen name="corner_pill">28dp</dimen>
+
+    <!-- Text sizes (replacing hardcoded values) -->
+    <dimen name="text_size_heading">20sp</dimen>
+    <dimen name="text_size_drill_title">18sp</dimen>
+    <dimen name="text_score_summary">48sp</dimen>
 </resources>

@@ -239,20 +239,24 @@ public class WordDetailFragment extends Fragment {
 
     private void setupListeners() {
         btnPlayWord.setOnClickListener(v -> {
+            com.spokeneasy.app.core.AnimationUtils.animateButtonAction(v);
             if (currentWord != null) {
                 ttsEngine.speak(currentWord.getWord());
             }
         });
 
         btnPlay1.setOnClickListener(v -> {
+            com.spokeneasy.app.core.AnimationUtils.animateButtonAction(v);
             if (currentWord != null) ttsEngine.speak(currentWord.getSentence1En());
         });
 
         btnPlay2.setOnClickListener(v -> {
+            com.spokeneasy.app.core.AnimationUtils.animateButtonAction(v);
             if (currentWord != null) ttsEngine.speak(currentWord.getSentence2En());
         });
 
         btnPlay3.setOnClickListener(v -> {
+            com.spokeneasy.app.core.AnimationUtils.animateButtonAction(v);
             if (currentWord != null) ttsEngine.speak(currentWord.getSentence3En());
         });
 
@@ -415,11 +419,10 @@ public class WordDetailFragment extends Fragment {
 
                     // Show score and playback button next to this sentence
                     sentenceScoreTexts[sentenceIdx].setVisibility(View.VISIBLE);
-                    sentenceScoreTexts[sentenceIdx].setText(score + "分");
                     btnPlaybackSentence[sentenceIdx].setVisibility(View.VISIBLE);
 
-                    com.spokeneasy.app.core.AnimationUtils.animateScorePulse(
-                            sentenceScoreTexts[sentenceIdx]);
+                    com.spokeneasy.app.core.AnimationUtils.animateScoreCount(
+                            sentenceScoreTexts[sentenceIdx], score, "%d分");
 
                     if (waveformView != null) {
                         waveformView.showSuccess();
