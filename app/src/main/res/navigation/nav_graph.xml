@@ -109,7 +109,11 @@
         tools:layout="@layout/fragment_settings">
         <action
             android:id="@+id/action_settings_to_recordHistory"
-            app:destination="@id/recordHistoryFragment" />
+            app:destination="@id/recordHistoryFragment"
+            app:enterAnim="@anim/scale_fade_in"
+            app:exitAnim="@anim/scale_fade_out"
+            app:popEnterAnim="@anim/scale_fade_in"
+            app:popExitAnim="@anim/scale_fade_out" />
     </fragment>
 
     <fragment

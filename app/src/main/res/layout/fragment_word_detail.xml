@@ -10,20 +10,21 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Word + Phonetic header -->
-        <LinearLayout
+        <!-- Word + Phonetic header (asymmetric: word left, play button top-right) -->
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/detail_word"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:textAppearance="?attr/textAppearanceHeadlineLarge"
-                android:textColor="?attr/colorOnBackground" />
+                android:textColor="?attr/colorOnBackground"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btn_play_word"
+                app:layout_constraintBottom_toTopOf="@id/detail_phonetic" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_play_word"
@@ -32,17 +33,22 @@
                 android:layout_height="48dp"
                 android:contentDescription="播放发音"
                 app:icon="@android:drawable/ic_media_play"
-                app:iconSize="24dp" />
+                app:iconSize="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        </LinearLayout>
+            <TextView
+                android:id="@+id/detail_phonetic"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/detail_word"
+                app:layout_constraintEnd_toEndOf="parent" />
 
-        <TextView
-            android:id="@+id/detail_phonetic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:textAppearance="?attr/textAppearanceTitleMedium"
-            android:textColor="?attr/colorOnSurfaceVariant" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- Divider -->
         <View

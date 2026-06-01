@@ -80,6 +80,8 @@ public class GuideFragment extends Fragment {
         if (!isAdded()) return;
         NavOptions navOptions = new NavOptions.Builder()
                 .setPopUpTo(R.id.guideFragment, true)
+                .setEnterAnim(R.anim.scale_fade_in)
+                .setExitAnim(R.anim.scale_fade_out)
                 .build();
         NavHostFragment.findNavController(this)
                 .navigate(R.id.learnFragment, null, navOptions);

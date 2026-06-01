@@ -214,6 +214,25 @@ public class LinkingDetailFragment extends Fragment {
                     .alpha(1f)
                     .setDuration(400)
                     .setInterpolator(new android.view.animation.OvershootInterpolator())
+                    .withEndAction(() -> {
+                        // Pulse the resulting text after arrow flies in
+                        if (detailLinkingText != null) {
+                            detailLinkingText.setScaleX(0.8f);
+                            detailLinkingText.setScaleY(0.8f);
+                            detailLinkingText.animate()
+                                    .scaleX(1.1f)
+                                    .scaleY(1.1f)
+                                    .setDuration(250)
+                                    .setInterpolator(new android.view.animation.DecelerateInterpolator())
+                                    .withEndAction(() -> detailLinkingText.animate()
+                                            .scaleX(1f)
+                                            .scaleY(1f)
+                                            .setDuration(200)
+                                            .setInterpolator(new android.view.animation.DecelerateInterpolator())
+                                            .start())
+                                    .start();
+                        }
+                    })
                     .start();
         }
     }
