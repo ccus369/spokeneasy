@@ -102,15 +102,3 @@ Android 英语口语练习 App "SpokenEasy"，Java + XML Layouts + Navigation Co
 | Compose BOM | 2024.x | 2024.02.00（已移除，转 XML） |
 
 **不要用 Gradle 9.x / AGP 9.x**，Gradle 9 移除了部分 API，会导致编译错误。
-
----
-
-## Build 踩坑记录
-
-| 问题 | 原因 | 正确做法 |
-|------|------|---------|
-| `NoSuchMethodError: module(Object)` | Gradle 9.x 移除了 API | 用 Gradle 8.14.5 + AGP 8.2.2 |
-| 插件找不到 `com.android.application` | settings.gradle.kts 的 google() 加了 content 过滤 | 去掉 content 过滤 |
-| Gradle 下载超时 | 国内网络问题 | 用腾讯云镜像下载，手动放入缓存 |
-| SHA256 校验失败 | 用了错误版本的 checksum | 版本确定后从 Gradle 官网获取正确 checksum |
-| Theme.Material3.DayNight.NoActionBar 找不到 | 缺少 `com.google.android.material:material` 依赖 | 添加 Material Components 依赖 |
