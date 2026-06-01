@@ -86,6 +86,7 @@ public abstract class AppDatabase extends RoomDatabase {
                             DB_NAME
                     )
                     .createFromAsset("database/spokeneasy.db")
+                    .fallbackToDestructiveMigration()
                     .addCallback(sRoomDatabaseCallback)
                     .addMigrations(ALL_MIGRATIONS)
                     .build();

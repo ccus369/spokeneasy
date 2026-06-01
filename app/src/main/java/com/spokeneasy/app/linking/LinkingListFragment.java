@@ -13,8 +13,6 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.widget.TextView;
-
 import com.google.android.material.progressindicator.LinearProgressIndicator;
 import com.spokeneasy.app.R;
 
@@ -23,7 +21,7 @@ public class LinkingListFragment extends Fragment {
     private LinkingViewModel viewModel;
     private LinkingListAdapter adapter;
     private LinearProgressIndicator loadingIndicator;
-    private TextView emptyView;
+    private View emptyView;
     private View skeletonLayout;
 
     @Nullable

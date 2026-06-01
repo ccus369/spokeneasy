@@ -16,8 +16,6 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.widget.TextView;
-
 import com.google.android.material.progressindicator.LinearProgressIndicator;
 import com.google.android.material.textfield.TextInputEditText;
 import com.spokeneasy.app.R;
@@ -30,7 +28,7 @@ public class WordListFragment extends Fragment {
     private WordListAdapter adapter;
     private LinearProgressIndicator loadingIndicator;
     private TextInputEditText searchEditText;
-    private TextView emptyView;
+    private View emptyView;
     private RecyclerView recyclerView;
     private View skeletonLayout;
 

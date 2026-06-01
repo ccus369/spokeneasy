@@ -5,14 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import android.view.View;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.widget.TextView;
 
 import com.google.android.material.chip.ChipGroup;
 import com.spokeneasy.app.R;
@@ -25,7 +21,7 @@ public class ShadowingListFragment extends Fragment {
     private ShadowingListAdapter adapter;
     private List<ShadowingContent> allItems = new ArrayList<>();
     private OnItemClickListener listener;
-    private TextView emptyView;
+    private View emptyView;
     private RecyclerView recyclerView;
     private View skeletonLayout;
 

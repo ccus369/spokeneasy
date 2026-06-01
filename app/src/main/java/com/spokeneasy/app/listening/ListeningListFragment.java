@@ -13,8 +13,6 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.widget.TextView;
-
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.progressindicator.LinearProgressIndicator;
@@ -26,7 +24,7 @@ public class ListeningListFragment extends Fragment {
     private ListeningListAdapter adapter;
     private LinearProgressIndicator loadingIndicator;
     private ChipGroup chipGroupLevel;
-    private TextView emptyView;
+    private View emptyView;
     private RecyclerView recyclerView;
     private View skeletonLayout;
 

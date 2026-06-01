@@ -7,9 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import android.view.View;
-import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
@@ -40,7 +37,7 @@ public class PronunciationLabFragment extends Fragment {
     private PronunciationAdapter adapter;
     private ChipGroup categoryChipGroup;
     private RecyclerView pairList;
-    private TextView emptyView;
+    private View emptyView;
     private View skeletonLayout;
 
     private static final int REQUEST_RECORD_AUDIO = 100;
