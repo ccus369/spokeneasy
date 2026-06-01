@@ -26,26 +26,23 @@ Android 英语口语练习 App "SpokenEasy"，Java + XML Layouts + Navigation Co
 **知识库位置**：`C:\Users\35403\Desktop\知识库\Android知识库\`
 **时间线**：`_timeline.md`（每次新增/更新在**最前面**插一行）
 
-三条规则：
-
-14. **知识优先查库** — 遇到技术问题先查知识库是否有相关文档，避免重复踩坑
-15. **发现即记录** — 调试中确认的根因、解决方案、模式，立即写成 `.md` 写入知识库，不留到"以后"。这是唯一能让后续对话继承经验的手段
-16. **定期收割历史对话** — 当知识库一段时间未更新时，扫描 `C:\Users\35403\.claude\projects\c--Users-35403-AndroidStudioProjects-Spokeneasy\` 下的 `.jsonl` 对话记录，提取未文档化的技术知识补入知识库。Claude Code 自身无法感知其他对话的内容，必须通过显式读取 JSONL 文件来实现跨会话访问
+1. **知识优先查库** — 遇到技术问题先查知识库是否有相关文档，避免重复踩坑
+2. **发现即记录** — 调试中确认的根因、解决方案、模式，立即写成 `.md` 写入知识库。这是唯一能让后续对话继承经验的手段
+3. **定期收割历史对话** — 知识库长期未更新时，扫描 JSONL 对话记录提取未文档化的技术知识补入。Claude Code 自身无法感知其他对话内容，必须显式读取 JSONL
 
 ### 项目约定
-17. **按功能分包**：word/linking/listening/...各自独立
-18. **同步更新本文档**：新增功能或改架构时更新
-
-### 工作节奏约定（UI 改造阶段）
-25. **每做完一个 Phase 暂停等待确认** — 改造计划分多阶段实施时，每完成一个 Phase 后停下来告知用户已完成内容，等待用户确认"开始下一步"再继续。不得自动连续执行多个 Phase。
+4. **按功能分包** — word/linking/listening/...各自独立
+5. **同步更新本文档** — 新增功能或改架构时更新。应更新：Phase 进度 / 架构决策 / 数据库版本 / 新增模块 / 依赖变更；不需更新：数据量增减 / UI 样式微调 / Bug 修复 / 知识库文章
 
 ### 防低级错误规则
-19. **跨组件回调链路，必须同时读取调用方和被调用方的源码再实现** — 当实现 A→B 的事件驱动流程时（回调、监听器、异步 chain），在写代码前先读出 A 和 B 的相关源码，确认回调链路完整。仅靠"我记得 B 会回调"的假设是不够的。
-20. **顺序操作场景，显式检查完成信号** — 涉及"做完 X 再做 Y"的逻辑（播放下一句、批量处理、动画链），在实现前用文字描述完整的信号传递路径，避免遗漏中间环节。同时在代码中用 TODO 标记关键信号点，逐点核验后再移除标记。
-21. **生命周期意识：任何异步回调必须考虑组件销毁场景** — Fragment/Activity 传给异步回调的 `Context`、`View`、`getView()` 返回值，在回调触发时可能已失效。回调 lambda 入口必须加 `isAdded()` / `getView() != null` 守卫；长时操作（录音、TTS、网络请求）的持有引用必须在 `onDestroyView()` / `onDestroy()` 中释放，避免内存泄漏或对已销毁组件操作。
-22. **异步回调必须确认线程归属** — 在回调中操作 UI 或 Fragment 之前，先确认回调在哪个线程执行。非 UI 线程的回调必须通过 `runOnUiThread()` / `Handler.post()` 切换到主线程。对不确定的，调用前翻被调用方源码确认线程归属，不要假设。
-23. **写完 happy path 后，逐个检查资源/状态/回调的边界失效场景** — 对每个外部依赖（TTS、录音、网络请求、文件 IO），列出至少一种"它不按预期工作时会发生什么"：初始化失败、正在执行时被中断、多次快速点击触发重叠操作、文件写入权限不足。对每个失效场景确认有 guard 或 fallback，不可静默崩溃。
-24. **Material / Android 命名空间混淆时，先查官方或同类布局对照** — XML 中 Material 组件的属性（chipMinHeight、chipCornerRadius 等）使用 `app:` 而非 `android:` 前缀；不确定时先在项目内搜索同类组件的已有使用方式，不凭空写。
+6. **跨组件回调链路，必须同时读取调用方和被调用方的源码再实现** — 写事件驱动流程前先读出 A 和 B 的相关源码确认链路完整，不靠"我记得"
+7. **顺序操作场景，显式检查完成信号** — "做完 X 再做 Y"逻辑（播放下一句/批量处理/动画链），先文字描述信号传递路径，再用 TODO 标记逐点核验
+8. **生命周期意识：任何异步回调必须考虑组件销毁场景** — 回调入口加 `isAdded()` / `getView() != null` 守卫；长时操作（录音/TTS/网络）的引用在 `onDestroyView()` 释放
+9. **异步回调必须确认线程归属** — 操作 UI/Fragment 前确认回调线程；非 UI 线程用 `runOnUiThread()` 切换；不确定的翻源码确认，不假设
+10. **写完 happy path 后逐一检查边界失效** — 对每个外部依赖（TTS/录音/网络/文件），至少列举一种失效场景并有 guard/fallback，不可静默崩溃
+11. **Material / Android 命名空间混淆时先查同类用法** — Material 组件属性用 `app:` 而非 `android:` 前缀；不确定时先搜项目内已有用法，不凭空写
+
+12. **每做完一个 Phase 暂停等待确认** — 多阶段任务每完成一个 Phase 后停下来告知用户已完成内容，等待用户确认"开始下一步"再继续。不得自动连续执行多个 Phase。
 
 ### 代码规范
 - Java 17
@@ -67,7 +64,8 @@ Android 英语口语练习 App "SpokenEasy"，Java + XML Layouts + Navigation Co
 - 主题：浅色+深色模式，Material3 XML 主题，蓝色主色调
 - 用户：设备UUID标识，仅游客模式
 - AI 聊天：MiMo API（`api.xiaomimimo.com/v1/chat/completions`，OpenAI 兼容），OkHttp 4.12.0
-- 练习记录：PracticeRecordEntity Room 表（user_uuid + created_at 索引），DB migration v1→2
+- 练习记录：PracticeRecordEntity Room 表（user_uuid + created_at 索引），DB migration v1→2→3
+- 听力跟读（Shadowing）：listening.json 数据驱动，TTS 回调链实现全列表串联播放，短句级 ISE 评分
 - TTS 引擎回退链（国产 ROM 兼容）：默认引擎 → `getEngines()` → `Settings.Secure.tts_default_synth` → 已知 OEM 引擎（OPPO/Xiaomi/Huawei/Vivo）。`boolean[] listenerFired + int[] initStatus` 数组模式处理同步回调竞争
 - 首页容器：LearnFragment + PracticeRootFragment 使用 TabLayout + ChildFragmentManager 实现标签切换，避免 Navigation Component 嵌套
 - 发音实验室：Json 驱动的极小对立体（minimal pairs）数据模型，按音素分类筛选，ISE 评分对比练习
@@ -88,6 +86,7 @@ Android 英语口语练习 App "SpokenEasy"，Java + XML Layouts + Navigation Co
 - Phase 9b ✅ 发音实验室（最小对立体 minimal_pairs.json + 音素分类 ChipGroup + 对比发音 + ISE 评分）
 - Phase 9c ✅ 句型操练（4 种题型 substitution/transformation/expansion/response + 6 语法点 JSON 题库 + 3 阶段: 选择→操练→总结）
 - Phase 9d ✅ 情景对话（5 阶段: 场景选择→预热词汇→对话跟读→AI 角色扮演→总结报告 + MiMo API 驱动角色扮演）
+- Phase 10 ✅ 听力跟读模块（Shadowing）— listening.json 数据驱动，逐句导航 + 全列表播放 TTS 回调链串联 + 短句 ISE 评分 + 总评分卡片动画弹入；LearnFragment 新增第 3 标签页
 
 ---
 
