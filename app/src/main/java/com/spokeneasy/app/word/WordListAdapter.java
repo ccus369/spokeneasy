@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.spokeneasy.app.R;
+import com.spokeneasy.app.core.AnimationUtils;
 
 import java.util.Locale;
 
@@ -83,6 +84,8 @@ public class WordListAdapter extends ListAdapter<WordEntity, WordListAdapter.Vie
                 onItemClickListener.onItemClick(word);
             }
         });
+
+        AnimationUtils.animateListItem(holder.itemView, position * 50, holder.itemView.getContext());
     }
 
     private int getCategoryColor(String category) {

@@ -15,3 +15,7 @@ local.properties
 # Binary files — download from GitHub Releases
 /app/libs/Msc.jar
 **/spokeneasy.db
+
+# Claude Code — local skills and lock file
+.agents/
+skills-lock.json

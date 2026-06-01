@@ -19,6 +19,9 @@ public class LinkingEntity {
     @ColumnInfo(name = "linking_text")
     private String linkingText;
 
+    @ColumnInfo(name = "ipa")
+    private String ipa;
+
     @ColumnInfo(name = "example_en")
     private String exampleEn;
 
@@ -39,6 +42,9 @@ public class LinkingEntity {
 
     public String getLinkingText() { return linkingText; }
     public void setLinkingText(String linkingText) { this.linkingText = linkingText; }
+
+    public String getIpa() { return ipa; }
+    public void setIpa(String ipa) { this.ipa = ipa; }
 
     public String getExampleEn() { return exampleEn; }
     public void setExampleEn(String exampleEn) { this.exampleEn = exampleEn; }

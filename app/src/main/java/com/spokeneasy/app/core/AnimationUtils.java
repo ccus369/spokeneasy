@@ -52,6 +52,20 @@ public class AnimationUtils {
                 .start();
     }
 
+    public static void animateButtonPress(View button) {
+        button.animate()
+                .scaleX(0.95f)
+                .scaleY(0.95f)
+                .setDuration(80)
+                .withEndAction(() -> button.animate()
+                        .scaleX(1f)
+                        .scaleY(1f)
+                        .setDuration(100)
+                        .setInterpolator(new DecelerateInterpolator())
+                        .start())
+                .start();
+    }
+
     public static void animateListItem(View itemView, int delay, Context context) {
         itemView.setAlpha(0f);
         itemView.setTranslationY(dpToPx(context, 30));

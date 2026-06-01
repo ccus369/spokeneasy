@@ -70,6 +70,13 @@
     <string name="tts_configure_engine">配置系统语音引擎</string>
     <string name="tts_test_phrase">Hello, welcome to SpokenEasy.</string>
 
+    <!-- Empty states -->
+    <string name="empty_word_list">暂无单词\n开始学习第一个单词吧</string>
+    <string name="empty_linking_list">暂无连读规则\n完成基础学习后会自动解锁</string>
+    <string name="empty_listening_list">暂无听力材料</string>
+    <string name="empty_shadowing_list">暂无跟读材料</string>
+    <string name="empty_pronunciation_list">暂无发音对</string>
+
     <!-- Guide -->
     <string name="guide_description">跟读单词、练习连读、纠正发音、AI 对话\n—— 全方位提升你的英语口语</string>
     <string name="guide_permission_hint">首次使用需要授予录音权限以进行发音评测</string>

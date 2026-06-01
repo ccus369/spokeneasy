@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.chip.Chip;
 import com.spokeneasy.app.R;
+import com.spokeneasy.app.core.AnimationUtils;
 
 public class ListeningListAdapter extends ListAdapter<ListeningAudioEntity, ListeningListAdapter.ViewHolder> {
 
@@ -72,6 +73,8 @@ public class ListeningListAdapter extends ListAdapter<ListeningAudioEntity, List
                 onItemClickListener.onItemClick(item);
             }
         });
+
+        AnimationUtils.animateListItem(holder.itemView, position * 50, holder.itemView.getContext());
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {

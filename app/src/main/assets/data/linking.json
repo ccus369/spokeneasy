@@ -4,6 +4,7 @@
       "rule_name": "want to → wanna",
       "original": "want to",
       "linking_text": "wanna",
+      "ipa": "ˈwɑːnə",
       "example_en": "I wanna go home.",
       "example_cn": "我想回家。",
       "category": "contraction"
@@ -12,6 +13,7 @@
       "rule_name": "going to → gonna",
       "original": "going to",
       "linking_text": "gonna",
+      "ipa": "ˈɡʌnə",
       "example_en": "It's gonna rain today.",
       "example_cn": "今天要下雨了。",
       "category": "contraction"
@@ -20,6 +22,7 @@
       "rule_name": "give me → gimme",
       "original": "give me",
       "linking_text": "gimme",
+      "ipa": "ˈɡɪmi",
       "example_en": "Gimme a break!",
       "example_cn": "饶了我吧！",
       "category": "assimilation"
@@ -28,6 +31,7 @@
       "rule_name": "out of → outta",
       "original": "out of",
       "linking_text": "outta",
+      "ipa": "ˈaʊtə",
       "example_en": "I'm outta here.",
       "example_cn": "我要走了。",
       "category": "elision"
@@ -36,6 +40,7 @@
       "rule_name": "let me → lemme",
       "original": "let me",
       "linking_text": "lemme",
+      "ipa": "ˈlɛmi",
       "example_en": "Lemme see that.",
       "example_cn": "让我看看那个。",
       "category": "assimilation"
@@ -44,6 +49,7 @@
       "rule_name": "don't know → dunno",
       "original": "don't know",
       "linking_text": "dunno",
+      "ipa": "dəˈnoʊ",
       "example_en": "I dunno what to say.",
       "example_cn": "我不知道该说什么。",
       "category": "contraction"
@@ -52,6 +58,7 @@
       "rule_name": "kind of → kinda",
       "original": "kind of",
       "linking_text": "kinda",
+      "ipa": "ˈkaɪndə",
       "example_en": "It's kinda weird.",
       "example_cn": "这有点奇怪。",
       "category": "reduction"
@@ -60,6 +67,7 @@
       "rule_name": "sort of → sorta",
       "original": "sort of",
       "linking_text": "sorta",
+      "ipa": "ˈsɔːrtə",
       "example_en": "I'm sorta tired.",
       "example_cn": "我有点累。",
       "category": "reduction"
@@ -68,6 +76,7 @@
       "rule_name": "got to → gotta",
       "original": "got to",
       "linking_text": "gotta",
+      "ipa": "ˈɡɑːtə",
       "example_en": "I gotta go now.",
       "example_cn": "我得走了。",
       "category": "contraction"
@@ -76,6 +85,7 @@
       "rule_name": "come on → c'mon",
       "original": "come on",
       "linking_text": "c'mon",
+      "ipa": "kəˈmɑːn",
       "example_en": "C'mon, let's go!",
       "example_cn": "快点，我们走吧！",
       "category": "elision"
@@ -84,6 +94,7 @@
       "rule_name": "what's up → wassup",
       "original": "what's up",
       "linking_text": "wassup",
+      "ipa": "wəˈsʌp",
       "example_en": "Wassup man?",
       "example_cn": "兄弟，咋样？",
       "category": "contraction"
@@ -92,6 +103,7 @@
       "rule_name": "don't you → doncha",
       "original": "don't you",
       "linking_text": "doncha",
+      "ipa": "ˈdoʊntʃə",
       "example_en": "Doncha like it?",
       "example_cn": "你不喜欢吗？",
       "category": "assimilation"
@@ -100,6 +112,7 @@
       "rule_name": "won't you → woncha",
       "original": "won't you",
       "linking_text": "woncha",
+      "ipa": "ˈwoʊntʃə",
       "example_en": "Woncha come with us?",
       "example_cn": "你不跟我们一起来吗？",
       "category": "assimilation"
@@ -108,6 +121,7 @@
       "rule_name": "what do you → whaddaya",
       "original": "what do you",
       "linking_text": "whaddaya",
+      "ipa": "ˈwʌdəjə",
       "example_en": "Whaddaya think?",
       "example_cn": "你觉得呢？",
       "category": "assimilation"
@@ -116,6 +130,7 @@
       "rule_name": "what are you → whaddaya",
       "original": "what are you",
       "linking_text": "whaddaya",
+      "ipa": "ˈwʌdəjə",
       "example_en": "Whaddaya doing?",
       "example_cn": "你在做什么？",
       "category": "assimilation"
@@ -124,6 +139,7 @@
       "rule_name": "I am in a → I'm in a",
       "original": "I am in a",
       "linking_text": "I'm in a",
+      "ipa": "aɪm ɪn ə",
       "example_en": "I'm in a hurry.",
       "example_cn": "我很匆忙。",
       "category": "linking"
@@ -132,6 +148,7 @@
       "rule_name": "we are in → we're in",
       "original": "we are in",
       "linking_text": "we're in",
+      "ipa": "wɪr ɪn",
       "example_en": "We're in trouble.",
       "example_cn": "我们有麻烦了。",
       "category": "linking"
@@ -140,6 +157,7 @@
       "rule_name": "could have → coulda",
       "original": "could have",
       "linking_text": "coulda",
+      "ipa": "ˈkʊdə",
       "example_en": "I coulda won the race.",
       "example_cn": "我本来能赢得比赛。",
       "category": "reduction"
@@ -148,6 +166,7 @@
       "rule_name": "should have → shoulda",
       "original": "should have",
       "linking_text": "shoulda",
+      "ipa": "ˈʃʊdə",
       "example_en": "You shoulda called me.",
       "example_cn": "你应该打电话给我的。",
       "category": "reduction"
@@ -156,6 +175,7 @@
       "rule_name": "would have → woulda",
       "original": "would have",
       "linking_text": "woulda",
+      "ipa": "ˈwʊdə",
       "example_en": "I woulda helped you.",
       "example_cn": "我本来会帮你的。",
       "category": "reduction"
@@ -164,6 +184,7 @@
       "rule_name": "because → 'cause",
       "original": "because",
       "linking_text": "'cause",
+      "ipa": "kəz",
       "example_en": "'Cause I said so.",
       "example_cn": "因为我是这么说的。",
       "category": "reduction"
@@ -172,6 +193,7 @@
       "rule_name": "let us → let's",
       "original": "let us",
       "linking_text": "let's",
+      "ipa": "lɛts",
       "example_en": "Let's go to the beach.",
       "example_cn": "我们去海滩吧。",
       "category": "contraction"
@@ -180,6 +202,7 @@
       "rule_name": "a lot of → a lotta",
       "original": "a lot of",
       "linking_text": "a lotta",
+      "ipa": "əˈlɑːtə",
       "example_en": "A lotta people came.",
       "example_cn": "来了很多人。",
       "category": "reduction"
@@ -188,6 +211,7 @@
       "rule_name": "lots of → lotsa",
       "original": "lots of",
       "linking_text": "lotsa",
+      "ipa": "ˈlɑːtsə",
       "example_en": "I've got lotsa friends.",
       "example_cn": "我有很多朋友。",
       "category": "reduction"
@@ -196,6 +220,7 @@
       "rule_name": "couple of → coupla",
       "original": "couple of",
       "linking_text": "coupla",
+      "ipa": "ˈkʌplə",
       "example_en": "A coupla days ago.",
       "example_cn": "几天前。",
       "category": "reduction"
@@ -204,6 +229,7 @@
       "rule_name": "piece of → piece a",
       "original": "piece of",
       "linking_text": "piece a",
+      "ipa": "ˈpiːs ə",
       "example_en": "Piece a cake!",
       "example_cn": "小菜一碟！",
       "category": "reduction"
@@ -212,6 +238,7 @@
       "rule_name": "give me that → gimme that",
       "original": "give me that",
       "linking_text": "gimme that",
+      "ipa": "ˈɡɪmi ðæt",
       "example_en": "Gimme that phone.",
       "example_cn": "把那个手机给我。",
       "category": "assimilation"
@@ -220,6 +247,7 @@
       "rule_name": "tell me → tellme",
       "original": "tell me",
       "linking_text": "tellme",
+      "ipa": "ˈtɛlmi",
       "example_en": "Tellme the truth.",
       "example_cn": "告诉我真相。",
       "category": "linking"
@@ -228,6 +256,7 @@
       "rule_name": "show me → showme",
       "original": "show me",
       "linking_text": "showme",
+      "ipa": "ˈʃoʊmi",
       "example_en": "Showme your ID.",
       "example_cn": "给我看你的身份证。",
       "category": "linking"
@@ -236,6 +265,7 @@
       "rule_name": "did you → didja",
       "original": "did you",
       "linking_text": "didja",
+      "ipa": "ˈdɪdʒə",
       "example_en": "Didja see that movie?",
       "example_cn": "你看那部电影了吗？",
       "category": "assimilation"
@@ -244,6 +274,7 @@
       "rule_name": "could you → couldja",
       "original": "could you",
       "linking_text": "couldja",
+      "ipa": "ˈkʊdʒə",
       "example_en": "Couldja help me out?",
       "example_cn": "你能帮我吗？",
       "category": "assimilation"
@@ -252,6 +283,7 @@
       "rule_name": "would you → wouldja",
       "original": "would you",
       "linking_text": "wouldja",
+      "ipa": "ˈwʊdʒə",
       "example_en": "Wouldja like some coffee?",
       "example_cn": "你想要点咖啡吗？",
       "category": "assimilation"
@@ -260,6 +292,7 @@
       "rule_name": "should you → shouldja",
       "original": "should you",
       "linking_text": "shouldja",
+      "ipa": "ˈʃʊdʒə",
       "example_en": "Shouldja go now?",
       "example_cn": "你现在该走了吗？",
       "category": "assimilation"
@@ -268,6 +301,7 @@
       "rule_name": "how is → how's",
       "original": "how is",
       "linking_text": "how's",
+      "ipa": "haʊz",
       "example_en": "How's it going?",
       "example_cn": "最近怎么样？",
       "category": "contraction"
@@ -276,6 +310,7 @@
       "rule_name": "where is → where's",
       "original": "where is",
       "linking_text": "where's",
+      "ipa": "wɛrz",
       "example_en": "Where's my wallet?",
       "example_cn": "我的钱包呢？",
       "category": "contraction"
@@ -284,6 +319,7 @@
       "rule_name": "here is → here's",
       "original": "here is",
       "linking_text": "here's",
+      "ipa": "hɪrz",
       "example_en": "Here's your coffee.",
       "example_cn": "这是你的咖啡。",
       "category": "contraction"
@@ -292,6 +328,7 @@
       "rule_name": "there is → there's",
       "original": "there is",
       "linking_text": "there's",
+      "ipa": "ðɛrz",
       "example_en": "There's a problem.",
       "example_cn": "有个问题。",
       "category": "contraction"
@@ -300,6 +337,7 @@
       "rule_name": "that is → that's",
       "original": "that is",
       "linking_text": "that's",
+      "ipa": "ðæts",
       "example_en": "That's awesome!",
       "example_cn": "太棒了！",
       "category": "contraction"
@@ -308,6 +346,7 @@
       "rule_name": "it is → it's",
       "original": "it is",
       "linking_text": "it's",
+      "ipa": "ɪts",
       "example_en": "It's a beautiful day.",
       "example_cn": "今天天气真好。",
       "category": "contraction"
@@ -316,6 +355,7 @@
       "rule_name": "what is → what's",
       "original": "what is",
       "linking_text": "what's",
+      "ipa": "wʌts",
       "example_en": "What's your name?",
       "example_cn": "你叫什么名字？",
       "category": "contraction"
@@ -324,6 +364,7 @@
       "rule_name": "I will → I'll",
       "original": "I will",
       "linking_text": "I'll",
+      "ipa": "aɪl",
       "example_en": "I'll be there soon.",
       "example_cn": "我很快就到。",
       "category": "contraction"
@@ -332,6 +373,7 @@
       "rule_name": "you will → you'll",
       "original": "you will",
       "linking_text": "you'll",
+      "ipa": "juːl",
       "example_en": "You'll like it.",
       "example_cn": "你会喜欢的。",
       "category": "contraction"
@@ -340,6 +382,7 @@
       "rule_name": "he will → he'll",
       "original": "he will",
       "linking_text": "he'll",
+      "ipa": "hiːl",
       "example_en": "He'll come later.",
       "example_cn": "他晚点会来。",
       "category": "contraction"
@@ -348,6 +391,7 @@
       "rule_name": "she will → she'll",
       "original": "she will",
       "linking_text": "she'll",
+      "ipa": "ʃiːl",
       "example_en": "She'll be happy.",
       "example_cn": "她会开心的。",
       "category": "contraction"
@@ -356,6 +400,7 @@
       "rule_name": "they will → they'll",
       "original": "they will",
       "linking_text": "they'll",
+      "ipa": "ðeɪl",
       "example_en": "They'll arrive at 8.",
       "example_cn": "他们会在八点到。",
       "category": "contraction"
@@ -364,6 +409,7 @@
       "rule_name": "we will → we'll",
       "original": "we will",
       "linking_text": "we'll",
+      "ipa": "wiːl",
       "example_en": "We'll see what happens.",
       "example_cn": "我们走着瞧。",
       "category": "contraction"
@@ -372,6 +418,7 @@
       "rule_name": "I have → I've",
       "original": "I have",
       "linking_text": "I've",
+      "ipa": "aɪv",
       "example_en": "I've been waiting.",
       "example_cn": "我一直在等。",
       "category": "contraction"
@@ -380,6 +427,7 @@
       "rule_name": "you have → you've",
       "original": "you have",
       "linking_text": "you've",
+      "ipa": "juːv",
       "example_en": "You've done well.",
       "example_cn": "你做得很好。",
       "category": "contraction"
@@ -388,6 +436,7 @@
       "rule_name": "not yet → not yet",
       "original": "not yet",
       "linking_text": "not yet",
+      "ipa": "nɑːt jɛt",
       "example_en": "I'm not yet ready.",
       "example_cn": "我还没准备好。",
       "category": "linking"
@@ -396,36 +445,37 @@
       "rule_name": "I would → I'd",
       "original": "I would",
       "linking_text": "I'd",
+      "ipa": "aɪd",
       "example_en": "I'd like a coffee.",
       "example_cn": "我想要一杯咖啡。",
       "category": "contraction"
     },
-    {"rule_name": "cannot → can't", "original": "cannot", "linking_text": "can't", "example_en": "I can't believe it.", "example_cn": "我简直不敢相信。", "category": "contraction"},
-    {"rule_name": "will not → won't", "original": "will not", "linking_text": "won't", "example_en": "I won't give up.", "example_cn": "我不会放弃。", "category": "contraction"},
-    {"rule_name": "do not → don't", "original": "do not", "linking_text": "don't", "example_en": "Don't worry about it.", "example_cn": "别担心。", "category": "contraction"},
-    {"rule_name": "did not → didn't", "original": "did not", "linking_text": "didn't", "example_en": "I didn't mean that.", "example_cn": "我不是那个意思。", "category": "contraction"},
-    {"rule_name": "them → 'em", "original": "them", "linking_text": "'em", "example_en": "I told 'em already.", "example_cn": "我已经告诉他们了。", "category": "elision"},
-    {"rule_name": "and → 'n'", "original": "and", "linking_text": "'n'", "example_en": "Rock 'n' roll is great.", "example_cn": "摇滚乐很棒。", "category": "elision"},
-    {"rule_name": "going → goin'", "original": "going", "linking_text": "goin'", "example_en": "Where are you goin'?", "example_cn": "你要去哪？", "category": "elision"},
-    {"rule_name": "about → 'bout", "original": "about", "linking_text": "'bout", "example_en": "Think 'bout it.", "example_cn": "考虑一下。", "category": "elision"},
-    {"rule_name": "something → somethin'", "original": "something", "linking_text": "somethin'", "example_en": "Say somethin'!", "example_cn": "说点什么！", "category": "elision"},
-    {"rule_name": "probably → prob'ly", "original": "probably", "linking_text": "prob'ly", "example_en": "I'll prob'ly be late.", "example_cn": "我可能会迟到。", "category": "elision"},
-    {"rule_name": "little → li'l", "original": "little", "linking_text": "li'l", "example_en": "Just a li'l bit.", "example_cn": "就一点点。", "category": "elision"},
-    {"rule_name": "doing → doin'", "original": "doing", "linking_text": "doin'", "example_en": "Whatcha doin'?", "example_cn": "你在干嘛？", "category": "elision"},
-    {"rule_name": "got you → gotcha", "original": "got you", "linking_text": "gotcha", "example_en": "I gotcha!", "example_cn": "我明白了！", "category": "assimilation"},
-    {"rule_name": "bet you → betcha", "original": "bet you", "linking_text": "betcha", "example_en": "Betcha I'm right.", "example_cn": "我打赌我是对的。", "category": "assimilation"},
-    {"rule_name": "meet you → meetcha", "original": "meet you", "linking_text": "meetcha", "example_en": "Nice to meetcha!", "example_cn": "很高兴见到你！", "category": "assimilation"},
-    {"rule_name": "didn't you → dincha", "original": "didn't you", "linking_text": "dincha", "example_en": "Dincha hear the news?", "example_cn": "你没听到消息吗？", "category": "assimilation"},
-    {"rule_name": "need to → needa", "original": "need to", "linking_text": "needa", "example_en": "I needa go now.", "example_cn": "我现在得走了。", "category": "reduction"},
-    {"rule_name": "have to → hafta", "original": "have to", "linking_text": "hafta", "example_en": "I hafta finish this.", "example_cn": "我得完成这个。", "category": "reduction"},
-    {"rule_name": "used to → useta", "original": "used to", "linking_text": "useta", "example_en": "I useta live there.", "example_cn": "我以前住那里。", "category": "reduction"},
-    {"rule_name": "supposed to → supposta", "original": "supposed to", "linking_text": "supposta", "example_en": "I'm supposta be at work.", "example_cn": "我应该在上班。", "category": "reduction"},
-    {"rule_name": "look at → lookit", "original": "look at", "linking_text": "lookit", "example_en": "Lookit that sunset!", "example_cn": "看那日落！", "category": "linking"},
-    {"rule_name": "give it → givit", "original": "give it", "linking_text": "givit", "example_en": "Givit to me.", "example_cn": "把它给我。", "category": "linking"},
-    {"rule_name": "what if → whatif", "original": "what if", "linking_text": "whatif", "example_en": "Whatif I said no?", "example_cn": "如果我说不呢？", "category": "linking"},
-    {"rule_name": "go away → goaway", "original": "go away", "linking_text": "goaway", "example_en": "Goaway and leave me alone.", "example_cn": "走开，别烦我。", "category": "linking"},
-    {"rule_name": "come on in → come on in", "original": "come on in", "linking_text": "come on in", "example_en": "Come on in, the door is open.", "example_cn": "进来吧，门开着。", "category": "linking"},
-    {"rule_name": "a lot → a lot", "original": "a lot", "linking_text": "a lot", "example_en": "I go there a lot.", "example_cn": "我经常去那里。", "category": "linking"},
-    {"rule_name": "all right → alright", "original": "all right", "linking_text": "alright", "example_en": "Are you alright?", "example_cn": "你还好吗？", "category": "linking"}
+    {"rule_name": "cannot → can't", "original": "cannot", "linking_text": "can't", "ipa": "kænt", "example_en": "I can't believe it.", "example_cn": "我简直不敢相信。", "category": "contraction"},
+    {"rule_name": "will not → won't", "original": "will not", "linking_text": "won't", "ipa": "woʊnt", "example_en": "I won't give up.", "example_cn": "我不会放弃。", "category": "contraction"},
+    {"rule_name": "do not → don't", "original": "do not", "linking_text": "don't", "ipa": "doʊnt", "example_en": "Don't worry about it.", "example_cn": "别担心。", "category": "contraction"},
+    {"rule_name": "did not → didn't", "original": "did not", "linking_text": "didn't", "ipa": "ˈdɪdənt", "example_en": "I didn't mean that.", "example_cn": "我不是那个意思。", "category": "contraction"},
+    {"rule_name": "them → 'em", "original": "them", "linking_text": "'em", "ipa": "əm", "example_en": "I told 'em already.", "example_cn": "我已经告诉他们了。", "category": "elision"},
+    {"rule_name": "and → 'n'", "original": "and", "linking_text": "'n'", "ipa": "ən", "example_en": "Rock 'n' roll is great.", "example_cn": "摇滚乐很棒。", "category": "elision"},
+    {"rule_name": "going → goin'", "original": "going", "linking_text": "goin'", "ipa": "ˈɡoʊɪn", "example_en": "Where are you goin'?", "example_cn": "你要去哪？", "category": "elision"},
+    {"rule_name": "about → 'bout", "original": "about", "linking_text": "'bout", "ipa": "baʊt", "example_en": "Think 'bout it.", "example_cn": "考虑一下。", "category": "elision"},
+    {"rule_name": "something → somethin'", "original": "something", "linking_text": "somethin'", "ipa": "ˈsʌmθɪn", "example_en": "Say somethin'!", "example_cn": "说点什么！", "category": "elision"},
+    {"rule_name": "probably → prob'ly", "original": "probably", "linking_text": "prob'ly", "ipa": "ˈprɑːbli", "example_en": "I'll prob'ly be late.", "example_cn": "我可能会迟到。", "category": "elision"},
+    {"rule_name": "little → li'l", "original": "little", "linking_text": "li'l", "ipa": "lɪl", "example_en": "Just a li'l bit.", "example_cn": "就一点点。", "category": "elision"},
+    {"rule_name": "doing → doin'", "original": "doing", "linking_text": "doin'", "ipa": "ˈduːɪn", "example_en": "Whatcha doin'?", "example_cn": "你在干嘛？", "category": "elision"},
+    {"rule_name": "got you → gotcha", "original": "got you", "linking_text": "gotcha", "ipa": "ˈɡɑːtʃə", "example_en": "I gotcha!", "example_cn": "我明白了！", "category": "assimilation"},
+    {"rule_name": "bet you → betcha", "original": "bet you", "linking_text": "betcha", "ipa": "ˈbɛtʃə", "example_en": "Betcha I'm right.", "example_cn": "我打赌我是对的。", "category": "assimilation"},
+    {"rule_name": "meet you → meetcha", "original": "meet you", "linking_text": "meetcha", "ipa": "ˈmiːtʃə", "example_en": "Nice to meetcha!", "example_cn": "很高兴见到你！", "category": "assimilation"},
+    {"rule_name": "didn't you → dincha", "original": "didn't you", "linking_text": "dincha", "ipa": "ˈdɪntʃə", "example_en": "Dincha hear the news?", "example_cn": "你没听到消息吗？", "category": "assimilation"},
+    {"rule_name": "need to → needa", "original": "need to", "linking_text": "needa", "ipa": "ˈniːdə", "example_en": "I needa go now.", "example_cn": "我现在得走了。", "category": "reduction"},
+    {"rule_name": "have to → hafta", "original": "have to", "linking_text": "hafta", "ipa": "ˈhæftə", "example_en": "I hafta finish this.", "example_cn": "我得完成这个。", "category": "reduction"},
+    {"rule_name": "used to → useta", "original": "used to", "linking_text": "useta", "ipa": "ˈjuːstə", "example_en": "I useta live there.", "example_cn": "我以前住那里。", "category": "reduction"},
+    {"rule_name": "supposed to → supposta", "original": "supposed to", "linking_text": "supposta", "ipa": "səˈpoʊstə", "example_en": "I'm supposta be at work.", "example_cn": "我应该在上班。", "category": "reduction"},
+    {"rule_name": "look at → lookit", "original": "look at", "linking_text": "lookit", "ipa": "ˈlʊkɪt", "example_en": "Lookit that sunset!", "example_cn": "看那日落！", "category": "linking"},
+    {"rule_name": "give it → givit", "original": "give it", "linking_text": "givit", "ipa": "ˈɡɪvɪt", "example_en": "Givit to me.", "example_cn": "把它给我。", "category": "linking"},
+    {"rule_name": "what if → whatif", "original": "what if", "linking_text": "whatif", "ipa": "ˈwʌtɪf", "example_en": "Whatif I said no?", "example_cn": "如果我说不呢？", "category": "linking"},
+    {"rule_name": "go away → goaway", "original": "go away", "linking_text": "goaway", "ipa": "ˌɡoʊəˈweɪ", "example_en": "Goaway and leave me alone.", "example_cn": "走开，别烦我。", "category": "linking"},
+    {"rule_name": "come on in → come on in", "original": "come on in", "linking_text": "come on in", "ipa": "kʌm ɑːn ɪn", "example_en": "Come on in, the door is open.", "example_cn": "进来吧，门开着。", "category": "linking"},
+    {"rule_name": "a lot → a lot", "original": "a lot", "linking_text": "a lot", "ipa": "ə lɑːt", "example_en": "I go there a lot.", "example_cn": "我经常去那里。", "category": "linking"},
+    {"rule_name": "all right → alright", "original": "all right", "linking_text": "alright", "ipa": "ɔːlˈraɪt", "example_en": "Are you alright?", "example_cn": "你还好吗？", "category": "linking"}
   ]
 }

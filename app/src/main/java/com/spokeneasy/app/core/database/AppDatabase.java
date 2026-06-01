@@ -33,7 +33,7 @@ import java.util.concurrent.Executors;
         UserProgressEntity.class,
         PracticeRecordEntity.class
     },
-    version = 2,
+    version = 3,
     exportSchema = true
 )
 public abstract class AppDatabase extends RoomDatabase {
@@ -87,13 +87,22 @@ public abstract class AppDatabase extends RoomDatabase {
                     )
                     .createFromAsset("database/spokeneasy.db")
                     .addCallback(sRoomDatabaseCallback)
-                    .addMigrations(MIGRATION_1_2)
+                    .addMigrations(ALL_MIGRATIONS)
                     .build();
                 }
             }
         }
         return INSTANCE;
     }
+
+    static final Migration MIGRATION_2_3 = new Migration(2, 3) {
+        @Override
+        public void migrate(@NonNull SupportSQLiteDatabase database) {
+            database.execSQL("ALTER TABLE linking ADD COLUMN ipa TEXT");
+        }
+    };
+
+    private static final Migration[] ALL_MIGRATIONS = {MIGRATION_1_2, MIGRATION_2_3};
 
     private static final Callback sRoomDatabaseCallback = new Callback() {
         @Override
@@ -104,4 +113,5 @@ public abstract class AppDatabase extends RoomDatabase {
             });
         }
     };
+
 }

@@ -70,6 +70,15 @@
 
         </LinearLayout>
 
+        <!-- IPA pronunciation -->
+        <TextView
+            android:id="@+id/detail_ipa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            android:textColor="?attr/colorOnSurfaceVariant" />
+
         <!-- Divider -->
         <View
             android:layout_width="match_parent"

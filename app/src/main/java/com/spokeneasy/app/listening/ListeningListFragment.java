@@ -13,6 +13,8 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.widget.TextView;
+
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.progressindicator.LinearProgressIndicator;
@@ -24,6 +26,8 @@ public class ListeningListFragment extends Fragment {
     private ListeningListAdapter adapter;
     private LinearProgressIndicator loadingIndicator;
     private ChipGroup chipGroupLevel;
+    private TextView emptyView;
+    private RecyclerView recyclerView;
 
     @Nullable
     @Override
@@ -41,8 +45,9 @@ public class ListeningListFragment extends Fragment {
 
         loadingIndicator = view.findViewById(R.id.loading_indicator);
         chipGroupLevel = view.findViewById(R.id.chip_group_level);
+        emptyView = view.findViewById(R.id.empty_view);
 
-        RecyclerView recyclerView = view.findViewById(R.id.listening_recycler_view);
+        recyclerView = view.findViewById(R.id.listening_recycler_view);
         adapter = new ListeningListAdapter();
         adapter.setOnItemClickListener(item -> {
             NavController navController = Navigation.findNavController(view);
@@ -55,6 +60,9 @@ public class ListeningListFragment extends Fragment {
         viewModel.getItems().observe(getViewLifecycleOwner(), items -> {
             if (items != null) {
                 adapter.submitList(items);
+                boolean empty = items.isEmpty();
+                recyclerView.setVisibility(empty ? View.GONE : View.VISIBLE);
+                emptyView.setVisibility(empty ? View.VISIBLE : View.GONE);
             }
         });
 

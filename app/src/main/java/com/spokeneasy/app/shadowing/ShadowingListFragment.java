@@ -5,10 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.view.View;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.widget.TextView;
 
 import com.google.android.material.chip.ChipGroup;
 import com.spokeneasy.app.R;
@@ -21,6 +25,8 @@ public class ShadowingListFragment extends Fragment {
     private ShadowingListAdapter adapter;
     private List<ShadowingContent> allItems = new ArrayList<>();
     private OnItemClickListener listener;
+    private TextView emptyView;
+    private RecyclerView recyclerView;
 
     public interface OnItemClickListener {
         void onItemClick(ShadowingContent item);
@@ -43,7 +49,8 @@ public class ShadowingListFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         ChipGroup chipGroup = view.findViewById(R.id.chip_group_level);
-        RecyclerView recyclerView = view.findViewById(R.id.shadowing_recycler_view);
+        emptyView = view.findViewById(R.id.empty_view);
+        recyclerView = view.findViewById(R.id.shadowing_recycler_view);
 
         adapter = new ShadowingListAdapter();
         adapter.setOnItemClickListener(item -> {
@@ -54,6 +61,7 @@ public class ShadowingListFragment extends Fragment {
         recyclerView.setAdapter(adapter);
 
         allItems = ShadowingLoader.load(requireContext());
+        updateEmptyState(allItems);
         adapter.submitList(allItems);
 
         chipGroup.setOnCheckedStateChangeListener((group, checkedIds) -> {
@@ -64,7 +72,15 @@ public class ShadowingListFragment extends Fragment {
                 else if (id == R.id.chip_level_2) level = 2;
                 else if (id == R.id.chip_level_3) level = 3;
             }
-            adapter.submitList(ShadowingLoader.filterByLevel(allItems, level));
+            List<ShadowingContent> filtered = ShadowingLoader.filterByLevel(allItems, level);
+            updateEmptyState(filtered);
+            adapter.submitList(filtered);
         });
+    }
+
+    private void updateEmptyState(List<ShadowingContent> items) {
+        boolean empty = items == null || items.isEmpty();
+        recyclerView.setVisibility(empty ? View.GONE : View.VISIBLE);
+        emptyView.setVisibility(empty ? View.VISIBLE : View.GONE);
     }
 }

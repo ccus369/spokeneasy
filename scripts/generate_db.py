@@ -35,6 +35,7 @@ def create_schema(conn):
             rule_name TEXT,
             original TEXT,
             linking_text TEXT,
+            ipa TEXT,
             example_en TEXT,
             example_cn TEXT,
             category TEXT
@@ -111,10 +112,11 @@ def import_linking(conn, data):
     for item in items:
         cursor.execute(
             """INSERT INTO linking (rule_name, original, linking_text,
-               example_en, example_cn, category)
-               VALUES (?, ?, ?, ?, ?, ?)""",
+               ipa, example_en, example_cn, category)
+               VALUES (?, ?, ?, ?, ?, ?, ?)""",
             (
                 item["rule_name"], item["original"], item["linking_text"],
+                item.get("ipa", ""),
                 item["example_en"], item["example_cn"],
                 item.get("category", ""),
             ),
@@ -169,7 +171,10 @@ def main():
     # Create database
     conn = sqlite3.connect(str(DB_PATH))
     create_schema(conn)
-    print("  Schema created (5 tables)\n")
+    # Set user_version for Room's createFromAsset migration strategy
+    conn.execute("PRAGMA user_version = 3")
+    conn.commit()
+    print("  Schema created (5 tables), user_version=3\n")
 
     # Import words
     words_data = load_json("words.json")

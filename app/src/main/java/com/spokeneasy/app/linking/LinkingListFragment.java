@@ -13,6 +13,8 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.widget.TextView;
+
 import com.google.android.material.progressindicator.LinearProgressIndicator;
 import com.spokeneasy.app.R;
 
@@ -21,6 +23,7 @@ public class LinkingListFragment extends Fragment {
     private LinkingViewModel viewModel;
     private LinkingListAdapter adapter;
     private LinearProgressIndicator loadingIndicator;
+    private TextView emptyView;
 
     @Nullable
     @Override
@@ -37,6 +40,7 @@ public class LinkingListFragment extends Fragment {
         viewModel = new ViewModelProvider(this).get(LinkingViewModel.class);
 
         loadingIndicator = view.findViewById(R.id.loading_indicator);
+        emptyView = view.findViewById(R.id.empty_view);
 
         RecyclerView recyclerView = view.findViewById(R.id.linking_recycler_view);
         adapter = new LinkingListAdapter();
@@ -51,6 +55,9 @@ public class LinkingListFragment extends Fragment {
         viewModel.getItems().observe(getViewLifecycleOwner(), items -> {
             if (items != null) {
                 adapter.submitList(items);
+                boolean empty = items.isEmpty();
+                recyclerView.setVisibility(empty ? View.GONE : View.VISIBLE);
+                emptyView.setVisibility(empty ? View.VISIBLE : View.GONE);
             }
         });
 

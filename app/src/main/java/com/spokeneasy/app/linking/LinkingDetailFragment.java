@@ -43,6 +43,7 @@ public class LinkingDetailFragment extends Fragment {
     private TextView detailRuleName;
     private TextView detailOriginal;
     private TextView detailLinkingText;
+    private TextView detailIpa;
     private TextView detailExampleEn;
     private TextView detailExampleCn;
     private MaterialButton btnPlayRule, btnPlayExample;
@@ -116,6 +117,7 @@ public class LinkingDetailFragment extends Fragment {
         detailRuleName = view.findViewById(R.id.detail_rule_name);
         detailOriginal = view.findViewById(R.id.detail_original);
         detailLinkingText = view.findViewById(R.id.detail_linking_text);
+        detailIpa = view.findViewById(R.id.detail_ipa);
         detailExampleEn = view.findViewById(R.id.detail_example_en);
         detailExampleCn = view.findViewById(R.id.detail_example_cn);
         btnPlayRule = view.findViewById(R.id.btn_play_rule);
@@ -194,6 +196,8 @@ public class LinkingDetailFragment extends Fragment {
         detailRuleName.setText(item.getRuleName());
         detailOriginal.setText(item.getOriginal());
         detailLinkingText.setText(item.getLinkingText());
+        detailIpa.setText(String.format(Locale.getDefault(), "/%s/",
+                item.getIpa() != null ? item.getIpa() : ""));
         detailExampleEn.setText(item.getExampleEn());
         detailExampleCn.setText(item.getExampleCn());
         updateChineseVisibility();

@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.chip.Chip;
 import com.spokeneasy.app.R;
+import com.spokeneasy.app.core.AnimationUtils;
 
 public class ShadowingListAdapter extends ListAdapter<ShadowingContent, ShadowingListAdapter.ViewHolder> {
 
@@ -86,6 +87,8 @@ public class ShadowingListAdapter extends ListAdapter<ShadowingContent, Shadowin
                 onItemClickListener.onItemClick(item);
             }
         });
+
+        AnimationUtils.animateListItem(holder.itemView, position * 50, holder.itemView.getContext());
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {

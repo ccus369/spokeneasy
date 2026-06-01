@@ -16,6 +16,8 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.widget.TextView;
+
 import com.google.android.material.progressindicator.LinearProgressIndicator;
 import com.google.android.material.textfield.TextInputEditText;
 import com.spokeneasy.app.R;
@@ -28,6 +30,8 @@ public class WordListFragment extends Fragment {
     private WordListAdapter adapter;
     private LinearProgressIndicator loadingIndicator;
     private TextInputEditText searchEditText;
+    private TextView emptyView;
+    private RecyclerView recyclerView;
 
     @Nullable
     @Override
@@ -45,8 +49,9 @@ public class WordListFragment extends Fragment {
 
         loadingIndicator = view.findViewById(R.id.loading_indicator);
         searchEditText = view.findViewById(R.id.search_edit_text);
+        emptyView = view.findViewById(R.id.empty_view);
 
-        RecyclerView recyclerView = view.findViewById(R.id.word_recycler_view);
+        recyclerView = view.findViewById(R.id.word_recycler_view);
         adapter = new WordListAdapter();
         adapter.setOnItemClickListener(word -> {
             NavController navController = Navigation.findNavController(view);
@@ -59,6 +64,9 @@ public class WordListFragment extends Fragment {
         viewModel.getWords().observe(getViewLifecycleOwner(), words -> {
             if (words != null) {
                 adapter.submitList(words);
+                boolean empty = words.isEmpty();
+                recyclerView.setVisibility(empty ? View.GONE : View.VISIBLE);
+                emptyView.setVisibility(empty ? View.VISIBLE : View.GONE);
             }
         });
 

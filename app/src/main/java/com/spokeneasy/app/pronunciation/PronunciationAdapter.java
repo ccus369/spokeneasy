@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.button.MaterialButton;
 import com.spokeneasy.app.R;
+import com.spokeneasy.app.core.AnimationUtils;
 import com.spokeneasy.app.core.audio.AudioWaveformView;
 
 import java.util.HashMap;
@@ -89,6 +90,7 @@ public class PronunciationAdapter extends
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         PronunciationContent.MinimalPair pair = getItem(position);
         holder.bind(pair);
+        AnimationUtils.animateListItem(holder.itemView, position * 50, holder.itemView.getContext());
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

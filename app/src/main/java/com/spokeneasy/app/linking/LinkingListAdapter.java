@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.spokeneasy.app.R;
+import com.spokeneasy.app.core.AnimationUtils;
 
 public class LinkingListAdapter extends ListAdapter<LinkingEntity, LinkingListAdapter.ViewHolder> {
 
@@ -74,6 +75,8 @@ public class LinkingListAdapter extends ListAdapter<LinkingEntity, LinkingListAd
                 onItemClickListener.onItemClick(item);
             }
         });
+
+        AnimationUtils.animateListItem(holder.itemView, position * 50, holder.itemView.getContext());
     }
 
     private int getCategoryColor(String category) {
