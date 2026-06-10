@@ -19,3 +19,4 @@ local.properties
 # Claude Code — local skills and lock file
 .agents/
 skills-lock.json
+.superpowers/

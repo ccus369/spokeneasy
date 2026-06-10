@@ -2,34 +2,58 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="Base.Theme.Spokeneasy" parent="Theme.Material3.Dark.NoActionBar">
-        <!-- Primary -->
-        <item name="colorPrimary">@color/blue_200</item>
-        <item name="colorOnPrimary">@color/blue_900</item>
-        <item name="colorPrimaryContainer">@color/blue_700</item>
-        <item name="colorOnPrimaryContainer">@color/blue_100</item>
+        <!-- Primary — Indigo (dark) -->
+        <item name="colorPrimary">@color/indigo_200</item>
+        <item name="colorOnPrimary">@color/indigo_800</item>
+        <item name="colorPrimaryContainer">@color/indigo_700</item>
+        <item name="colorOnPrimaryContainer">@color/indigo_50</item>
 
-        <!-- Secondary -->
-        <item name="colorSecondary">@color/blue_grey_300</item>
-        <item name="colorOnSecondary">@color/blue_grey_900</item>
-        <item name="colorSecondaryContainer">@color/blue_grey_700</item>
-        <item name="colorOnSecondaryContainer">@color/blue_grey_200</item>
+        <!-- Secondary — Indigo 500 (dark) -->
+        <item name="colorSecondary">@color/indigo_200</item>
+        <item name="colorOnSecondary">@color/indigo_800</item>
+        <item name="colorSecondaryContainer">@color/indigo_700</item>
+        <item name="colorOnSecondaryContainer">@color/indigo_100</item>
 
-        <!-- Tertiary -->
-        <item name="colorTertiary">@color/purple_200</item>
-        <item name="colorOnTertiary">@color/purple_900</item>
+        <!-- Tertiary — Green CTA (dark) -->
+        <item name="colorTertiary">@color/green_100</item>
+        <item name="colorOnTertiary">@color/green_500</item>
+        <item name="colorTertiaryContainer">@color/green_500</item>
+        <item name="colorOnTertiaryContainer">@color/white</item>
 
-        <!-- Background & Surface -->
-        <item name="android:colorBackground">@color/grey_950</item>
+        <!-- Background & Surface — OLED Dark -->
+        <item name="android:colorBackground">@color/surface_oled</item>
         <item name="colorOnBackground">@color/grey_50</item>
-        <item name="colorSurface">@color/grey_900</item>
+        <item name="colorSurface">@color/surface_card_dark</item>
         <item name="colorOnSurface">@color/grey_50</item>
+        <item name="colorSurfaceVariant">@color/surface_border_dark</item>
+        <item name="colorOnSurfaceVariant">@color/indigo_100</item>
 
         <!-- Error -->
         <item name="colorError">@color/red_300</item>
         <item name="colorOnError">@color/red_900</item>
 
-        <!-- Status bar -->
-        <item name="android:statusBarColor">@color/blue_700</item>
+        <!-- Custom attrs — Indigo Bento surface levels (dark / OLED) -->
+        <item name="surfaceCard">@color/surface_card_dark</item>
+        <item name="surfaceBorder">@color/surface_border_dark</item>
+        <item name="surfaceElevated">@color/surface_elevated_dark</item>
+        <item name="colorCta">@color/green_500</item>
+        <item name="colorOnCta">@color/white</item>
+
+        <!-- Custom attrs — icon gradient backgrounds (dark) -->
+        <item name="iconBgIndigo">@drawable/bg_icon_indigo_dark</item>
+        <item name="iconBgGreen">@drawable/bg_icon_green_dark</item>
+        <item name="iconBgAmber">@drawable/bg_icon_amber_dark</item>
+        <item name="iconBgPink">@drawable/bg_icon_pink_dark</item>
+        <item name="iconBgPurple">@drawable/bg_icon_purple_dark</item>
+        <item name="iconBgBlue">@drawable/bg_icon_blue_dark</item>
+
+        <!-- Font families -->
+        <item name="fontHeading">@font/outfit</item>
+        <item name="fontBody">@font/work_sans</item>
+
+        <!-- Status bar — transparent on OLED -->
+        <item name="android:statusBarColor">@color/surface_oled</item>
+        <item name="android:navigationBarColor">@color/surface_card_dark</item>
     </style>
 
     <style name="Theme.Spokeneasy" parent="Base.Theme.Spokeneasy" />

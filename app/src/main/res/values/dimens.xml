@@ -10,4 +10,17 @@
     <dimen name="text_size_heading">20sp</dimen>
     <dimen name="text_size_drill_title">18sp</dimen>
     <dimen name="text_score_summary">48sp</dimen>
+
+    <!-- Indigo Bento heading sizes (Outfit font) -->
+    <dimen name="heading_xl">28sp</dimen>
+    <dimen name="heading_lg">22sp</dimen>
+    <dimen name="heading_md">18sp</dimen>
+    <dimen name="heading_sm">16sp</dimen>
+
+    <!-- Icon container sizes -->
+    <dimen name="icon_container_bento">44dp</dimen>
+    <dimen name="icon_size_bento">24dp</dimen>
+    <dimen name="icon_container_list">36dp</dimen>
+    <dimen name="icon_size_list">18dp</dimen>
+    <dimen name="icon_radius">12dp</dimen>
 </resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Indigo Bento custom theme attributes -->
+    <attr name="surfaceCard" format="color" />
+    <attr name="surfaceBorder" format="color" />
+    <attr name="surfaceElevated" format="color" />
+    <attr name="colorCta" format="color" />
+    <attr name="colorOnCta" format="color" />
+
+    <!-- Icon gradient container backgrounds -->
+    <attr name="iconBgIndigo" format="reference" />
+    <attr name="iconBgGreen" format="reference" />
+    <attr name="iconBgAmber" format="reference" />
+    <attr name="iconBgPink" format="reference" />
+    <attr name="iconBgPurple" format="reference" />
+    <attr name="iconBgBlue" format="reference" />
+
+    <!-- Font family aliases -->
+    <attr name="fontHeading" format="reference" />
+    <attr name="fontBody" format="reference" />
+</resources>

@@ -87,7 +87,57 @@
     <color name="chip_scene_text">#FFE65100</color>
 
     <!-- Bottom navigation tab colors -->
-    <color name="bottom_nav_learn_tint">#FF1976D2</color>
+    <color name="bottom_nav_learn_tint">#FF4F46E5</color>
     <color name="bottom_nav_practice_tint">#FFFF8F00</color>
     <color name="bottom_nav_settings_tint">#FF78909C</color>
+
+    <!-- ===== Phase 3: Indigo Bento palette ===== -->
+
+    <!-- Indigo primary palette -->
+    <color name="indigo_50">#FFEEF2FF</color>
+    <color name="indigo_100">#FFE0E7FF</color>
+    <color name="indigo_200">#FFC7D2FE</color>
+    <color name="indigo_500">#FF6366F1</color>
+    <color name="indigo_600">#FF4F46E5</color>
+    <color name="indigo_700">#FF4338CA</color>
+    <color name="indigo_800">#FF3730A3</color>
+    <color name="indigo_900">#FF312E81</color>
+
+    <!-- Green CTA accent -->
+    <color name="green_500">#FF22C55E</color>
+    <color name="green_100">#FFDCFCE7</color>
+
+    <!-- OLED Dark mode surface levels -->
+    <color name="surface_oled">#FF000000</color>
+    <color name="surface_card_dark">#FF1C1C1E</color>
+    <color name="surface_border_dark">#FF2C2C2E</color>
+    <color name="surface_elevated_dark">#FF3A3A3C</color>
+
+    <!-- Icon gradient container colors (light) -->
+    <color name="icon_grad_indigo_start">#FFEEF2FF</color>
+    <color name="icon_grad_indigo_end">#FFC7D2FE</color>
+    <color name="icon_grad_green_start">#FFDCFCE7</color>
+    <color name="icon_grad_green_end">#FFBBF7D0</color>
+    <color name="icon_grad_amber_start">#FFFEF3C7</color>
+    <color name="icon_grad_amber_end">#FFFDE68A</color>
+    <color name="icon_grad_pink_start">#FFFCE7F3</color>
+    <color name="icon_grad_pink_end">#FFFBCFE8</color>
+    <color name="icon_grad_purple_start">#FFF3E8FF</color>
+    <color name="icon_grad_purple_end">#FFE9D5FF</color>
+    <color name="icon_grad_blue_start">#FFE0F2FE</color>
+    <color name="icon_grad_blue_end">#FFBAE6FD</color>
+
+    <!-- Icon gradient container colors (dark) -->
+    <color name="icon_grad_indigo_dark_start">#FF1E1B4B</color>
+    <color name="icon_grad_indigo_dark_end">#FF312E81</color>
+    <color name="icon_grad_green_dark_start">#FF14532D</color>
+    <color name="icon_grad_green_dark_end">#FF166534</color>
+    <color name="icon_grad_amber_dark_start">#FF451A03</color>
+    <color name="icon_grad_amber_dark_end">#FF78350F</color>
+    <color name="icon_grad_pink_dark_start">#FF4C0519</color>
+    <color name="icon_grad_pink_dark_end">#FF701A2C</color>
+    <color name="icon_grad_purple_dark_start">#FF3B0764</color>
+    <color name="icon_grad_purple_dark_end">#FF581C87</color>
+    <color name="icon_grad_blue_dark_start">#FF0C4A6E</color>
+    <color name="icon_grad_blue_dark_end">#FF1E3A5F</color>
 </resources>
