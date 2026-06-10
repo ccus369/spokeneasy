@@ -64,7 +64,7 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginEnd="8dp"
-                android:src="@drawable/ic_headset"
+                android:src="@drawable/ic_headphone_outline"
                 android:alpha="0.6"
                 android:contentDescription="听力材料" />
 

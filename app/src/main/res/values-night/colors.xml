@@ -51,7 +51,7 @@
     <color name="chip_scene_text">#FFFF8A65</color>
 
     <!-- Bottom navigation tab colors (same as light) -->
-    <color name="bottom_nav_learn_tint">#FF1976D2</color>
+    <color name="bottom_nav_learn_tint">#FF4F46E5</color>
     <color name="bottom_nav_practice_tint">#FFFF8F00</color>
     <color name="bottom_nav_settings_tint">#FF78909C</color>
 </resources>

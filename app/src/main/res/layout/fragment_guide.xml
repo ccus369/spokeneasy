@@ -66,14 +66,13 @@
             android:gravity="center_vertical">
 
             <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:padding="12dp"
-                android:background="@drawable/bg_category_tag"
-                android:backgroundTint="?attr/colorPrimaryContainer"
-                android:src="@drawable/ic_menu_book"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:padding="10dp"
+                android:background="@drawable/bg_icon_indigo"
+                android:src="@drawable/ic_book_outline"
                 android:contentDescription=""
-                app:tint="?attr/colorPrimary" />
+                app:tint="@android:color/white" />
 
             <TextView
                 android:layout_width="0dp"
@@ -96,14 +95,13 @@
             android:gravity="center_vertical">
 
             <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:padding="12dp"
-                android:background="@drawable/bg_category_tag"
-                android:backgroundTint="?attr/colorPrimaryContainer"
-                android:src="@drawable/ic_headset"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:padding="10dp"
+                android:background="@drawable/bg_icon_blue"
+                android:src="@drawable/ic_headphone_outline"
                 android:contentDescription=""
-                app:tint="?attr/colorPrimary" />
+                app:tint="@android:color/white" />
 
             <TextView
                 android:layout_width="0dp"
@@ -126,14 +124,13 @@
             android:gravity="center_vertical">
 
             <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:padding="12dp"
-                android:background="@drawable/bg_category_tag"
-                android:backgroundTint="?attr/colorPrimaryContainer"
-                android:src="@drawable/ic_record_voice_over"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:padding="10dp"
+                android:background="@drawable/bg_icon_green"
+                android:src="@drawable/ic_mic_outline"
                 android:contentDescription=""
-                app:tint="?attr/colorPrimary" />
+                app:tint="@android:color/white" />
 
             <TextView
                 android:layout_width="0dp"

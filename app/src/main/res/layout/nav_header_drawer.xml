@@ -11,7 +11,7 @@
     <ImageView
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:src="@drawable/ic_menu_book"
+        android:src="@drawable/ic_book_outline"
         android:contentDescription="@null"
         android:alpha="0.9" />
 

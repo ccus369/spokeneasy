@@ -97,6 +97,8 @@
     <color name="indigo_50">#FFEEF2FF</color>
     <color name="indigo_100">#FFE0E7FF</color>
     <color name="indigo_200">#FFC7D2FE</color>
+    <color name="indigo_300">#FFA5B4FC</color>
+    <color name="indigo_400">#FF818CF8</color>
     <color name="indigo_500">#FF6366F1</color>
     <color name="indigo_600">#FF4F46E5</color>
     <color name="indigo_700">#FF4338CA</color>

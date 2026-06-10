@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/learnFragment"
-        android:icon="@drawable/ic_menu_book"
+        android:icon="@drawable/ic_book_outline"
         android:title="@string/menu_learn" />
     <item
         android:id="@+id/practiceRootFragment"
-        android:icon="@drawable/ic_record_voice_over"
+        android:icon="@drawable/ic_mic_outline"
         android:title="@string/menu_practice" />
     <item
         android:id="@+id/chatFragment"
-        android:icon="@android:drawable/ic_menu_edit"
+        android:icon="@drawable/ic_chat_outline"
         android:title="@string/menu_chat" />
     <item
         android:id="@+id/settingsFragment"
-        android:icon="@drawable/ic_settings"
+        android:icon="@drawable/ic_settings_outline"
         android:title="@string/menu_settings" />
 </menu>

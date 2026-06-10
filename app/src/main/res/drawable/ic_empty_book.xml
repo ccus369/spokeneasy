@@ -6,23 +6,23 @@
     android:viewportHeight="80">
     <!-- Book outline -->
     <path
-        android:fillColor="#FFF5F5F5"
-        android:strokeColor="#FF90A4AE"
+        android:fillColor="#FFEEF2FF"
+        android:strokeColor="#FFA5B4FC"
         android:strokeWidth="2"
         android:pathData="M18,14 L62,14 L62,66 L18,66 Z" />
     <!-- Spine line -->
     <path
-        android:strokeColor="#FF90A4AE"
+        android:strokeColor="#FFC7D2FE"
         android:strokeWidth="1.5"
         android:pathData="M40,14 L40,66" />
     <!-- Text lines left -->
     <path
-        android:strokeColor="#FFCFD8DC"
+        android:strokeColor="#FFE0E7FF"
         android:strokeWidth="1.5"
         android:pathData="M24,24 L36,24 M24,30 L36,30 M24,36 L32,36 M24,48 L36,48 M24,54 L36,54 M24,60 L32,60" />
     <!-- Text lines right -->
     <path
-        android:strokeColor="#FFCFD8DC"
+        android:strokeColor="#FFE0E7FF"
         android:strokeWidth="1.5"
         android:pathData="M44,24 L56,24 M44,30 L56,30 M44,36 L52,36 M44,48 L56,48 M44,54 L56,54 M44,60 L52,60" />
 </vector>

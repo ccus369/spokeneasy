@@ -80,7 +80,7 @@
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:contentDescription="播放句子"
-                app:icon="@drawable/ic_headset"
+                app:icon="@drawable/ic_headphone_outline"
                 app:iconSize="18dp" />
 
             <TextView
@@ -135,7 +135,7 @@
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:contentDescription="播放句子"
-                app:icon="@drawable/ic_headset"
+                app:icon="@drawable/ic_headphone_outline"
                 app:iconSize="18dp" />
 
             <TextView
@@ -190,7 +190,7 @@
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:contentDescription="播放句子"
-                app:icon="@drawable/ic_headset"
+                app:icon="@drawable/ic_headphone_outline"
                 app:iconSize="18dp" />
 
             <TextView
