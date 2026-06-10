@@ -50,6 +50,16 @@
     <color name="chip_scene_bg">#FF3E2723</color>
     <color name="chip_scene_text">#FFFF8A65</color>
 
+    <!-- Chip background colors (dark) -->
+    <color name="chip_bg_indigo">#FF312E81</color>
+    <color name="chip_bg_amber">#FF451A03</color>
+    <color name="chip_bg_blue">#FF0C4A6E</color>
+
+    <!-- Chip text colors (dark) -->
+    <color name="chip_text_indigo">#FFA5B4FC</color>
+    <color name="chip_text_amber">#FFFDE68A</color>
+    <color name="chip_text_blue">#FF7DD3FC</color>
+
     <!-- Bottom navigation tab colors (same as light) -->
     <color name="bottom_nav_learn_tint">#FF4F46E5</color>
     <color name="bottom_nav_practice_tint">#FFFF8F00</color>

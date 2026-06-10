@@ -129,6 +129,16 @@
     <color name="icon_grad_blue_start">#FFE0F2FE</color>
     <color name="icon_grad_blue_end">#FFBAE6FD</color>
 
+    <!-- Chip background colors (light) -->
+    <color name="chip_bg_indigo">#FFEEF2FF</color>
+    <color name="chip_bg_amber">#FFFEF3C7</color>
+    <color name="chip_bg_blue">#FFE0F2FE</color>
+
+    <!-- Chip text colors (light) -->
+    <color name="chip_text_indigo">#FF4338CA</color>
+    <color name="chip_text_amber">#FFFF6F00</color>
+    <color name="chip_text_blue">#FF0369A1</color>
+
     <!-- Icon gradient container colors (dark) -->
     <color name="icon_grad_indigo_dark_start">#FF1E1B4B</color>
     <color name="icon_grad_indigo_dark_end">#FF312E81</color>

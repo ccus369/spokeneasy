@@ -3,89 +3,205 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingTop="24dp">
 
-    <!-- Greeting Bar -->
+    <!-- ===== Greeting Section ===== -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        app:cardCornerRadius="@dimen/corner_large"
+        app:cardElevation="0dp"
+        app:strokeWidth="0dp"
+        android:backgroundTint="?attr/colorPrimaryContainer">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="14dp">
+
+            <!-- Greeting text -->
+            <TextView
+                android:id="@+id/greeting_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceHeadlineMedium"
+                android:fontFamily="@font/outfit"
+                android:textColor="?attr/colorOnPrimaryContainer" />
+
+            <TextView
+                android:id="@+id/greeting_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textColor="?attr/colorOnPrimaryContainer"
+                android:alpha="0.7" />
+
+            <!-- Stats chips row -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/stats_word"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp"
+                    android:background="@drawable/bg_chip_indigo"
+                    android:textAppearance="?attr/textAppearanceLabelSmall"
+                    android:textColor="@color/chip_text_indigo"
+                    android:letterSpacing="0.02" />
+
+                <TextView
+                    android:id="@+id/stats_linking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp"
+                    android:background="@drawable/bg_chip_amber"
+                    android:textAppearance="?attr/textAppearanceLabelSmall"
+                    android:textColor="@color/chip_text_amber"
+                    android:letterSpacing="0.02" />
+
+                <TextView
+                    android:id="@+id/stats_pronunciation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp"
+                    android:background="@drawable/bg_chip_blue"
+                    android:textAppearance="?attr/textAppearanceLabelSmall"
+                    android:textColor="@color/chip_text_blue"
+                    android:letterSpacing="0.02" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- ===== Overall Progress Section ===== -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingHorizontal="20dp"
-        android:paddingTop="16dp"
-        android:paddingBottom="12dp"
-        android:background="?attr/colorPrimaryContainer">
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
 
         <TextView
-            android:id="@+id/greeting_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="学习进度"
+            android:textAppearance="?attr/textAppearanceTitleSmall"
+            android:fontFamily="@font/outfit"
+            android:textColor="?attr/colorOnBackground" />
+
+        <TextView
+            android:id="@+id/overall_progress_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?attr/textAppearanceTitleMedium"
-            android:textColor="?attr/colorOnPrimaryContainer" />
+            android:text="0/0"
+            android:textAppearance="?attr/textAppearanceLabelMedium"
+            android:textColor="?attr/colorPrimary"
+            android:fontFamily="@font/outfit" />
 
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/overall_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="6dp"
+        android:max="100"
+        android:progressTint="?attr/colorPrimary"
+        android:progressBackgroundTint="?attr/colorSurfaceVariant" />
+
+    <!-- ===== Bento 2×2 Grid ===== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
+
+        <!-- Row 1 -->
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:orientation="horizontal"
-            android:gravity="center_vertical">
+            android:gravity="center">
 
-            <TextView
-                android:id="@+id/greeting_word_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?attr/textAppearanceBodySmall"
-                android:textColor="?attr/colorOnPrimaryContainer"
-                android:alpha="0.85" />
+            <include
+                layout="@layout/item_bento_tile"
+                android:id="@+id/tile_word"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="8dp"
-                android:text="·"
-                android:textColor="?attr/colorOnPrimaryContainer"
-                android:alpha="0.4"
-                android:textAppearance="?attr/textAppearanceBodySmall" />
+            <View
+                android:layout_width="8dp"
+                android:layout_height="match_parent" />
 
-            <TextView
-                android:id="@+id/greeting_linking_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?attr/textAppearanceBodySmall"
-                android:textColor="?attr/colorOnPrimaryContainer"
-                android:alpha="0.85" />
+            <include
+                layout="@layout/item_bento_tile"
+                android:id="@+id/tile_linking"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="8dp"
-                android:text="·"
-                android:textColor="?attr/colorOnPrimaryContainer"
-                android:alpha="0.4"
-                android:textAppearance="?attr/textAppearanceBodySmall" />
+        </LinearLayout>
 
-            <TextView
-                android:id="@+id/greeting_pronunciation_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?attr/textAppearanceBodySmall"
-                android:textColor="?attr/colorOnPrimaryContainer"
-                android:alpha="0.85" />
+        <!-- Spacer between rows -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <!-- Row 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <include
+                layout="@layout/item_bento_tile"
+                android:id="@+id/tile_listening"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="match_parent" />
+
+            <include
+                layout="@layout/item_bento_tile"
+                android:id="@+id/tile_chat"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
 
         </LinearLayout>
 
     </LinearLayout>
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:tabMode="fixed"
-        app:tabGravity="fill" />
-
-    <FrameLayout
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
 
 </LinearLayout>

@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,26 +14,23 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.google.android.material.tabs.TabLayout;
 import com.spokeneasy.app.R;
-import com.spokeneasy.app.linking.LinkingListFragment;
 import com.spokeneasy.app.progress.UserProgressViewModel;
-import com.spokeneasy.app.shadowing.ShadowingListFragment;
-import com.spokeneasy.app.word.WordListFragment;
 
 import java.util.List;
 import java.util.Locale;
 
 public class LearnFragment extends Fragment {
 
-    private TabLayout tabLayout;
-    private Fragment currentFragment;
     private UserProgressViewModel viewModel;
 
     private TextView greetingText;
-    private TextView greetingWordCount;
-    private TextView greetingLinkingCount;
-    private TextView greetingPronunciationCount;
+    private TextView greetingSubtitle;
+    private TextView overallProgressText;
+    private ProgressBar overallProgressBar;
+    private TextView statsWord;
+    private TextView statsLinking;
+    private TextView statsPronunciation;
 
     @Nullable
     @Override
@@ -45,88 +44,129 @@ public class LearnFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        // --- Greeting ---
         greetingText = view.findViewById(R.id.greeting_text);
-        greetingWordCount = view.findViewById(R.id.greeting_word_count);
-        greetingLinkingCount = view.findViewById(R.id.greeting_linking_count);
-        greetingPronunciationCount = view.findViewById(R.id.greeting_pronunciation_count);
+        greetingSubtitle = view.findViewById(R.id.greeting_subtitle);
 
-        // Set greeting based on time of day
         java.util.Calendar cal = java.util.Calendar.getInstance();
         int hour = cal.get(java.util.Calendar.HOUR_OF_DAY);
-        String greeting;
+        String emoji;
+        String phrase;
         if (hour < 12) {
-            greeting = "早上好 🌅";
+            emoji = "🌅"; // 🌅
+            phrase = "早上好";
         } else if (hour < 18) {
-            greeting = "下午好 ☀️";
+            emoji = "☀️"; // ☀️
+            phrase = "下午好";
         } else {
-            greeting = "晚上好 🌙";
+            emoji = "🌙"; // 🌙
+            phrase = "晚上好";
         }
-        greetingText.setText(greeting);
+        greetingText.setText(phrase + " " + emoji);
+        greetingSubtitle.setText("今天也要加油哦 💪");
 
-        tabLayout = view.findViewById(R.id.tab_layout);
+        // --- Overall progress ---
+        overallProgressText = view.findViewById(R.id.overall_progress_text);
+        overallProgressBar = view.findViewById(R.id.overall_progress_bar);
 
-        tabLayout.addTab(tabLayout.newTab().setText("单词学习"));
-        tabLayout.addTab(tabLayout.newTab().setText("连读练习"));
-        tabLayout.addTab(tabLayout.newTab().setText("听力跟读"));
+        // --- Stats chips ---
+        statsWord = view.findViewById(R.id.stats_word);
+        statsLinking = view.findViewById(R.id.stats_linking);
+        statsPronunciation = view.findViewById(R.id.stats_pronunciation);
 
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                switchFragment(tab.getPosition());
-            }
+        // --- Bento tiles ---
+        setupTile(view, R.id.tile_word, R.drawable.ic_book_outline,
+                R.drawable.bg_icon_indigo, "单词学习", "逐词学习，AI 评分",
+                R.id.action_learn_to_wordList);
 
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {}
+        setupTile(view, R.id.tile_linking, R.drawable.ic_link_outline,
+                R.drawable.bg_icon_amber, "连读练习", "地道发音，连读技巧",
+                R.id.action_learn_to_linkingList);
 
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {}
-        });
+        setupTile(view, R.id.tile_listening, R.drawable.ic_headphone_outline,
+                R.drawable.bg_icon_blue, "听力跟读", "真实场景，沉浸练习",
+                R.id.action_learn_to_listeningList);
 
-        // Observe stats for greeting bar
+        setupTile(view, R.id.tile_chat, R.drawable.ic_chat_outline,
+                R.drawable.bg_icon_purple, "AI 对话", "智能陪练，随时对话",
+                R.id.action_learn_to_chat);
+
+        // AI Chat 没有进度数据，隐藏进度条区域
+        requireView().findViewById(R.id.tile_chat)
+                .findViewById(R.id.tile_progress_section)
+                .setVisibility(View.GONE);
+
+        // --- Observe stats ---
         viewModel = new ViewModelProvider(this).get(UserProgressViewModel.class);
         viewModel.getStats().observe(getViewLifecycleOwner(), stats -> {
             if (stats != null && stats.size() >= 3) {
-                updateGreetingStats(stats);
+                updateStats(stats);
             }
         });
-
-        // Default to first tab
-        switchFragment(0);
     }
 
-    private void updateGreetingStats(List<UserProgressViewModel.ModuleStats> stats) {
+    private void setupTile(View rootView, int tileId, int iconRes, int bgRes,
+                           String title, String subtitle, int actionId) {
+        View tile = rootView.findViewById(tileId);
+        ImageView icon = tile.findViewById(R.id.tile_icon);
+        TextView titleView = tile.findViewById(R.id.tile_title);
+        TextView subtitleView = tile.findViewById(R.id.tile_subtitle);
+
+        icon.setImageResource(iconRes);
+        icon.setBackgroundResource(bgRes);
+        icon.setImageTintList(android.content.res.ColorStateList.valueOf(
+                getResources().getColor(R.color.white, getContext().getTheme())));
+        titleView.setText(title);
+        subtitleView.setText(subtitle);
+
+        tile.setOnClickListener(v ->
+                NavHostFragment.findNavController(this).navigate(actionId));
+    }
+
+    private void updateStats(List<UserProgressViewModel.ModuleStats> stats) {
         UserProgressViewModel.ModuleStats word = stats.get(0);
         UserProgressViewModel.ModuleStats linking = stats.get(1);
         UserProgressViewModel.ModuleStats pronunciation = stats.get(2);
 
-        greetingWordCount.setText(String.format(Locale.getDefault(),
+        // Overall progress
+        int totalTotal = word.getTotalCount() + linking.getTotalCount()
+                + pronunciation.getTotalCount();
+        int totalCompleted = word.getCompletedCount() + linking.getCompletedCount()
+                + pronunciation.getCompletedCount();
+
+        if (totalTotal > 0) {
+            int percent = totalCompleted * 100 / totalTotal;
+            overallProgressBar.setProgress(percent);
+        }
+        overallProgressText.setText(String.format(Locale.getDefault(),
+                "%d/%d", totalCompleted, totalTotal));
+
+        // Stats chips
+        statsWord.setText(String.format(Locale.getDefault(),
                 "单词 %d/%d", word.getCompletedCount(), word.getTotalCount()));
-        greetingLinkingCount.setText(String.format(Locale.getDefault(),
+        statsLinking.setText(String.format(Locale.getDefault(),
                 "连读 %d/%d", linking.getCompletedCount(), linking.getTotalCount()));
-        greetingPronunciationCount.setText(String.format(Locale.getDefault(),
-                "发音 %d/%d", pronunciation.getCompletedCount(), pronunciation.getTotalCount()));
+        statsPronunciation.setText(String.format(Locale.getDefault(),
+                "发音 %d/%d", pronunciation.getCompletedCount(),
+                pronunciation.getTotalCount()));
+
+        // Per-tile progress
+        updateTileProgress(R.id.tile_word,
+                word.getCompletedCount(), word.getTotalCount());
+        updateTileProgress(R.id.tile_linking,
+                linking.getCompletedCount(), linking.getTotalCount());
+        updateTileProgress(R.id.tile_listening,
+                pronunciation.getCompletedCount(), pronunciation.getTotalCount());
     }
 
-    private void switchFragment(int position) {
-        Fragment fragment;
-        if (position == 0) {
-            fragment = new WordListFragment();
-        } else if (position == 1) {
-            fragment = new LinkingListFragment();
-        } else {
-            ShadowingListFragment sf = new ShadowingListFragment();
-            sf.setOnItemClickListener(item -> {
-                Bundle args = new Bundle();
-                args.putInt("audioId", item.getId());
-                NavHostFragment.findNavController(this)
-                        .navigate(R.id.shadowingDetailFragment, args);
-            });
-            fragment = sf;
+    private void updateTileProgress(int tileId, int completed, int total) {
+        View tile = requireView().findViewById(tileId);
+        ProgressBar bar = tile.findViewById(R.id.tile_progress_bar);
+        TextView text = tile.findViewById(R.id.tile_progress_text);
+
+        if (total > 0) {
+            bar.setProgress(completed * 100 / total);
         }
-        getChildFragmentManager()
-                .beginTransaction()
-                .replace(R.id.container, fragment)
-                .commit();
-        currentFragment = fragment;
+        text.setText(String.format(Locale.getDefault(), "%d/%d", completed, total));
     }
 }
