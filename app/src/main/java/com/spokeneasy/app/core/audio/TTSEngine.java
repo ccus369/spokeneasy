@@ -33,6 +33,13 @@ public class TTSEngine {
     private final Queue<String> pendingSpeaks = new LinkedList<>();
     private Handler mainHandler;
     private TtsCallback callback;
+    private IflytekTtsEngine iflytekEngine;
+    private boolean useIflytek = false;
+    /** Guards iFlytek init-vs-speech: once onDone fires, onError becomes speech-only */
+    private boolean iflytekInitDone = false;
+    /** Guards against re-entrant init (e.g. iFlytek error callback fires initEngine
+     *  while TTSEngine.init() is still on the stack) */
+    private boolean initInProgress = false;
 
     public interface TtsCallback {
         void onDone();
@@ -42,18 +49,67 @@ public class TTSEngine {
     }
 
     public void init(Context context, TtsCallback callback) {
-        if (tts != null) {
-            tts.shutdown();
+        if (initInProgress) return; // prevent re-entrant fallback
+        initInProgress = true;
+
+        try {
+            if (tts != null) {
+                tts.shutdown();
+            }
+            if (iflytekEngine != null) {
+                iflytekEngine.shutdown();
+            }
+
+            cacheDir = new File(context.getCacheDir(), "tts");
+            cacheDir.mkdirs();
+            mainHandler = new Handler(Looper.getMainLooper());
+            languageAvailable = true;
+            missingLanguageData = false;
+            useIflytek = false;
+
+            // Use Application context for SDK calls to avoid holding Activity/Fragment refs
+            final Context appContext = context.getApplicationContext();
+
+            // Phase 1: Try iFlytek cloud TTS first (natural human-like voice)
+            iflytekInitDone = false;
+            iflytekEngine = new IflytekTtsEngine();
+            iflytekEngine.init(appContext, new TtsCallback() {
+                @Override
+                public void onDone() {
+                    Log.d("TTSEngine", "iFlytek TTS ready, using cloud TTS");
+                    iflytekInitDone = true;
+                    useIflytek = true;
+                    processPendingSpeaks();
+                    callback.onDone();
+                }
+
+                @Override
+                public void onError(String message) {
+                    if (iflytekInitDone) {
+                        // Speech playback error — report to caller, don't re-init
+                        callback.onError("讯飞TTS播放失败: " + message);
+                        return;
+                    }
+                    // Init error — fallback to Android TTS
+                    Log.d("TTSEngine", "iFlytek init unavailable (" + message
+                            + "), fallback to Android TTS");
+                    useIflytek = false;
+                    initInProgress = false; // release guard before fallback
+                    initEngine(appContext, null, callback);
+                }
+
+                @Override
+                public void onLanguageWarning(String message) {
+                    Log.d("TTSEngine", "iFlytek TTS warning: " + message
+                            + ", fallback to Android TTS");
+                    useIflytek = false;
+                    initInProgress = false; // release guard before fallback
+                    initEngine(appContext, null, callback);
+                }
+            });
+        } finally {
+            initInProgress = false;
         }
-
-        cacheDir = new File(context.getCacheDir(), "tts");
-        cacheDir.mkdirs();
-        mainHandler = new Handler(Looper.getMainLooper());
-        languageAvailable = true;
-        missingLanguageData = false;
-
-        // Phase 1: try default engine
-        initEngine(context, null, callback);
     }
 
     /** Try initializing with a specific engine (null = default).
@@ -319,14 +375,25 @@ public class TTSEngine {
 
     /** Returns the detected TTS engine name, e.g. \"com.iflytek.tts\" */
     public String getEngineName() {
+        if (useIflytek && iflytekEngine != null) {
+            return iflytekEngine.getEngineName();
+        }
         return engineName;
     }
 
     public boolean isInitialized() {
+        if (useIflytek && iflytekEngine != null) {
+            return iflytekEngine.isInitialized();
+        }
         return isInitialized;
     }
 
     public void speak(String text) {
+        if (useIflytek && iflytekEngine != null && iflytekEngine.isInitialized()) {
+            iflytekEngine.speak(text);
+            return;
+        }
+
         if (!isInitialized || tts == null) {
             pendingSpeaks.add(text);
             return;
@@ -345,6 +412,10 @@ public class TTSEngine {
     }
 
     public void stop() {
+        if (useIflytek && iflytekEngine != null) {
+            iflytekEngine.stop();
+            return;
+        }
         stopPlayback();
         if (tts != null) {
             tts.stop();
@@ -352,11 +423,19 @@ public class TTSEngine {
     }
 
     public boolean isSpeaking() {
+        if (useIflytek && iflytekEngine != null) {
+            return iflytekEngine.isSpeaking();
+        }
         if (mediaPlayer != null && mediaPlayer.isPlaying()) return true;
         return tts != null && tts.isSpeaking();
     }
 
     public void shutdown() {
+        if (useIflytek && iflytekEngine != null) {
+            iflytekEngine.shutdown();
+            useIflytek = false;
+            return;
+        }
         stopPlayback();
         if (tts != null) {
             tts.stop();

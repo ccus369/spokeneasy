@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.card.MaterialCardView;
 import com.spokeneasy.app.R;
 
 import java.util.List;
@@ -62,14 +61,12 @@ public class GrammarListAdapter extends
 
     class ViewHolder extends RecyclerView.ViewHolder {
         TextView titleText, typeText, stepsText;
-        MaterialCardView cardView;
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);
             titleText = itemView.findViewById(R.id.grammar_title);
             typeText = itemView.findViewById(R.id.grammar_types);
             stepsText = itemView.findViewById(R.id.grammar_steps);
-            cardView = (MaterialCardView) itemView;
         }
 
         void bind(DrillContent.DrillCollection gc) {
@@ -84,7 +81,7 @@ public class GrammarListAdapter extends
             }
             typeText.setText(types.toString());
 
-            cardView.setOnClickListener(v -> {
+            itemView.setOnClickListener(v -> {
                 if (callback != null) callback.onSelect(gc);
             });
         }
