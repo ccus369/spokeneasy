@@ -395,6 +395,7 @@ public class ShadowingDetailFragment extends Fragment {
         });
 
         btnShowText.setOnClickListener(v -> {
+            com.spokeneasy.app.core.AnimationUtils.animateButtonPress(v);
             boolean isVisible = dialogTextCard.getVisibility() == View.VISIBLE;
             dialogTextCard.setVisibility(isVisible ? View.GONE : View.VISIBLE);
             btnShowText.setText(isVisible
@@ -407,9 +408,13 @@ public class ShadowingDetailFragment extends Fragment {
             playCurrentSentence();
         });
 
-        btnRecord.setOnClickListener(v -> toggleRecording());
+        btnRecord.setOnClickListener(v -> {
+            com.spokeneasy.app.core.AnimationUtils.animateButtonPress(v);
+            toggleRecording();
+        });
 
         btnPrev.setOnClickListener(v -> {
+            com.spokeneasy.app.core.AnimationUtils.animateButtonPress(v);
             if (currentIndex > 0) {
                 currentIndex--;
                 updateSentenceUI();
@@ -417,6 +422,7 @@ public class ShadowingDetailFragment extends Fragment {
         });
 
         btnNext.setOnClickListener(v -> {
+            com.spokeneasy.app.core.AnimationUtils.animateButtonPress(v);
             if (currentIndex < sentences.length - 1) {
                 currentIndex++;
                 updateSentenceUI();

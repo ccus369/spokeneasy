@@ -261,6 +261,7 @@ public class WordDetailFragment extends Fragment {
         });
 
         btnToggleCn.setOnClickListener(v -> {
+            com.spokeneasy.app.core.AnimationUtils.animateButtonPress(v);
             showChinese = !showChinese;
             updateChineseVisibility();
         });
@@ -269,6 +270,7 @@ public class WordDetailFragment extends Fragment {
         for (int i = 0; i < 3; i++) {
             final int sentenceIdx = i;
             btnPlaybackSentence[i].setOnClickListener(v -> {
+                com.spokeneasy.app.core.AnimationUtils.animateButtonPress(v);
                 if (sentenceAudioPaths[sentenceIdx] != null) {
                     playbackRecording(sentenceAudioPaths[sentenceIdx]);
                 }
@@ -277,6 +279,7 @@ public class WordDetailFragment extends Fragment {
 
         // Bottom recording button (records the next unscored sentence)
         btnRecord.setOnClickListener(v -> {
+            com.spokeneasy.app.core.AnimationUtils.animateButtonPress(v);
             if (!audioRecorder.isRecording()) {
                 if (ContextCompat.checkSelfPermission(requireContext(),
                         Manifest.permission.RECORD_AUDIO)
@@ -294,6 +297,7 @@ public class WordDetailFragment extends Fragment {
         });
 
         btnPlayback.setOnClickListener(v -> {
+            com.spokeneasy.app.core.AnimationUtils.animateButtonPress(v);
             if (currentAudioPath != null) {
                 playbackRecording(currentAudioPath);
             }

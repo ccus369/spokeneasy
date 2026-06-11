@@ -274,9 +274,13 @@ public class ListeningDetailFragment extends Fragment {
     // region Listeners
 
     private void setupListeners() {
-        btnPlayDialog.setOnClickListener(v -> togglePlayback());
+        btnPlayDialog.setOnClickListener(v -> {
+            com.spokeneasy.app.core.AnimationUtils.animateButtonPress(v);
+            togglePlayback();
+        });
 
         btnShowText.setOnClickListener(v -> {
+            com.spokeneasy.app.core.AnimationUtils.animateButtonPress(v);
             boolean isVisible = dialogTextCard.getVisibility() == View.VISIBLE;
             if (isVisible) {
                 dialogTextCard.setVisibility(View.GONE);
@@ -290,6 +294,7 @@ public class ListeningDetailFragment extends Fragment {
         });
 
         btnSubmit.setOnClickListener(v -> {
+            com.spokeneasy.app.core.AnimationUtils.animateButtonPress(v);
             if (submitted) return;
             if (questions == null || questions.size() < 3 || getView() == null) return;
 

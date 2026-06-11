@@ -141,13 +141,34 @@ public class PatternDrillFragment extends Fragment {
             com.spokeneasy.app.core.AnimationUtils.animateButtonAction(v);
             playCurrentStep();
         });
-        btnRecord.setOnClickListener(v -> toggleRecording());
-        btnPlayExpected.setOnClickListener(v -> playExpectedAnswer());
-        btnPlayRecording.setOnClickListener(v -> playUserRecording());
-        btnPrev.setOnClickListener(v -> viewModel.prevStep());
-        btnNext.setOnClickListener(v -> viewModel.nextStep());
-        btnBackSelection.setOnClickListener(v -> viewModel.backToSelection());
-        btnRetry.setOnClickListener(v -> viewModel.retryGrammar());
+        btnRecord.setOnClickListener(v -> {
+            com.spokeneasy.app.core.AnimationUtils.animateButtonPress(v);
+            toggleRecording();
+        });
+        btnPlayExpected.setOnClickListener(v -> {
+            com.spokeneasy.app.core.AnimationUtils.animateButtonPress(v);
+            playExpectedAnswer();
+        });
+        btnPlayRecording.setOnClickListener(v -> {
+            com.spokeneasy.app.core.AnimationUtils.animateButtonPress(v);
+            playUserRecording();
+        });
+        btnPrev.setOnClickListener(v -> {
+            com.spokeneasy.app.core.AnimationUtils.animateButtonPress(v);
+            viewModel.prevStep();
+        });
+        btnNext.setOnClickListener(v -> {
+            com.spokeneasy.app.core.AnimationUtils.animateButtonPress(v);
+            viewModel.nextStep();
+        });
+        btnBackSelection.setOnClickListener(v -> {
+            com.spokeneasy.app.core.AnimationUtils.animateButtonPress(v);
+            viewModel.backToSelection();
+        });
+        btnRetry.setOnClickListener(v -> {
+            com.spokeneasy.app.core.AnimationUtils.animateButtonPress(v);
+            viewModel.retryGrammar();
+        });
     }
 
     private void initViews(View view) {

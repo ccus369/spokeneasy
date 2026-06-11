@@ -57,10 +57,10 @@
         <action
             android:id="@+id/action_wordList_to_wordDetail"
             app:destination="@id/wordDetailFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
+            app:enterAnim="@anim/scale_fade_in"
+            app:exitAnim="@anim/scale_fade_out"
+            app:popEnterAnim="@anim/scale_fade_in"
+            app:popExitAnim="@anim/scale_fade_out" />
     </fragment>
 
     <fragment
@@ -81,10 +81,10 @@
         <action
             android:id="@+id/action_linkingList_to_linkingDetail"
             app:destination="@id/linkingDetailFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
+            app:enterAnim="@anim/scale_fade_in"
+            app:exitAnim="@anim/scale_fade_out"
+            app:popEnterAnim="@anim/scale_fade_in"
+            app:popExitAnim="@anim/scale_fade_out" />
     </fragment>
 
     <fragment
@@ -105,10 +105,10 @@
         <action
             android:id="@+id/action_listeningList_to_listeningDetail"
             app:destination="@id/listeningDetailFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
+            app:enterAnim="@anim/scale_fade_in"
+            app:exitAnim="@anim/scale_fade_out"
+            app:popEnterAnim="@anim/scale_fade_in"
+            app:popExitAnim="@anim/scale_fade_out" />
     </fragment>
 
     <fragment

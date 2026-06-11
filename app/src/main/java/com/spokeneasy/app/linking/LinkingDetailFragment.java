@@ -257,11 +257,13 @@ public class LinkingDetailFragment extends Fragment {
         });
 
         btnToggleCn.setOnClickListener(v -> {
+            com.spokeneasy.app.core.AnimationUtils.animateButtonPress(v);
             showChinese = !showChinese;
             updateChineseVisibility();
         });
 
         btnRecord.setOnClickListener(v -> {
+            com.spokeneasy.app.core.AnimationUtils.animateButtonPress(v);
             if (!audioRecorder.isRecording()) {
                 if (ContextCompat.checkSelfPermission(requireContext(),
                         Manifest.permission.RECORD_AUDIO)
@@ -278,6 +280,7 @@ public class LinkingDetailFragment extends Fragment {
         });
 
         btnPlayback.setOnClickListener(v -> {
+            com.spokeneasy.app.core.AnimationUtils.animateButtonPress(v);
             if (currentAudioPath != null) {
                 audioRecorder.playBack(currentAudioPath, new AudioRecorder.AudioCallback() {
                     @Override
