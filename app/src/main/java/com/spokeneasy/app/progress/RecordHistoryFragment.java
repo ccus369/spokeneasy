@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -44,11 +43,8 @@ public class RecordHistoryFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        ImageButton btnBack = view.findViewById(R.id.btn_history_back);
         recyclerView = view.findViewById(R.id.history_recycler);
         emptyText = view.findViewById(R.id.history_empty);
-
-        btnBack.setOnClickListener(v -> requireActivity().onBackPressed());
 
         adapter = new HistoryAdapter();
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));

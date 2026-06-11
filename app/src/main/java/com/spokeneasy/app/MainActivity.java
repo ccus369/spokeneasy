@@ -9,6 +9,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
+import androidx.navigation.NavOptions;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
@@ -42,9 +43,17 @@ public class MainActivity extends AppCompatActivity {
         navController = navHostFragment.getNavController();
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
-        NavigationUI.setupWithNavController(bottomNav, navController);
+        // Manual bottom nav: clear back stack on tab switch instead of piling up
+        bottomNav.setOnItemSelectedListener(item -> {
+            NavOptions navOptions = new NavOptions.Builder()
+                    .setPopUpTo(navController.getGraph().getStartDestinationId(), true)
+                    .setLaunchSingleTop(true)
+                    .build();
+            navController.navigate(item.getItemId(), null, navOptions);
+            return true;
+        });
 
-        // Per-tab icon tinting (Learn=blue, Practice=amber, Settings=grey)
+        // Per-tab icon tinting (Learn=indigo, Practice=amber, Settings=grey)
         int unselectedColor = ContextCompat.getColor(this, R.color.blue_grey_600);
         int[][] states = new int[][] {
                 new int[] { android.R.attr.state_checked },
