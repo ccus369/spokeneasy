@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.spokeneasy.app.R;
@@ -70,11 +71,11 @@ public class SummaryAdapter extends RecyclerView.Adapter<SummaryAdapter.ViewHold
             // Color based on score
             int color;
             if (result.score >= 80) {
-                color = 0xFF4CAF50; // green
+                color = ContextCompat.getColor(itemView.getContext(), R.color.score_excellent);
             } else if (result.score >= 60) {
-                color = 0xFFFF9800; // orange
+                color = ContextCompat.getColor(itemView.getContext(), R.color.score_fair);
             } else {
-                color = 0xFFF44336; // red
+                color = ContextCompat.getColor(itemView.getContext(), R.color.score_poor);
             }
             scoreText.setTextColor(color);
         }

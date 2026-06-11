@@ -134,7 +134,7 @@
             app:cardElevation="0dp"
             app:strokeWidth="1dp"
             app:strokeColor="?attr/colorOutlineVariant"
-            app:cardCornerRadius="24dp">
+            app:cardCornerRadius="@dimen/corner_xlarge">
 
             <EditText
                 android:id="@+id/chat_input"

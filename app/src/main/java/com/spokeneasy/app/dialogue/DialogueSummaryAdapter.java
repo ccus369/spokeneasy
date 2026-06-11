@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.spokeneasy.app.R;
@@ -51,16 +52,16 @@ public class DialogueSummaryAdapter extends RecyclerView.Adapter<DialogueSummary
             holder.scoreText.setText(score + " 分");
             int color;
             if (score >= 80) {
-                color = 0xFF4CAF50;
+                color = ContextCompat.getColor(holder.itemView.getContext(), R.color.score_excellent);
             } else if (score >= 60) {
-                color = 0xFFFF9800;
+                color = ContextCompat.getColor(holder.itemView.getContext(), R.color.score_fair);
             } else {
-                color = 0xFFF44336;
+                color = ContextCompat.getColor(holder.itemView.getContext(), R.color.score_poor);
             }
             holder.scoreText.setTextColor(color);
         } else {
             holder.scoreText.setText("—");
-            holder.scoreText.setTextColor(0xFF9E9E9E);
+            holder.scoreText.setTextColor(ContextCompat.getColor(holder.itemView.getContext(), R.color.score_none));
         }
     }
 

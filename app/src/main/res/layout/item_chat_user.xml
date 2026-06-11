@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end"
         android:maxWidth="300dp"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="@dimen/corner_large"
         app:cardElevation="1dp"
         app:contentPaddingStart="14dp"
         app:contentPaddingEnd="14dp"

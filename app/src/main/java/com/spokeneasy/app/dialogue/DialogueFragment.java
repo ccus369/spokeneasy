@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -290,7 +291,7 @@ public class DialogueFragment extends Fragment {
 
             indexText.setText(word.word);
             indexText.setTextSize(16);
-            indexText.setTextColor(0xFF1C1B1F);
+            indexText.setTextColor(ContextCompat.getColor(requireContext(), R.color.dialogue_index_text));
 
             LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) indexText.getLayoutParams();
             lp.width = 0;
@@ -302,7 +303,7 @@ public class DialogueFragment extends Fragment {
 
             scoreText.setText("▶");
             scoreText.setTextSize(18);
-            scoreText.setTextColor(0xFF1976D2);
+            scoreText.setTextColor(ContextCompat.getColor(requireContext(), R.color.dialogue_play_button));
             scoreText.setOnClickListener(v -> ttsEngine.speak(word.word));
 
             row.setClickable(false);
@@ -414,10 +415,10 @@ public class DialogueFragment extends Fragment {
         dialogueScoreSection.setVisibility(View.VISIBLE);
         int color;
         String label;
-        if (score >= 85) { color = 0xFF4CAF50; label = "优秀"; }
-        else if (score >= 70) { color = 0xFF2196F3; label = "良好"; }
-        else if (score >= 50) { color = 0xFFFF9800; label = "一般"; }
-        else { color = 0xFFF44336; label = "需努力"; }
+        if (score >= 85) { color = ContextCompat.getColor(requireContext(), R.color.score_excellent); label = "优秀"; }
+        else if (score >= 70) { color = ContextCompat.getColor(requireContext(), R.color.score_good); label = "良好"; }
+        else if (score >= 50) { color = ContextCompat.getColor(requireContext(), R.color.score_fair); label = "一般"; }
+        else { color = ContextCompat.getColor(requireContext(), R.color.score_poor); label = "需努力"; }
         dialogueScoreDisplay.setTextColor(color);
         dialogueScoreDisplay.setText(score + " 分 · " + label);
         dialogueExpectedText.setText(expected);
@@ -457,10 +458,10 @@ public class DialogueFragment extends Fragment {
         dialogueSummaryScore.setText(avg + " 分");
 
         int color;
-        if (avg >= 85) color = 0xFF4CAF50;
-        else if (avg >= 70) color = 0xFF2196F3;
-        else if (avg >= 50) color = 0xFFFF9800;
-        else color = 0xFFF44336;
+        if (avg >= 85) color = ContextCompat.getColor(requireContext(), R.color.score_excellent);
+        else if (avg >= 70) color = ContextCompat.getColor(requireContext(), R.color.score_good);
+        else if (avg >= 50) color = ContextCompat.getColor(requireContext(), R.color.score_fair);
+        else color = ContextCompat.getColor(requireContext(), R.color.score_poor);
         dialogueSummaryScore.setTextColor(color);
 
         // Build scores map for adapter

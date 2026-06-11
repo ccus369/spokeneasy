@@ -139,6 +139,18 @@
     <color name="chip_text_amber">#FFFF6F00</color>
     <color name="chip_text_blue">#FF0369A1</color>
 
+    <!-- ===== Step 3: Global style colors ===== -->
+
+    <!-- Drawer scrim overlay -->
+    <color name="drawer_scrim">#66000000</color>
+
+    <!-- Score "none/no data" color -->
+    <color name="score_none">#FF9E9E9E</color>
+
+    <!-- Dialogue module text colors (light) -->
+    <color name="dialogue_index_text">#FF1C1B1F</color>
+    <color name="dialogue_play_button">#FF1976D2</color>
+
     <!-- Icon gradient container colors (dark) -->
     <color name="icon_grad_indigo_dark_start">#FF1E1B4B</color>
     <color name="icon_grad_indigo_dark_end">#FF312E81</color>
