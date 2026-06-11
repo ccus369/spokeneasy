@@ -129,7 +129,7 @@ public class ChatFragment extends Fragment {
         // Settings button → navigate to SettingsFragment
         btnSettings.setOnClickListener(v -> {
             androidx.navigation.Navigation.findNavController(v)
-                    .navigate(R.id.settingsFragment);
+                    .navigate(R.id.action_chat_to_settings);
         });
 
         // Init TTS

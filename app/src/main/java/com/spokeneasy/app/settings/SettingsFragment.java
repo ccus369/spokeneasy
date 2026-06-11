@@ -2,6 +2,8 @@ package com.spokeneasy.app.settings;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
@@ -9,6 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.material.progressindicator.LinearProgressIndicator;
 
@@ -56,6 +61,12 @@ public class SettingsFragment extends Fragment {
     private View ttsActionLayout;
 
     private TTSEngine ttsEngine;
+
+    // Theme section
+    private View themeSystemRow, themeLightRow, themeDarkRow;
+    private View themeSystemIndicator, themeLightIndicator, themeDarkIndicator;
+    private static final String PREFS_NAME = "settings";
+    private static final String KEY_THEME_MODE = "theme_mode";
 
     // MiMo API section
     private TextInputEditText mimoKeyInput;
@@ -117,6 +128,7 @@ public class SettingsFragment extends Fragment {
 
         setupTtsSection();
         loadMimoApiKey();
+        setupThemeSection();
         setupListeners();
     }
 
@@ -189,6 +201,64 @@ public class SettingsFragment extends Fragment {
         String key = config.getMiMoApiKey();
         if (!key.isEmpty()) {
             mimoKeyInput.setText(key);
+        }
+    }
+
+    private void setupThemeSection() {
+        themeSystemRow = requireView().findViewById(R.id.theme_system_row);
+        themeLightRow = requireView().findViewById(R.id.theme_light_row);
+        themeDarkRow = requireView().findViewById(R.id.theme_dark_row);
+        themeSystemIndicator = requireView().findViewById(R.id.theme_system_indicator);
+        themeLightIndicator = requireView().findViewById(R.id.theme_light_indicator);
+        themeDarkIndicator = requireView().findViewById(R.id.theme_dark_indicator);
+
+        int currentMode = requireContext().getSharedPreferences(PREFS_NAME, 0)
+                .getInt(KEY_THEME_MODE, 0);
+        updateThemeIndicators(currentMode);
+
+        themeSystemRow.setOnClickListener(v -> setThemeMode(0));
+        themeLightRow.setOnClickListener(v -> setThemeMode(1));
+        themeDarkRow.setOnClickListener(v -> setThemeMode(2));
+    }
+
+    private void setThemeMode(int mode) {
+        SharedPreferences prefs = requireContext().getSharedPreferences(PREFS_NAME, 0);
+        prefs.edit().putInt(KEY_THEME_MODE, mode).apply();
+
+        switch (mode) {
+            case 1:
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                break;
+            case 2:
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                break;
+            default:
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+                break;
+        }
+
+        updateThemeIndicators(mode);
+
+        // Recreate activity to apply the new theme immediately
+        requireActivity().recreate();
+    }
+
+    private void updateThemeIndicators(int selectedMode) {
+        int primaryColor = ContextCompat.getColor(requireContext(), R.color.indigo_600);
+
+        updateIndicator(themeSystemIndicator, selectedMode == 0, primaryColor);
+        updateIndicator(themeLightIndicator, selectedMode == 1, primaryColor);
+        updateIndicator(themeDarkIndicator, selectedMode == 2, primaryColor);
+    }
+
+    private void updateIndicator(View indicator, boolean selected, int primaryColor) {
+        GradientDrawable drawable = (GradientDrawable) indicator.getBackground();
+        if (selected) {
+            drawable.setColor(primaryColor);
+            drawable.setStroke(0, 0);
+        } else {
+            drawable.setColor(android.graphics.Color.TRANSPARENT);
+            drawable.setStroke(2, ContextCompat.getColor(requireContext(), R.color.grey_300));
         }
     }
 

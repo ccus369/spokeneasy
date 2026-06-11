@@ -34,10 +34,13 @@
 
         <!-- Custom attrs — Indigo Bento surface levels (light) -->
         <item name="surfaceCard">@color/white</item>
-        <item name="surfaceBorder">#FFE5E7EB</item>
+        <item name="surfaceBorder">@color/surface_border_light</item>
         <item name="surfaceElevated">@color/white</item>
         <item name="colorCta">@color/green_500</item>
         <item name="colorOnCta">@color/white</item>
+
+        <!-- Toolbar background — dark indigo -->
+        <item name="toolbarBackground">@color/indigo_600</item>
 
         <!-- Custom attrs — icon gradient backgrounds -->
         <item name="iconBgIndigo">@drawable/bg_icon_indigo</item>

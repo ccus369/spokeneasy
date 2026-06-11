@@ -1,7 +1,6 @@
 package com.spokeneasy.app.linking;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -67,7 +66,7 @@ public class LinkingListAdapter extends ListAdapter<LinkingEntity, LinkingListAd
             holder.categoryTag.setVisibility(View.VISIBLE);
             GradientDrawable drawable = (GradientDrawable) holder.categoryTag.getBackground();
             drawable.setColor(bgColor);
-            holder.categoryTag.setTextColor(Color.WHITE);
+            holder.categoryTag.setTextColor(ContextCompat.getColor(holder.itemView.getContext(), android.R.color.white));
         } else {
             holder.categoryTag.setVisibility(View.GONE);
         }

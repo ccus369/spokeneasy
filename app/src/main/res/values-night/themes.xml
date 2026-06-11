@@ -39,6 +39,9 @@
         <item name="colorCta">@color/green_500</item>
         <item name="colorOnCta">@color/white</item>
 
+        <!-- Toolbar background — dark indigo -->
+        <item name="toolbarBackground">@color/indigo_700</item>
+
         <!-- Custom attrs — icon gradient backgrounds (dark) -->
         <item name="iconBgIndigo">@drawable/bg_icon_indigo_dark</item>
         <item name="iconBgGreen">@drawable/bg_icon_green_dark</item>

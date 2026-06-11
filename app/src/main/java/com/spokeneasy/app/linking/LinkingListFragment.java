@@ -48,7 +48,7 @@ public class LinkingListFragment extends Fragment {
             NavController navController = Navigation.findNavController(view);
             Bundle args = new Bundle();
             args.putLong("linkingId", item.getId());
-            navController.navigate(R.id.linkingDetailFragment, args);
+            navController.navigate(R.id.action_linkingList_to_linkingDetail, args);
         });
         recyclerView.setAdapter(adapter);
 

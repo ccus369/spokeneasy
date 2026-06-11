@@ -3,7 +3,7 @@
     android:shape="rectangle">
     <stroke
         android:width="2dp"
-        android:color="#F44336" />
-    <solid android:color="#1AF44336" />
+        android:color="@color/quiz_wrong" />
+    <solid android:color="@color/quiz_wrong_bg" />
     <corners android:radius="@dimen/corner_medium" />
 </shape>

@@ -45,7 +45,7 @@
             app:cardCornerRadius="@dimen/corner_medium"
             app:cardElevation="1dp"
             app:contentPadding="10dp"
-            app:cardBackgroundColor="#1AFFF176">
+            app:cardBackgroundColor="@color/chat_ai_bg">
 
             <TextView
                 android:id="@+id/chat_correction_text"

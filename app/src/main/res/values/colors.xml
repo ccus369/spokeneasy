@@ -22,6 +22,7 @@
 
     <!-- Neutral palette -->
     <color name="grey_50">#FFF5F5F5</color>
+    <color name="grey_300">#FFE0E0E0</color>
     <color name="grey_900">#FF1E1E1E</color>
     <color name="grey_950">#FF121212</color>
 
@@ -143,6 +144,18 @@
 
     <!-- Drawer scrim overlay -->
     <color name="drawer_scrim">#66000000</color>
+
+    <!-- Transformation area background -->
+    <color name="transformation_bg">#18048AFB</color>
+
+    <!-- Category tag default grey -->
+    <color name="category_tag_bg">#FF888888</color>
+
+    <!-- Surface border (light) -->
+    <color name="surface_border_light">#FFE5E7EB</color>
+
+    <!-- AI chat bubble background -->
+    <color name="chat_ai_bg">#1AFFF176</color>
 
     <!-- Score "none/no data" color -->
     <color name="score_none">#FF9E9E9E</color>

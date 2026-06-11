@@ -92,4 +92,12 @@
     <string name="mimo_api_key_save">保存</string>
     <string name="mimo_api_key_saved">API Key 已保存</string>
     <string name="mimo_api_key_cleared">API Key 已清除</string>
+
+    <!-- Theme settings -->
+    <string name="theme_section_title">主题设置</string>
+    <string name="theme_label">外观模式</string>
+    <string name="theme_system">跟随系统</string>
+    <string name="theme_light">浅色模式</string>
+    <string name="theme_dark">深色模式</string>
+    <string name="theme_switched">主题已切换</string>
 </resources>

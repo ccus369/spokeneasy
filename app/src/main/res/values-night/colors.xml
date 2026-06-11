@@ -72,8 +72,20 @@
     <color name="dialogue_index_text">#FFE0E0E0</color>
     <color name="dialogue_play_button">#FF90CAF9</color>
 
+    <!-- Neutral palette (dark variant) -->
+    <color name="grey_300">#FF555555</color>
+
     <!-- Bottom navigation tab colors (same as light) -->
     <color name="bottom_nav_learn_tint">#FF4F46E5</color>
     <color name="bottom_nav_practice_tint">#FFFF8F00</color>
     <color name="bottom_nav_settings_tint">#FF78909C</color>
+
+    <!-- Transformation area background (dark) -->
+    <color name="transformation_bg">#1A6366F1</color>
+
+    <!-- Category tag default grey (dark) -->
+    <color name="category_tag_bg">#FF666666</color>
+
+    <!-- AI chat bubble background (dark) -->
+    <color name="chat_ai_bg">#1A2E7D32</color>
 </resources>

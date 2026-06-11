@@ -213,7 +213,7 @@
                 android:layout_marginTop="8dp"
                 android:text="录音中…"
                 android:textSize="14sp"
-                android:textColor="@color/design_default_color_error"
+                android:textColor="?attr/colorError"
                 android:gravity="center"
                 android:visibility="gone" />
 
